@@ -1,16 +1,37 @@
+import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 
-type Props = {};
+type Props = {
+  white: boolean;
+};
 
-const Navbar = (props: Props) => {
+const Navbar = ({ white }: Props) => {
   return (
     <nav className="absolute top-0 left-0 w-screen p-6">
       <div className="w-full flex items-center justify-between px-6 pl-10">
         <Link className="z-20" href="/">
-          <img src="/images/Component 2.png" />
+          <div className="flex w-52 gap-x-2">
+            <div className="flex justify-center">
+              {white ? (
+                <img className="w-full h-full" src="/logo.svg" alt="" />
+              ) : (
+                <img className="w-full h-full" src="/logo_white.svg" alt="" />
+              )}
+            </div>
+            <h1
+              className={clsx("text-xl font-medium", white ? "" : "text-white")}
+            >
+              Alphabet Trading
+            </h1>
+          </div>
         </Link>
-        <div className="flex gap-x-8 text-md text-white font-bold z-20">
+        <div
+          className={clsx(
+            "flex gap-x-8 text-md font-bold z-20",
+            white ? "" : "text-white"
+          )}
+        >
           <Link
             href="/"
             className="block mt-4 lg:inline-block lg:mt-0 mr-4 cusror-pointer"
