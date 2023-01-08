@@ -1,13 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
 import Navbar from "../components/common/Navbar";
 import Welcome from "../components/home/Welcome";
 import Why from "../components/home/Why";
 import Review from "../components/home/Review";
 import Footer from "../components/common/Footer";
-import Detail from "../components/home/DetailItem";
 import Details from "../components/home/Details";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,7 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="relative">
-        <Navbar />
+        <Navbar white={false} />
         <video autoPlay loop muted className="w-screen" width="100%">
           <source src="/alphabet-coffee-v5.mp4" type="video/mp4" />
         </video>
