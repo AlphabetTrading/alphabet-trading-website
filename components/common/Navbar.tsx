@@ -20,10 +20,7 @@ const Navbar = ({ white }: Props) => {
               )}
             </div>
             <h1
-              className={clsx(
-                "text-xl font-medium",
-                white ? "" : "text-white"
-              )}
+              className={clsx("text-xl font-medium", white ? "" : "text-white")}
             >
               Alphabet Trading
             </h1>

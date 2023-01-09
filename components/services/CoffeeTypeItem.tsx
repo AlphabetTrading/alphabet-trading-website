@@ -13,7 +13,7 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
       className={clsx(
         "flex",
         index % 2 == 0
-          ? "bg-secondary/20"
+          ? "bg-secondary/20 text-primary"
           : "bg-primary flex-row-reverse w-full text-white"
       )}
     >
@@ -24,7 +24,7 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
         <div className="text-center">
           <h1
             style={{ writingMode: "vertical-rl" }}
-            className="text-center text-3xl rotate-180"
+            className="text-center text-3xl rotate-180 font-semibold"
           >
             {coffeeType.name}
           </h1>
@@ -32,7 +32,7 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
         <div
           className={clsx(
             "flex flex-col flex-1 items-start border-l-2",
-            index % 2 == 0 ? "border-black" : "border-white"
+            index % 2 == 0 ? "border-primary" : "border-white"
           )}
         >
           <div className="flex flex-col items-start gap-y-4 p-2 px-4">
@@ -40,10 +40,10 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
             <div
               className={clsx(
                 "flex items-center border",
-                index % 2 == 0 ? "border-black" : "border-white"
+                index % 2 == 0 ? "border-primary" : "border-white"
               )}
             >
-              <button className="p-2 px-3">See Offerings</button>
+              <button className="p-2 px-3 font-semibold">See Offerings</button>
               <FaChevronRight className="pr-2" />
             </div>
           </div>
