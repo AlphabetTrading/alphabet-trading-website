@@ -27,7 +27,7 @@ const coffeeTypes = [
   {
     name: "Gedebe",
     description:
-      "Cofffees from Gedebe district are known and loved for their fragrant, floral aroma, sweet, balanced taste and smooth acidity. We curate Chelchele, Chelbesa, Worka Sakaro and Banko Gotiti",
+      "Coffee from Gedebe district is known and loved for its fragrant & floral aroma, sweet & balanced taste and smooth acidity. We curate Chelchele, Chelbesa, Worka Sakaro and Banko Gotiti",
     imgSrc: "/images/gedebe.svg",
   },
   {
