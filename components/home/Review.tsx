@@ -61,7 +61,7 @@ const Review = () => {
         >
           <FaChevronLeft size={28} color="red" />
         </div>
-        <div className="flex flex-col gap-y-2 items-center bg-white p-12 m-6 px-20 mx-20 transform duration-500">
+        <div className="flex flex-col gap-y-2 items-center bg-white p-12 m-6 px-20 mx-20 shadow-2xl transform duration-500">
           <p className="text-center text-md italic">
             {reviews[currentReview].review}
           </p>

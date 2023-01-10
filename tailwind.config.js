@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        Raleway: ["Raleway", "sans-serif", ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         primary: "#0A1026",
         secondary: "#086965",

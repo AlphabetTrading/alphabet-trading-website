@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import Footer from "../../components/common/Footer";
@@ -25,8 +26,27 @@ const offerings: Offering[] = [
 
 const index = (props: Props) => {
   return (
-    <div>
-      <div>
+    <>
+      <Head>
+        <title>Offerings - Alphabet Trading PLC</title>
+        <meta
+          name="description"
+          content="Alphabet is a coffee export firm based in its place of origin. We specialize in discovering, developing and exporting the finest commercial grade coffee and spe"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        ></link>
+      </Head>
+      <main>
         <Navbar white={true} />
         <div className="w-full flex flex-col justify-center items-center gap-y-3 mt-28 p-12 md:p-24 bg-secondary/10">
           <h1 className="text-4xl font-semibold">
@@ -75,8 +95,8 @@ const index = (props: Props) => {
           })}
         </div>
         <Footer />
-      </div>
-    </div>
+      </main>
+    </>
   );
 };
 
