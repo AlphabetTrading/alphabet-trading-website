@@ -21,11 +21,11 @@ const Navbar = ({ white }: Props) => {
             </div>
             <h1
               className={clsx(
-                "text-xl font-medium tracking-wide",
+                "text-xl font-normal tracking-wide",
                 white ? "" : "text-white"
               )}
             >
-              <span className="text-2xl font-bold">Alphabet </span>Trading
+              <span className="text-2xl font-DM_Serif">Alphabet </span>Trading
             </h1>
           </div>
         </Link>
@@ -54,7 +54,7 @@ const Navbar = ({ white }: Props) => {
             Offerings
           </Link>
           <Link
-            href="/about-us"
+            href="/about"
             className="block mt-4 lg:inline-block lg:mt-0  mr-4"
           >
             About Us
