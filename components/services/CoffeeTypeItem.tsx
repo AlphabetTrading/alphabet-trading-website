@@ -24,7 +24,7 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
         <div className="text-center">
           <h1
             style={{ writingMode: "vertical-rl" }}
-            className="text-center text-3xl rotate-180 font-medium"
+            className="text-center text-3xl rotate-180 font-DM_Serif font-medium capitalize"
           >
             {coffeeType.name}
           </h1>
