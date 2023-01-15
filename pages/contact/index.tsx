@@ -37,17 +37,17 @@ const index = (props: Props) => {
       </Head>
       <main>
         <Navbar white />
-        <div className="w-full flex flex-col md:flex-row justify-center md:justify-evenly items-center gap-y-3 p-12 px-24 my-12 mt-20">
+        <div className="w-full flex flex-col md:flex-row justify-center md:justify-evenly items-center gap-y-3 p-12 px-20 my-12 mt-20">
           <ContactForm />
           <ContactMap />
         </div>
         <div className="grid grid-cols-12 justify-center md:justify-between items-start md:gap-x-3 px-24 md:px-36 mb-16 gap-y-3 text-md font-medium">
           <div className="col-span-12 md:col-span-4 md:row-span-2 gap-x-2 border border-gray-200 p-4 rounded-lg shadow-xl">
             <div className="flex items-start gap-x-2">
-              <FaPhoneAlt />
-              <div className="flex flex-col items-start gap-y-1">
-                <h1 className="text-lg font-semibold">Call Us</h1>
-                <div>
+              <FaPhoneAlt className="mt-1" size={24} />
+              <div className="flex flex-col items-start text-sm gap-y-1">
+                <h1 className="text-xl font-bold">Call Us</h1>
+                <div className="leading-5">
                   <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
                   <h3>Sat 9:00 a.m - 12:00 p.m</h3>
                 </div>
@@ -60,10 +60,10 @@ const index = (props: Props) => {
           </div>
           <div className="col-span-12 md:col-span-4 gap-x-2 border border-gray-200 p-4 rounded-md shadow-xl">
             <div className="flex gap-x-2">
-              <FaMapPin />
-              <div className="flex flex-col gap-y-1">
-                <h1 className="text-lg font-semibold">Visit Us</h1>
-                <div>
+              <FaMapPin size={24} className="mt-1" />
+              <div className="flex flex-col text-sm gap-y-1">
+                <h1 className="text-xl font-bold">Visit Us</h1>
+                <div className="leading-5">
                   <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
                   <h3>Sat 9:00 a.m - 12:00 p.m</h3>
                 </div>
@@ -77,10 +77,10 @@ const index = (props: Props) => {
           </div>
           <div className="col-span-12 md:col-span-4 gap-x-2 border border-gray-200 p-4 rounded-lg shadow-xl">
             <div className="flex gap-x-2">
-              <AiOutlineMail />
-              <div className="flex flex-col gap-y-1">
-                <h1 className="text-lg font-semibold">Mail Us</h1>
-                <div>
+              <AiOutlineMail size={24} className="mt-1" />
+              <div className="flex flex-col text-sm gap-y-1">
+                <h1 className="text-xl font-bold">Mail Us</h1>
+                <div className="leading-5">
                   <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
                   <h3>Sat 9:00 a.m - 12:00 p.m</h3>
                 </div>

@@ -20,7 +20,11 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
       >
         <div className="bg-[#086965]/20 w-1/3 lg:w-1/4 h-96 rounded-lg relative mb-20">
           <div className="bg-white w-full h-96 rounded-lg absolute z-10 top-12 left-12">
-            <img className="rounded-lg w-full h-full" src={imageSrc} alt="" />
+            <img
+              className="object-cover rounded-lg w-full h-full"
+              src={imageSrc}
+              alt=""
+            />
           </div>
         </div>
         <div
@@ -33,7 +37,10 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
           {descriptions?.map((description: string, index2: number) => {
             return (
               <h3
-                className={clsx("text-lg", index % 2 == 1 ? "text-end" : "")}
+                className={clsx(
+                  "text-lg leading-6 font-medium",
+                  index % 2 == 1 ? "text-end" : ""
+                )}
                 key={index2}
               >
                 {description}

@@ -16,7 +16,7 @@ const Welcome = (props: Props) => {
         alt=""
       />
       <h1 className="text-4xl font-semibold">Welcome to Alphabet Trading</h1>
-      <p className="w-3/5 text-center text-lg">
+      <p className="w-3/5 text-center text-lg leading-6">
         Alphabet Trading PLC was formally established in November 2019 by Mr
         Henock Fikru to engage mainly in the export of agricultural goods from
         Ethiopia. and has been focused on building relationships with coffee

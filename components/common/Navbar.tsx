@@ -11,7 +11,7 @@ const Navbar = ({ white }: Props) => {
     <nav className="absolute top-0 left-0 w-full p-6">
       <div className="w-full flex items-center justify-between px-6 pl-10">
         <Link className="z-20" href="/">
-          <div className="flex w-52 gap-x-2">
+          <div className="flex w-56 gap-x-2">
             <div className="flex justify-center">
               {white ? (
                 <img className="w-full h-full" src="/logo.svg" alt="" />

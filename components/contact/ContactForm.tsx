@@ -28,12 +28,12 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="w-full md:w-1/3 text-[#434343] p-10 rounded-lg">
-        <h1 className="text-3xl font-Poppins font-semibold mb-3">Contact Us</h1>
+      <div className="w-full md:w-1/3 text-[#282828] p-10 rounded-lg">
+        <h1 className="text-[46px] font-bold mb-6">Contact Us</h1>
         <Formik initialValues={INITIAL_VALUES} onSubmit={() => {}}>
           {(formik) => (
             <div>
-              <Form className="flex flex-col gap-y-4">
+              <Form className="flex flex-col gap-y-5">
                 <div className="w-full flex gap-x-4">
                   <FormField
                     id="fname"
@@ -80,7 +80,7 @@ const ContactForm = () => {
                     name="message"
                     placeholder="Message"
                     rows={4}
-                    className="w-full bg-secondary/20 resize-none p-2 placeholder:text-xs"
+                    className="w-full bg-secondary/20 resize-none p-2 placeholder:text-sm"
                     //   formik={formik}
                   />
                 </div>
