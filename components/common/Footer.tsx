@@ -23,7 +23,9 @@ const Footer = (props: Props) => {
           <div className="flex justify-center w-1/5">
             <img className="w-full h-full" src="/logo.svg" alt="" />
           </div>
-          <h1 className="w-2/5 text-4xl">Alphabet Trading</h1>
+          <h1 className="w-2/5 font-normal text-4xl tracking-wide">
+            <span className="font-DM_Serif text-5xl">Alphabet</span> Trading
+          </h1>
         </div>
         <div className="w-2/3 py-2 flex justify-evenly items-start">
           <div className="flex flex-col gap-y-2">
@@ -70,10 +72,10 @@ const Footer = (props: Props) => {
           <div className="flex flex-col gap-y-2">
             <h1 className="text-xl text-center">Follow Us</h1>
             <div className="flex gap-x-4">
-              <AiOutlineLinkedin color="#086965" size={28} />
-              <AiFillTwitterCircle color="#086965" size={28} />
-              <AiOutlineYoutube color="#086965" size={28} />
-              <RiFacebookCircleLine color="#086965" size={28} />
+              <img src="/icons/linkedin.svg" alt="" />
+              <img src="/icons/twitter.svg" alt="" />
+              <img src="/icons/youtube.svg" alt="" />
+              <img src="/icons/facebook.svg" alt="" />
             </div>
           </div>
         </div>

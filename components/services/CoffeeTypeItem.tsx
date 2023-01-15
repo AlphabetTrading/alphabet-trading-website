@@ -35,7 +35,7 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
             index % 2 == 0 ? "border-primary" : "border-white"
           )}
         >
-          <div className="flex flex-col items-start gap-y-4 p-2 px-4">
+          <div className="flex flex-col items-start gap-y-4 p-2 px-4 leading-5 text-md font-semibold">
             <p>{coffeeType.description}</p>
             <div
               className={clsx(

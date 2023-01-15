@@ -4,7 +4,6 @@ import {
   useSpring,
   useCycle,
   motion,
-  useViewportScroll,
 } from "framer-motion";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
@@ -217,11 +216,11 @@ const Navbar = ({ white }: Props) => {
                 ))}
               </motion.ul>
             </motion.nav>
+                  </div>
+              </div>
+            </motion.header>
           </div>
-        </div>
-      </motion.header>
-    </div>
-  );
+          );
 };
 
-export default Navbar;
+          export default Navbar;
