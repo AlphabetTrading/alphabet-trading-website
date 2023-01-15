@@ -59,12 +59,10 @@ const Review = () => {
           onClick={onPrevReview}
           className="rounded-full bg-white p-2 cursor-pointer"
         >
-          <FaChevronLeft size={28} color="red" />
+          <FaChevronLeft size={28} color="#F2A40C" />
         </div>
         <div className="flex flex-col gap-y-2 items-center bg-white p-12 m-6 px-20 mx-20 shadow-2xl transform duration-500">
-          <p className="text-center text-md italic">
-            {reviews[currentReview].review}
-          </p>
+          <p className="text-center text-md">{reviews[currentReview].review}</p>
           <div className="flex flex-col items-center mt-6 text-center">
             <h1 className="font-bold text-lg">{reviews[currentReview].name}</h1>
             <h3>
@@ -76,7 +74,7 @@ const Review = () => {
           onClick={onNextReview}
           className="rounded-full bg-white p-2 cursor-pointer"
         >
-          <FaChevronRight size={28} color="red" />
+          <FaChevronRight size={28} color="#F2A40C" />
         </div>
       </div>
     </div>

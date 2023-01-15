@@ -9,9 +9,9 @@ const Why = (props: Props) => {
       <h1 className="text-4xl font-bold my-4">Why Alphabet</h1>
       <div className="flex flex-col bg-[#0A1026]">
         <div className="flex">
-          <div className="flex flex-col gap-y-4 w-2/3 p-24 text-white">
+          <div className="flex flex-col gap-y-4 w-2/3 p-24 text-white leading-6">
             <h1 className="text-3xl font-semibold">Our Approach</h1>
-            <p className="text-lg">
+            <p className="text-lg leading-6">
               Helping the world to discover the finest quality isn’t just a
               one-time task for us, but rather a process. A process in which we
               diligently and consistently invest our time, effort, knowledge and
@@ -22,12 +22,12 @@ const Why = (props: Props) => {
               deliver quality coffee that benefits everyone from the grower to
               the consumer.
             </p>
-            <p className="text-lg">
+            <p className="text-lg leading-6">
               Our approach is rooted in the principles of sustainability,
               transparency, traceability and the collective economic health of a
               global community like no other.
             </p>
-            <p className="text-lg">
+            <p className="text-lg leading-6">
               We deeply care about the relationships we cultivate and the
               connections those create. Relationships are the key to any
               successful venture through our work with our esteemed partners and
@@ -56,14 +56,16 @@ const Why = (props: Props) => {
             />
           </div>
           <div className="flex flex-col gap-y-4 w-1/3 p-16 text-white">
-            <h1 className="text-3xl font-semibold">Commitment to Excellence</h1>
-            <p className="text-lg">
+            <h1 className="text-3xl font-semibold leading-8">
+              Commitment to Excellence
+            </h1>
+            <p className="text-lg leading-6">
               Embracing a sustainability approach means that we act hand in hand
               with the environment and the people we work with. We bear
               responsibility for the environment, the organization and the
               economic livelihood of the people around us.
             </p>
-            <p className="text-lg">
+            <p className="text-lg leading-6">
               We have devised a model where we don’t degrade the contribution of
               others environmentally, economically and socially.
             </p>

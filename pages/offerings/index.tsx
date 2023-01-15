@@ -57,10 +57,10 @@ const index = (props: Props) => {
             Our <span className="text-secondary">Coffee</span> Export
           </h1>
           <p className="w-full md:w-1/2 text-center font-semibold">
-            Yirgacheffe, Guji, Sidama, Gedeb and Limu are the five regions in
+            Yirgacheffe, Guji, Sidama, Gedebe and Limu are the five regions in
             Ethiopia that Alphabet Coffee sources its coffee from.
           </p>
-          <div className="flex w-full justify-start mt-8 text-xs md:text-sm lg:text-md font-semibold">
+          <div className="flex w-5/6 mt-8 text-xs md:text-sm lg:text-md font-semibold">
             <div className="w-1/12"></div>
             <div className="w-3/12 flex items-center">
               <div className="w-full flex items-center gap-x-1">

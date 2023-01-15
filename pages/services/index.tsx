@@ -67,19 +67,19 @@ const index = (props: Props) => {
       </Head>
       <main>
         <Navbar white={true} />
-        <div className="grid grid-cols-12 my-28">
+        <div className="grid grid-cols-12 my-40">
           <div className="col-span-6 flex flex-col justify-center mx-24 gap-y-3">
             <h1 className="text-4xl font-bold">
               Our <span className="text-secondary">Coffee</span> Export
             </h1>
-            <p className="tracking-wide font-medium text-sm">
+            <p className="font-semibold text-md leading-5">
               From the birthplace of coffee to the conscious consumers, Alphabet
               engages in exporting Ethiopian specialty coffee. With a wide range
               of coffee types and quality processing, working in the sector has
               open a door in the huge and ever growing world of coffee and we
               pride ourselves in taking the chance to move forward.
             </p>
-            <p className="tracking-wide font-medium text-sm">
+            <p className="leading-5 font-semibold text-md">
               The high consumer demand for Ethiopian coffee open us a door to
               that world of wonder, in which our floral, distinctive and winy
               flavors of coffee have displayed. Our main export destinations are
@@ -87,7 +87,7 @@ const index = (props: Props) => {
             </p>
           </div>
           <img
-            className="col-span-6 rounded-l-full"
+            className="col-span-6 rounded-l-full border-[18px] border-r-0 border-secondary/10"
             src="/images/services1.svg"
             alt=""
           />
