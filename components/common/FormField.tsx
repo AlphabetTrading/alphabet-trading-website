@@ -1,14 +1,13 @@
 import { clsx } from "clsx";
-import { Field, FormikErrors, FormikProps, FormikTouched } from "formik";
+import { Field, FormikProps } from "formik";
 import React from "react";
-import { FormValues } from "../contact/ContactForm";
 
 type Props = {
   id: string;
   name: string;
   label: string;
   placeholder: string;
-  formik: FormikProps<FormValues>;
+  formik: FormikProps<any>;
 };
 
 const FormField = ({ id, name, placeholder, label, formik }: Props) => {
@@ -21,7 +20,7 @@ const FormField = ({ id, name, placeholder, label, formik }: Props) => {
         placeholder={placeholder}
         type="text"
         className={clsx(
-          "w-full text-sm placeholder-[#949494] border resize-none bg-secondary/20 rounded-md focus:outline-none py-2 px-2 my-1",
+          "w-full text-sm placeholder-[#949494] border resize-none bg-secondary/10 rounded-md focus:outline-none py-2 px-2 my-1",
           (formik.touched as any)[name] && (formik.errors as any)[name]
             ? "border-red-500"
             : "border-[#DCDCDC]"

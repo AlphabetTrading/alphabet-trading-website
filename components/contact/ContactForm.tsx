@@ -80,7 +80,7 @@ const ContactForm = () => {
                     name="message"
                     placeholder="Message"
                     rows={4}
-                    className="w-full bg-secondary/20 resize-none p-2 placeholder:text-sm"
+                    className="w-full rounded-lg border bg-secondary/10 resize-none p-2 placeholder:text-sm"
                     //   formik={formik}
                   />
                 </div>

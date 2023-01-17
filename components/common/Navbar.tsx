@@ -1,10 +1,5 @@
 import clsx from "clsx";
-import {
-  useScroll,
-  useSpring,
-  useCycle,
-  motion,
-} from "framer-motion";
+import { useScroll, useSpring, useCycle, motion } from "framer-motion";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { useDimensions } from "../../hooks/useDimensions";
@@ -216,11 +211,11 @@ const Navbar = ({ white }: Props) => {
                 ))}
               </motion.ul>
             </motion.nav>
-                  </div>
-              </div>
-            </motion.header>
           </div>
-          );
+        </div>
+      </motion.header>
+    </div>
+  );
 };
 
-          export default Navbar;
+export default Navbar;
