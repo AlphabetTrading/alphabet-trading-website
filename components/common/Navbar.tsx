@@ -1,10 +1,5 @@
 import clsx from "clsx";
-import {
-  useScroll,
-  useSpring,
-  useCycle,
-  motion,
-} from "framer-motion";
+import { useScroll, useSpring, useCycle, motion } from "framer-motion";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { useDimensions } from "../../hooks/useDimensions";

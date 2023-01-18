@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+import BaseLayout from "../../components/common/BaseLayout";
 import Footer from "../../components/common/Footer";
 import Navbar from "../../components/common/Navbar";
 import FaqItem from "../../components/faq/FaqItem";
@@ -41,7 +42,7 @@ const faqs = [
 ];
 const index = (props: Props) => {
   return (
-    <>
+    <BaseLayout>
       <Head>
         <title>FAQs - Alphabet Trading PLC</title>
         <meta
@@ -65,7 +66,7 @@ const index = (props: Props) => {
           rel="stylesheet"
         ></link>
       </Head>
-      <main>
+      <>
         <Navbar white />
         <div className="flex flex-col w-full h-full items-center justify-center mt-28 gap-y-6">
           <div className="relative flex items-center justify-center w-full h-72">
@@ -106,9 +107,8 @@ const index = (props: Props) => {
             })}
           </div>
         </div>
-        <Footer />
-      </main>
-    </>
+      </>
+    </BaseLayout>
   );
 };
 

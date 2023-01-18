@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaMap, FaMapPin, FaPhone, FaPhoneAlt } from "react-icons/fa";
+import BaseLayout from "../../components/common/BaseLayout";
 import Footer from "../../components/common/Footer";
 import Navbar from "../../components/common/Navbar";
 import ContactForm from "../../components/contact/ContactForm";
@@ -11,7 +12,7 @@ type Props = {};
 
 const index = (props: Props) => {
   return (
-    <>
+    <BaseLayout>
       <Head>
         <title>Contact Us - Alphabet Trading PLC</title>
         <meta
@@ -35,7 +36,7 @@ const index = (props: Props) => {
           rel="stylesheet"
         ></link>
       </Head>
-      <main>
+      <>
         <Navbar white />
         <div className="w-full flex flex-col md:flex-row justify-center md:justify-evenly items-center gap-y-3 p-12 px-20 my-12 mt-20">
           <ContactForm />
@@ -92,9 +93,8 @@ const index = (props: Props) => {
             </div>
           </div>
         </div>
-        <Footer />
-      </main>
-    </>
+      </>
+    </BaseLayout>
   );
 };
 

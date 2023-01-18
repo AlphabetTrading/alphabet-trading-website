@@ -6,6 +6,22 @@
   --text-primary: #000;
   --bg-primary: #5956e9;
   --bg-primary-dark: #3f3cdd;
+  --green-dark: #086965;
+  --green-light: #0fa19d;
+  --dark-navy: #020c1b;
+  --navy: #0a1026;
+  --light-navy: #111935;
+  --lightest-navy: #233554;
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --green-tint: rgba(100, 255, 218, 0.1);
+  --font-sans: "Inter", "San Francisco", "SF Pro Text", -apple-system, system-ui,
+    sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 }
 
 @layer base {
@@ -13,4 +29,24 @@
     font-family: Raleway;
     color: var(--text-primary);
   }
+}
+
+::-webkit-scrollbar {
+  cursor: pointer;
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-slate);
+  border: 3px solid var(--navy);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy);
+}
+
+::selection {
+  background-color: var(--lightest-navy);
+  color: var(--lightest-slate);
 }
