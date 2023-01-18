@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
+import BaseLayout from "../../components/common/BaseLayout";
 import Footer from "../../components/common/Footer";
 import Navbar from "../../components/common/Navbar";
 import OfferingsItem, {
@@ -26,7 +27,7 @@ const offerings: Offering[] = [
 
 const index = (props: Props) => {
   return (
-    <>
+    <BaseLayout>
       <Head>
         <title>Offerings - Alphabet Trading PLC</title>
         <meta
@@ -50,7 +51,7 @@ const index = (props: Props) => {
           rel="stylesheet"
         ></link>
       </Head>
-      <main>
+      <>
         <Navbar white={true} />
         <div className="w-full flex flex-col justify-center items-center gap-y-3 mt-28 p-12 md:p-24 bg-secondary/10">
           <h1 className="text-4xl font-semibold">
@@ -98,9 +99,8 @@ const index = (props: Props) => {
             return <OfferingsItem key={index} offering={offering} />;
           })}
         </div>
-        <Footer />
-      </main>
-    </>
+      </>
+    </BaseLayout>
   );
 };
 

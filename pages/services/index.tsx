@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+import BaseLayout from "../../components/common/BaseLayout";
 import Footer from "../../components/common/Footer";
 import Navbar from "../../components/common/Navbar";
 import CoffeeTypeItem from "../../components/services/CoffeeTypeItem";
@@ -41,7 +42,7 @@ const coffeeTypes = [
 
 const index = (props: Props) => {
   return (
-    <>
+    <BaseLayout>
       <Head>
         <title>Services - Alphabet Trading PLC</title>
         <meta
@@ -65,7 +66,7 @@ const index = (props: Props) => {
           rel="stylesheet"
         ></link>
       </Head>
-      <main>
+      <>
         <Navbar white={true} />
         <div className="grid grid-cols-12 my-40">
           <div className="col-span-6 flex flex-col justify-center mx-24 gap-y-3">
@@ -103,9 +104,8 @@ const index = (props: Props) => {
             );
           })}
         </div>
-        <Footer />
-      </main>
-    </>
+      </>
+    </BaseLayout>
   );
 };
 
