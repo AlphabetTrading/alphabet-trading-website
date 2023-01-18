@@ -72,7 +72,7 @@ const Why = (props: Props) => {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 

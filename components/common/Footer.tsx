@@ -81,7 +81,6 @@ const Footer = (props: Props) => {
             </div>
           </div>
         </div>
-
       </div>
       <div className="bg-[#086965] py-2 text-center">
         Copyright <span>© {getYear()}</span> Alphabet Trading PLC. All Rights

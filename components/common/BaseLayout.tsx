@@ -2,7 +2,7 @@ import React from "react";
 import { WithChildren } from "../../types/common";
 import Footer from "./Footer";
 import ScrollUpArrow from "./ScrollUpArrow";
-interface LayoutProps extends WithChildren { }
+interface LayoutProps extends WithChildren {}
 
 const BaseLayout = ({ children }: LayoutProps) => {
   return (

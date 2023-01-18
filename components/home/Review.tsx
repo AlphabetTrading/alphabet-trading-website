@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import ReviewSlider from "./ReviewSlider";
 
-
 const Review = () => {
-
   return (
     <div className="bg-[#086965]/20 min-h-[400px] md:min-h-[500px] overflow-hidden relative py-8">
       <div className="absolute w-full h-full z-10">
