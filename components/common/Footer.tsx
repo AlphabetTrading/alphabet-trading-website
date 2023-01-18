@@ -19,16 +19,16 @@ const Footer = (props: Props) => {
   return (
     <div>
       <div className="flex items-center p-8 text-white bg-[#0A1026]">
-        <div className="flex items-center justify-center w-1/3 gap-x-4">
-          <div className="flex justify-center w-1/5">
-            <img className="w-full h-full" src="/logo.svg" alt="" />
+        <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-4">
+          <div className="flex items-center justify-center col-span-2 md:col-span-2 gap-x-4">
+            <div className="flex justify-center">
+              <img className="w-full h-full" src="/logo.svg" alt="" />
+            </div>
+            <h1 className="font-normal text-4xl tracking-wide flex md:flex-col items-center gap-x-1">
+              <span className="font-DM_Serif text-5xl">Alphabet</span> Trading
+            </h1>
           </div>
-          <h1 className="w-2/5 font-normal text-4xl tracking-wide">
-            <span className="font-DM_Serif text-5xl">Alphabet</span> Trading
-          </h1>
-        </div>
-        <div className="w-2/3 py-2 flex justify-evenly items-start">
-          <div className="flex flex-col gap-y-2">
+          <div className="col-span-1 flex flex-col gap-y-2">
             <h1 className="text-xl">Quick Links</h1>
             <div className="flex flex-col gap-y-2 text-[#AEAEAE]">
               <ul className="flex flex-col gap-y-2 cursor-pointer">
@@ -53,8 +53,8 @@ const Footer = (props: Props) => {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col gap-y-3 text-[#AEAEAE]">
-            <h1 className="text-xl text-center text-white">Contact</h1>
+          <div className="col-span-1 flex flex-col gap-y-3 text-[#AEAEAE]">
+            <h1 className="text-xl text-start text-white">Contact</h1>
             <div className="flex items-center gap-x-2">
               <FaPhoneAlt />
               <div className="text-sm">
@@ -69,16 +69,19 @@ const Footer = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-y-2">
-            <h1 className="text-xl text-center">Follow Us</h1>
-            <div className="flex gap-x-4">
-              <img src="/icons/linkedin.svg" alt="" />
-              <img src="/icons/twitter.svg" alt="" />
-              <img src="/icons/youtube.svg" alt="" />
-              <img src="/icons/facebook.svg" alt="" />
+          <div className="col-span-2 md:col-span-5 lg:col-span-1 py-2 flex justify-evenly items-start">
+            <div className="flex flex-col gap-y-2">
+              <h1 className="text-xl text-center">Follow Us</h1>
+              <div className="flex gap-x-4">
+                <img src="/icons/linkedin.svg" alt="" />
+                <img src="/icons/twitter.svg" alt="" />
+                <img src="/icons/youtube.svg" alt="" />
+                <img src="/icons/facebook.svg" alt="" />
+              </div>
             </div>
           </div>
         </div>
+
       </div>
       <div className="bg-[#086965] py-2 text-center">
         Copyright <span>© {getYear()}</span> Alphabet Trading PLC. All Rights

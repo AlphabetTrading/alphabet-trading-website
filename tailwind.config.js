@@ -17,6 +17,8 @@ module.exports = {
         primary: "#0A1026",
         secondary: "#086965",
         text_primary: "#5956E9",
+        navy: "#0a1026",
+        bg_green: "#086965",
       },
       boxShadow: {
         "t-sm": "0 -1px 2px 0 rgba(0, 0, 0, 0.05)",
