@@ -14,12 +14,12 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
     <div>
       <div
         className={clsx(
-          "flex flex-col items-center justify-center p-12 lg:gap-x-8",
+          "flex flex-col items-center justify-center p-2 sm:p-8 md:p-12 lg:gap-x-8",
           index % 2 == 0 ? "lg:flex-row" : "lg:flex-row-reverse"
         )}
       >
-        <div className="bg-[#086965]/20 w-1/3 lg:w-1/4 h-96 rounded-lg relative mb-20">
-          <div className="bg-white w-full h-96 rounded-lg absolute z-10 top-12 left-12">
+        <div className="bg-[#086965]/20 w-4/5 h-64  md:w-1/3 lg:w-1/4 md:h-96 rounded-lg relative mb-20">
+          <div className="bg-white w-full h-64 md:h-96 rounded-lg absolute z-10 top-3 left-3 sm:top-8 sm:left-8 md:top-12 md:left-12">
             <img
               className="object-cover rounded-lg w-full h-full"
               src={imageSrc}
@@ -29,17 +29,19 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
         </div>
         <div
           className={clsx(
-            "lg:w-1/2 flex flex-col items-center mx-64 md:mx-12 gap-y-4",
+            "w-full lg:w-1/2 flex flex-col items-center md:mx-12 gap-y-4",
             index % 2 == 0 ? "lg:items-start" : "lg:items-end"
           )}
         >
-          <h1 className="text-3xl font-semibold">{title}</h1>
+          <h1 className="text-2xl text-center md:text-3xl font-semibold">
+            {title}
+          </h1>
           {descriptions?.map((description: string, index2: number) => {
             return (
               <h3
                 className={clsx(
-                  "text-lg leading-6 font-medium",
-                  index % 2 == 1 ? "text-end" : ""
+                  "text-sm md:text-lg leading-5 md:leading-6 font-medium text-center",
+                  index % 2 == 1 ? "md:text-end" : " md:text-start"
                 )}
                 key={index2}
               >

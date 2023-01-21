@@ -7,7 +7,7 @@ interface LayoutProps extends WithChildren {}
 const BaseLayout = ({ children }: LayoutProps) => {
   return (
     <div className="">
-      <main className="flex flex-col flex-1 min-h-screen overflow-auto relative">
+      <main className="flex flex-col flex-1 min-h-screen max-w-screen overflow-x-hidden overflow-auto relative">
         {children}
       </main>
       <Footer />

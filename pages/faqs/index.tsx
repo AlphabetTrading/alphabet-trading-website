@@ -45,32 +45,12 @@ const index = (props: Props) => {
     <BaseLayout>
       <Head>
         <title>FAQs - Alphabet Trading PLC</title>
-        <meta
-          name="description"
-          content="Alphabet is a coffee export firm based in its place of origin. We specialize in discovering, developing and exporting the finest commercial grade coffee and spe"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-          rel="stylesheet"
-        ></link>
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
-          rel="stylesheet"
-        ></link>
       </Head>
       <>
         <Navbar white />
         <div className="flex flex-col w-full h-full items-center justify-center mt-28 gap-y-6">
-          <div className="relative flex items-center justify-center w-full h-72">
-            <h1 className="text-6xl font-bold z-10">
+          <div className="relative flex items-center justify-center w-full h-56 md:h-60 lg:h-72">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold z-10">
               Frequently <span className="text-secondary">Asked Questions</span>
             </h1>
 
@@ -83,7 +63,7 @@ const index = (props: Props) => {
           <div>
             <div className="flex flex-col gap-y-2 justify-center items-center text-[#555555]">
               <h1 className="text-3xl font-bold">Help Center</h1>
-              <p className="w-2/3 text-center text-lg font-semibold">
+              <p className="w-2/3 text-center text-base md:text-lg font-semibold">
                 You can get in touch with us via email{" "}
                 <span className="text-secondary">
                   Henock@alphabettrading.com
@@ -94,7 +74,7 @@ const index = (props: Props) => {
             </div>
           </div>
           <Searchbar />
-          <div className="flex flex-col w-2/3 gap-y-5 mb-24">
+          <div className="flex flex-col w-11/12 md:w-3/4 lg:w-2/3 gap-y-5 mb-24">
             {faqs.map((faq: any, index: number) => {
               return (
                 <FaqItem

@@ -7,11 +7,11 @@ const Why = (props: Props) => {
   return (
     <div className="w-full flex flex-col items-center justify-center mt-8">
       <h1 className="text-4xl font-bold my-4">Why Alphabet</h1>
-      <div className="flex flex-col bg-[#0A1026]">
-        <div className="flex">
-          <div className="flex flex-col gap-y-4 w-2/3 p-24 text-white leading-6">
-            <h1 className="text-3xl font-semibold">Our Approach</h1>
-            <p className="text-lg leading-6">
+      <div className="flex flex-col bg-navy">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3">
+          <div className="order-2 md:order-1 col-span-2  flex flex-col gap-y-4 p-5 sm:p-8 md:p-12 lg:p-16 xl:24 text-white leading-6">
+            <h1 className="text-2xl md:text-3xl font-semibold">Our Approach</h1>
+            <p className="text-sm md:text-lg leading-5 md:leading-6">
               Helping the world to discover the finest quality isn’t just a
               one-time task for us, but rather a process. A process in which we
               diligently and consistently invest our time, effort, knowledge and
@@ -22,12 +22,12 @@ const Why = (props: Props) => {
               deliver quality coffee that benefits everyone from the grower to
               the consumer.
             </p>
-            <p className="text-lg leading-6">
+            <p className="text-sm md:text-lg leading-5 md:leading-6">
               Our approach is rooted in the principles of sustainability,
               transparency, traceability and the collective economic health of a
               global community like no other.
             </p>
-            <p className="text-lg leading-6">
+            <p className="text-sm md:text-lg leading-5 md:leading-6">
               We deeply care about the relationships we cultivate and the
               connections those create. Relationships are the key to any
               successful venture through our work with our esteemed partners and
@@ -37,7 +37,7 @@ const Why = (props: Props) => {
               relationships.
             </p>
           </div>
-          <div className="w-1/3 flex flex-col gap-y-2">
+          <div className="order-1 md:order-2 col-span-1 h-80 md:h-auto flex flex-col gap-y-2">
             <img
               className="w-full h-full object-cover"
               src="/images/whyalphabet1.svg"
@@ -47,25 +47,25 @@ const Why = (props: Props) => {
         </div>
       </div>
       <div className="flex flex-col bg-[#086965]">
-        <div className="flex">
-          <div className="w-2/3 flex flex-col gap-y-2">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3">
+          <div className="hidden col-span-2 md:flex flex-col gap-y-2">
             <img
               className="w-full h-full object-cover"
               src="/images/whyalphabet2.svg"
               alt=""
             />
           </div>
-          <div className="flex flex-col gap-y-4 w-1/3 p-16 text-white">
-            <h1 className="text-3xl font-semibold leading-8">
+          <div className="flex flex-col gap-y-4 p-5 sm:p-8 lg:p-12 xl:p-16 text-white">
+            <h1 className="text-2xl md:text-3xl font-semibold leading-8">
               Commitment to Excellence
             </h1>
-            <p className="text-lg leading-6">
+            <p className="text-sm md:text-lg leading-5 md:leading-6">
               Embracing a sustainability approach means that we act hand in hand
               with the environment and the people we work with. We bear
               responsibility for the environment, the organization and the
               economic livelihood of the people around us.
             </p>
-            <p className="text-lg leading-6">
+            <p className="text-sm md:text-lg leading-5 md:leading-6">
               We have devised a model where we don’t degrade the contribution of
               others environmentally, economically and socially.
             </p>
