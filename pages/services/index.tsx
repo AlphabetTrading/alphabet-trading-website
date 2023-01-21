@@ -1,7 +1,6 @@
 import Head from "next/head";
 import React from "react";
 import BaseLayout from "../../components/common/BaseLayout";
-import Footer from "../../components/common/Footer";
 import Navbar from "../../components/common/Navbar";
 import CoffeeTypeItem from "../../components/services/CoffeeTypeItem";
 
@@ -68,8 +67,8 @@ const index = (props: Props) => {
       </Head>
       <>
         <Navbar white={true} />
-        <div className="grid grid-cols-12 my-40">
-          <div className="col-span-6 flex flex-col justify-center mx-24 gap-y-3">
+        <div className="flex w-full pl-5 flex-col-reverse lg:flex-row justify-between my-28 lg:my-40  gap-y-3 ">
+          <div className="w-full lg:w-1/2 flex flex-col justify-center p-8 gap-y-3">
             <h1 className="text-4xl font-bold">
               Our <span className="text-secondary">Coffee</span> Export
             </h1>
@@ -88,7 +87,7 @@ const index = (props: Props) => {
             </p>
           </div>
           <img
-            className="col-span-6 rounded-l-full border-[18px] border-r-0 border-secondary/10"
+            className="w-full lg:w-1/2 rounded-l-full border-8 md:border-[16px] border-r-0 md:border-r-0 border-primary/10 object-cover"
             src="/images/services1.svg"
             alt=""
           />
