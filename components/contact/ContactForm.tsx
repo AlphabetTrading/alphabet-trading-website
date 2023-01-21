@@ -28,7 +28,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="w-full md:w-1/3 text-[#282828] p-10 rounded-lg">
+      <div className="w-full sm:w-3/4 md:2/3 lg:w-1/3 text-[#282828] p-10 rounded-lg">
         <h1 className="text-[46px] font-bold mb-6">Contact Us</h1>
         <Formik initialValues={INITIAL_VALUES} onSubmit={() => {}}>
           {(formik) => (

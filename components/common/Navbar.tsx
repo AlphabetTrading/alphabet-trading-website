@@ -91,12 +91,19 @@ const Navbar = ({ white }: Props) => {
       <motion.header
         className={clsx(
           "w-full top-0 left-0 fixed transition-all p-6 z-50 duration-500 ease-in-out",
+          white ? "text-gray-700" : "text-white",
           scrolledYAmount > 50 || isOpen
-            ? "bg-[#0A1026] drop-shadow-md"
+            ? "bg-[#0A1026] drop-shadow-md text-white"
             : "bg-transparent"
         )}
       >
-        <div className="w-full flex justify-between items-center text-white ">
+        <div
+          className={clsx(
+            "w-full flex justify-between items-center text-white ",
+            white ? "text-gray-700" : "text-white",
+            (scrolledYAmount > 50 || isOpen) && "!text-white"
+          )}
+        >
           <div className="flex-shrink-0">
             <Link className="z-20" href="/">
               <div className="flex w-52 gap-x-2">
@@ -155,13 +162,14 @@ const Navbar = ({ white }: Props) => {
               custom={height}
               ref={containerRef}
             >
-              <button onClick={() => toggleOpen()}>
-                <svg
-                  width="23"
-                  className="fill-white"
-                  height="23"
-                  viewBox="0 0 23 23"
-                >
+              <button
+                className={clsx(
+                  white ? "text-gray-700" : "text-white",
+                  (scrolledYAmount > 50 || isOpen) && "!text-white"
+                )}
+                onClick={() => toggleOpen()}
+              >
+                <svg width="23" height="23" viewBox="0 0 23 23">
                   <Path
                     variants={{
                       closed: { d: "M 2 2.5 L 20 2.5" },

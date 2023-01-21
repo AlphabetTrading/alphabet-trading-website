@@ -36,8 +36,8 @@ const index = (props: Props) => {
         <Navbar white />
         <div className="w-full my-12 mt-32">
           <>
-            <div className="grid grid-cols-12 p-12 px-28 items-center">
-              <div className="col-span-6 font-semibold">
+            <div className="flex flex-col justify-center gap-y-5 md:flex-row p-5 md:p-12 lg:px-28 lg:pb-32 items-center">
+              <div className="w-full lg:w-1/2  font-semibold">
                 <h4 className="uppercase text-xs text-secondary">
                   About Alphabet Trading
                 </h4>
@@ -46,7 +46,7 @@ const index = (props: Props) => {
                   our promises
                 </h1>
               </div>
-              <div className="col-span-6">
+              <div className="w-full lg:w-1/2 ">
                 <p className="text-md font-medium">
                   Driven by passion, fueled with professionalism and inspired by
                   excellence, team Alphabet is devoted to providing an
@@ -59,9 +59,15 @@ const index = (props: Props) => {
                 </p>
               </div>
             </div>
-            <img src="/images/about1.svg" alt="" />
-            <div className="flex items-center p-12 px-28 mt-16">
-              <div className="flex flex-col w-1/2 font-semibold gap-y-6">
+            <div className="h-[300px] md:h-full">
+              <img
+                src="/images/about1.svg"
+                alt=""
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col md:flex-row items-center p-5 md:p-12 lg:px-28  mt-16">
+              <div className="flex flex-col  w-full md:w-1/2 font-semibold gap-y-6">
                 <div>
                   <h4 className="uppercase text-xs text-secondary">
                     why we started it
@@ -84,7 +90,7 @@ const index = (props: Props) => {
                   diligence, open communication and reasonable speed.
                 </p>
               </div>
-              <div className="flex w-1/2 font-semibold">
+              <div className="w-full hidden md:flex md:w-1/2 font-semibold">
                 <div
                   style={{ borderWidth: "18px", borderRadius: "72px" }}
                   className="border border-secondary/20 rotate-[10deg] p-2 m-3"
@@ -97,8 +103,8 @@ const index = (props: Props) => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-row-reverse items-center p-12 px-28 gap-x-8">
-              <div className="flex flex-col w-1/2 font-semibold gap-y-6">
+            <div className="flex flex-col md:flex-row-reverse items-center p-5 md:p-12 lg:px-28 gap-x-8">
+              <div className="flex flex-col w-full md:w-1/2 font-semibold gap-y-6">
                 <div>
                   <h4 className="uppercase text-xs text-secondary">
                     Why we started it
@@ -122,7 +128,7 @@ const index = (props: Props) => {
                   rapid turnaround of sample evaluation and reporting.
                 </p>
               </div>
-              <div className="flex w-1/2 font-semibold">
+              <div className="hidden md:flex w-1/2 font-semibold">
                 <div
                   style={{ borderWidth: "18px", borderRadius: "72px" }}
                   className="border border-secondary/20 rotate-[10deg] p-2 m-3"

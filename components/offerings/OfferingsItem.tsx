@@ -15,7 +15,7 @@ type Props = {
 const OfferingsItem = ({ offering }: Props) => {
   return (
     <>
-      <div className="flex w-5/6 items-center bg-white text-sm lg:text-md text-[#565656] shadow-xl font-semibold">
+      <div className="flex w-full md:w-5/6 items-center bg-white text-sm lg:text-md text-[#565656] shadow-xl font-semibold">
         <div className="w-1/12 p-3 px-4">
           <img
             className="w-10 h-10"

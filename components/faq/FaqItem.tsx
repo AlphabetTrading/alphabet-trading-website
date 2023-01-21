@@ -19,15 +19,15 @@ const FaqItem = ({ title, description, index }: Props) => {
             fill="currentColor"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             />
           </svg>
         </div>
         <div className="max-h-0 overflow-hidden duration-300 group-focus:max-h-fit group-focus:p-4 group-focus:px-10 group-focus:shadow-md">
           <div className="bg-white flex w-full h-fit border-l-4 border-secondary p-4">
-            <h1 className="text-start text-md font-semibold tracking-wide text-black/70">
+            <h1 className="text-start text-sm md:text-md font-semibold tracking-wide text-black/70">
               {description}
             </h1>
           </div>

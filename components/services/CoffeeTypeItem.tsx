@@ -11,20 +11,34 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
   return (
     <div
       className={clsx(
-        "flex",
+        "grid grid-cols-1 md:grid-cols-2",
         index % 2 == 0
           ? "bg-secondary/20 text-primary"
           : "bg-primary flex-row-reverse w-full text-white"
       )}
     >
-      <div className="w-1/2">
-        <img src={coffeeType.imgSrc} alt="" />
+      <div
+        className={clsx(
+          "h-full",
+          index % 2 === 0 ? "md:order-1" : "md:order-2"
+        )}
+      >
+        <img
+          src={coffeeType.imgSrc}
+          alt=""
+          className="h-full w-full object-cover "
+        />
       </div>
-      <div className="w-1/2 flex items-center p-24 gap-x-2">
+      <div
+        className={clsx(
+          "flex  items-center p-8 sm:10 md:p-8 lg:14 xl:p-24 gap-x-2",
+          index % 2 === 0 ? "md:order-2" : "md:order-1"
+        )}
+      >
         <div className="text-center">
           <h1
             style={{ writingMode: "vertical-rl" }}
-            className="text-center text-3xl rotate-180 font-DM_Serif font-medium capitalize"
+            className="text-center text-2xl md:text-3xl rotate-180 font-DM_Serif font-medium capitalize"
           >
             {coffeeType.name}
           </h1>
@@ -35,7 +49,7 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
             index % 2 == 0 ? "border-primary" : "border-white"
           )}
         >
-          <div className="flex flex-col items-start gap-y-4 p-2 px-4 leading-5 text-md font-semibold">
+          <div className="flex flex-col items-start gap-y-4 p-2 md:px-4 leading-5 text-md font-semibold">
             <p>{coffeeType.description}</p>
             <div
               className={clsx(

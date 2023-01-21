@@ -5,7 +5,7 @@ type Props = {};
 
 const Searchbar = (props: Props) => {
   return (
-    <form className="max-w-lg w-1/4 px-4">
+    <form className="max-w-xl w-2/3 md:w-1/3 lg:w-1/4 px-4">
       <div className="relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -19,75 +19,61 @@ const index = (props: Props) => {
           name="description"
           content="Alphabet is a coffee export firm based in its place of origin. We specialize in discovering, developing and exporting the finest commercial grade coffee and spe"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-          rel="stylesheet"
-        ></link>
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
-          rel="stylesheet"
-        ></link>
       </Head>
       <>
         <Navbar white />
-        <div className="w-full flex flex-col md:flex-row justify-center md:justify-evenly items-center gap-y-3 p-12 px-20 my-12 mt-20">
+        <div className="w-full flex flex-col lg:flex-row justify-center lg:justify-evenly items-center gap-y-3 p-5 lg:p-12 xl:px-20 lg:my-12 mt-20">
           <ContactForm />
           <ContactMap />
         </div>
-        <div className="grid grid-cols-12 justify-center md:justify-between items-start md:gap-x-3 px-24 md:px-36 mb-16 gap-y-3 text-md font-medium">
-          <div className="col-span-12 md:col-span-4 md:row-span-2 gap-x-2 border border-gray-200 p-4 rounded-lg shadow-xl">
-            <div className="flex items-start gap-x-2">
-              <FaPhoneAlt className="mt-1" size={24} />
-              <div className="flex flex-col items-start text-sm gap-y-1">
-                <h1 className="text-xl font-bold">Call Us</h1>
-                <div className="leading-5">
-                  <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
-                  <h3>Sat 9:00 a.m - 12:00 p.m</h3>
-                </div>
-                <div className="text-secondary">
-                  <h4>(+251) 911261233</h4>
-                  <h4>(+251) 118220469</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-12 md:col-span-4 gap-x-2 border border-gray-200 p-4 rounded-md shadow-xl">
-            <div className="flex gap-x-2">
-              <FaMapPin size={24} className="mt-1" />
-              <div className="flex flex-col text-sm gap-y-1">
-                <h1 className="text-xl font-bold">Visit Us</h1>
-                <div className="leading-5">
-                  <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
-                  <h3>Sat 9:00 a.m - 12:00 p.m</h3>
-                </div>
-                <div className="text-secondary">
-                  <h4>Alphabet Trading PLC,</h4>
-                  <h4>Bel Amour Bldg 5th Floor</h4>
-                  <h4>Addis Ababa, Ethiopia.</h4>
+        <div className="w-full flex justify-center items-center py-5">
+          <div className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-5 px-10 lg:px-24 xl:36 mb-16 gap-y-3 text-md font-medium">
+            <div className="h-full w-full  gap-x-2 border border-gray-200 p-4 lg:py-6 rounded-lg shadow-xl">
+              <div className="flex items-start gap-x-2">
+                <FaPhoneAlt className="mt-1" size={24} />
+                <div className="flex flex-col items-start text-sm gap-y-1">
+                  <h1 className="text-xl font-bold">Call Us</h1>
+                  <div className="leading-5">
+                    <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
+                    <h3>Sat 9:00 a.m - 12:00 p.m</h3>
+                  </div>
+                  <div className="text-secondary">
+                    <h4>(+251) 911261233</h4>
+                    <h4>(+251) 118220469</h4>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-span-12 md:col-span-4 gap-x-2 border border-gray-200 p-4 rounded-lg shadow-xl">
-            <div className="flex gap-x-2">
-              <AiOutlineMail size={24} className="mt-1" />
-              <div className="flex flex-col text-sm gap-y-1">
-                <h1 className="text-xl font-bold">Mail Us</h1>
-                <div className="leading-5">
-                  <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
-                  <h3>Sat 9:00 a.m - 12:00 p.m</h3>
+            <div className="h-full w-full gap-x-2 border border-gray-200 p-4 lg:py-6 rounded-md shadow-xl">
+              <div className="flex gap-x-2">
+                <FaMapPin size={24} className="mt-1" />
+                <div className="flex flex-col text-sm gap-y-1">
+                  <h1 className="text-xl font-bold">Visit Us</h1>
+                  <div className="leading-5">
+                    <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
+                    <h3>Sat 9:00 a.m - 12:00 p.m</h3>
+                  </div>
+                  <div className="text-secondary">
+                    <h4>Alphabet Trading PLC,</h4>
+                    <h4>Bel Amour Bldg 5th Floor</h4>
+                    <h4>Addis Ababa, Ethiopia.</h4>
+                  </div>
                 </div>
-                <div className="text-secondary">
-                  <h4>henock@alphabettrading.com</h4>
-                  <h4>orders@alphabetrading.com </h4>
+              </div>
+            </div>
+            <div className="h-full w-full gap-x-2 border border-gray-200 p-4 lg:py-6 rounded-lg shadow-xl">
+              <div className="flex gap-x-2">
+                <AiOutlineMail size={24} className="mt-1" />
+                <div className="flex flex-col text-sm gap-y-1">
+                  <h1 className="text-xl font-bold">Mail Us</h1>
+                  <div className="leading-5">
+                    <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
+                    <h3>Sat 9:00 a.m - 12:00 p.m</h3>
+                  </div>
+                  <div className="text-secondary">
+                    <h4>henock@alphabettrading.com</h4>
+                    <h4>orders@alphabetrading.com </h4>
+                  </div>
                 </div>
               </div>
             </div>
