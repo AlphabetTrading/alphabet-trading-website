@@ -3,6 +3,7 @@ import React from "react";
 import BaseLayout from "../../components/common/BaseLayout";
 import Navbar from "../../components/common/Navbar";
 import CoffeeTypeItem from "../../components/services/CoffeeTypeItem";
+import Image from "next/image";
 
 type Props = {};
 
@@ -48,7 +49,7 @@ const index = (props: Props) => {
       <>
         <Navbar white={true} />
         <div className="flex w-full flex-col-reverse lg:flex-row justify-between my-28 lg:my-40  gap-y-3 ">
-          <div className="w-full lg:w-1/2 flex flex-col justify-center p-8 gap-y-4">
+          <div className="w-11/12 lg:w-1/2 xl:1/3 flex flex-col justify-center p-8 lg:px-10 gap-y-4">
             <h1 className="text-4xl font-bold">
               Our <span className="text-secondary">Coffee</span> Export
             </h1>
@@ -66,11 +67,14 @@ const index = (props: Props) => {
               USA and Europe.
             </p>
           </div>
-          <img
-            className="w-full lg:w-1/2 lg:rounded-l-full lg:border-[16px] border-r-0 lg:border-r-0 border-primary/10 object-cover"
-            src="/images/services1.svg"
-            alt=""
-          />
+          <div className="relative min-h-[450px] overflow-hidden lg:w-1/2 lg:rounded-l-full lg:border-[16px] border-r-0 lg:border-r-0 border-primary/10">
+            <Image
+              fill
+              className="w-full h-full object-cover aspect-square"
+              src="/images/services1.svg"
+              alt=""
+            />
+          </div>
         </div>
         <div>
           {coffeeTypes.map((coffeeType: any, index: number) => {

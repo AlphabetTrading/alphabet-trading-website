@@ -31,14 +31,14 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
       </div>
       <div
         className={clsx(
-          "flex  items-center p-8 sm:10 md:p-8 lg:14 xl:p-24 gap-x-2",
+          "flex  items-center p-6 sm:10 md:p-8 lg:14 xl:p-20 gap-x-2",
           index % 2 === 0 ? "md:order-2" : "md:order-1"
         )}
       >
         <div className="text-center">
           <h1
             style={{ writingMode: "vertical-rl" }}
-            className="text-center text-2xl md:text-3xl rotate-180 font-DM_Serif font-medium capitalize"
+            className="text-center  text-2xl md:text-3xl rotate-180 font-DM_Serif font-medium capitalize"
           >
             {coffeeType.name}
           </h1>
@@ -51,15 +51,15 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
         >
           <div className="flex flex-col items-start gap-y-4 p-2 md:px-4 leading-5 text-md font-semibold">
             <p>{coffeeType.description}</p>
-            <div
+            <button
               className={clsx(
-                "flex items-center border",
+                "flex items-center border hover:scale-105 transition duration-200 ease-in-out",
                 index % 2 == 0 ? "border-primary" : "border-white"
               )}
             >
-              <button className="p-2 px-3 font-semibold">See Offerings</button>
+              <p className="p-2 px-3 font-semibold ">See Offerings</p>
               <FaChevronRight className="pr-2" />
-            </div>
+            </button>
           </div>
         </div>
       </div>
