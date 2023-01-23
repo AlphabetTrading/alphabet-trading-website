@@ -3,6 +3,7 @@ import React from "react";
 import BaseLayout from "../../components/common/BaseLayout";
 import Footer from "../../components/common/Footer";
 import Navbar from "../../components/common/Navbar";
+import Image from "next/image";
 
 type Props = {};
 
@@ -34,16 +35,19 @@ const index = (props: Props) => {
       </Head>
       <>
         <Navbar white />
-        <div className="w-full my-12 mt-32">
-          <>
-            <div className="flex flex-col justify-center gap-y-5 md:flex-row p-5 md:p-12 lg:px-28 lg:pb-32 items-center">
+        <div className="w-full my-12 mt-32 flex justify-center">
+          <div className="">
+            <div className="w-11/12 flex flex-col justify-center gap-y-5 md:flex-row p-5 md:p-12 lg:px-28 lg:pb-32 items-center">
               <div className="w-full lg:w-1/2  font-semibold">
                 <h4 className="uppercase text-xs text-secondary">
                   About Alphabet Trading
                 </h4>
                 <h1 className="text-5xl font-bold">
-                  We <span className="text-secondary">always</span> deliver on
-                  our promises
+                  We{" "}
+                  <span className="text-secondary italic !font-extrabold scale-110 leading-7">
+                    always
+                  </span>{" "}
+                  deliver on our promises
                 </h1>
               </div>
               <div className="w-full lg:w-1/2 ">
@@ -59,14 +63,15 @@ const index = (props: Props) => {
                 </p>
               </div>
             </div>
-            <div className="h-[300px] md:h-full">
-              <img
+            <div className="relative min-h-[350px] ">
+              <Image
+                fill
                 src="/images/about1.svg"
                 alt=""
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="flex flex-col md:flex-row items-center p-5 md:p-12 lg:px-28  mt-16">
+            <div className="flex flex-col md:flex-row items-center p-5 md:p-12 lg:px-32  mt-16">
               <div className="flex flex-col  w-full md:w-1/2 font-semibold gap-y-6">
                 <div>
                   <h4 className="uppercase text-xs text-secondary">
@@ -93,10 +98,11 @@ const index = (props: Props) => {
               <div className="w-full hidden md:flex md:w-1/2 font-semibold">
                 <div
                   style={{ borderWidth: "18px", borderRadius: "72px" }}
-                  className="border border-secondary/20 rotate-[10deg] p-2 m-3"
+                  className="relative h-full w-full border-8 border-secondary/20 rotate-[8deg] p-2 m-3 rounded-2xl"
                 >
                   <img
-                    className="-rotate-[10deg] shadow-t-2xl"
+                    // fill
+                    className="-rotate-[10deg] w-full h-full object-cover shadow-t-2xl rounded-2xl"
                     src="https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
                     alt=""
                   />
@@ -141,7 +147,7 @@ const index = (props: Props) => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         </div>
       </>
     </BaseLayout>

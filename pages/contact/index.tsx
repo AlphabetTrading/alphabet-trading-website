@@ -27,7 +27,7 @@ const index = (props: Props) => {
           <ContactMap />
         </div>
         <div className="w-full flex justify-center items-center py-5">
-          <div className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-5 px-10 lg:px-24 xl:36 mb-16 gap-y-3 text-md font-medium">
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-5 px-10 lg:px-24 xl:36 mb-16 gap-y-3 text-md font-medium">
             <div className="h-full w-full  gap-x-2 border border-gray-200 p-4 lg:py-6 rounded-lg shadow-xl">
               <div className="flex items-start gap-x-2">
                 <FaPhoneAlt className="mt-1" size={24} />

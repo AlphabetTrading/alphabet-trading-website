@@ -5,7 +5,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const variants = {
   initial: (direction: number) => {
     return {
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? 800 : -800,
       opacity: 0,
       // scale: 0.5,
     };
@@ -16,18 +16,18 @@ const variants = {
     // scale: 1,
     // transition: 'ease-in',
     transition: {
-      x: { type: "spring", stiffness: 300, damping: 30 },
-      opacity: { duration: 0.05 },
+      // x: { type: "spring", stiffness: 250, damping: 20 },
+      opacity: { duration: 0.1 },
     },
   },
   exit: (direction: number) => {
     return {
-      x: direction > 0 ? -1000 : 1000,
+      x: direction > 0 ? -800 : 800,
       opacity: 0,
       // scale: 0.5,
       // transition: 'ease-in',
       transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
+        x: { type: "spring", stiffness: 250, damping: 20 },
         opacity: { duration: 0.1 },
       },
     };
@@ -81,8 +81,18 @@ const ReviewSlider = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="relative w-full md:w-3/4 flex justify-center h-72 md:h-96 overflow-hidden">
-        <div className="w-11/12 md:w-4/5 lg:w-2/3 overflow-hidden flex justify-center mx-5 relative">
+      <div className="relative w-full flex justify-center items-center min-h-[24rem] md:min-h-[24rem] overflow-hidden ">
+        <div className="w-full lg:w-4/5 xl:w-3/4 overflow-hidden min-h-[500px] gap-x-1 sm:gap-x-2 flex justify-center items-center mx-2 sm:mx-5 relative">
+          <button
+            type="button"
+            onClick={prevStep}
+            className="rounded-full bg-white p-2 cursor-pointer  drop-shadow-md shadow-lg"
+          >
+            <FaChevronLeft
+              className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8"
+              color="#F2A40C"
+            />
+          </button>
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               variants={variants}
@@ -91,9 +101,9 @@ const ReviewSlider = () => {
               exit="exit"
               key={reviews[index].name}
               custom={direction}
-              className="w-full h-full flex flex-col gap-y-5 rounded-lg items-center bg-white p-5 md:p-12 md:px-20 shadow-2xl transform duration-1000"
+              className=" w-full h-full  flex flex-col gap-y-5 rounded-lg items-center bg-white p-7 md:p-12 md:px-20 shadow-t-2xl transition transform duration-300"
             >
-              <p className="text-center text-xs sm:text-sm md:text-md">
+              <p className="text-center text-xs sm:text-sm md:text-md lg:text-lg">
                 {reviews[index].review}
               </p>
               <div className="flex flex-col items-center text-center">
@@ -104,21 +114,17 @@ const ReviewSlider = () => {
               </div>
             </motion.div>
           </AnimatePresence>
+          <button
+            type="button"
+            onClick={nextStep}
+            className="rounded-full bg-white p-2 cursor-pointer drop-shadow-md shadow-lg"
+          >
+            <FaChevronRight
+              className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8"
+              color="#F2A40C"
+            />
+          </button>
         </div>
-        <button
-          type="button"
-          onClick={prevStep}
-          className="rounded-full bg-white p-2 cursor-pointer absolute top-1/2 transform -translate-y-1/2 left-2 md:left-10 lg:left-20 drop-shadow-md shadow-lg"
-        >
-          <FaChevronLeft size={28} color="#F2A40C" />
-        </button>
-        <button
-          type="button"
-          onClick={nextStep}
-          className="rounded-full bg-white p-2 cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-2 md:right-10  lg:right-20 drop-shadow-md shadow-lg"
-        >
-          <FaChevronRight size={28} color="#F2A40C" />
-        </button>
       </div>
     </div>
   );

@@ -20,6 +20,11 @@ module.exports = {
         navy: "#0a1026",
         bg_green: "#086965",
       },
+      aspectRatio: {
+        "4/3": "4/3",
+        "3/2": "3/2",
+        "4/5": "4/5",
+      },
       boxShadow: {
         "t-sm": "0 -1px 2px 0 rgba(0, 0, 0, 0.05)",
         "t-md":

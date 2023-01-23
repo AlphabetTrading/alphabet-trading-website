@@ -10,12 +10,17 @@ type Props = {
 const variants = {
   open: {
     opacity: 1,
-    transition: { staggerChildren: 0.06, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.06, delayChildren: 0.2, duration: 0.6 },
     display: "flex",
   },
+  // exit={{
+  //   y: 100,
+  //   opacity: 0,
+  //   transition: { duration: 0.6 },
+  // }}
   closed: {
     opacity: 0,
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    transition: { staggerChildren: 0.05, staggerDirection: -1, duration: 0.6 },
     display: "none",
   },
 };
@@ -90,7 +95,7 @@ const Navbar = ({ white }: Props) => {
     <div className="overflow-x-hidden">
       <motion.header
         className={clsx(
-          "w-full top-0 left-0 fixed transition-all p-6 z-50 duration-500 ease-in-out",
+          "w-full top-0 left-0 fixed transition p-6  z-50 duration-500 ease-in-out",
           white ? "text-gray-700" : "text-white",
           scrolledYAmount > 50 || isOpen
             ? "bg-[#0A1026] drop-shadow-md text-white"
@@ -106,13 +111,17 @@ const Navbar = ({ white }: Props) => {
         >
           <div className="flex-shrink-0">
             <Link className="z-20" href="/">
-              <div className="flex w-52 gap-x-2">
-                <div className="flex justify-center">
+              <div className="flex  gap-x-2">
+                <div className="flex  justify-center">
                   {!(scrolledYAmount > 50 || isOpen) ? (
-                    <img className="w-full h-full" src="/logo.svg" alt="" />
+                    <img
+                      className="w-full h-full aspect-square"
+                      src="/logo.svg"
+                      alt=""
+                    />
                   ) : (
                     <img
-                      className="w-full h-full"
+                      className="w-full h-full aspect-square"
                       src="/logo_white.svg"
                       alt=""
                     />
@@ -120,11 +129,11 @@ const Navbar = ({ white }: Props) => {
                 </div>
                 <h1
                   className={clsx(
-                    "text-xl font-normal tracking-wide",
+                    "flex text-xl md:text-2xl gap-x-1 items-center font-normal tracking-wide",
                     white ? "" : "text-white"
                   )}
                 >
-                  <span className="text-2xl font-DM_Serif">Alphabet </span>
+                  <span className="font-DM_Serif">Alphabet </span>
                   Trading
                 </h1>
               </div>
@@ -144,7 +153,7 @@ const Navbar = ({ white }: Props) => {
                       <Link
                         key={navItem.id}
                         href={navItem.href}
-                        className="block mt-4 lg:inline-block lg:mt-0 lg:mr-4 cusror-pointer"
+                        className="block mt-4 lg:inline-block lg:mt-0 lg:mr-4 cursor-pointer hover:scale-110 hover:font-bold transition duration-200 ease-in-out"
                       >
                         {navItem.title}
                       </Link>
@@ -169,7 +178,10 @@ const Navbar = ({ white }: Props) => {
                 )}
                 onClick={() => toggleOpen()}
               >
-                <svg width="23" height="23" viewBox="0 0 23 23">
+                <svg
+                  className="h-5 w-6 md:h-6 md:w-7 lg:h-8 lg:w-8"
+                  viewBox="0 0 23 23"
+                >
                   <Path
                     variants={{
                       closed: { d: "M 2 2.5 L 20 2.5" },
@@ -199,7 +211,7 @@ const Navbar = ({ white }: Props) => {
                   transition: "var(--transition)",
                 }}
                 variants={variants}
-                className="min-w-full  flex flex-col p-5 px-10 gap-y-3 bg-[#0A1026] rounded-xl absolute top-20 right-0 left-0 z-50"
+                className="min-w-full  flex flex-col p-5 px-10 gap-y-3 bg-[#0A1026] rounded-xl absolute top-20 md:top-20 right-0 left-0 z-50"
               >
                 {navigationItems.map((navItem) => (
                   <motion.li
