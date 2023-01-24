@@ -25,6 +25,22 @@ module.exports = {
         "3/2": "3/2",
         "4/5": "4/5",
       },
+      animation: {
+        slide_left: "slide_left 0.1s forwards",
+        slide_right: "slide_right 0.1s backwards",
+      },
+      keyframes: {
+        slide_left: {
+          "0%": { transform: "translateX(-100%)" },
+          "50%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+        slide_right: {
+          "0%": { transform: "translateX(100%)" },
+          "50%": { transform: "translateX(50%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+      },
       boxShadow: {
         "t-sm": "0 -1px 2px 0 rgba(0, 0, 0, 0.05)",
         "t-md":

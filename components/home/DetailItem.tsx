@@ -19,8 +19,8 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
           index % 2 == 0 ? "lg:flex-row" : "lg:flex-row-reverse"
         )}
       >
-        <div className="bg-[#086965]/20  h-64 md:lg:w-1/2 lg:w-1/3  lg:h-96 rounded-lg relative mb-5 aspect-4/3 md:aspect-4/3 lg:aspect-square">
-          <div className="bg-white w-full h-64 lg:h-96 rounded-lg absolute z-10 top-3 left-3 sm:top-8 sm:left-8 md:top-10 md:left-10 lg:top-12 lg:left-12">
+        <div className="bg-[#086965]/20 w-3/5 md:w-2/5 lg:w-[30%] xl:w-1/4 2xl:w-1/5 h-[20rem] lg:h-96 2xl:h-[420px] rounded-lg relative mb-1 lg:mb-5 aspect-4/3 lg:aspect-square">
+          <div className="bg-white w-full h-[20rem] lg:h-96 xl:h-[400px] 2xl:h-[420px] rounded-lg absolute z-10 top-0 left-0 lg:top-12 lg:left-12">
             <Image
               fill
               className="object-cover rounded-lg w-full h-full"

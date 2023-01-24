@@ -37,7 +37,8 @@ const index = (props: Props) => {
         <Navbar white />
         <div className="w-full my-12 mt-32 flex justify-center">
           <div className="">
-            <div className="w-11/12 flex flex-col justify-center gap-y-5 md:flex-row p-5 md:p-12 lg:px-28 lg:pb-32 items-center">
+            <div className="flex flex-col justify-center gap-y-5 gap-x-2 md:flex-row p-5 md:p-12 lg:px-28 lg:pb-32 items-center">
+              {/* <div className="w-11/12 flex flex-col justify-center gap-y-5 md:flex-row p-5 md:p-12 lg:px-28 lg:pb-32 items-center"> */}
               <div className="w-full lg:w-1/2  font-semibold">
                 <h4 className="uppercase text-xs text-secondary">
                   About Alphabet Trading
@@ -47,7 +48,7 @@ const index = (props: Props) => {
                   <span className="text-secondary italic !font-extrabold scale-110 leading-7">
                     always
                   </span>{" "}
-                  deliver on our promises
+                  deliver on our <br></br>promises
                 </h1>
               </div>
               <div className="w-full lg:w-1/2 ">
@@ -102,7 +103,7 @@ const index = (props: Props) => {
                 >
                   <img
                     // fill
-                    className="-rotate-[10deg] w-full h-full object-cover shadow-t-2xl rounded-2xl"
+                    className="-rotate-[8deg] w-full h-full object-cover shadow-t-2xl rounded-2xl"
                     src="https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
                     alt=""
                   />

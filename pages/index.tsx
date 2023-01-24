@@ -6,6 +6,7 @@ import Why from "../components/home/Why";
 import Review from "../components/home/Review";
 import Details from "../components/home/Details";
 import BaseLayout from "../components/common/BaseLayout";
+import CustomCheckbox from "../components/common/CustomCheckbox";
 
 const inter = Inter({ subsets: ["latin"] });
 
