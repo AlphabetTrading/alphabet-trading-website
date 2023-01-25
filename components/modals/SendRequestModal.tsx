@@ -5,8 +5,11 @@ import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import FormField from "../common/FormField";
 import Tag from "../common/Tag";
-import { Offering } from "../offerings/OfferingsItem";
-
+import {
+  IOfferingRequest,
+  useOfferingsContext,
+} from "../../context/OfferingsContext";
+import { motion } from "framer-motion";
 export interface FormValues {
   firstName: string;
   lastName: string;
@@ -31,28 +34,54 @@ const INITIAL_VALUES = {
 } as FormValues;
 
 type Props = {
-  handleOfferingCheck: (offering: Offering) => void;
-  selectedProducts: Offering[];
+  handleOfferingCheck: (offering: IOfferingRequest) => void;
   onClose: () => void;
 };
 
-const SendRequestModal = ({
-  handleOfferingCheck,
-  selectedProducts,
-  onClose,
-}: Props) => {
+const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
-
+  const { selectedOfferings } = useOfferingsContext();
   return (
     <>
-      <div className=" transition-all duration-200 py-8 text-[#565656] w-screen h-full absolute top-0 bottom-0 left-0 right-0 bg-gray-900 bg-opacity-30 z-[100]">
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+          transition: {
+            duration: 0.2,
+          },
+        }}
+        exit={{
+          opacity: 0,
+        }}
+        className=" transition-all duration-200 py-8 text-[#565656] w-screen h-full absolute top-0 bottom-0 left-0 right-0 bg-gray-900 bg-opacity-30 z-[100]"
+      >
         <Formik initialValues={INITIAL_VALUES} onSubmit={() => {}}>
           {(formik) => (
             <div>
               <Form className="flex flex-col gap-y-5">
-                <div
+                <motion.div
+                  initial={{
+                    y: "-100vh",
+                    opacity: 0,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: "0vh",
+                    transition: {
+                      duration: 0.2,
+                      type: "spring",
+                      damping: 25,
+                      stiffness: 500,
+                    },
+                  }}
+                  exit={{
+                    y: "100vh",
+                    opacity: 0,
+                  }}
                   role="alert"
                   className="flex flex-col  justify-center items-center gap-y-3 min-h-fit bg-white container mx-auto w-11/12 md:w-1/2 lg:w-2/5 xl:w-[38%] rounded-xl px-10 py-16 relative"
                 >
@@ -89,15 +118,19 @@ const SendRequestModal = ({
                       Selected Products
                     </h2>
                     <div className="flex flex-wrap self-start gap-2 font-semibold">
-                      {selectedProducts?.map(
-                        (product: Offering, index: number) => {
+                      {selectedOfferings?.map(
+                        (product: IOfferingRequest, index: number) => {
                           return (
-                            <Tag value={product.type} key={index}>
+                            <Tag value={product.type} key={product.id}>
                               <p className="text-xs">
                                 {product.type} {product.grade}
                               </p>
                               <IoMdClose
+                                className="cursor-pointer"
                                 onClick={() => {
+                                  if (selectedOfferings.length == 1) {
+                                    onClose();
+                                  }
                                   handleOfferingCheck(product);
                                 }}
                               />
@@ -198,10 +231,10 @@ const SendRequestModal = ({
                     )}
                     <button
                       type="submit"
-                      disabled={selectedProducts.length === 0}
+                      disabled={selectedOfferings.length === 0}
                       className={clsx(
                         "w-full flex items-center justify-center gap-x-3  px-6 py-3 mt-4 text-sm font-bold text-white rounded-lg",
-                        selectedProducts.length === 0
+                        selectedOfferings.length === 0
                           ? "bg-secondary/20 cursor-not-allowed"
                           : "bg-secondary"
                       )}
@@ -231,12 +264,12 @@ const SendRequestModal = ({
                       Send Request
                     </button>
                   </div>
-                </div>
+                </motion.div>
               </Form>
             </div>
           )}
         </Formik>
-      </div>
+      </motion.div>
     </>
   );
 };

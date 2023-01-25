@@ -4,30 +4,24 @@ import ProductAvailabilityChip, {
   AVAILABILITY,
 } from "../common/AvailabilityChip";
 import CustomCheckbox from "../common/CustomCheckbox";
-
-export type Offering = {
-  id: number;
-  type: string;
-  grade: string;
-  location: string;
-  availability: string;
-  request?: string;
-};
+import {
+  IOfferingRequest,
+  useOfferingsContext,
+} from "../../context/OfferingsContext";
 
 type Props = {
-  offering: Offering;
-  handleOfferingCheck: (offering: Offering) => void;
+  offering: IOfferingRequest;
+  handleOfferingCheck: (offering: IOfferingRequest) => void;
 };
 
 const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
   const [error, setError] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
   return (
     <>
       <div className="hidden md:grid md:grid-cols-12 w-full md:w-5/6 gap-x-1 px-2 items-center bg-white text-sm lg:text-md text-[#565656] rounded-lg shadow-xl font-semibold">
         <div className="md:col-span-2 flex justify-around items-center py-3">
           <CustomCheckbox
-            isChecked={isChecked}
+            isChecked={offering.isSelected}
             handleOfferingCheck={() => {
               if (offering.availability !== AVAILABILITY.AVAILABLE) {
                 setError(true);
@@ -36,7 +30,6 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
                 }, 2000);
               } else {
                 handleOfferingCheck(offering);
-                setIsChecked(!isChecked);
               }
             }}
           />
@@ -57,7 +50,7 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
         <div className="w-full flex flex-col gap-y-2 p-6 pb-10 bg-white text-sm text-[#565656] rounded-lg shadow-xl font-semibold">
           <div className="w-full flex justify-between">
             <CustomCheckbox
-              isChecked={isChecked}
+              isChecked={offering.isSelected}
               handleOfferingCheck={() => {
                 if (offering.availability !== AVAILABILITY.AVAILABLE) {
                   setError(true);
@@ -66,7 +59,6 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
                   }, 2000);
                 } else {
                   handleOfferingCheck(offering);
-                  setIsChecked(!isChecked);
                 }
               }}
             />
