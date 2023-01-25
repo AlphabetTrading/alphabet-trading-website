@@ -1,13 +1,15 @@
-import { Form, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import FormField from "../common/FormField";
-
+import * as yup from "yup";
+import { sendContactUsEmail } from "../../lib/sendContactUsEmail";
+import clsx from "clsx";
 export interface FormValues {
   firstName: string;
   lastName: string;
   email: string;
-  phoneNumber?: string;
+  phone?: string;
   companyName?: string;
   message: string;
 }
@@ -16,39 +18,60 @@ const INITIAL_VALUES = {
   firstName: "",
   lastName: "",
   email: "",
-  phoneNumber: "",
+  phone: "",
   companyName: "",
   message: "",
 } as FormValues;
 
+const schemaValidation = yup.object().shape({
+  firstName: yup.string().required("Required!"),
+  lastName: yup.string().required("Required!"),
+  email: yup.string().email("Invalid email!").required("Required!"),
+  companyName: yup.string().required("Required!"),
+  phone: yup.string().required("Required!"),
+  message: yup.string().required("Required!"),
+});
+
 const ContactForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   return (
     <>
       <div className="w-full sm:w-3/4 md:2/3 lg:w-1/3 text-[#282828] p-10 rounded-lg">
         <h1 className="text-[46px] font-bold mb-6">Contact Us</h1>
-        <Formik initialValues={INITIAL_VALUES} onSubmit={() => {}}>
+        <Formik
+          validationSchema={schemaValidation}
+          initialValues={INITIAL_VALUES}
+          onSubmit={async (values: any, { setSubmitting, resetForm }) => {
+            setSubmitting(true);
+            try {
+              await sendContactUsEmail(values);
+              setSubmitting(false);
+              resetForm();
+            } catch (error: any) {
+              setSubmitting(false);
+              setErrorMessage(error.message);
+            }
+          }}
+        >
           {(formik) => (
             <div>
               <Form className="flex flex-col gap-y-5">
                 <div className="w-full flex gap-x-4">
                   <FormField
                     id="fname"
-                    name="fname"
+                    name="firstName"
                     placeholder="First Name"
                     formik={formik}
-                    label="First Name"
+                    label="First Name *"
                   />
 
                   <FormField
                     id="lname"
-                    name="lname"
+                    name="lastName"
                     placeholder="Last Name"
                     formik={formik}
-                    label="Last Name"
+                    label="Last Name*"
                   />
                 </div>
 
@@ -57,7 +80,7 @@ const ContactForm = () => {
                   name="email"
                   placeholder="Email Address"
                   formik={formik}
-                  label="Email"
+                  label="Email*"
                 />
                 <FormField
                   id="phone"
@@ -68,21 +91,31 @@ const ContactForm = () => {
                 />
                 <FormField
                   id="cname"
-                  name="cname"
+                  name="companyName"
                   placeholder="Company Name"
                   formik={formik}
                   label="Company Name"
                 />
                 <div className="w-full">
                   <h1 className="text-sm font-bold">Message</h1>
-                  <textarea
+                  <Field
+                    as="textarea"
                     id="message"
                     name="message"
                     placeholder="Message"
                     rows={4}
-                    className="w-full rounded-lg border bg-secondary/10 resize-none p-2 placeholder:text-sm"
-                    //   formik={formik}
+                    className={clsx(
+                      "w-full rounded-lg border bg-secondary/10 resize-none p-2 placeholder:text-sm",
+                      formik.touched.message && formik.errors.message
+                        ? "border-red-500"
+                        : ""
+                    )}
                   />
+                  {formik.touched.message && formik.errors.message && (
+                    <p className="text-red-500 py-2 text-xs">
+                      {formik.errors.message.toString()}
+                    </p>
+                  )}
                 </div>
 
                 {errorMessage && (
@@ -96,7 +129,7 @@ const ContactForm = () => {
                   type="submit"
                   className="w-full flex items-center justify-center gap-x-3  px-6 py-3 mt-4 text-sm font-bold text-white bg-primary rounded-lg"
                 >
-                  {loading && (
+                  {formik.isSubmitting && (
                     <svg
                       className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                       xmlns="http://www.w3.org/2000/svg"

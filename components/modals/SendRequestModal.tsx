@@ -70,19 +70,19 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
         <Formik
           initialValues={INITIAL_VALUES}
           validationSchema={schemaValidation}
-          onSubmit={async (values: any) => {
-            loading = true;
+          onSubmit={async (values: any, { setSubmitting }) => {
+            setSubmitting(true);
             try {
               await sendOfferingRequestEmail(values);
-              setLoading(false);
+              setSubmitting(false);
+              setSubmitting(false);
+              setTimeout(onClose, 1000);
             } catch (error: any) {
-              loading = false;
-              setLoading(false);
               setErrorMessage(error.message);
             }
           }}
         >
-          {(formik: any) => (
+          {(formik) => (
             <div>
               <Form className="flex flex-col gap-y-5">
                 <motion.div
@@ -165,9 +165,6 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                       Please enter your address below and we will send samples
                       in 3-5 business days.{" "}
                     </p>
-                    {JSON.stringify(formik.errors)}
-                    {JSON.stringify(loading)}
-
                     <div className="w-full flex gap-x-4">
                       <FormField
                         id="fname"
@@ -263,7 +260,7 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                           : "bg-secondary"
                       )}
                     >
-                      {loading && (
+                      {formik.isSubmitting && (
                         <svg
                           className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                           xmlns="http://www.w3.org/2000/svg"

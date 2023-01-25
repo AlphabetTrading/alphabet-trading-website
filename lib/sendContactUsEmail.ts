@@ -1,5 +1,5 @@
-export const sendOfferingRequestEmail = async (data: any) => {
-  await fetch("api/request-offerings", {
+export const sendContactUsEmail = async (data: any) => {
+  await fetch("api/contact-us", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
