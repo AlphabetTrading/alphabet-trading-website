@@ -1,14 +1,18 @@
 import Head from "next/head";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import BaseLayout from "../../components/common/BaseLayout";
-import Footer from "../../components/common/Footer";
 import Navbar from "../../components/common/Navbar";
 import FaqItem from "../../components/faq/FaqItem";
 import Searchbar from "../../components/faq/Searchbar";
+import useDebounce from "../../hooks/useDebounce";
+import { AnimatePresence } from "framer-motion";
 
 type Props = {};
-
-const faqs = [
+type FaqType = {
+  title: string;
+  description: string;
+};
+const faqs: FaqType[] = [
   {
     title: "Where do you get your coffees from?",
     description:
@@ -40,7 +44,37 @@ const faqs = [
       "You can get in touch with us via email- Henock@alphabettrading.com or contact us through the phone via +251 911 26 12 33.",
   },
 ];
-const index = (props: Props) => {
+
+const FAQsPage = (props: Props) => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredFaqs, setFilteredFaqs] = useState<FaqType[]>(faqs);
+  const handleChange = (query: string) => {
+    setSearchQuery(query);
+  };
+  const debouncedSearchText = useDebounce(searchQuery, 100);
+
+  const filterFaqs = useCallback(() => {
+    if (debouncedSearchText) {
+      const filtered = faqs.filter((faq) => {
+        return (
+          faq.title
+            .toLowerCase()
+            .includes(debouncedSearchText.trim().toLowerCase()) ||
+          faq.description
+            .toLowerCase()
+            .includes(debouncedSearchText.trim().toLowerCase())
+        );
+      });
+      setFilteredFaqs(filtered);
+    } else {
+      setFilteredFaqs(faqs);
+    }
+  }, [searchQuery, debouncedSearchText]);
+
+  useEffect(() => {
+    filterFaqs();
+  }, [filterFaqs]);
+
   return (
     <BaseLayout>
       <Head>
@@ -73,18 +107,20 @@ const index = (props: Props) => {
               </p>
             </div>
           </div>
-          <Searchbar />
-          <div className="flex flex-col w-11/12 md:w-3/4 lg:w-2/3 gap-y-5 mb-24">
-            {faqs.map((faq: any, index: number) => {
-              return (
-                <FaqItem
-                  key={index}
-                  title={faq.title}
-                  description={faq.description}
-                  index={index}
-                />
-              );
-            })}
+          <Searchbar onChange={handleChange} />
+          <div className="flex flex-col w-11/12 md:w-3/4 lg:w-2/3 gap-y-5 mb-24 min-h-96">
+            <AnimatePresence>
+              {filteredFaqs.map((faq: FaqType, index: number) => {
+                return (
+                  <FaqItem
+                    key={faq.title}
+                    title={faq.title}
+                    description={faq.description}
+                    index={index}
+                  />
+                );
+              })}
+            </AnimatePresence>
           </div>
         </div>
       </>
@@ -92,4 +128,4 @@ const index = (props: Props) => {
   );
 };
 
-export default index;
+export default FAQsPage;
