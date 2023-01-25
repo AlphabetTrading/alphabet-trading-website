@@ -24,7 +24,7 @@ const Searchbar = (props: Props) => {
         <input
           type="text"
           placeholder="Search"
-          className="w-full py-2 pl-12 pr-4 text-[#808080] border rounded-md outline-none bg-secondary/20 focus:bg-secondary/10 focus:border-secondary"
+          className="w-full py-2 pl-12 pr-4 placeholder:text-[#808080] text-black/80 border rounded-md outline-none bg-secondary/20 focus:bg-secondary/10 focus:border-secondary"
         />
       </div>
     </form>
