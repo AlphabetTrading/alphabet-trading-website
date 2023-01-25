@@ -86,7 +86,7 @@ const OfferingsComponent = (props: Props) => {
         <div className="hidden md:grid md:grid-cols-12 w-5/6 gap-x-1 mt-8 text-xs md:text-sm lg:text-md px-2 font-semibold">
           <div className="col-span-2"></div>
           <div className="col-span-3 flex items-center">
-            <div className="w-full flex items-center gap-x-2">
+            <div className="w-full flex items-center gap-x-1">
               <h2>Coffee Type</h2>
               <AiFillCaretUp
                 onClick={() => {

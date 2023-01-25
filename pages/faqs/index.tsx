@@ -84,7 +84,7 @@ const FAQsPage = (props: Props) => {
         <Navbar white />
         <div className="flex flex-col w-full h-full items-center justify-center mt-28 gap-y-6">
           <div className="relative flex items-center justify-center w-full h-56 md:h-60 lg:h-72">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold z-10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold z-10 text-center">
               Frequently <span className="text-secondary">Asked Questions</span>
             </h1>
 
