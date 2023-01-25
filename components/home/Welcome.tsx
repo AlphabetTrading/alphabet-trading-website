@@ -13,7 +13,7 @@ const Welcome = (props: Props) => {
         />
       </div>
       <div className="w-full flex flex-col gap-y-2 justify-center items-center absolute top-0 right-0 left-0 bottom-0 z-10">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold">
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold">
           Welcome to Alphabet Trading
         </h1>
         <p className="w-11/12 sm:w-3/4 md:w-2/3 text-center text-sm md:text-md lg:text-lg md:leading-6 py-4 md:py-6">

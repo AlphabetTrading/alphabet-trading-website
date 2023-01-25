@@ -80,7 +80,7 @@ const ReviewSlider = () => {
             color="#F2A40C"
           />
         </button>
-        <div className="relative w-full lg:w-4/5 xl:w-3/4 max-h-[300px] min-h-[325px] sm:max-h-[400px] sm:min-h-[350px] overflow-hidden gap-x-1 sm:gap-x-2 flex justify-center items-center mx-2 sm:mx-5">
+        <div className="relative w-full lg:w-4/5 xl:w-3/4 max-h-[500px] min-h-[450px] sm:max-h-[400px] mt-6 sm:min-h-[350px] overflow-hidden gap-x-1 sm:gap-x-2 flex justify-center items-center mx-2 sm:mx-5">
           <AnimatePresence>
             <motion.div
               variants={variants}
