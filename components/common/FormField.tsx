@@ -26,6 +26,11 @@ const FormField = ({ id, name, placeholder, label, formik }: Props) => {
             : ""
         )}
       />
+      {(formik.touched as any)[name] && (formik.errors as any)[name] && (
+        <p className="text-red-500 py-2 text-xs">
+          {(formik.errors as any)[name]}
+        </p>
+      )}
     </div>
   );
 };
