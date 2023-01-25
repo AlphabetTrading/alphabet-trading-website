@@ -1,7 +1,9 @@
 import React from "react";
 import { BiSearch } from "react-icons/bi";
 
-type Props = {};
+type Props = {
+  onChange: (val: string) => void;
+};
 
 const Searchbar = (props: Props) => {
   return (
@@ -23,6 +25,8 @@ const Searchbar = (props: Props) => {
         </svg>
         <input
           type="text"
+          autoFocus
+          onChange={(e) => props.onChange(e.target.value)}
           placeholder="Search"
           className="w-full py-2 pl-12 pr-4 placeholder:text-[#808080] text-black/80 border rounded-md outline-none bg-secondary/20 focus:bg-secondary/10 focus:border-secondary"
         />

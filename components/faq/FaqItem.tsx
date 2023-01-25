@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 type Props = {
   title: string;
   description: string;
@@ -8,7 +8,21 @@ type Props = {
 
 const FaqItem = ({ title, description, index }: Props) => {
   return (
-    <div className="flex flex-col w-full shadow-lg">
+    <motion.div
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+        transition: {
+          duration: 0.2,
+        },
+      }}
+      exit={{
+        opacity: 0,
+      }}
+      className="flex flex-col w-full shadow-lg"
+    >
       <button className="group focus:outline-none">
         <div className="flex flex-row justify-between items-center gap-2 text-xl font-semibold text-[#3D3D3D] hover:bg-[#F6F6FC] p-6">
           <h1>{title}</h1>
@@ -33,7 +47,7 @@ const FaqItem = ({ title, description, index }: Props) => {
           </div>
         </div>
       </button>
-    </div>
+    </motion.div>
   );
 };
 
