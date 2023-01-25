@@ -22,13 +22,13 @@ const index = (props: Props) => {
       </Head>
       <>
         <Navbar white />
-        <div className="w-full flex flex-col lg:flex-row justify-center lg:justify-evenly items-center gap-y-3 p-5 lg:p-12 xl:px-20 lg:my-12 mt-20">
+        <div className="w-full flex flex-col lg:flex-row justify-center lg:justify-evenly items-center gap-y-3 p-5 lg:p-12 xl:px-20 mb-4 mt-20">
           <ContactForm />
           <ContactMap />
         </div>
-        <div className="w-full flex justify-center items-center py-5">
+        <div className="w-full flex justify-center items-center py-2">
           <div className="w-full grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-5 px-10 lg:px-24 xl:36 mb-16 gap-y-3 text-md font-medium">
-            <div className="h-full w-full  gap-x-2 border border-gray-200 p-4 lg:py-6 rounded-lg shadow-xl">
+            <div className="h-full w-full  gap-x-2 p-4 px-8 lg:py-6 rounded-[20px] shadow-2xl">
               <div className="flex items-start gap-x-2">
                 <FaPhoneAlt className="mt-1" size={24} />
                 <div className="flex flex-col items-start text-sm gap-y-1">
@@ -44,7 +44,7 @@ const index = (props: Props) => {
                 </div>
               </div>
             </div>
-            <div className="h-full w-full gap-x-2 border border-gray-200 p-4 lg:py-6 rounded-md shadow-xl">
+            <div className="h-full w-full gap-x-2 p-4 px-8 lg:py-6 rounded-[20px] shadow-2xl">
               <div className="flex gap-x-2">
                 <FaMapPin size={24} className="mt-1" />
                 <div className="flex flex-col text-sm gap-y-1">
@@ -61,7 +61,7 @@ const index = (props: Props) => {
                 </div>
               </div>
             </div>
-            <div className="h-full w-full gap-x-2 border border-gray-200 p-4 lg:py-6 rounded-lg shadow-xl">
+            <div className="h-full w-full gap-x-2 p-8 lg:py-6 rounded-[20px] shadow-2xl">
               <div className="flex gap-x-2">
                 <AiOutlineMail size={24} className="mt-1" />
                 <div className="flex flex-col text-sm gap-y-1">

@@ -49,7 +49,7 @@ const index = (props: Props) => {
       <>
         <Navbar white={true} />
         <div className="flex w-full flex-col-reverse lg:flex-row justify-between my-28 lg:my-40  gap-y-3 ">
-          <div className="w-11/12 lg:w-1/2 xl:1/3 flex flex-col justify-center p-8 lg:px-10 gap-y-4">
+          <div className="w-full lg:w-1/2 xl:1/3 flex flex-col justify-center p-8 lg:px-16 gap-y-4">
             <h1 className="text-4xl font-bold">
               Our <span className="text-secondary">Coffee</span> Export
             </h1>
@@ -67,7 +67,7 @@ const index = (props: Props) => {
               USA and Europe.
             </p>
           </div>
-          <div className="relative min-h-[450px] overflow-hidden lg:w-1/2 lg:rounded-l-full lg:border-[16px] border-r-0 lg:border-r-0 border-primary/10">
+          <div className="relative min-h-[450px] ml-4 overflow-hidden lg:w-1/2 rounded-l-full border-[16px] border-r-0 border-primary/15">
             <Image
               fill
               className="w-full h-full object-cover aspect-square"

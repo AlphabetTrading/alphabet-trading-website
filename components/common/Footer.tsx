@@ -21,12 +21,14 @@ const Footer = (props: Props) => {
       <div className="flex items-center p-5 sm:p-8 text-white py-14">
         <div className="w-full flex flex-col items-center justify-start md:grid grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-4">
           <div className="flex flex-col items-center justify-center col-span-2 md:col-span-3 gap-x-4 h-full">
-            <div className="flex items-center flex-col">
+            <div className="flex items-center gap-x-3">
               <div className="flex justify-center">
                 <img className="w-full h-full" src="/logo.svg" alt="" />
               </div>
-              <h1 className="font-normal text-3xl sm:text-4xl md:text-4xl tracking-wide flex md:flex-col xl:flex-row xl:my-2 items-center gap-x-1">
-                <span className="font-DM_Serif ">Alphabet</span> Trading
+              <h1 className="font-normal text-3xl sm:text-2xl md:text-3xl tracking-wide xl:my-2 items-center">
+                <span className="font-DM_Serif ">Alphabet</span>
+                <br></br>
+                Trading
               </h1>
             </div>
             <div className="w-64 my-2">
@@ -81,7 +83,7 @@ const Footer = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className="col-span-10 md:col-span-10 lg:col-span-2 gap-y-2 py-2 flex flex-col justify-center items-center w-full">
+          <div className="col-span-10 md:col-span-10 lg:col-span-2 gap-y-2 py-2 flex flex-col justify-start items-center w-full h-full">
             <h1 className="text-xl text-center w-full">Follow Us</h1>
             <div className="flex gap-x-4 w-full justify-center">
               <img

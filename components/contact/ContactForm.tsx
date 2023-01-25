@@ -74,7 +74,7 @@ const ContactForm = () => {
                   label="Company Name"
                 />
                 <div className="w-full">
-                  <h1>Message</h1>
+                  <h1 className="text-sm font-bold">Message</h1>
                   <textarea
                     id="message"
                     name="message"
