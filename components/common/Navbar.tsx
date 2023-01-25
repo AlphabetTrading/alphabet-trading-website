@@ -97,7 +97,7 @@ const Navbar = ({ white }: Props) => {
   const router = useRouter();
   const [prevIndex, setPrevIndex] = useState(-1);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const path = localStorage.getItem("prevPath") || "/";
     // console.log(path);
     setPrevIndex(
