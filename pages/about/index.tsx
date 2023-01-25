@@ -43,13 +43,12 @@ const index = (props: Props) => {
                 <h4 className="uppercase text-xs font-bold text-secondary">
                   About Alphabet Trading
                 </h4>
-                <h1 className="text-5xl font-bold">
-                  We{" "}
-                  <span className="text-secondary italic !font-extrabold scale-110 leading-7">
-                    always
-                  </span>{" "}
-                  deliver on our <br></br>promises
-                </h1>
+                <div className="w-full lg:w-4/5 2xl:w-2/3">
+                  <h1 className="text-5xl font-bold">
+                    We <span className="text-secondary">always</span> deliver on
+                    our promises
+                  </h1>
+                </div>
               </div>
               <div className="w-full lg:w-1/2 ">
                 <p className="text-md font-medium">

@@ -67,7 +67,7 @@ const index = (props: Props) => {
               USA and Europe.
             </p>
           </div>
-          <div className="relative min-h-[450px] ml-4 overflow-hidden lg:w-1/2 rounded-l-full border-[16px] border-r-0 border-primary/15">
+          <div className="relative min-h-[450px] ml-4 overflow-hidden lg:w-1/2 rounded-l-full border-[16px] border-r-0 border-secondary/10">
             <Image
               fill
               className="w-full h-full object-cover aspect-square"
