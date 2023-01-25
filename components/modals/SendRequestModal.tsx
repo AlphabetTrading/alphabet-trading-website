@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { Formik, Form } from "formik";
-import { useRouter } from "next/router";
+import * as yup from "yup";
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import FormField from "../common/FormField";
@@ -10,6 +10,7 @@ import {
   useOfferingsContext,
 } from "../../context/OfferingsContext";
 import { motion } from "framer-motion";
+import { sendOfferingRequestEmail } from "../../lib/sendOfferingRequestEmail";
 export interface FormValues {
   firstName: string;
   lastName: string;
@@ -21,6 +22,7 @@ export interface FormValues {
   state: string;
   zipCode: string;
 }
+
 const INITIAL_VALUES = {
   firstName: "",
   lastName: "",
@@ -33,6 +35,12 @@ const INITIAL_VALUES = {
   zipCode: "",
 } as FormValues;
 
+const schemaValidation = yup.object().shape({
+  firstName: yup.string().required("Required!"),
+  lastName: yup.string().required("Required!"),
+  email: yup.string().email("Invalid email!").required("Required!"),
+});
+
 type Props = {
   handleOfferingCheck: (offering: IOfferingRequest) => void;
   onClose: () => void;
@@ -40,7 +48,7 @@ type Props = {
 
 const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
   const [errorMessage, setErrorMessage] = useState("");
-  const [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState(false);
   const { selectedOfferings } = useOfferingsContext();
   return (
     <>
@@ -59,8 +67,22 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
         }}
         className=" transition-all duration-200 py-8 text-[#565656] w-screen h-full absolute top-0 bottom-0 left-0 right-0 bg-gray-900 bg-opacity-30 z-[100]"
       >
-        <Formik initialValues={INITIAL_VALUES} onSubmit={() => {}}>
-          {(formik) => (
+        <Formik
+          initialValues={INITIAL_VALUES}
+          validationSchema={schemaValidation}
+          onSubmit={async (values: any) => {
+            loading = true;
+            try {
+              await sendOfferingRequestEmail(values);
+              setLoading(false);
+            } catch (error: any) {
+              loading = false;
+              setLoading(false);
+              setErrorMessage(error.message);
+            }
+          }}
+        >
+          {(formik: any) => (
             <div>
               <Form className="flex flex-col gap-y-5">
                 <motion.div
@@ -143,22 +165,24 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                       Please enter your address below and we will send samples
                       in 3-5 business days.{" "}
                     </p>
+                    {JSON.stringify(formik.errors)}
+                    {JSON.stringify(loading)}
 
                     <div className="w-full flex gap-x-4">
                       <FormField
                         id="fname"
-                        name="fname"
+                        name="firstName"
                         placeholder="First Name"
                         formik={formik}
-                        label="First Name"
+                        label="First Name*"
                       />
 
                       <FormField
                         id="lname"
-                        name="lname"
+                        name="lastName"
                         placeholder="Last Name"
                         formik={formik}
-                        label="Last Name"
+                        label="Last Name*"
                       />
                     </div>
                     <div className="w-full flex gap-x-4">
@@ -167,7 +191,7 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                         name="email"
                         placeholder="Email Address"
                         formik={formik}
-                        label="Email"
+                        label="Email*"
                       />
                       <FormField
                         id="phone"
