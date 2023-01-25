@@ -1,11 +1,65 @@
 import Image from "next/image";
 import React from "react";
+import { AiOutlineMail } from "react-icons/ai";
+import { FaPhoneAlt, FaMapPin } from "react-icons/fa";
 
 type Props = {};
 
 const Why = (props: Props) => {
   return (
-    <div className="w-full flex flex-col items-center justify-center mt-8">
+    <div className="w-full flex flex-col items-center justify-center mt-24">
+      <div className="flex flex-col gap-y-4">
+        <div className="flex flex-col mx-auto items-center w-5/6 md:w-2/3 lg:w-3/5">
+          <div className="">
+            <h4 className="uppercase text-xs font-bold text-secondary">
+              Lorem Ipsum
+            </h4>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+              Lorem ipsum dolor
+            </h1>
+          </div>
+          <p className="text-center">
+            Lorem ipsum dolor sit amet consectetur. Eu et mattis turpis porta
+            pulvinar elementum et dui. Ut arcu morbi lacinia sagittis dui nunc
+            ac. Aliquam ipsum egestas eu sagittis elit amet. Nec montes ut
+            accumsan mollis nisi et.
+          </p>
+        </div>
+        <div className="w-full flex justify-center items-center py-2">
+          <div className="w-3/4 md:w-full grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-5 px-10 lg:px-24 xl:px-36 mb-16 gap-y-3 text-md font-medium">
+            <div className="w-full h-full p-8 py-12 lg:py-20 my-2 rounded-[20px] shadow-xl">
+              <div className="w-full flex flex-col gap-y-2 items-center justify-end">
+                <img className="w-16 h-16" src="/icons/sustain.svg" />
+                <h1 className="text-lg font-medium">Sustainability</h1>
+                <p className="text-sm font-light text-center w-11/12 md:w-5/6 lg:w-2/3">
+                  Lorem ipsum dolor sit amet consectetur. Dui vivamus eget
+                  porttitor nulla quam eget egestas.
+                </p>
+              </div>
+            </div>
+            <div className="w-full h-full p-8 py-12 lg:py-20 my-2 rounded-[20px] shadow-xl">
+              <div className="w-full flex flex-col gap-y-2 items-center justify-center">
+                <img className="w-16 h-16" src="/icons/transparency.svg" />
+                <h1 className="text-lg font-medium">Transparency</h1>
+                <p className="text-sm font-light text-center w-11/12 md:w-5/6 lg:w-2/3">
+                  Lorem ipsum dolor sit amet consectetur. Dui vivamus eget
+                  porttitor nulla quam eget egestas.
+                </p>
+              </div>
+            </div>
+            <div className="w-full h-full p-8 py-12 lg:py-20 my-2 rounded-[20px] shadow-xl">
+              <div className="w-full flex flex-col gap-y-2 items-center justify-center">
+                <img className="w-16 h-16" src="/icons/traceability.svg" />
+                <h1 className="text-lg font-medium">Traceability</h1>
+                <p className="text-sm font-light text-center w-11/12 md:w-5/6 lg:w-2/3">
+                  Lorem ipsum dolor sit amet consectetur. Dui vivamus eget
+                  porttitor nulla quam eget egestas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <h1 className="text-4xl font-bold my-4">Why Alphabet</h1>
       <div className="flex flex-col bg-navy">
         <div className="w-full grid grid-cols-1 md:grid-cols-3">

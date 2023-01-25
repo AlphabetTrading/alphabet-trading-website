@@ -42,9 +42,9 @@ interface IOfferingContextProps {
 const offeringsData: IOffering[] = [
   {
     id: 1,
-    type: "Sidama",
+    type: "Washed Yirgacheeffee Idedo",
     grade: "G-1",
-    location: "Sidama Region, Ethiopia",
+    location: "Southern Region, Ethiopia",
     availability: "Available",
   },
   {
@@ -56,17 +56,73 @@ const offeringsData: IOffering[] = [
   },
   {
     id: 3,
-    type: "Limu",
+    type: "Washed yirgacheeffee Aricha",
+    grade: "G-1",
+    location: "Southern Region, Ethiopia",
+    availability: "Available",
+  },
+  {
+    id: 4,
+    type: "Washed yirgacheeffee Aricha",
+    grade: "G-2",
+    location: "Southern Region, Ethiopia",
+    availability: "Available",
+  },
+  {
+    id: 5,
+    type: "Washed Guji Hambela",
     grade: "G-1",
     location: "Oromia Region, Ethiopia",
     availability: "Available",
   },
   {
-    id: 4,
-    type: "Guji",
+    id: 6,
+    type: "Washed Guji Hambela",
+    grade: "G-2",
+    location: "Oromia Region, Ethiopia",
+    availability: "Not Available",
+  },
+  {
+    id: 7,
+    type: "Washed Guji Uraga",
     grade: "G-1",
     location: "Oromia Region, Ethiopia",
     availability: "Available",
+  },
+  {
+    id: 8,
+    type: "Washed Guji Uraga",
+    grade: "G-2",
+    location: "Oromia Region, Ethiopia",
+    availability: "Not Available",
+  },
+  {
+    id: 9,
+    type: "Washed Guji Limu Kosa",
+    grade: "G-1",
+    location: "Oromia Region, Ethiopia",
+    availability: "Available",
+  },
+  {
+    id: 10,
+    type: "Washed Guji Limu Kosa",
+    grade: "G-2",
+    location: "Oromia Region, Ethiopia",
+    availability: "Available",
+  },
+  {
+    id: 11,
+    type: "Washed Gedebe Chelchele",
+    grade: "G-1",
+    location: "Southern Region, Ethiopia",
+    availability: "Not Available",
+  },
+  {
+    id: 12,
+    type: "Washed Gedebe Chelchele",
+    grade: "G-2",
+    location: "Southern Region, Ethiopia",
+    availability: "Not Available",
   },
 ];
 export const OfferingsContext = createContext<IOfferingContextProps>({

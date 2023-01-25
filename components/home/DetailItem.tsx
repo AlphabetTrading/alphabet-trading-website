@@ -51,10 +51,10 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
               </h3>
             );
           })}
-          <div className="flex items-center mt-4 text-secondary gap-x-2">
+          {/* <div className="flex items-center mt-4 text-secondary gap-x-2">
             <button className="text-lg ">Read More</button>
             <FaChevronRight />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
