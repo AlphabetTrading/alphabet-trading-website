@@ -87,7 +87,7 @@ const Footer = (props: Props) => {
             <h1 className="text-xl text-center w-full">Follow Us</h1>
             <div className="flex gap-x-4 w-full justify-center">
               <img
-                src="/icons/linkedin.svg"
+                src="/icons/Linkedin.svg"
                 alt=""
                 className="w-8 h-8 md:w-10 md:h-10 "
               />
