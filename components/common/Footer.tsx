@@ -86,11 +86,80 @@ const Footer = (props: Props) => {
           <div className="col-span-10 md:col-span-10 lg:col-span-2 gap-y-2 py-2 flex flex-col justify-start items-center w-full h-full">
             <h1 className="text-xl text-center w-full">Follow Us</h1>
             <div className="flex gap-x-4 w-full justify-center">
-              <img
-                src="/icons/Linkedin.svg"
-                alt=""
-                className="w-8 h-8 md:w-10 md:h-10 "
-              />
+              <div className="w-8 h-8 md:w-10 md:h-10 relative ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  width="512"
+                  height="512"
+                  x="0"
+                  y="0"
+                  className="w-full h-full text-secondary"
+                  viewBox="0 0 682.667 682.667"
+                >
+                  <g>
+                    <defs>
+                      <clipPath id="a" clipPathUnits="userSpaceOnUse">
+                        <path d="M0 512h512V0H0Z" fill="currentColor"></path>
+                      </clipPath>
+                    </defs>
+                    <path
+                      d="M151 76H91v240h60z"
+                      transform="matrix(1.33333 0 0 -1.33333 0 682.667)"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="15"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeMiterlimit="10"
+                      strokeDasharray="none"
+                      strokeOpacity=""
+                      data-original="currentColor"
+                    ></path>
+                    <g
+                      clip-path="url(#a)"
+                      transform="matrix(1.33333 0 0 -1.33333 0 682.667)"
+                    >
+                      <path
+                        d="M0 0c0-16.569-13.432-30-30-30-16.568 0-30 13.431-30 30 0 16.569 13.432 30 30 30C-13.432 30 0 16.569 0 0Z"
+                        transform="translate(151 406)"
+                        fill="currentColor"
+                        stroke="currentColor"
+                        strokeWidth="15"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeMiterlimit="10"
+                        strokeDasharray="none"
+                        strokeOpacity=""
+                      ></path>
+                      <path
+                        d="M0 0c0 24.853 20.147 45 45 45S90 24.853 90 0v-135h60V26.459a78.543 78.543 0 0 1-8.292 35.125c-26.581 53.161-99.571 55.553-134.712 20.412L0 75v30h-60v-240H0Z"
+                        transform="translate(271 211)"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="15"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeMiterlimit="10"
+                        strokeDasharray="none"
+                        strokeOpacity=""
+                      ></path>
+                      <path
+                        d="M0 0h-360c-33.137 0-61 27.863-61 61v360c0 33.137 27.863 61 61 61H0c33.137 0 61-27.863 61-61V61C61 27.863 33.137 0 0 0Z"
+                        transform="translate(436 15)"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="15"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeMiterlimit="10"
+                        strokeDasharray="none"
+                        strokeOpacity=""
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
               <img
                 src="/icons/twitter.svg"
                 alt=""

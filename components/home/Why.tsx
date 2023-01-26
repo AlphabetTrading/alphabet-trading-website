@@ -26,32 +26,32 @@ const Why = (props: Props) => {
           </p>
         </div>
         <div className="w-full flex justify-center items-center py-2">
-          <div className="w-3/4 md:w-full grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-5 px-10 lg:px-24 xl:px-36 mb-16 gap-y-3 text-md font-medium">
-            <div className="w-full h-full p-8 py-12 lg:py-20 my-2 rounded-[20px] shadow-xl">
-              <div className="w-full flex flex-col gap-y-2 items-center justify-end">
+          <div className="w-11/12 sm:w-3/4 md:w-full xl:w-11/12 2xl:w-3/4 grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-5 px-10 lg:px-24 xl:px-28 mb-16 gap-y-3 text-md font-medium">
+            <div className="w-full h-full p-8 py-10 flex flex-col my-2 rounded-[20px] shadow-xl">
+              <div className="w-full flex flex-col gap-y-2 items-center justify-center">
                 <img className="w-16 h-16" src="/icons/sustain.svg" />
                 <h1 className="text-lg font-medium">Sustainability</h1>
-                <p className="text-sm font-light text-center w-11/12 md:w-5/6 lg:w-2/3">
+                <p className="text-sm font-light text-center w-11/12 md:w-5/6 lg:w-4/5 h-full">
                   Lorem ipsum dolor sit amet consectetur. Dui vivamus eget
                   porttitor nulla quam eget egestas.
                 </p>
               </div>
             </div>
-            <div className="w-full h-full p-8 py-12 lg:py-20 my-2 rounded-[20px] shadow-xl">
+            <div className="w-full h-full p-8 py-10 flex flex-col my-2 rounded-[20px] shadow-xl">
               <div className="w-full flex flex-col gap-y-2 items-center justify-center">
                 <img className="w-16 h-16" src="/icons/transparency.svg" />
                 <h1 className="text-lg font-medium">Transparency</h1>
-                <p className="text-sm font-light text-center w-11/12 md:w-5/6 lg:w-2/3">
+                <p className="text-sm font-light text-center w-11/12 md:w-5/6 lg:w-4/5 h-full">
                   Lorem ipsum dolor sit amet consectetur. Dui vivamus eget
                   porttitor nulla quam eget egestas.
                 </p>
               </div>
             </div>
-            <div className="w-full h-full p-8 py-12 lg:py-20 my-2 rounded-[20px] shadow-xl">
+            <div className="w-full h-full p-8 py-10 flex flex-col my-2 rounded-[20px] shadow-xl">
               <div className="w-full flex flex-col gap-y-2 items-center justify-center">
                 <img className="w-16 h-16" src="/icons/traceability.svg" />
                 <h1 className="text-lg font-medium">Traceability</h1>
-                <p className="text-sm font-light text-center w-11/12 md:w-5/6 lg:w-2/3">
+                <p className="text-sm font-light text-center w-11/12 md:w-5/6 lg:w-4/5 h-full">
                   Lorem ipsum dolor sit amet consectetur. Dui vivamus eget
                   porttitor nulla quam eget egestas.
                 </p>
