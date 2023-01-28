@@ -65,17 +65,17 @@ const OfferingsComponent = (props: Props) => {
         )}
       </AnimatePresence>
       <div className="w-full flex flex-col justify-center items-center gap-y-3 mt-28 p-4 py-12 md:py-20 md:px-6 lg:px-10 xl:px-20 2xl:px-36 border border-green-400 bg-secondary/10">
-        <h1 className="text-4xl font-semibold">
+        <h1 className="text-4xl 2k:text-5xl 4k:text-6xl font-semibold">
           Our <span className="text-secondary">Coffee</span> Export
         </h1>
-        <p className="w-11/12 md:w-2/3 lg:w-7/12 xl:w-1/2 text-center font-semibold">
+        <p className="w-11/12 md:w-2/3 lg:w-7/12 xl:w-1/2 2k:w-2/5 4k:w-1/4 text-center font-semibold 2k:text-xl 4k:text-2xl">
           Yirgacheffe, Guji, Sidama, Gedebe and Limu are the five regions in
           Ethiopia that Alphabet Coffee sources its coffee from.
         </p>
-        <div className="w-full md:w-5/6 flex justify-end">
+        <div className="w-full md:w-5/6 2k:w-2/3 4k:w-1/2 flex justify-end">
           <Button
             classname={clsx(
-              "w-full text-white bg-secondary rounded-2xl",
+              "w-full text-white 2k:text-lg 4k:text-xl bg-secondary rounded-2xl",
               selectedOfferings.length === 0 ? "bg-secondary/40" : ""
             )}
             disabled={selectedOfferings.length === 0}
@@ -83,7 +83,7 @@ const OfferingsComponent = (props: Props) => {
             text={`Request Sample (${selectedOfferings.length})`}
           />
         </div>
-        <div className="hidden md:grid md:grid-cols-12 w-5/6 gap-x-1 mt-8 text-xs md:text-sm lg:text-md px-2 font-semibold">
+        <div className="hidden md:grid md:grid-cols-12  md:w-5/6 2k:w-2/3 4k:w-1/2 gap-x-1 mt-8 text-xs md:text-sm lg:text-md 2k:text-[18px] 4k:text-2xl px-2 font-semibold">
           <div className="col-span-2"></div>
           <div className="col-span-3 flex items-center">
             <div className="w-full flex items-center gap-x-1">
@@ -99,7 +99,7 @@ const OfferingsComponent = (props: Props) => {
                   }
                 }}
                 className={clsx(
-                  "-mr-2",
+                  "-mr-2 cursor-pointer",
                   sortBy.field === "type" && !sortBy.reverse && "text-amber-500"
                 )}
               />
@@ -114,7 +114,7 @@ const OfferingsComponent = (props: Props) => {
                   }
                 }}
                 className={clsx(
-                  "-mr-2",
+                  "-mr-2 cursor-pointer",
                   sortBy.field === "type" && sortBy.reverse && "text-amber-500"
                 )}
               />
@@ -133,7 +133,7 @@ const OfferingsComponent = (props: Props) => {
                   }));
                 }}
                 className={clsx(
-                  "-mr-2",
+                  "-mr-2 cursor-pointer",
                   sortBy.field === "grade" &&
                     !sortBy.reverse &&
                     "text-amber-500"
@@ -149,7 +149,7 @@ const OfferingsComponent = (props: Props) => {
                   }));
                 }}
                 className={clsx(
-                  "-mr-2",
+                  "-mr-2 cursor-pointer",
                   sortBy.field === "grade" && sortBy.reverse && "text-amber-500"
                 )}
               />
@@ -167,7 +167,7 @@ const OfferingsComponent = (props: Props) => {
                   }));
                 }}
                 className={clsx(
-                  "-mr-2",
+                  "-mr-2 cursor-pointer",
                   sortBy.field === "location" &&
                     !sortBy.reverse &&
                     "text-amber-500"
@@ -182,7 +182,7 @@ const OfferingsComponent = (props: Props) => {
                   }));
                 }}
                 className={clsx(
-                  "-mr-2",
+                  "-mr-2 cursor-pointer",
                   sortBy.field === "location" &&
                     sortBy.reverse &&
                     "text-amber-500"
@@ -202,7 +202,7 @@ const OfferingsComponent = (props: Props) => {
                   }));
                 }}
                 className={clsx(
-                  "-mr-2",
+                  "-mr-2 cursor-pointer",
                   sortBy.field === "availability" &&
                     !sortBy.reverse &&
                     "text-amber-500"
@@ -217,7 +217,7 @@ const OfferingsComponent = (props: Props) => {
                   }));
                 }}
                 className={clsx(
-                  "-mr-2",
+                  "-mr-2 cursor-pointer",
                   sortBy.field === "availability" &&
                     sortBy.reverse &&
                     "text-amber-500"

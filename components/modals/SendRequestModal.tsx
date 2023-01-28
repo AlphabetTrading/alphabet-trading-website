@@ -105,7 +105,7 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                     opacity: 0,
                   }}
                   role="alert"
-                  className="flex flex-col  justify-center items-center gap-y-3 min-h-fit bg-white container mx-auto w-11/12 md:w-1/2 lg:w-2/5 xl:w-[38%] rounded-xl px-10 py-16 relative"
+                  className="flex flex-col  justify-center items-center gap-y-3 min-h-fit bg-white container mx-auto w-11/12 md:w-1/2 lg:w-2/5 xl:w-[38%] 2k:w-1/3 4k:w-1/4 rounded-xl px-10 py-16 relative"
                 >
                   <div
                     className="cursor-pointer absolute top-8 right-8"
@@ -136,7 +136,7 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                     </svg>
                   </div>
                   <div className="w-full flex flex-col  justify-center items-center gap-y-3">
-                    <h2 className="font-semibold text-lg self-start">
+                    <h2 className="font-semibold text-xl 2k:text-2xl self-start">
                       Selected Products
                     </h2>
                     <div className="flex flex-wrap self-start gap-2 font-semibold">
@@ -144,7 +144,7 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                         (product: IOfferingRequest, index: number) => {
                           return (
                             <Tag value={product.type} key={product.id}>
-                              <p className="text-xs">
+                              <p className="text-xs 2k:text-lg 4k:text-xl">
                                 {product.type} {product.grade}
                               </p>
                               <IoMdClose
@@ -161,7 +161,7 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                         }
                       )}
                     </div>
-                    <p className="text-xs font-semibold  self-start mb-2">
+                    <p className="text-xs 2k:text-lg 4k:text-xl font-semibold  self-start mb-2">
                       Please enter your address below and we will send samples
                       in 3-5 business days.{" "}
                     </p>
@@ -245,7 +245,7 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                     </div>
                     {errorMessage && (
                       <div className="bg-[#E4646451] py-1 rounded-md">
-                        <span className="text-[#E46464] px-4 text-xs">
+                        <span className="text-[#E46464] px-4 text-xs 2k:text-md">
                           {errorMessage}
                         </span>
                       </div>
@@ -254,7 +254,7 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                       type="submit"
                       disabled={selectedOfferings.length === 0}
                       className={clsx(
-                        "w-full flex items-center justify-center gap-x-3  px-6 py-3 mt-4 text-sm font-bold text-white rounded-lg",
+                        "w-full flex items-center justify-center gap-x-3  px-6 py-3 2k:py-4 4k:py-6 mt-4 text-sm font-bold text-white 2k:text-lg 4k:text-2xl rounded-lg",
                         selectedOfferings.length === 0
                           ? "bg-secondary/20 cursor-not-allowed"
                           : "bg-secondary"

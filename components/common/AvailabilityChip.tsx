@@ -17,16 +17,18 @@ const ProductAvailabilityChip = ({ type }: Props) => {
     switch (type) {
       case AVAILABILITY.AVAILABLE:
         return (
-          <span className="flex  items-center gap-x-1">
-            <GiCheckMark />
-            <h1 className="text-md tracking-wide font-normal">Available</h1>
+          <span className="flex items-center gap-x-1">
+            <GiCheckMark size={18} />
+            <h1 className="text-md 2k:text-[18px] 4k:text-2xl tracking-wide font-normal">
+              Available
+            </h1>
           </span>
         );
       case AVAILABILITY.NOT_AVAILABLE:
         return (
           <span className="flex items-center gap-x-1">
-            <IoMdClose />
-            <h1 className="text-md tracking-wide font-normal text-start">
+            <IoMdClose size={18} />
+            <h1 className="text-md 2k:text-[18px] 4k:text-2xl tracking-wide font-normal text-start">
               Not Available
             </h1>
           </span>

@@ -13,14 +13,14 @@ type Props = {
 const FormField = ({ id, name, placeholder, label, formik }: Props) => {
   return (
     <div className="w-full">
-      <h1 className="text-sm font-bold">{label}</h1>
+      <h1 className="text-sm 2k:text-lg 4k:text-2xl font-bold">{label}</h1>
       <Field
         id={id}
         name={name}
         placeholder={placeholder}
         type="text"
         className={clsx(
-          "w-full text-sm placeholder-[#949494] resize-none bg-secondary/10 rounded-md focus:outline-none py-2 px-2 my-1",
+          "w-full text-sm 2k:text-md 4k:text-xl placeholder-[#949494] resize-none bg-secondary/10 rounded-md focus:outline-none p-2 2k:p-3 2k:py-5 4k:p-4 4k:py-6 my-1",
           (formik.touched as any)[name] && (formik.errors as any)[name]
             ? "border border-red-500"
             : ""
