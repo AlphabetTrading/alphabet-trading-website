@@ -10,7 +10,7 @@ const CustomCheckbox = ({ handleOfferingCheck, isChecked }: Props) => {
   return (
     <div
       className={clsx(
-        "relative w-5 h-5 p-[3px] rounded-full border-2",
+        "relative w-5 h-5 2k:w-7 2k:h-7 4k:w-9 4k:h-9 p-[3px] 2k:p-[4px] 4k:p-[5px] rounded-full border-2",
         isChecked ? "border-[#F2A40C]" : "border-[#C9C9C9]"
       )}
     >

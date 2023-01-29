@@ -18,8 +18,8 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
   const [error, setError] = useState(false);
   return (
     <>
-      <div className="hidden md:grid md:grid-cols-12 w-full md:w-5/6 gap-x-1 px-2 items-center bg-white text-sm lg:text-md text-[#565656] rounded-lg shadow-xl font-semibold">
-        <div className="md:col-span-2 flex justify-around items-center py-3">
+      <div className="hidden md:grid md:grid-cols-12 w-full md:w-5/6 2k:w-2/3 4k:w-1/2 gap-x-1 px-2 items-center bg-white text-sm lg:text-md text-[#565656] rounded-lg shadow-xl font-semibold">
+        <div className="md:col-span-2 flex justify-around items-center py-3 2k:py-6 4k:py-10">
           <CustomCheckbox
             isChecked={offering.isSelected}
             handleOfferingCheck={() => {
@@ -39,9 +39,15 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
             alt=""
           />
         </div>
-        <div className="col-span-3">{offering.type}</div>
-        <div className="col-span-2">{offering.grade}</div>
-        <div className="col-span-3">{offering.location}</div>
+        <div className="col-span-3 2k:text-[18px] 4k:text-3xl">
+          {offering.type}
+        </div>
+        <div className="col-span-2 2k:text-[18px] 4k:text-3xl">
+          {offering.grade}
+        </div>
+        <div className="col-span-3 2k:text-[18px] 4k:text-3xl">
+          {offering.location}
+        </div>
         <div className="col-span-2">
           <ProductAvailabilityChip type={offering.availability} />
         </div>
@@ -100,9 +106,9 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
               opacity: 0,
               transition: { duration: 0.6 },
             }}
-            className="w-full md:w-5/6 px-2 items-center text-sm lg:text-md text-[#565656] font-semibold"
+            className="w-full md:w-5/6 2k:w-3/5 4k:w-1/2 px-2 items-center text-sm lg:text-md text-[#565656] font-semibold"
           >
-            <h1 className="self-start text-red-500">
+            <h1 className="self-start text-red-500 2k:text-xl 4k:text-2xl">
               Item is currently not available
             </h1>
           </motion.div>

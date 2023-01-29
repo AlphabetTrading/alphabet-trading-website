@@ -80,7 +80,7 @@ const ReviewSlider = () => {
             color="#F2A40C"
           />
         </button>
-        <div className="relative w-full lg:w-4/5 xl:w-3/4 max-h-[500px] min-h-[450px] sm:max-h-[400px] mt-6 sm:min-h-[350px] overflow-hidden gap-x-1 sm:gap-x-2 flex justify-center items-center mx-2 sm:mx-5">
+        <div className="relative w-full lg:w-4/5 xl:w-3/4 4k:w-1/2 max-h-[500px] min-h-[450px] sm:max-h-[400px] mt-6 sm:min-h-[350px] overflow-hidden gap-x-1 sm:gap-x-2 flex justify-center items-center mx-2 sm:mx-5">
           <AnimatePresence>
             <motion.div
               variants={variants}
@@ -92,14 +92,14 @@ const ReviewSlider = () => {
               custom={direction}
               className="absolute w-full h-full inset-0 flex flex-col gap-y-5 rounded-lg items-center justify-center bg-white p-7 md:p-12 md:px-20 shadow-t-2xl"
             >
-              <p className="text-center text-sm md:text-md lg:text-lg">
+              <p className="text-center text-sm md:text-md lg:text-lg 2k:text-xl 4k:text-2xl">
                 {reviews[index].review}
               </p>
               <div className="flex flex-col items-center text-center">
-                <h1 className="font-bold text-md md:text-lg">
+                <h1 className="font-bold text-md md:text-lg 2k:text-2xl 4k:text-3xl">
                   {reviews[index].name}
                 </h1>
-                <h3>
+                <h3 className="text-sm md:text-md lg:text-lg 2k:text-xl 4k:text-2xl">
                   {reviews[index].role}, {reviews[index].company}
                 </h3>
               </div>
