@@ -25,6 +25,7 @@ const ScrollUpArrow = (props: Props) => {
     <AnimatePresence>
       {scrollPosition > 100 && (
         <motion.button
+          aria-label="scroll-top"
           onClick={goToTop}
           initial={{ y: 100, opacity: 0 }}
           animate={{

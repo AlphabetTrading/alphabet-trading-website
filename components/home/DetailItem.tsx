@@ -25,7 +25,7 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
               fill
               className="object-cover rounded-lg w-full h-full"
               src={imageSrc}
-              alt=""
+              alt="detail item"
             />
           </div>
         </div>
@@ -35,12 +35,10 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
             index % 2 == 0 ? "lg:items-start" : "lg:items-end"
           )}
         >
-          <h1 className="text-2xl text-center md:text-3xl 2k:text-4xl 4k:text-5xl font-semibold mb-[1rem]">
-            {title}
-          </h1>
+          <h1 className="strokeOpacity">{title}</h1>
           {descriptions?.map((description: string, index2: number) => {
             return (
-              <h3
+              <h2
                 className={clsx(
                   "text-sm md:text-lg 2k:text-xl 4k:text-2xl w-4/5 2k:w-3/4 4k:w-2/3 leading-5 md:leading-6 font-medium text-center",
                   index % 2 == 1 ? "lg:text-end" : " lg:text-start"
@@ -48,7 +46,7 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
                 key={index2}
               >
                 {description}
-              </h3>
+              </h2>
             );
           })}
           {/* <div className="flex items-center mt-4 text-secondary gap-x-2">
