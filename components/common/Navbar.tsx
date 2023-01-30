@@ -149,7 +149,7 @@ const Navbar = ({ white }: Props) => {
                 </div>
                 <h1
                   className={clsx(
-                    "text-2xl font-normal tracking-wide",
+                    "text-2xl font-normal font-DM_Serif  tracking-wide",
                     white ? "" : "text-white"
                   )}
                 >
