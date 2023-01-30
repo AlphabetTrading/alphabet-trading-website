@@ -23,7 +23,10 @@ const FaqItem = ({ title, description, index }: Props) => {
       }}
       className="flex flex-col w-full shadow-lg"
     >
-      <button className="group focus:outline-none">
+      <button
+        aria-label={`faq-${index + 1}`}
+        className="group focus:outline-none"
+      >
         <div className="flex flex-row justify-between items-center gap-2 text-xl font-semibold text-[#3D3D3D] hover:bg-[#F6F6FC] p-6">
           <h1>{title}</h1>
           <svg

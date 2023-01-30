@@ -10,7 +10,7 @@ const Review = () => {
           fill
           className="absolute left-1 top-1  w-36 h-36"
           src="/images/review-quote.svg"
-          alt=""
+          alt="customer review"
         />
       </div>
       <div className="relative z-10">

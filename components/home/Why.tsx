@@ -1,7 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { AiOutlineMail } from "react-icons/ai";
-import { FaPhoneAlt, FaMapPin } from "react-icons/fa";
 
 type Props = {};
 
@@ -11,9 +9,9 @@ const Why = (props: Props) => {
       <div className="flex flex-col gap-y-4">
         <div className="flex flex-col mx-auto items-center gap-y-2 w-5/6 md:w-2/3 lg:w-3/5">
           <div className="">
-            <h4 className="uppercase text-xs 2k:text-lg 4k:text-xl font-bold text-secondary">
+            <h1 className="uppercase text-xs 2k:text-lg 4k:text-xl font-bold text-secondary">
               Lorem Ipsum
-            </h4>
+            </h1>
             <h1 className="text-3xl md:text-4xl lg:text-5xl 2k:text-6xl font-bold">
               Lorem ipsum dolor
             </h1>
@@ -30,6 +28,7 @@ const Why = (props: Props) => {
             <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-xl">
               <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
                 <img
+                  alt="sustainability"
                   className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-24"
                   src="/icons/sustain.svg"
                 />
@@ -45,6 +44,7 @@ const Why = (props: Props) => {
             <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-xl">
               <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
                 <img
+                  alt="transparency"
                   className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-24"
                   src="/icons/transparency.svg"
                 />
@@ -60,6 +60,7 @@ const Why = (props: Props) => {
             <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-xl">
               <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
                 <img
+                  alt="traceability"
                   className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-24"
                   src="/icons/traceability.svg"
                 />
@@ -81,9 +82,9 @@ const Why = (props: Props) => {
       <div className="flex flex-col bg-navy">
         <div className="w-full grid grid-cols-1 md:grid-cols-3 2k:grid-cols-5 8k:grid-cols-7">
           <div className="order-2 md:order-1 col-span-2 2k:col-span-3 8k:col-span-4 flex flex-col gap-y-4 p-5  py-8 sm:p-8 md:p-12 lg:p-16 xl:p-20 text-white leading-6">
-            <h1 className="text-2xl md:text-3xl 2k:text-4xl 4k:text-5xl font-semibold">
+            <h2 className="text-2xl md:text-3xl 2k:text-4xl 4k:text-5xl font-semibold">
               Our Approach
-            </h1>
+            </h2>
             <p className="text-sm md:text-lg 2k:text-2xl 4k:text-3xl leading-5 md:leading-6">
               Helping the world to discover the finest quality isn’t just a
               one-time task for us, but rather a process. A process in which we
@@ -115,7 +116,7 @@ const Why = (props: Props) => {
               className="w-full h-full object-cover"
               fill
               src="/images/whyalphabet1.svg"
-              alt=""
+              alt="why-alphabet-1"
             />
           </div>
         </div>
@@ -127,13 +128,13 @@ const Why = (props: Props) => {
               className="w-full h-full object-cover"
               fill
               src="/images/whyalphabet2.svg"
-              alt=""
+              alt="why-alphabet-2"
             />
           </div>
           <div className="flex order-1 md:order-2 2k:col-span-2 flex-col gap-y-4 p-5 py-8 sm:p-8 lg:p-12 xl:p-16 4k:p-24 text-white">
-            <h1 className="text-2xl md:text-3xl 2k:text-4xl 4k:text-5xl  font-semibold leading-8">
+            <h2 className="text-2xl md:text-3xl 2k:text-4xl 4k:text-5xl  font-semibold leading-8">
               Commitment to Excellence
-            </h1>
+            </h2>
             <p className="text-sm md:text-lg 2k:text-2xl  4k:text-3xl leading-5 md:leading-6">
               Embracing a sustainability approach means that we act hand in hand
               with the environment and the people we work with. We bear

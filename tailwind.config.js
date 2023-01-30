@@ -20,8 +20,12 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        Raleway: ["Raleway", "sans-serif", ...defaultTheme.fontFamily.sans],
-        DM_Serif: ["DM Serif Display", "sans-serif"],
+        Raleway: [
+          "var(--font-raleway)",
+          "sans-serif",
+          ...defaultTheme.fontFamily.sans,
+        ],
+        DM_Serif: ["var(--font-dm-serif)", "DM Serif Display", "sans-serif"],
       },
       colors: {
         primary: "#0A1026",
