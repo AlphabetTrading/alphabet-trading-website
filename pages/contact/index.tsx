@@ -3,7 +3,6 @@ import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaMap, FaMapPin, FaPhone, FaPhoneAlt } from "react-icons/fa";
 import BaseLayout from "../../components/common/BaseLayout";
-import Footer from "../../components/common/Footer";
 import Navbar from "../../components/common/Navbar";
 import ContactForm from "../../components/contact/ContactForm";
 import ContactMap from "../../components/contact/ContactMap";

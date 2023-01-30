@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Image from "next/image";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 
@@ -19,11 +20,13 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
     >
       <div
         className={clsx(
-          "h-full",
+          "h-full relative min-h-[300px] md:min-h-[400px] lg:min-h-[500px]",
           index % 2 === 0 ? "md:order-1" : "md:order-2"
         )}
       >
-        <img
+        <Image
+          fill
+          priority
           src={coffeeType.imgSrc}
           alt=""
           className="h-full w-full object-cover "
@@ -38,7 +41,7 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
         <div className="text-center">
           <h1
             style={{ writingMode: "vertical-rl" }}
-            className="text-center md:pr-1 2k:pr-2 4k:pr-6 text-2xl md:text-3xl 2k:text-[40px] 4k:text-6xl rotate-180 font-DM_Serif font-medium capitalize"
+            className="text-center md:pr-1 2k:pr-2 4k:pr-6 text-2xl md:text-3xl 2k:text-[40px] 4k:text-6xl rotate-180 font-DM_Serif font-semibold capitalize"
           >
             {coffeeType.name}
           </h1>
@@ -54,6 +57,7 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
               {coffeeType.description}
             </p>
             <button
+              aria-label="see offerings"
               className={clsx(
                 "flex items-center border hover:scale-105 transition duration-200 ease-in-out",
                 index % 2 == 0 ? "border-primary" : "border-white"

@@ -12,6 +12,7 @@ export type ButtonProps = {
 const Button = (props: ButtonProps) => {
   return (
     <button
+      aria-label={props.text}
       disabled={props.disabled}
       onClick={props.onClick}
       className={clsx(
