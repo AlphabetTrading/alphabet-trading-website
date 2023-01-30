@@ -8,7 +8,7 @@ const Welcome = (props: Props) => {
       <div className="w-full h-full relative">
         <Image
           fill
-          className="w-80 h-80 absolute m-auto left-0 right-0 top-0 bottom-0"
+          className="w-full h-full absolute m-auto left-0 right-0 top-0 bottom-0"
           src="/images/welcome.svg"
           alt=""
         />

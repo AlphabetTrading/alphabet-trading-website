@@ -123,7 +123,7 @@ const Why = (props: Props) => {
       </div>
       <div className="relative flex flex-col bg-[#086965]">
         <div className="w-full grid grid-cols-1 md:grid-cols-3 2k:grid-cols-5">
-          <div className="relative order-1 md:order-1 col-span-2 2k:col-span-3 xl:h-[35rem] 2xl:h-[40rem] 4k:h-[50rem] md:flex flex-col gap-y-2">
+          <div className="relative order-1 md:order-1 col-span-2 2k:col-span-3 h-80 xl:h-[35rem] 2xl:h-[40rem] 4k:h-[50rem] md:flex flex-col gap-y-2">
             <Image
               className="w-full h-full object-cover"
               fill

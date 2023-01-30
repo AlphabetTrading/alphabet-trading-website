@@ -23,22 +23,24 @@ export default function Home() {
           content="Alphabet is a coffee export firm based in its place of origin. We specialize in discovering, developing and exporting the finest commercial grade coffee and species"
         />
       </Head>
-      <video
-        autoPlay
-        loop
-        muted
-        className="min-h-[400px] aspect-video object-cover w-screen bg-secondary"
-        width="100%"
-        preload="auto"
-        poster="/images/hero_video_poster.jpg"
-      >
-        <source src="/alphabet-coffee-v5.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <Welcome />
-      <Why />
-      <Details />
-      <Review />
+      <div className="flex flex-col justify-center w-full">
+        <video
+          autoPlay
+          loop
+          muted
+          className="min-h-[400px] aspect-video object-cover w-screen bg-secondary"
+          width="100%"
+          preload="auto"
+          poster="/images/hero_video_poster.jpg"
+        >
+          <source src="/alphabet-coffee-v5.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <Welcome />
+        <Why />
+        <Details />
+        <Review />
+      </div>
     </BaseLayout>
   );
 }
