@@ -12,26 +12,6 @@ const index = (props: Props) => {
     <BaseLayout>
       <Head>
         <title>About Us - Alphabet Trading PLC</title>
-        <meta
-          name="description"
-          content="Alphabet is a coffee export firm based in its place of origin. We specialize in discovering, developing and exporting the finest commercial grade coffee and spe"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-          rel="stylesheet"
-        ></link>
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
-          rel="stylesheet"
-        ></link>
       </Head>
       <>
         <Navbar white />
@@ -71,7 +51,7 @@ const index = (props: Props) => {
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="flex flex-col md:flex-row items-center p-5 md:p-12 lg:px-32  mt-16">
+            <div className="flex flex-col md:flex-row items-center p-5 md:p-12 gap-y-5 lg:px-32  mt-16">
               <div className="flex flex-col  w-full md:w-1/2 font-semibold gap-y-6">
                 <div>
                   <h4 className="uppercase text-xs  font-bold text-secondary">
@@ -95,18 +75,18 @@ const index = (props: Props) => {
                   diligence, open communication and reasonable speed.
                 </p>
               </div>
-              <div className="w-full md:flex md:w-1/2 font-semibold">
-                <div className="relative h-full w-full md:border-[18px] md:border-secondary/20 md:rotate-[8deg] py-4 rounded-[72px]">
-                  <img
-                    // fill
-                    className="md:-rotate-[8deg] w-full h-full object-cover md:shadow-t-2xl rounded-[48px]"
+              <div className="w-full md:flex md:w-1/2 font-semibold h-full ">
+                <div className="relative min-h-[300px]  lg:min-h-[400px] h-full w-full md:border-[18px] md:border-secondary/20 md:rotate-[8deg] py-6 MD:py-4 rounded-[72px]">
+                  <Image
+                    fill
+                    className="absolute inset-0 md:-rotate-[8deg] w-full h-full object-cover md:shadow-t-2xl rounded-[48px]"
                     src="https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
                     alt=""
                   />
                 </div>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row-reverse items-center p-5 md:p-12 lg:px-28 gap-x-8">
+            <div className="flex flex-col md:flex-row-reverse items-center p-5  gap-y-5 md:p-12 lg:px-28 gap-x-8">
               <div className="flex flex-col w-full md:w-1/2 font-semibold gap-y-6">
                 <div>
                   <h4 className="uppercase text-xs  font-bold text-secondary">
@@ -132,9 +112,9 @@ const index = (props: Props) => {
                 </p>
               </div>
               <div className="w-full md:flex md:w-1/2 font-semibold">
-                <div className="relative h-full w-full md:border-[18px] md:border-secondary/20 md:rotate-[8deg] py-4 rounded-[72px]">
-                  <img
-                    // fill
+                <div className="relative min-h-[300px]  lg:min-h-[400px]  h-full w-full md:border-[18px] md:border-secondary/20 md:rotate-[8deg] py-6 MD:py-4 rounded-[72px]">
+                  <Image
+                    fill
                     className="md:-rotate-[8deg] w-full h-full object-cover md:shadow-t-2xl rounded-[48px]"
                     src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
                     alt=""

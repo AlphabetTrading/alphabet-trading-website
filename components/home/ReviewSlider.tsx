@@ -71,6 +71,8 @@ const ReviewSlider = () => {
     <div className="flex justify-center items-center">
       <div className="w-full px-2 md:px-4 flex justify-center items-center min-h-[24rem] md:min-h-[24rem] overflow-hidden">
         <button
+          id="prev-button"
+          aria-label="prev-button"
           type="button"
           onClick={prevStep}
           className="rounded-full bg-white p-2 cursor-pointer  drop-shadow-md shadow-lg"
@@ -99,15 +101,17 @@ const ReviewSlider = () => {
                 <h1 className="font-bold text-md md:text-lg 2k:text-2xl 4k:text-3xl">
                   {reviews[index].name}
                 </h1>
-                <h3 className="text-sm md:text-md lg:text-lg 2k:text-xl 4k:text-2xl">
+                <h1 className="text-sm md:text-md lg:text-lg 2k:text-xl 4k:text-2xl">
                   {reviews[index].role}, {reviews[index].company}
-                </h3>
+                </h1>
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
         <button
           type="button"
+          id="next-button"
+          aria-label="next-button"
           onClick={nextStep}
           className="rounded-full bg-white p-2 cursor-pointer drop-shadow-md shadow-lg"
         >

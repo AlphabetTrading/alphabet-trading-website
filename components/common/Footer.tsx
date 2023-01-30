@@ -117,7 +117,7 @@ const Footer = (props: Props) => {
                       data-original="currentColor"
                     ></path>
                     <g
-                      clip-path="url(#a)"
+                      clipPath="url(#a)"
                       transform="matrix(1.33333 0 0 -1.33333 0 682.667)"
                     >
                       <path
@@ -179,9 +179,9 @@ const Footer = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="bg-[#086965] py-2 text-center">
-        Copyright <span>© {getYear()}</span> Alphabet Trading PLC. All Rights
-        Reserved
+      <div className="bg-[#086965] py-2 text-center contrast-100">
+        Copyright <span className="contrast-100">© {getYear()}</span> Alphabet
+        Trading PLC. All Rights Reserved
       </div>
     </footer>
   );
