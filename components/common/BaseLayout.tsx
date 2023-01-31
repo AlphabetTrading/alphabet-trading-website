@@ -6,8 +6,8 @@ interface LayoutProps extends WithChildren {}
 
 const BaseLayout = ({ children }: LayoutProps) => {
   return (
-    <div className=" min-h-screen max-w-screen  overflow-auto overflow-x-hidden relative max-w-screen-2k">
-      <main className="flex flex-col flex-1">{children}</main>
+    <div className=" min-h-screen max-w-screen  overflow-auto overflow-x-hidden relative">
+      <main className="flex justify-center w-screen">{children}</main>
       <Footer />
       <ScrollUpArrow />
     </div>

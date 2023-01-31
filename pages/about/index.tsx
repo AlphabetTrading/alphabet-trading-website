@@ -12,6 +12,10 @@ const index = (props: Props) => {
     <BaseLayout>
       <Head>
         <title>About Us - Alphabet Trading PLC</title>
+        <meta
+          name="description"
+          content="Driven by passion, fueled with professionalism and inspired by excellence, team Alphabet is devoted to providing an all-encompassing service. We always deliver on our promises. How we do things is equally important to what we do, and that's why we always stick with our values and community. After all in coffee 'we are because they are'."
+        />
       </Head>
       <>
         <Navbar white />

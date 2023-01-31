@@ -27,7 +27,7 @@ const FaqItem = ({ title, description, index }: Props) => {
         aria-label={`faq-${index + 1}`}
         className="group focus:outline-none"
       >
-        <div className="flex flex-row justify-between items-center gap-2 text-xl font-semibold text-[#3D3D3D] hover:bg-[#F6F6FC] p-6">
+        <div className="flex flex-row justify-between items-center gap-2 text-xl font-semibold text-[#3D3D3D] hover:bg-[#F6F6FC] p-6  text-start">
           <h1>{title}</h1>
           <svg
             className="h-8 w-8 group-focus:rotate-180"

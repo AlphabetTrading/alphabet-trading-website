@@ -41,7 +41,7 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
         <div className="text-center">
           <h1
             style={{ writingMode: "vertical-rl" }}
-            className="text-center md:pr-1 2k:pr-2 4k:pr-6 text-2xl md:text-3xl 2k:text-[40px] 4k:text-6xl rotate-180 font-DM_Serif font-semibold capitalize"
+            className="text-center md:pr-1 2k:pr-2 4k:pr-6 text-2xl md:text-3xl 2k:text-[40px] 4k:text-6xl rotate-180 font-DM_Serif capitalize"
           >
             {coffeeType.name}
           </h1>

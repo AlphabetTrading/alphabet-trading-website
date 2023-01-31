@@ -35,7 +35,9 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
             index % 2 == 0 ? "lg:items-start" : "lg:items-end"
           )}
         >
-          <h1 className="strokeOpacity">{title}</h1>
+          <h1 className="strokeOpacity text-2xl text-center md:text-3xl 2k:text-4xl 4k:text-5xl font-semibold mb-[0.5rem]">
+            {title}
+          </h1>
           {descriptions?.map((description: string, index2: number) => {
             return (
               <h2

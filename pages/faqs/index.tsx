@@ -49,6 +49,10 @@ const FAQsPage = (props: Props) => {
     <BaseLayout>
       <Head>
         <title>FAQs - Alphabet Trading PLC</title>
+        <meta
+          name="description"
+          content="You will find answers to some of our most frequently asked questions about Alphabet Trading PLC."
+        />
       </Head>
       <>
         <Navbar white />
@@ -79,7 +83,7 @@ const FAQsPage = (props: Props) => {
             </div>
           </div>
           <Searchbar onChange={handleChange} />
-          <div className="flex flex-col w-11/12 md:w-3/4 lg:w-2/3 gap-y-5 mb-24 min-h-96">
+          <div className="flex flex-col w-11/12 md:w-3/4 lg:w-2/3 xl:w-3/5 2k:w-1/2 4k:w-1/3 gap-y-5 mb-24 min-h-96">
             <AnimatePresence>
               {filteredFaqs.map((faq: FaqType, index: number) => {
                 return (

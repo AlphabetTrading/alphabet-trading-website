@@ -17,10 +17,8 @@ const dm_serif = DM_Serif_Display({
 });
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div
-      className={clsx(raleway.variable, dm_serif.variable, raleway.className)}
-    >
-      <Component {...pageProps} />;
+    <div className={clsx(raleway.variable, dm_serif.variable)}>
+      <Component {...pageProps} />
     </div>
   );
 }

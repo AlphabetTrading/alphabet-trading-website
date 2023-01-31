@@ -149,7 +149,7 @@ const Navbar = ({ white }: Props) => {
                 </div>
                 <h1
                   className={clsx(
-                    "text-2xl font-normal font-DM_Serif  tracking-wide",
+                    "text-2xl 2k:text-3xl 4k:text-4xl font-normal tracking-wide",
                     white ? "" : "text-white"
                   )}
                 >
@@ -162,10 +162,10 @@ const Navbar = ({ white }: Props) => {
           </div>
           <div className="hidden md:flex items-center justify-between">
             <nav className="">
-              <div className="w-full flex items-center justify-between px-6 pl-10">
+              <div className="w-full flex items-center justify-between px-6 pl-10 2k:px-14 2k:pl-18 4k:px-20 4k:pl-24">
                 <div
                   className={clsx(
-                    "flex gap-x-6 lg:gap-x-8 text-md font-semibold z-20",
+                    "flex gap-x-6 lg:gap-x-8 text-md 2k:text-xl 4k:text-2xl font-semibold z-20",
                     white ? "" : "text-white"
                   )}
                 >
