@@ -27,18 +27,20 @@ const index = (props: Props) => {
             <h1 className="text-4xl 2k:text-5xl 4k:text-6xl font-bold">
               Our <span className="text-secondary">Coffee</span> Export
             </h1>
-            <p className="font-medium text-md 2k:text-xl 4k:text-3xl leading-5 font-Raleway">
-              From the birthplace of coffee to the conscious consumers, Alphabet
-              engages in exporting Ethiopian specialty coffee. With a wide range
-              of coffee types and quality processing, working in the sector has
-              open a door in the huge and ever growing world of coffee and we
-              pride ourselves in taking the chance to move forward.
+            <p className="font-medium text-md 2k:text-xl 4k:text-3xl leading-5">
+              Alphabet is dedicated to providing the best specialty coffee from
+              Ethiopia to conscious consumers across the world. From our
+              production in the birthplace of coffee, we offer a vast selection
+              of varieties and quality products that have allowed us to tap into
+              the ever-expanding massive world of coffee. We are proud to be
+              part of this great endeavor and look forward to continuing to
+              provide quality products.
             </p>
             <p className="font-medium text-md 2k:text-xl 4k:text-3xl leading-5">
-              The high consumer demand for Ethiopian coffee open us a door to
-              that world of wonder, in which our floral, distinctive and winy
-              flavors of coffee have displayed. Our main export destinations are
-              USA and Europe.
+              The booming consumer demand for Ethiopian coffee has opened a
+              doorway to the remarkable realm of its flavors: floral,
+              distinctive and wine-like. Our primary export destinations are the
+              United States and Europe.
             </p>
           </div>
           <div className="relative min-h-[450px] xl:h-[20rem] 2k:h-[25rem] 4k:h-[45rem] ml-4 overflow-hidden lg:w-1/2 rounded-l-full border-[16px] border-r-0 border-secondary/10">

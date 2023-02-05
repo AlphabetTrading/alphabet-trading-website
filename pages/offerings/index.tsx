@@ -17,10 +17,12 @@ const Index = (props: Props) => {
           content="Explore the various types of beans that we offer! We provide world-class coffees sourced from five regions in Ethiopia with unique flavor profiles and delicious aromas. Our range of coffee focuses on quality, sustainability and customer satisfaction. Experience our selection yourself to find your perfect roast!"
         />
       </Head>
-      <Navbar white={true} />
-      <OfferingsContextWrapper>
-        <OfferingsComponent />
-      </OfferingsContextWrapper>
+      <div className="flex flex-col justify-center w-full">
+        <Navbar white={true} />
+        <OfferingsContextWrapper>
+          <OfferingsComponent />
+        </OfferingsContextWrapper>
+      </div>
     </BaseLayout>
   );
 };
