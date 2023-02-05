@@ -21,7 +21,7 @@ const index = (props: Props) => {
         <Navbar white />
         <div className="w-full my-12 mt-32 flex justify-center">
           <div className="">
-            <div className="flex flex-col justify-center gap-y-5 gap-x-2 md:flex-row p-5 md:p-12 lg:px-28 lg:pb-16 items-center">
+            <div className="flex flex-col justify-center gap-y-5 gap-x-2 md:flex-row p-8 md:p-12 lg:px-20 xl:px-28  lg:pb-16 items-center">
               {/* <div className="w-11/12 flex flex-col justify-center gap-y-5 md:flex-row p-5 md:p-12 lg:px-28 lg:pb-32 items-center"> */}
               <div className="w-full lg:w-1/2  font-semibold">
                 <h4 className="uppercase text-xs font-bold text-secondary">
@@ -50,13 +50,13 @@ const index = (props: Props) => {
             <div className="relative min-h-[350px] ">
               <Image
                 fill
-                src="/images/about1.svg"
-                alt=""
+                src="/images/new_about1.jpg"
+                alt="about_us_1"
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="flex flex-col md:flex-row items-center p-5 md:p-12 gap-y-5 lg:px-32  mt-16">
-              <div className="flex flex-col  w-full md:w-1/2 font-semibold gap-y-6">
+            <div className="flex flex-col lg:flex-row items-center p-8 md:p-12 gap-y-5 md:gap-x-[4rem] lg:px-20 xl:px-28  mt-16">
+              <div className="flex flex-col w-full lg:w-1/2 lg:justify-between font-semibold gap-y-6">
                 <div>
                   <h4 className="uppercase text-xs  font-bold text-secondary">
                     why we started it
@@ -79,19 +79,19 @@ const index = (props: Props) => {
                   diligence, open communication and reasonable speed.
                 </p>
               </div>
-              <div className="w-full md:flex md:w-1/2 font-semibold h-full ">
-                <div className="relative min-h-[300px]  lg:min-h-[400px] h-full w-full md:border-[18px] md:border-secondary/20 md:rotate-[8deg] py-6 MD:py-4 rounded-[72px]">
+              <div className="w-full lg:w-1/2 lg:flex font-semibold h-full ">
+                <div className="relative min-h-[300px] lg:min-h-[320px] xl:min-h-[340px] h-full w-full lg:border-[18px] lg:border-secondary/20 lg:rotate-[8deg] py-6 lg:py-4 rounded-[72px]">
                   <Image
                     fill
-                    className="absolute inset-0 md:-rotate-[8deg] w-full h-full object-cover md:shadow-t-2xl rounded-[48px]"
-                    src="https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
-                    alt=""
+                    className="absolute inset-0 lg:-rotate-[8deg] w-full h-full object-cover lg:shadow-t-2xl rounded-[48px]"
+                    src="/images/new_about2.jpg"
+                    alt="about_us_2"
                   />
                 </div>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row-reverse items-center p-5  gap-y-5 md:p-12 lg:px-28 gap-x-8">
-              <div className="flex flex-col w-full md:w-1/2 font-semibold gap-y-6">
+            <div className="flex flex-col md:flex-row-reverse items-center p-8 gap-y-5 md:gap-x-[4rem] md:p-12 lg:px-20 xl:px-28  gap-x-8">
+              <div className="flex flex-col w-full lg:w-1/2 font-semibold gap-y-6">
                 <div>
                   <h4 className="uppercase text-xs  font-bold text-secondary">
                     Why we started it
@@ -100,11 +100,11 @@ const index = (props: Props) => {
                 </div>
                 <p className="text-md font-medium leading-5">
                   Alphabet Trading PLC was formally established in November 2019
-                  by Mr Henock Fikru Asfaw in partnership with his mother, to
-                  engage mainly in the export of agricultural goods from
-                  Ethiopia and has been focused on building relationships with
-                  coffee producers and suppliers from the Southern and Western
-                  parts of Ethiopia, in Sidama, Oromia and SNNP regions.
+                  by Mr Henock Fikru Asfaw along with his mother, to engage
+                  mainly in the export of agricultural goods from Ethiopia and
+                  has been focused on building relationships with coffee
+                  producers and suppliers from the Southern and Western parts of
+                  Ethiopia, in Sidama, Oromia and SNNP regions.
                 </p>
                 <p className="text-md font-medium leading-5">
                   The company has its office on the 5th floor of Bel Amour
@@ -115,13 +115,13 @@ const index = (props: Props) => {
                   rapid turnaround of sample evaluation and reporting.
                 </p>
               </div>
-              <div className="w-full md:flex md:w-1/2 font-semibold">
-                <div className="relative min-h-[300px]  lg:min-h-[400px]  h-full w-full md:border-[18px] md:border-secondary/20 md:rotate-[8deg] py-6 MD:py-4 rounded-[72px]">
+              <div className="w-full lg:w-1/2 lg:flex font-semibold">
+                <div className="relative min-h-[300px] lg:min-h-[320px] xl:min-h-[340px] h-full w-full lg:border-[18px] lg:border-secondary/20 lg:rotate-[8deg] py-6 lg:py-4 rounded-[72px]">
                   <Image
                     fill
-                    className="md:-rotate-[8deg] w-full h-full object-cover md:shadow-t-2xl rounded-[48px]"
-                    src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
-                    alt=""
+                    className="lg:-rotate-[8deg] w-full h-full object-cover lg:shadow-t-2xl rounded-[48px]"
+                    src="/images/new_about3.jpg"
+                    alt="about_us_3"
                   />
                 </div>
               </div>
