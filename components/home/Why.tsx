@@ -24,8 +24,8 @@ const Why = (props: Props) => {
           </p> */}
         </div>
         <div className="w-full flex justify-center items-center py-2">
-          <div className="w-11/12 sm:w-3/4 md:w-full lg:w-[96%] 2k:w-4/5 grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-8 xl:gap-x-10 px-10 lg:px-24 xl:px-28 mb-16 gap-y-3 text-md font-medium">
-            <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
+          <div className="w-11/12 sm:w-3/4 md:w-full lg:w-[96%] 2k:w-4/5 grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-8 xl:gap-x-10 px-[1rem] lg:px-24 xl:px-28 mb-16 gap-y-3 text-md font-medium">
+            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
               <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
                 <img
                   alt="sustainability"
@@ -44,7 +44,7 @@ const Why = (props: Props) => {
                 </p>
               </div>
             </div>
-            <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
+            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
               <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
                 <img
                   alt="transparency"
@@ -63,7 +63,7 @@ const Why = (props: Props) => {
                 </p>
               </div>
             </div>
-            <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
+            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
               <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
                 <img
                   alt="traceability"

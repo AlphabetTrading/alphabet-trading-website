@@ -11,7 +11,6 @@ const ContactMap = (props: Props) => {
         height="600"
         style={{ border: 0 }}
         allowFullScreen
-        className="aspect-square"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>{" "}
