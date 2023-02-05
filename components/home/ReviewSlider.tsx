@@ -37,13 +37,13 @@ const reviews: Review[] = [
     review:
       "Alphabet coffee has become a more reliable and professional partner we could have imagined for a new company. Their ability to produce and ship quality as specified, promptly and accurately surpasses many more experienced companies. We also have navigated challenges quickly and effectively. How impressive the success of this new company has been in navigating the challenges in Ethiopia and globally with such poise and success from 2020 to 2022 is hard to overstate.",
   },
-  {
-    name: "Kaleb Mesfin",
-    role: "Web Developer",
-    company: "A2SV",
-    review:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
+  // {
+  //   name: "Kaleb Mesfin",
+  //   role: "Web Developer",
+  //   company: "A2SV",
+  //   review:
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  // },
 ];
 const ReviewSlider = () => {
   const [index, setIndex] = useState(0);
@@ -75,7 +75,7 @@ const ReviewSlider = () => {
           aria-label="prev-button"
           type="button"
           onClick={prevStep}
-          className="rounded-full bg-white p-2 cursor-pointer  drop-shadow-md shadow-lg"
+          className="hidden rounded-full bg-white p-2 cursor-pointer  drop-shadow-md shadow-lg"
         >
           <FaChevronLeft
             className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8"
@@ -113,7 +113,7 @@ const ReviewSlider = () => {
           id="next-button"
           aria-label="next-button"
           onClick={nextStep}
-          className="rounded-full bg-white p-2 cursor-pointer drop-shadow-md shadow-lg"
+          className="hidden rounded-full bg-white p-2 cursor-pointer drop-shadow-md shadow-lg"
         >
           <FaChevronRight
             className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8"

@@ -10,66 +10,75 @@ const Why = (props: Props) => {
         <div className="flex flex-col mx-auto items-center gap-y-2 w-5/6 md:w-2/3 lg:w-3/5">
           <div className="">
             <h1 className="uppercase text-xs 2k:text-lg 4k:text-xl font-bold text-secondary">
-              Lorem Ipsum
+              Alphabet Trading
             </h1>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl 2k:text-6xl font-bold">
-              Lorem ipsum dolor
+            <h1 className="text-2xl md:text-3xl lg:text-4xl 2k:text-5xl font-bold uppercase">
+              We Provide you With
             </h1>
           </div>
-          <p className="text-center 2k:text-2xl 4k:text-4xl">
+          {/* <p className="text-center 2k:text-2xl 4k:text-4xl">
             Lorem ipsum dolor sit amet consectetur. Eu et mattis turpis porta
             pulvinar elementum et dui. Ut arcu morbi lacinia sagittis dui nunc
             ac. Aliquam ipsum egestas eu sagittis elit amet. Nec montes ut
             accumsan mollis nisi et.
-          </p>
+          </p> */}
         </div>
         <div className="w-full flex justify-center items-center py-2">
-          <div className="w-11/12 sm:w-3/4 md:w-full xl:w-11/12 2xl:w-3/4 2k:w-4/5 grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-5 px-10 lg:px-24 xl:px-28 mb-16 gap-y-3 text-md font-medium">
-            <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-xl">
+          <div className="w-11/12 sm:w-3/4 md:w-full lg:w-[96%] 2k:w-4/5 grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-8 xl:gap-x-10 px-10 lg:px-24 xl:px-28 mb-16 gap-y-3 text-md font-medium">
+            <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
               <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
                 <img
                   alt="sustainability"
                   className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-24"
                   src="/icons/sustain.svg"
                 />
-                <h1 className="text-lg font-medium 2k:text-2xl 4k:text-3xl">
-                  Sustainability
+                <h1 className="font-semibold text-center text-lg xl:text-xl 2k:text-2xl 4k:text-3xl">
+                  Best Quality Coffee
                 </h1>
-                <p className="text-sm 2k:text-lg 4k:text-2xl font-light text-center w-11/12 md:w-5/6 lg:w-4/5 h-full">
-                  Lorem ipsum dolor sit amet consectetur. Dui vivamus eget
-                  porttitor nulla quam eget egestas.
+                <p className="text-sm xl:text-md 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
+                  We source our organic and specialty grade coffees from the
+                  birthplace of Coffee - Ethiopia, which is known for its
+                  strong, bright flavor and distinctive berry aroma. Each crop
+                  is hand-selected with the utmost care and attention in order
+                  to bring out its unique characteristics
                 </p>
               </div>
             </div>
-            <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-xl">
+            <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
               <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
                 <img
                   alt="transparency"
                   className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-24"
                   src="/icons/transparency.svg"
                 />
-                <h1 className="text-lg 2k:text-2xl 4k:text-3xl font-medium">
-                  Transparency
+                <h1 className="text-lg xl:text-xl text-center 2k:text-2xl 4k:text-3xl font-semibold">
+                  Meticulous Production
                 </h1>
-                <p className="text-sm 2k:text-lg 4k:text-2xl font-light text-center w-11/12 md:w-5/6 lg:w-4/5 h-full">
-                  Lorem ipsum dolor sit amet consectetur. Dui vivamus eget
-                  porttitor nulla quam eget egestas.
+                <p className="text-sm xl:text-md 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
+                  Our specialists keep a watchful eye on all phases of
+                  production, from the choice of crops and processing to putting
+                  our beans into containers for shipment. This guarantees that
+                  only highest standards are implemented when it comes to
+                  quality assurance and freshness.
                 </p>
               </div>
             </div>
-            <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-xl">
+            <div className="w-full h-full p-8 py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
               <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
                 <img
                   alt="traceability"
                   className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-24"
                   src="/icons/traceability.svg"
                 />
-                <h1 className="text-lg 2k:text-2xl 4k:text-3xl font-medium">
-                  Traceability
+                <h1 className="text-lg xl:text-xl 2k:text-2xl 4k:text-3xl text-center font-semibold">
+                  Overall Satisfaction
                 </h1>
-                <p className="text-sm 2k:text-lg 4k:text-2xl font-light text-center w-11/12 md:w-5/6 lg:w-4/5 h-full">
-                  Lorem ipsum dolor sit amet consectetur. Dui vivamus eget
-                  porttitor nulla quam eget egestas.
+                <p className="text-sm xl:text-md 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
+                  We proudly offer clients around the globe the finest, freshest
+                  coffee beans available. We strive to provide outstanding
+                  service and guarantee satisfaction by consistently going above
+                  and beyond to ensure all services meet or exceed
+                  customers&apos; expectations.
                 </p>
               </div>
             </div>
@@ -115,7 +124,7 @@ const Why = (props: Props) => {
             <Image
               className="w-full h-full object-cover"
               fill
-              src="/images/whyalphabet1.svg"
+              src="/images/new_whyalphabet1.jpg"
               alt="why-alphabet-1"
             />
           </div>
@@ -127,7 +136,7 @@ const Why = (props: Props) => {
             <Image
               className="w-full h-full object-cover"
               fill
-              src="/images/whyalphabet2.svg"
+              src="/images/new_whyalphabet2.jpg"
               alt="why-alphabet-2"
             />
           </div>
@@ -136,14 +145,17 @@ const Why = (props: Props) => {
               Commitment to Excellence
             </h2>
             <p className="text-sm md:text-lg 2k:text-2xl  4k:text-3xl leading-5 md:leading-6">
-              Embracing a sustainability approach means that we act hand in hand
-              with the environment and the people we work with. We bear
-              responsibility for the environment, the organization and the
-              economic livelihood of the people around us.
+              We strive for nothing less than best-in-class offerings, customer
+              service, and convenience in all of our operations. From evaluating
+              the quality of beans from our suppliers to ensuring that the
+              coffee we ship arrives on time and in excellent condition, we make
+              sure every step of the process is handled with utmost care and
+              dedication.
             </p>
             <p className="text-sm md:text-lg 2k:text-2xl  4k:text-3xl leading-5 md:leading-6">
-              We have devised a model where we don’t degrade the contribution of
-              others environmentally, economically and socially.
+              Additionally, we are constantly looking for better ways to
+              innovate our services and processes to provide the best possible
+              experience for all involved.
             </p>
           </div>
         </div>

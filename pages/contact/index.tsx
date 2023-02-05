@@ -19,7 +19,7 @@ const index = (props: Props) => {
           content="Regardless of your location, our team is always available to answer any questions that you may have regarding our products or orders. You can come straight to our office or Get in touch by telephone, email or use the contact form and we’ll be more than happy to help!"
         />
       </Head>
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <Navbar white />
         <div className="w-full flex flex-col lg:flex-row justify-center lg:justify-evenly items-center gap-y-3 p-5 lg:p-12 xl:px-20 mb-4 mt-20">
           <ContactForm />

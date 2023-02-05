@@ -14,7 +14,7 @@ const Review = () => {
         />
       </div>
       <div className="relative z-10">
-        <h1 className="text-4xl 2k:text-5xl text-center font-semibold mt-4">
+        <h1 className="text-4xl 2k:text-5xl text-center font-bold mt-4">
           Customer Reviews
         </h1>
         <ReviewSlider />
