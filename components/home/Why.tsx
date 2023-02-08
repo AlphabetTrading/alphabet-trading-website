@@ -25,17 +25,17 @@ const Why = (props: Props) => {
         </div>
         <div className="w-full flex justify-center items-center py-2">
           <div className="w-11/12 sm:w-3/4 md:w-full lg:w-[96%] 2k:w-4/5 grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-8 xl:gap-x-10 px-[1rem] lg:px-24 xl:px-28 mb-16 gap-y-3 text-md font-medium">
-            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
-              <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
+            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col justify-center my-[2rem] rounded-[20px] shadow-2xl">
+              <div className="w-full flex flex-col gap-y-[1rem] items-center justify-center">
                 <img
                   alt="sustainability"
-                  className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-24"
-                  src="/icons/sustain.svg"
+                  className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-2"
+                  src="/icons/new_sustain.svg"
                 />
                 <h1 className="font-semibold text-center text-lg xl:text-xl 2k:text-2xl 4k:text-3xl">
                   Best Quality Coffee
                 </h1>
-                <p className="text-sm xl:text-md 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
+                <p className="text-sm 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
                   We source our organic and specialty grade coffees from the
                   birthplace of Coffee - Ethiopia, which is known for its
                   strong, bright flavor and distinctive berry aroma. Each crop
@@ -44,17 +44,17 @@ const Why = (props: Props) => {
                 </p>
               </div>
             </div>
-            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
-              <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
+            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col justify-center my-[2rem]  rounded-[20px] shadow-2xl">
+              <div className="w-full flex flex-col gap-y-[1rem] items-center justify-center">
                 <img
                   alt="transparency"
-                  className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-24"
-                  src="/icons/transparency.svg"
+                  className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-2"
+                  src="/icons/new_transparency.svg"
                 />
                 <h1 className="text-lg xl:text-xl text-center 2k:text-2xl 4k:text-3xl font-semibold">
                   Meticulous Production
                 </h1>
-                <p className="text-sm xl:text-md 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
+                <p className="text-sm 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
                   Our specialists keep a watchful eye on all phases of
                   production, from the choice of crops and processing to putting
                   our beans into containers for shipment. This guarantees that
@@ -63,17 +63,17 @@ const Why = (props: Props) => {
                 </p>
               </div>
             </div>
-            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col my-2 rounded-[20px] shadow-2xl">
-              <div className="w-full flex flex-col gap-y-2 2k:gap-y-4 items-center justify-center">
+            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col justify-center my-[2rem] rounded-[20px] shadow-2xl">
+              <div className="w-full flex flex-col gap-y-[1rem] items-center justify-center">
                 <img
                   alt="traceability"
                   className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-24"
-                  src="/icons/traceability.svg"
+                  src="/icons/new_traceability.svg"
                 />
                 <h1 className="text-lg xl:text-xl 2k:text-2xl 4k:text-3xl text-center font-semibold">
                   Overall Satisfaction
                 </h1>
-                <p className="text-sm xl:text-md 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
+                <p className="text-sm 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
                   We proudly offer clients around the globe the finest, freshest
                   coffee beans available. We strive to provide outstanding
                   service and guarantee satisfaction by consistently going above
