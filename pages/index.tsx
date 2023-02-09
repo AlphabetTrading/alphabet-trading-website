@@ -33,7 +33,10 @@ export default function Home() {
           preload="auto"
           poster="/images/hero_video_poster.jpg"
         >
-          <source src="/alphabet-coffee-v5.mp4" type="video/mp4" />
+          <source src="/FINAL COFFEE  COLOER VIDEO_480p.mp4" type="video/mp4" />
+          <source src="/FINAL COFFEE  COLOER VIDEO_720p.mp4" type="video/mp4" />
+          <source src="/FINAL COFFEE  COLOER VIDEO.mp4" type="video/mp4" />
+          <source src="/FINAL COFFEE  COLOERVIDEO 4K.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <Welcome />
