@@ -29,9 +29,9 @@
     font-family: Raleway;
     color: var(--text-primary);
   }
+
   body {
-    display: flex;
-    justify-content: center;
+    width: "100%";
   }
 }
 
