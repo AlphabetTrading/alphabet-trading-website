@@ -4,7 +4,6 @@ import BaseLayout from "../../components/common/BaseLayout";
 import Footer from "../../components/common/Footer";
 import Navbar from "../../components/common/Navbar";
 import Image from "next/image";
-import { S3_URL } from "../../config";
 
 type Props = {};
 
@@ -51,7 +50,7 @@ const index = (props: Props) => {
             <div className="relative min-h-[350px] ">
               <Image
                 fill
-                src={`${S3_URL}/images/about1.webp`}
+                src={`https://alphabettrading.s3.amazonaws.com/images/about1.webp`}
                 alt="about_us_1"
                 className="h-full w-full object-cover"
               />
@@ -85,7 +84,7 @@ const index = (props: Props) => {
                   <Image
                     fill
                     className="absolute inset-0 lg:-rotate-[8deg] w-full h-full object-cover lg:shadow-t-2xl rounded-[48px]"
-                    src={`${S3_URL}/images/about2.webp`}
+                    src={`https://alphabettrading.s3.amazonaws.com/images/about2.webp`}
                     alt="about_us_2"
                   />
                 </div>
@@ -121,7 +120,7 @@ const index = (props: Props) => {
                   <Image
                     fill
                     className="lg:-rotate-[8deg] w-full h-full object-cover lg:shadow-t-2xl rounded-[48px]"
-                    src={`${S3_URL}/images/about3.webp`}
+                    src={`https://alphabettrading.s3.amazonaws.com/images/about3.webp`}
                     alt="about_us_3"
                   />
                 </div>
