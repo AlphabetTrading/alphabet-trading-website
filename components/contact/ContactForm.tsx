@@ -37,7 +37,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/3 text-[#282828] p-5 py-7 pr-10 rounded-lg">
+      <div className="w-full md:w-5/6 lg:w-1/3 xl:w-1/2 2k:w-4/5 text-[#282828] p-6 py-7 pr-10 rounded-lg">
         <h1 className="text-[46px] font-bold mb-6">Contact Us</h1>
         <Formik
           validationSchema={schemaValidation}

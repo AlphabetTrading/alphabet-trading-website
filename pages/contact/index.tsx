@@ -19,14 +19,14 @@ const index = (props: Props) => {
           content="Regardless of your location, our team is always available to answer any questions that you may have regarding our products or orders. You can come straight to our office or Get in touch by telephone, email or use the contact form and we’ll be more than happy to help!"
         />
       </Head>
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full items-center xl:w-11/12 2k:w-3/4 4k:w-1/2 ">
         <Navbar white />
-        <div className="w-full flex flex-col lg:flex-row justify-center lg:justify-evenly items-center gap-y-3 p-5 lg:p-12 xl:px-20 mb-4 mt-20">
+        <div className="w-full flex flex-col lg:flex-row items-center  lg:justify-center justify-evenly gap-y-3 p-5 lg:p-12 xl:px-20 mb-4 mt-20">
           <ContactForm />
           <ContactMap />
         </div>
-        <div className="w-full flex justify-center items-center py-2">
-          <div className="w-full grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-5 px-10 lg:px-24 mb-16 gap-y-3 text-md font-medium">
+        <div className="w-full md:w-5/6 lg:w-full xl:w-11/12 flex justify-center items-center py-2">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-3 justify-center place-content-center items-center md:gap-x-5 px-10 mb-16 gap-y-3 text-md font-medium">
             <div className="h-full w-full  gap-x-2 p-4 px-8 lg:py-6 rounded-[20px] shadow-2xl">
               <div className="flex items-start gap-x-2">
                 <FaPhoneAlt className="mt-1" size={24} />
