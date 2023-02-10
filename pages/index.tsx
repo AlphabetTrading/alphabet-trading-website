@@ -1,13 +1,10 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import Navbar from "../components/common/Navbar";
 import Welcome from "../components/home/Welcome";
 import Why from "../components/home/Why";
 import Review from "../components/home/Review";
 import Details from "../components/home/Details";
 import BaseLayout from "../components/common/BaseLayout";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -31,9 +28,24 @@ export default function Home() {
           className="min-h-[400px] aspect-video object-cover w-screen bg-secondary"
           width="100%"
           preload="auto"
-          poster="/images/hero_video_poster.jpg"
+          poster={`${process.env.NEXT_APP_S3_URL}/images/hero_video_poster_min.webp`}
         >
-          <source src="/FINAL COFFEE  COLOER VIDEO_480p.mp4" type="video/mp4" />
+          <source
+            src={`${process.env.NEXT_APP_S3_URL}/FINAL+COFFEE++COLOER+VIDEO_480p.mp4`}
+            type="video/mp4"
+          />
+          <source
+            src={`${process.env.NEXT_APP_S3_URL}/FINAL+COFFEE++COLOER+VIDEO_720p.mp4`}
+            type="video/mp4"
+          />
+          <source
+            src={`${process.env.NEXT_APP_S3_URL}/FINAL+COFFEE++COLOERVIDEO+2K.mp4`}
+            type="video/mp4"
+          />
+          <source
+            src={`${process.env.NEXT_APP_S3_URL}/FINAL+COFFEE++COLOERVIDEO+4K.mp4`}
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
         <Welcome />
