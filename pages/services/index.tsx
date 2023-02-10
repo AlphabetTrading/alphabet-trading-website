@@ -5,6 +5,7 @@ import Navbar from "../../components/common/Navbar";
 import CoffeeTypeItem from "../../components/services/CoffeeTypeItem";
 import Image from "next/image";
 import coffeeTypesData from "../../data/services.json";
+import { S3_URL } from "../../config";
 
 type Props = {};
 
@@ -47,7 +48,7 @@ const index = (props: Props) => {
             <Image
               fill
               className="w-full h-full object-cover aspect-square"
-              src="/images/services1.svg"
+              src={`${S3_URL}/images/services1.webp`}
               alt="services"
               priority
             />

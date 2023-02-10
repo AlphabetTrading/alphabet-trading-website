@@ -33,7 +33,7 @@ const Footer = (props: Props) => {
             </div>
             <div className="w-64 my-2">
               <p className="text-center text-sm text-[#AEAEAE]">
-                Lorem ipsum dolor sit amet In quidem. Lorem ipsum dolor sit.
+                The Finest Selection of Coffee Beans from the Birth Place
               </p>
             </div>
           </div>

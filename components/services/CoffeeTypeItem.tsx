@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
+import { S3_URL } from "../../config";
 
 type Props = {
   index: number;
@@ -29,8 +30,8 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
         <Image
           fill
           priority
-          src={coffeeType.imgSrc}
-          alt=""
+          src={`${S3_URL}${coffeeType.imgSrc}`}
+          alt={coffeeType.name}
           className="h-full w-full object-cover "
         />
       </div>

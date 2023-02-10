@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { S3_URL } from "../../config";
 
 type Props = {};
 
@@ -124,7 +125,7 @@ const Why = (props: Props) => {
             <Image
               className="w-full h-full object-cover"
               fill
-              src="/images/new_whyalphabet1.jpg"
+              src={`${S3_URL}/images/whyalphabet1.webp`}
               alt="why-alphabet-1"
             />
           </div>
@@ -136,7 +137,7 @@ const Why = (props: Props) => {
             <Image
               className="w-full h-full object-cover"
               fill
-              src="/images/new_whyalphabet2.jpg"
+              src={`${S3_URL}/images/whyalphabet2.webp`}
               alt="why-alphabet-2"
             />
           </div>
