@@ -2,6 +2,28 @@ import React, { useEffect, useState } from "react";
 
 type Props = {};
 
+const getVideoSrcs = (width: number) => {
+  if (width >= 1080)
+    return [
+      "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE+COLOER+VIDEO.webm",
+      "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.mp4",
+    ];
+  if (width >= 720)
+    return [
+      "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE+COLOER+VIDEO_720p.webm",
+      "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.mp4",
+    ];
+  if (width >= 480)
+    return [
+      "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE+COLOER+VIDEO_480p.webm",
+      "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.mp4",
+    ];
+  return [
+    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE+COLOR+VIDEO_360p.webm",
+    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE+COLOR+VIDEO_360p.mp4",
+  ];
+};
+
 const HeroVideo = (props: Props) => {
   const [videoSrc, setvideoSrc] = useState(
     "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.mp4"
@@ -80,17 +102,22 @@ const HeroVideo = (props: Props) => {
         }
       }
     };
-    networkInterfaceChange();
-    networkInterface.addEventListener("change", networkInterfaceChange);
-
+    if (networkInterface && !!networkInterface.effectiveType) {
+      networkInterfaceChange();
+      networkInterface.addEventListener("change", networkInterfaceChange);
+    } else {
+      const [webmSrc, mp4Src] = getVideoSrcs(window.innerWidth || 500);
+      setWebmVideoSrc(webmSrc);
+      setWebmVideoSrc(mp4Src);
+    }
     return () => {
-      networkInterface.removeEventListener("change", networkInterfaceChange);
+      if (networkInterface && !!networkInterface.effectiveType) {
+        networkInterface.removeEventListener("change", networkInterfaceChange);
+      }
     };
   }, []);
-
   return (
     <video
-      autoPlay
       loop
       muted
       playsInline
@@ -98,7 +125,11 @@ const HeroVideo = (props: Props) => {
       width="100%"
       preload="auto"
       poster="https://alphabettrading.s3.amazonaws.com/images/hero_video_poster_min.webp"
-      src={webmVideoSrc || videoSrc}
+      autoPlay
+      src={
+        webmVideoSrc || videoSrc ||
+        "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE+COLOR+VIDEO_360p.mp4"
+      }
     >
       <source src={webmVideoSrc} type="video/webm" />
       <source src={videoSrc} type="video/mp4" />
