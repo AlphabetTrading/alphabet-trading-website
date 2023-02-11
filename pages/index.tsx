@@ -2,9 +2,11 @@ import Head from "next/head";
 import Navbar from "../components/common/Navbar";
 import Welcome from "../components/home/Welcome";
 import Why from "../components/home/Why";
+import React, { useState, useEffect } from "react";
 import Review from "../components/home/Review";
 import Details from "../components/home/Details";
 import BaseLayout from "../components/common/BaseLayout";
+import HeroVideo from "../components/home/HeroVideo";
 
 export default function Home() {
   return (
@@ -21,33 +23,7 @@ export default function Home() {
         />
       </Head>
       <div className="flex flex-col justify-center w-full">
-        <video
-          autoPlay
-          loop
-          muted
-          className="min-h-[400px] aspect-video object-cover w-screen bg-secondary"
-          width="100%"
-          preload="auto"
-          poster={`https://alphabettrading.s3.amazonaws.com/images/hero_video_poster_min.webp`}
-        >
-          <source
-            src={`https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.mp4`}
-            type="video/mp4"
-          />
-          <source
-            src={`https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.mp4`}
-            type="video/mp4"
-          />
-          <source
-            src={`https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOERVIDEO+2K.mp4`}
-            type="video/mp4"
-          />
-          <source
-            src={`https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOERVIDEO+4K.mp4`}
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+        <HeroVideo />
         <Welcome />
         <Why />
         <Details />
