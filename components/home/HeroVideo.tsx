@@ -14,18 +14,23 @@ const getVideoSrcs = (width: number) => {
       "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO.webm",
       "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO.mp4",
     ];
+  if (width >= 720)
+    return [
+      "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.webm",
+      "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.mp4",
+    ];
   return [
-    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.webm",
-    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.mp4",
+    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm",
+    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.mp4",
   ];
 };
 
 const HeroVideo = (props: Props) => {
   const [videoSrc, setvideoSrc] = useState(
-    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.mp4"
+    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.mp4"
   );
   const [webmVideoSrc, setWebmVideoSrc] = useState(
-    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.webm"
+    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm"
   );
 
   useEffect(() => {
@@ -36,7 +41,6 @@ const HeroVideo = (props: Props) => {
           networkInterface.effectiveType == "4g" &&
           networkInterface.downlink > 40
         ) {
-          console.log(networkInterface, "4g");
           setvideoSrc(
             "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOERVIDEO+4K.mp4"
           );
@@ -47,7 +51,6 @@ const HeroVideo = (props: Props) => {
           networkInterface.effectiveType == "4g" &&
           networkInterface.downlink > 30
         ) {
-          console.log(networkInterface, "4g");
           setvideoSrc(
             "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOERVIDEO+2K.mp4"
           );
@@ -58,7 +61,6 @@ const HeroVideo = (props: Props) => {
           networkInterface.effectiveType == "4g" &&
           networkInterface.downlink > 20
         ) {
-          console.log(networkInterface, "4g");
           setvideoSrc(
             "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO.mp4"
           );
@@ -66,7 +68,6 @@ const HeroVideo = (props: Props) => {
             "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO.webm"
           );
         } else if (networkInterface.effectiveType == "4g") {
-          console.log(networkInterface, "4g");
           setvideoSrc(
             "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.mp4"
           );
@@ -81,7 +82,6 @@ const HeroVideo = (props: Props) => {
             "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm"
           );
         } else if (networkInterface.effectiveType == "2g") {
-          console.log("2g");
           setvideoSrc(
             "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE+COLOR+VIDEO_360p.mp4"
           );
@@ -90,10 +90,10 @@ const HeroVideo = (props: Props) => {
           );
         } else {
           setvideoSrc(
-            "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.mp4"
+            "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.mp4"
           );
           setWebmVideoSrc(
-            "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.webm"
+            "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm"
           );
         }
       }
@@ -125,7 +125,7 @@ const HeroVideo = (props: Props) => {
       src={
         webmVideoSrc ||
         videoSrc ||
-        "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.webm"
+        "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm"
       }
     >
       <source src={webmVideoSrc} type="video/webm" />
