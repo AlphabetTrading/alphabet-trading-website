@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 type Props = {
+  expanded: false | number;
+  setExpanded: React.Dispatch<React.SetStateAction<number | false>>;
   title: string;
   description: string;
   index: number;
 };
 
-const FaqItem = ({ title, description, index }: Props) => {
+const FaqItem = ({
+  title,
+  expanded,
+  setExpanded,
+  description,
+  index,
+}: Props) => {
+  const isOpen = index === expanded;
+
   return (
     <motion.div
       initial={{
@@ -25,12 +36,13 @@ const FaqItem = ({ title, description, index }: Props) => {
     >
       <button
         aria-label={`faq-${index + 1}`}
-        className="group focus:outline-none"
+        className="focus:outline-none"
+        onClick={() => setExpanded(isOpen ? false : index)}
       >
         <div className="flex flex-row justify-between items-center gap-2 text-xl font-semibold text-[#3D3D3D] hover:bg-[#F6F6FC] p-6  text-start">
           <h1>{title}</h1>
           <svg
-            className="h-8 w-8 group-focus:rotate-180"
+            className={clsx("h-8 w-8", isOpen ? "rotate-180" : "")}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -42,7 +54,12 @@ const FaqItem = ({ title, description, index }: Props) => {
             />
           </svg>
         </div>
-        <div className="max-h-0 overflow-hidden duration-300 group-focus:max-h-fit group-focus:p-4 group-focus:px-10 group-focus:shadow-md">
+        <div
+          className={clsx(
+            "max-h-0 overflow-hidden duration-300",
+            isOpen ? "max-h-fit p-4 px-10 shadow-md" : ""
+          )}
+        >
           <div className="bg-white flex w-full h-fit border-l-4 border-secondary p-4">
             <h1 className="text-start text-sm md:text-md font-semibold tracking-wide text-black/70">
               {description}

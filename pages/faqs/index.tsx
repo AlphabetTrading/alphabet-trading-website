@@ -18,6 +18,7 @@ const faqs: FaqType[] = faqsData;
 const FAQsPage = (props: Props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredFaqs, setFilteredFaqs] = useState<FaqType[]>(faqs);
+  const [expanded, setExpanded] = useState<false | number>(false);
   const handleChange = (query: string) => {
     setSearchQuery(query);
   };
@@ -88,6 +89,8 @@ const FAQsPage = (props: Props) => {
               {filteredFaqs.map((faq: FaqType, index: number) => {
                 return (
                   <FaqItem
+                    expanded={expanded}
+                    setExpanded={setExpanded}
                     key={faq.title}
                     title={faq.title}
                     description={faq.description}
