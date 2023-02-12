@@ -127,7 +127,8 @@ const HeroVideo = (props: Props) => {
       poster="https://alphabettrading.s3.amazonaws.com/images/hero_video_poster_min.webp"
       autoPlay
       src={
-        webmVideoSrc || videoSrc ||
+        webmVideoSrc ||
+        videoSrc ||
         "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE+COLOR+VIDEO_360p.mp4"
       }
     >
