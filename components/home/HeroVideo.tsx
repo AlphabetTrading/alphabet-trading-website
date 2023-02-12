@@ -14,23 +14,18 @@ const getVideoSrcs = (width: number) => {
       "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO.webm",
       "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO.mp4",
     ];
-  if (width >= 720)
-    return [
-      "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.webm",
-      "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.mp4",
-    ];
   return [
-    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm",
-    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.mp4",
+    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.webm",
+    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.mp4",
   ];
 };
 
 const HeroVideo = (props: Props) => {
   const [videoSrc, setvideoSrc] = useState(
-    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.mp4"
+    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.mp4"
   );
   const [webmVideoSrc, setWebmVideoSrc] = useState(
-    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm"
+    "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.webm"
   );
 
   useEffect(() => {
@@ -95,10 +90,10 @@ const HeroVideo = (props: Props) => {
           );
         } else {
           setvideoSrc(
-            "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.mp4"
+            "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.mp4"
           );
           setWebmVideoSrc(
-            "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm"
+            "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.webm"
           );
         }
       }
@@ -130,7 +125,7 @@ const HeroVideo = (props: Props) => {
       src={
         webmVideoSrc ||
         videoSrc ||
-        "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm"
+        "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_720p.webm"
       }
     >
       <source src={webmVideoSrc} type="video/webm" />
