@@ -1,8 +1,8 @@
+import React from "react";
 import Head from "next/head";
 import Navbar from "../components/common/Navbar";
 import Welcome from "../components/home/Welcome";
 import Why from "../components/home/Why";
-import React, { useState, useEffect } from "react";
 import Review from "../components/home/Review";
 import Details from "../components/home/Details";
 import BaseLayout from "../components/common/BaseLayout";

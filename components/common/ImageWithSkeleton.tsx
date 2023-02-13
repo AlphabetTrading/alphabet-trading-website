@@ -6,30 +6,34 @@ interface Props {
   className: string;
   src: string;
   alt: string;
+  props?: any;
 }
 
-const ImageWithSkeleton = ({ className, src, alt }: Props) => {
+const ImageWithSkeleton = ({ className, src, alt, props }: Props) => {
   const [isloaded, setIsloaded] = useState(false);
   return (
     <>
-      <div className={clsx(isloaded ? "relative" : "absolute", "min-h-full")}>
-        <Image
-          fill
-          className={clsx("m-auto inset-0 object-cover", className)}
-          src={src}
-          alt={alt}
-          onLoad={() => setIsloaded(true)}
-        />
-        {isloaded && (
+      <div className={clsx("relative h-full min-h-full ")}>
+        {!isloaded && (
           <div
             className={clsx(
-              "flex animate-pulse flex-row items-center justify-center space-x-5",
+              "flex animate-pulse ease-in-out flex-row items-center justify-center space-x-5 absolute inset-0 object-cover",
               className
             )}
           >
-            <div className="h-full w-full bg-secondary/10"></div>
+            <div className="h-full w-full bg-secondary/20"></div>
           </div>
         )}
+        <Image
+          fill
+          className={clsx("absolute inset-0 object-cover", className)}
+          src={src}
+          alt={alt}
+          {...props}
+          onLoadingComplete={() => {
+            setIsloaded(true);
+          }}
+        />
       </div>
       ;
     </>
