@@ -49,8 +49,8 @@ const index = (props: Props) => {
               </div>
             </div>
             <div className="relative min-h-[350px] ">
-              <Image
-                fill
+              <ImageWithSkeleton
+                props={{ fill: true }}
                 src={`https://alphabettrading.s3.amazonaws.com/images/about1.webp`}
                 alt="about_us_1"
                 className="h-full w-full object-cover"
@@ -82,8 +82,8 @@ const index = (props: Props) => {
               </div>
               <div className="w-full lg:w-1/2 lg:flex font-semibold h-full ">
                 <div className="relative min-h-[300px] lg:min-h-[320px] xl:min-h-[340px] h-full w-full lg:border-[18px] lg:border-secondary/20 lg:rotate-[8deg] py-6 lg:py-4 rounded-[72px]">
-                  <Image
-                    fill
+                  <ImageWithSkeleton
+                    props={{ fill: true }}
                     className="absolute inset-0 lg:-rotate-[8deg] w-full h-full object-cover lg:shadow-t-2xl rounded-[48px]"
                     src={`https://alphabettrading.s3.amazonaws.com/images/about2.webp`}
                     alt="about_us_2"
@@ -118,8 +118,8 @@ const index = (props: Props) => {
               </div>
               <div className="w-full lg:w-1/2 lg:flex font-semibold h-full ">
                 <div className="relative min-h-[300px] lg:min-h-[320px] xl:min-h-[340px] h-full w-full lg:border-[18px] lg:border-secondary/20 lg:rotate-[8deg] py-6 lg:py-4 rounded-[72px]">
-                  <Image
-                    fill
+                  <ImageWithSkeleton
+                    props={{ fill: true }}
                     className="absolute inset-0 lg:-rotate-[8deg] w-full h-full object-cover lg:shadow-t-2xl rounded-[48px]"
                     src={`https://alphabettrading.s3.amazonaws.com/images/about3.webp`}
                     alt="about_us_3"

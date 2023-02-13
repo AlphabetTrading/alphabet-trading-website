@@ -24,8 +24,10 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
       >
         <div className="bg-[#086965]/20 w-3/5 md:w-[45%] lg:w-[30%] xl:w-1/4 2k:w-1/5 4k:w-1/6 h-[20rem] lg:h-96 xl:h-[440px] 2xl:h-[500px] 2k:h-[580px] 4k:h-[700px] rounded-[2rem] relative mb-[2rem] aspect-4/3 lg:aspect-square">
           <div className="bg-white w-full h-[24rem] lg:h-96 xl:h-[440px] 2xl:h-[500px] 2k:h-[580px] 4k:h-[700px] rounded-[2rem] absolute z-10 top-0 left-0 lg:top-12 lg:left-12 2k:left-16 2k:top-16">
-            <Image
-              fill
+            <ImageWithSkeleton
+              props={{
+                fill: true,
+              }}
               className="object-cover rounded-[2rem] w-full h-full"
               src={imageSrc}
               alt="detail item"

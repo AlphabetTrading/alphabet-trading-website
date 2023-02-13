@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 
 type Props = {
   index: number;
@@ -26,9 +27,11 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
           index % 2 === 0 ? "md:order-1" : "md:order-2"
         )}
       >
-        <Image
-          fill
-          priority
+        <ImageWithSkeleton
+          props={{
+            fill: true,
+            priority: true,
+          }}
           src={`https://alphabettrading.s3.amazonaws.com${coffeeType.imgSrc}`}
           alt={coffeeType.name}
           className="h-full w-full object-cover "
