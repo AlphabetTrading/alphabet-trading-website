@@ -4,6 +4,7 @@ import BaseLayout from "../../components/common/BaseLayout";
 import Footer from "../../components/common/Footer";
 import Navbar from "../../components/common/Navbar";
 import Image from "next/image";
+import ImageWithSkeleton from "../../components/common/ImageWithSkeleton";
 
 type Props = {};
 
@@ -90,7 +91,7 @@ const index = (props: Props) => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row-reverse items-center p-8 gap-y-5 md:gap-x-[4rem] md:p-12 lg:px-20 xl:px-28  gap-x-8">
+            <div className="flex flex-col lg:flex-row-reverse items-center p-8 gap-y-5 md:gap-x-[4rem] md:p-12 lg:px-20 xl:px-28  gap-x-8">
               <div className="flex flex-col w-full lg:w-1/2 font-semibold gap-y-6">
                 <div>
                   <h4 className="uppercase text-xs  font-bold text-secondary">
@@ -115,11 +116,11 @@ const index = (props: Props) => {
                   rapid turnaround of sample evaluation and reporting.
                 </p>
               </div>
-              <div className="w-full lg:w-1/2 lg:flex font-semibold">
+              <div className="w-full lg:w-1/2 lg:flex font-semibold h-full ">
                 <div className="relative min-h-[300px] lg:min-h-[320px] xl:min-h-[340px] h-full w-full lg:border-[18px] lg:border-secondary/20 lg:rotate-[8deg] py-6 lg:py-4 rounded-[72px]">
                   <Image
                     fill
-                    className="lg:-rotate-[8deg] w-full h-full object-cover lg:shadow-t-2xl rounded-[48px]"
+                    className="absolute inset-0 lg:-rotate-[8deg] w-full h-full object-cover lg:shadow-t-2xl rounded-[48px]"
                     src={`https://alphabettrading.s3.amazonaws.com/images/about3.webp`}
                     alt="about_us_3"
                   />

@@ -114,7 +114,7 @@ const Navbar = ({ white }: Props) => {
     <div className="overflow-x-hidden">
       <motion.header
         className={clsx(
-          "w-full top-0 left-0 fixed transition p-6  z-50 duration-500 ease-in-out",
+          "w-full top-0 left-0 fixed transition p-4 md:p-6 z-50 duration-500 ease-in-out",
           white ? "text-gray-700" : "text-white",
 
           scrolledYAmount > 50 || isOpen
@@ -131,8 +131,8 @@ const Navbar = ({ white }: Props) => {
         >
           <div className="flex-shrink-0 ml-2 md:ml-4 lg:ml-6 xl:ml-8">
             <Link className="z-20" href="/">
-              <div className="flex  gap-x-2">
-                <div className="flex  justify-center">
+              <div className="flex items-center gap-x-1 md:gap-x-2">
+                <div className="flex h-12 items-center justify-center">
                   {!(scrolledYAmount > 50 || isOpen) ? (
                     <img
                       className="w-full h-full aspect-square"
@@ -149,7 +149,7 @@ const Navbar = ({ white }: Props) => {
                 </div>
                 <h1
                   className={clsx(
-                    "text-2xl 2k:text-3xl 4k:text-4xl font-normal tracking-wide",
+                    "text-xl md:text-2xl 2k:text-3xl 4k:text-4xl font-normal tracking-wide",
                     white ? "" : "text-white"
                   )}
                 >
@@ -241,7 +241,7 @@ const Navbar = ({ white }: Props) => {
                   transition: "var(--transition)",
                 }}
                 variants={variants}
-                className="min-w-full  flex flex-col p-5 px-10 gap-y-3 bg-[#0A1026] rounded-xl absolute top-24 md:top-20 right-0 left-0 z-50"
+                className="min-w-full  flex flex-col p-5 px-10 gap-y-3 bg-[#0A1026] rounded-xl absolute top-20 right-0 left-0 z-50"
               >
                 {navigationItems.map((navItem) => (
                   <motion.li

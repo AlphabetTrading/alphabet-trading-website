@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 
 type Props = {
   index: number;
