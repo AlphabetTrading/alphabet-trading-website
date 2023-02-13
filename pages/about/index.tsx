@@ -25,9 +25,9 @@ const index = (props: Props) => {
             <div className="flex flex-col justify-center gap-y-5 gap-x-2 md:flex-row p-8 md:p-12 lg:px-20 xl:px-28  lg:pb-16 items-center">
               {/* <div className="w-11/12 flex flex-col justify-center gap-y-5 md:flex-row p-5 md:p-12 lg:px-28 lg:pb-32 items-center"> */}
               <div className="w-full lg:w-1/2  font-semibold">
-                <h4 className="uppercase text-xs font-bold text-secondary">
+                <h1 className="uppercase text-xs font-bold text-secondary">
                   About Alphabet Trading
-                </h4>
+                </h1>
                 <div className="w-full lg:w-4/5 2xl:w-2/3">
                   <h1 className="text-5xl font-bold">
                     We <span className="text-secondary">always</span> deliver on
@@ -48,20 +48,20 @@ const index = (props: Props) => {
                 </p>
               </div>
             </div>
-            <div className="relative min-h-[350px] ">
+            <div className="relative h-44 min-h-[350px]">
               <ImageWithSkeleton
                 props={{ fill: true }}
                 src={`https://alphabettrading.s3.amazonaws.com/images/about1.webp`}
                 alt="about_us_1"
-                className="h-full w-full object-cover"
+                className="h-full w-full"
               />
             </div>
             <div className="flex flex-col lg:flex-row items-center p-8 md:p-12 gap-y-5 md:gap-x-[4rem] lg:px-20 xl:px-28  mt-16">
               <div className="flex flex-col w-full lg:w-1/2 lg:justify-between font-semibold gap-y-6">
                 <div>
-                  <h4 className="uppercase text-xs  font-bold text-secondary">
+                  <h1 className="uppercase text-xs  font-bold text-secondary">
                     why we started it
-                  </h4>
+                  </h1>
                   <h1 className="text-5xl font-bold">Our Story</h1>
                 </div>
                 <p className="text-md font-medium leading-5">
@@ -81,7 +81,7 @@ const index = (props: Props) => {
                 </p>
               </div>
               <div className="w-full lg:w-1/2 lg:flex font-semibold h-full ">
-                <div className="relative min-h-[300px] lg:min-h-[320px] xl:min-h-[340px] h-full w-full lg:border-[18px] lg:border-secondary/20 lg:rotate-[8deg] py-6 lg:py-4 rounded-[72px]">
+                <div className="relative h-96 xl:h-80 min-h-[300px] lg:min-h-[320px] xl:min-h-[340px] w-full lg:border-[18px] lg:border-secondary/20 lg:rotate-[8deg] py-6 lg:py-4 rounded-[72px]">
                   <ImageWithSkeleton
                     props={{ fill: true }}
                     className="absolute inset-0 lg:-rotate-[8deg] w-full h-full object-cover lg:shadow-t-2xl rounded-[48px]"
@@ -94,9 +94,9 @@ const index = (props: Props) => {
             <div className="flex flex-col lg:flex-row-reverse items-center p-8 gap-y-5 md:gap-x-[4rem] md:p-12 lg:px-20 xl:px-28  gap-x-8">
               <div className="flex flex-col w-full lg:w-1/2 font-semibold gap-y-6">
                 <div>
-                  <h4 className="uppercase text-xs  font-bold text-secondary">
+                  <h1 className="uppercase text-xs  font-bold text-secondary">
                     Why we started it
-                  </h4>
+                  </h1>
                   <h1 className="text-5xl font-bold">Who We Are</h1>
                 </div>
                 <p className="text-md font-medium leading-5">
@@ -117,7 +117,7 @@ const index = (props: Props) => {
                 </p>
               </div>
               <div className="w-full lg:w-1/2 lg:flex font-semibold h-full ">
-                <div className="relative min-h-[300px] lg:min-h-[320px] xl:min-h-[340px] h-full w-full lg:border-[18px] lg:border-secondary/20 lg:rotate-[8deg] py-6 lg:py-4 rounded-[72px]">
+                <div className="relative h-96 xl:h-80 min-h-[300px] lg:min-h-[320px] xl:min-h-[340px] h-full w-full lg:border-[18px] lg:border-secondary/20 lg:rotate-[8deg] py-6 lg:py-4 rounded-[72px]">
                   <ImageWithSkeleton
                     props={{ fill: true }}
                     className="absolute inset-0 lg:-rotate-[8deg] w-full h-full object-cover lg:shadow-t-2xl rounded-[48px]"

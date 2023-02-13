@@ -124,7 +124,7 @@ const Why = (props: Props) => {
           <div className="relative order-1 md:order-2 col-span-1 2k:col-span-2 8k:col-span-3 h-80 4k:h-[40rem] md:h-auto flex flex-col gap-y-2">
             <ImageWithSkeleton
               props={{ fill: true }}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover bg-navy/20"
               src={`https://alphabettrading.s3.amazonaws.com/images/whyalphabet1.webp`}
               alt="why-alphabet-1"
             />
@@ -133,10 +133,10 @@ const Why = (props: Props) => {
       </div>
       <div className="relative flex flex-col bg-[#086965]">
         <div className="w-full grid grid-cols-1 md:grid-cols-3 2k:grid-cols-5">
-          <div className="relative order-1 md:order-1 col-span-2 2k:col-span-3 h-full md:flex flex-col gap-y-2">
+          <div className="relative order-1 md:order-1 col-span-2 2k:col-span-3 h-80 md:h-full md:flex flex-col gap-y-2">
             <ImageWithSkeleton
               props={{ fill: true }}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover bg-secondary/20"
               src={`https://alphabettrading.s3.amazonaws.com/images/whyalphabet2.webp`}
               alt="why-alphabet-2"
             />

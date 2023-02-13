@@ -33,12 +33,12 @@ const index = (props: Props) => {
                 <div className="flex flex-col items-start text-sm gap-y-1">
                   <h1 className="text-xl font-bold">Call Us</h1>
                   <div className="leading-5">
-                    <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
-                    <h3>Sat 9:00 a.m - 12:00 p.m</h3>
+                    <h2>Mon - Fri 9:00 a.m - 5:30 p.m,</h2>
+                    <h2>Sat 9:00 a.m - 12:00 p.m</h2>
                   </div>
                   <div className="text-secondary">
-                    <h4>(+251) 911261233</h4>
-                    <h4>(+251) 118220469</h4>
+                    <h2>(+251) 911261233</h2>
+                    <h2>(+251) 118220469</h2>
                   </div>
                 </div>
               </div>
@@ -49,13 +49,13 @@ const index = (props: Props) => {
                 <div className="flex flex-col text-sm gap-y-1">
                   <h1 className="text-xl font-bold">Visit Us</h1>
                   <div className="leading-5">
-                    <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
-                    <h3>Sat 9:00 a.m - 12:00 p.m</h3>
+                    <h2>Mon - Fri 9:00 a.m - 5:30 p.m,</h2>
+                    <h2>Sat 9:00 a.m - 12:00 p.m</h2>
                   </div>
                   <div className="text-secondary">
-                    <h4>Alphabet Trading PLC,</h4>
-                    <h4>Bel Amour Bldg 5th Floor</h4>
-                    <h4>Addis Ababa, Ethiopia.</h4>
+                    <h2>Alphabet Trading PLC,</h2>
+                    <h2>Bel Amour Bldg 5th Floor</h2>
+                    <h2>Addis Ababa, Ethiopia.</h2>
                   </div>
                 </div>
               </div>
@@ -66,12 +66,12 @@ const index = (props: Props) => {
                 <div className="flex flex-col text-sm gap-y-1">
                   <h1 className="text-xl font-bold">Mail Us</h1>
                   <div className="leading-5">
-                    <h3>Mon - Fri 9:00 a.m - 5:30 p.m,</h3>
-                    <h3>Sat 9:00 a.m - 12:00 p.m</h3>
+                    <h2>Mon - Fri 9:00 a.m - 5:30 p.m,</h2>
+                    <h2>Sat 9:00 a.m - 12:00 p.m</h2>
                   </div>
                   <div className="text-secondary">
-                    <h4>henock@alphabettrading.com</h4>
-                    <h4>orders@alphabetrading.com </h4>
+                    <h2>henock@alphabettrading.com</h2>
+                    <h2>orders@alphabetrading.com </h2>
                   </div>
                 </div>
               </div>

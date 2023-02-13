@@ -21,7 +21,9 @@ const ImageWithSkeleton = ({ className, src, alt, props }: Props) => {
               className
             )}
           >
-            <div className="h-full w-full bg-secondary/20"></div>
+            <div
+              className={clsx("h-full w-full bg-secondary/20", className)}
+            ></div>
           </div>
         )}
         <Image
@@ -35,7 +37,6 @@ const ImageWithSkeleton = ({ className, src, alt, props }: Props) => {
           }}
         />
       </div>
-      ;
     </>
   );
 };
