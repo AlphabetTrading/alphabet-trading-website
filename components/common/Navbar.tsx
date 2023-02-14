@@ -1,5 +1,11 @@
 import clsx from "clsx";
-import { useScroll, useSpring, useCycle, motion } from "framer-motion";
+import {
+  useScroll,
+  useSpring,
+  useCycle,
+  motion,
+  AnimatePresence,
+} from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
@@ -15,11 +21,11 @@ const variants = {
     transition: { staggerChildren: 0.06, delayChildren: 0.2, duration: 0.6 },
     display: "flex",
   },
-  // exit={{
-  //   y: 100,
-  //   opacity: 0,
-  //   transition: { duration: 0.6 },
-  // }}
+  exit: {
+    opacity: 0,
+    transition: { staggerChildren: 0.05, staggerDirection: -1, duration: 0.6 },
+    display: "none",
+  },
   closed: {
     opacity: 0,
     transition: { staggerChildren: 0.05, staggerDirection: -1, duration: 0.6 },
@@ -35,6 +41,7 @@ const Navbar = ({ white }: Props) => {
     function updateOpacity() {
       setScrolledYAmount(scrollY.get());
     }
+    updateOpacity();
     const unsubscribeX = scrollY.on("change", updateOpacity);
     return () => {
       unsubscribeX();
@@ -194,73 +201,77 @@ const Navbar = ({ white }: Props) => {
             </nav>
           </div>
           <div className="flex w-full md:hidden ">
-            <motion.nav
-              className="w-full flex flex-col items-end !text-white"
-              initial={false}
-              animate={isOpen ? "open" : "closed"}
-              custom={height}
-              ref={containerRef}
-            >
-              <button
-                className={clsx(
-                  white ? "text-gray-700" : "text-white",
-                  (scrolledYAmount > 50 || isOpen) && "!text-white"
-                )}
-                onClick={() => toggleOpen()}
+            <AnimatePresence>
+              <motion.nav
+                className="w-full flex flex-col items-end !text-white"
+                initial={false}
+                animate={isOpen ? "open" : "closed"}
+                exit={variants.exit}
+                custom={height}
+                ref={containerRef}
               >
-                <svg
-                  className="h-5 w-6 md:h-6 md:w-7 lg:h-8 lg:w-8"
-                  viewBox="0 0 23 23"
+                <button
+                  className={clsx(
+                    white ? "text-gray-700" : "text-white",
+                    (scrolledYAmount > 50 || isOpen) && "!text-white"
+                  )}
+                  onClick={() => toggleOpen()}
                 >
-                  <Path
-                    variants={{
-                      closed: { d: "M 2 2.5 L 20 2.5" },
-                      open: { d: "M 3 16.5 L 17 2.5" },
-                    }}
-                  />
-                  <Path
-                    d="M 2 9.423 L 20 9.423"
-                    variants={{
-                      closed: { opacity: 1 },
-                      open: { opacity: 0 },
-                    }}
-                    transition={{ duration: 0.1 }}
-                  />
-                  <Path
-                    variants={{
-                      closed: { d: "M 2 16.346 L 20 16.346" },
-                      open: { d: "M 3 2.5 L 17 16.346" },
-                    }}
-                  />
-                </svg>
-              </button>
-              <motion.ul
-                style={{
-                  boxShadow: "0 10px 30px -15px var(--navy-shadow)",
-                  borderRadius: "var(--border-radius)",
-                  transition: "var(--transition)",
-                }}
-                variants={variants}
-                className="min-w-full  flex flex-col p-5 px-10 gap-y-3 bg-[#0A1026] rounded-xl absolute top-20 right-0 left-0 z-50"
-              >
-                {navigationItems.map((navItem) => (
-                  <motion.li
-                    key={navItem.id}
-                    variants={variants}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
+                  <svg
+                    className="h-5 w-6 md:h-6 md:w-7 lg:h-8 lg:w-8"
+                    viewBox="0 0 23 23"
                   >
-                    <Link
-                      href={navItem.href}
-                      title={navItem.title}
-                      className=" font-normal text-gray-400 transition-all duration-200 hover:text-white"
+                    <Path
+                      variants={{
+                        closed: { d: "M 2 2.5 L 20 2.5" },
+                        open: { d: "M 3 16.5 L 17 2.5" },
+                      }}
+                    />
+                    <Path
+                      d="M 2 9.423 L 20 9.423"
+                      variants={{
+                        closed: { opacity: 1 },
+                        open: { opacity: 0 },
+                      }}
+                      transition={{ duration: 0.1 }}
+                    />
+                    <Path
+                      variants={{
+                        closed: { d: "M 2 16.346 L 20 16.346" },
+                        open: { d: "M 3 2.5 L 17 16.346" },
+                      }}
+                    />
+                  </svg>
+                </button>
+                <motion.ul
+                  style={{
+                    boxShadow: "0 10px 30px -15px var(--navy-shadow)",
+                    borderRadius: "var(--border-radius)",
+                    transition: "var(--transition)",
+                  }}
+                  variants={variants}
+                  exit={variants.exit}
+                  className="min-w-full  flex flex-col p-5 px-10 gap-y-3 bg-[#0A1026] rounded-xl absolute top-20 right-0 left-0 z-50"
+                >
+                  {navigationItems.map((navItem) => (
+                    <motion.li
+                      key={navItem.id}
+                      variants={variants}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      {navItem.title}
-                    </Link>
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </motion.nav>
+                      <Link
+                        href={navItem.href}
+                        title={navItem.title}
+                        className=" font-normal text-gray-400 transition-all duration-200 hover:text-white"
+                      >
+                        {navItem.title}
+                      </Link>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.nav>
+            </AnimatePresence>
           </div>
         </div>
       </motion.header>
