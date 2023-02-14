@@ -17,7 +17,7 @@ const ImageWithSkeleton = ({ className, src, alt, props }: Props) => {
         {!isloaded && (
           <div
             className={clsx(
-              "flex animate-pulse ease-in-out flex-row items-center justify-center space-x-5 absolute inset-0 object-cover",
+              "flex animate-pulse bg-white ease-in-out flex-row items-center justify-center space-x-5 absolute inset-0 object-cover",
               className
             )}
           >
