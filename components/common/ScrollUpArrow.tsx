@@ -15,7 +15,7 @@ const ScrollUpArrow = (props: Props) => {
     const updatePosition = () => {
       setScrollPosition(window.pageYOffset);
     };
-
+    updatePosition();
     window.addEventListener("scroll", updatePosition);
 
     return () => window.removeEventListener("scroll", updatePosition);
@@ -43,13 +43,13 @@ const ScrollUpArrow = (props: Props) => {
             transition: { duration: 0.2 },
           }}
           whileTap={{ scale: 1 }}
-          className="flex items-center justify-center fixed bottom-10 z-50 right-10 h-12 w-12 p-2 drop-shadow-xl shadow-xl shadow-black/50 backdrop-brightness-95 text-white rounded-full bg-secondary"
+          className="flex items-center justify-center fixed bottom-10 z-50 right-10 h-12 w-12 overflow-hidden p-2 drop-shadow-xl shadow-xl shadow-black/50 backdrop-brightness-95 text-white rounded-full bg-secondary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
-            x="0"
-            y="0"
+            width="512"
+            height="512"
             viewBox="0 0 32 32"
           >
             <g>
