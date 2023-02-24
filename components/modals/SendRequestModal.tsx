@@ -65,7 +65,7 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
         exit={{
           opacity: 0,
         }}
-        className="max-h-screen overflow-y-auto transition-all duration-200 py-8 text-[#565656] w-screen h-full absolute top-0 bottom-0 left-0 right-0 bg-gray-900 bg-opacity-30 z-[100]"
+        className="min-h-screen overflow-y-hidden transition-all duration-200 py-8 text-[#565656] w-screen h-full absolute top-0 bottom-0 left-0 right-0 bg-gray-700 bg-opacity-30 z-[100]"
       >
         <Formik
           initialValues={INITIAL_VALUES}

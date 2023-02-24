@@ -64,7 +64,14 @@ const OfferingsComponent = (props: Props) => {
           />
         )}
       </AnimatePresence>
-      <div className="w-full flex flex-col justify-center items-center gap-y-3 mt-28 p-4 py-12 md:py-20 md:px-6 lg:px-10 xl:px-20 2xl:px-36 bg-secondary/10">
+      <div
+        className={clsx(
+          "w-full flex flex-col justify-center items-center gap-y-3 mt-28 p-4 py-12 md:py-20 md:px-6 lg:px-10 xl:px-20 2xl:px-36",
+          isModalOpen
+            ? "bg-gray-900 bg-opacity-30 overflow-y-hidden"
+            : "bg-secondary/10"
+        )}
+      >
         <h1 className="text-4xl 2k:text-5xl 4k:text-6xl font-semibold">
           Our <span className="text-secondary">Coffee</span> Export
         </h1>
