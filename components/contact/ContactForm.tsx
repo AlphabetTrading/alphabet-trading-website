@@ -105,14 +105,14 @@ const ContactForm = () => {
                     placeholder="Message"
                     rows={4}
                     className={clsx(
-                      "w-full rounded-lg border bg-secondary/10 resize-none p-2 placeholder:text-sm",
+                      "w-full rounded-lg border bg-secondary/10 resize-none p-2 placeholder:text-sm appearance-none focus:outline-none",
                       formik.touched.message && formik.errors.message
                         ? "border-red-500"
                         : ""
                     )}
                   />
                   {formik.touched.message && formik.errors.message && (
-                    <p className="text-red-500 py-2 text-xs">
+                    <p className="text-red-500 py-1 text-xs">
                       {formik.errors.message.toString()}
                     </p>
                   )}
@@ -127,7 +127,7 @@ const ContactForm = () => {
                 )}
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-x-3  px-6 py-3 mt-4 text-sm font-bold text-white bg-primary rounded-lg"
+                  className="w-full flex items-center justify-center gap-x-3  px-6 py-3 text-sm font-bold text-white bg-secondary rounded-lg"
                 >
                   {formik.isSubmitting && (
                     <svg
