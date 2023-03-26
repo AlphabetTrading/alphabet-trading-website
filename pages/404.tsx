@@ -6,8 +6,8 @@ type Props = {};
 const PageNotFound = (props: Props) => {
   const router = useRouter();
   return (
-    <div className="flex md:flex-row flex-col-reverse h-screen items-center md:p-14 p-10">
-      <div className="flex flex-col w-full md:w-5/12 gap-y-6 text-center items-center md:items-start md:text-left ">
+    <div className="flex md:flex-row flex-col-reverse justify-center h-screen items-center md:p-14 p-10">
+      <div className="flex flex-col  w-full md:w-5/12 gap-y-6 text-center items-center md:items-start md:text-left ">
         <p className="text-secondary font-bold text-3xl md:text-6xl ">
           Oh No! Page not found
         </p>
