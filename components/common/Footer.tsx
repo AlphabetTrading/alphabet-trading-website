@@ -73,12 +73,18 @@ const Footer = (props: Props) => {
             </div>
             <div className="flex items-center sm:gap-x-2">
               <AiOutlineMail />
-              <div>
+              <div className="text-sm flex flex-col">
                 <a
                   className="text-base break-words"
                   href="mailto:henock@alphabettrading.com"
                 >
                   henock@alphabettrading.com
+                </a>
+                <a
+                  className="text-base break-words"
+                  href="mailto:info@alphabettrading.com"
+                >
+                  info@alphabettrading.com
                 </a>
               </div>
             </div>
@@ -86,26 +92,34 @@ const Footer = (props: Props) => {
           <div className="col-span-10 md:col-span-10 lg:col-span-2 gap-y-2 py-2 flex flex-col justify-start items-center w-full h-full">
             <h1 className="text-xl text-center w-full">Follow Us</h1>
             <div className="flex gap-x-4 w-full justify-center">
-              <img
-                src="/icons/linkedin.svg"
-                alt=""
-                className="w-8 h-8 md:w-10 md:h-10 "
-              />
-              <img
-                src="/icons/twitter.svg"
-                alt=""
-                className="w-8 h-8 md:w-10 md:h-10 "
-              />
-              <img
-                src="/icons/youtube.svg"
-                alt=""
-                className="w-8 h-8 md:w-10 md:h-10 "
-              />
-              <img
-                src="/icons/facebook.svg"
-                alt=""
-                className="w-8 h-8 md:w-10 md:h-10 "
-              />
+              <Link href="https://www.linkedin.com/company/alphabet-trading">
+                <img
+                  src="/icons/linkedin.svg"
+                  alt="linkedin"
+                  className="w-8 h-8 md:w-10 md:h-10 "
+                />
+              </Link>
+              <Link href="https://twitter.com/AlphabeTrading">
+                <img
+                  src="/icons/twitter.svg"
+                  alt="twitter"
+                  className="w-8 h-8 md:w-10 md:h-10 "
+                />
+              </Link>
+              <Link href="https://www.youtube.com/@AlphabetTrading">
+                <img
+                  src="/icons/youtube.svg"
+                  alt="youtube"
+                  className="w-8 h-8 md:w-10 md:h-10 "
+                />
+              </Link>
+              <Link href="https://www.instagram.com/alphabettradingplc/">
+                <img
+                  src="/icons/instagram.svg"
+                  alt=""
+                  className="w-8 h-8 md:w-10 md:h-10 "
+                />
+              </Link>
             </div>
           </div>
         </div>

@@ -36,7 +36,7 @@ const DetailItem = ({ index, title, descriptions, imageSrc }: Props) => {
         </div>
         <div
           className={clsx(
-            "w-full lg:w-1/2 flex flex-col items-center md:mx-12 gap-y-2",
+            "w-full lg:w-1/2 flex flex-col items-center md:mx-12 gap-y-2 text-white",
             index % 2 == 0 ? "lg:items-start" : "lg:items-end"
           )}
         >

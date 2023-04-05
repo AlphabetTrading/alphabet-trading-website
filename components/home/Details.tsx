@@ -32,7 +32,7 @@ const details = [
 
 const Details = (props: Props) => {
   return (
-    <div className="bg-[#086965]/10 py-14 md:py-20 flex flex-col gap-y-10">
+    <div className="bg-navy py-14 md:py-20 flex flex-col gap-y-10">
       {details.map((detail: any, index: number) => {
         return (
           <DetailItem
