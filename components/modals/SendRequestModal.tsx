@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import FormField from "../common/FormField";
 import Tag from "../common/Tag";
@@ -47,6 +47,14 @@ type Props = {
 };
 
 const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
+  useEffect(() => {
+    const body = document.getElementsByTagName("body")[0];
+    body.style.overflow = "hidden";
+    return () => {
+      body.style.overflow = "visible";
+    };
+  }, []);
+
   const [errorMessage, setErrorMessage] = useState("");
   let [loading, setLoading] = useState(false);
   const { selectedOfferings } = useOfferingsContext();
