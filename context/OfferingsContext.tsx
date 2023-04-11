@@ -32,13 +32,18 @@ interface IOfferingContextProps {
   offerings: IOffering[];
   setOfferings: Dispatch<SetStateAction<any>>;
   offeringRequests: IOfferingRequest[];
+  filteredOfferingRequests: IOfferingRequest[];
   setOfferingRequests: Dispatch<SetStateAction<any>>;
+  setFilteredOfferingRequests: Dispatch<SetStateAction<any>>;
   selectedOfferings: IOfferingRequest[];
-  filterOfferings: (sortBy: {
-    field: string;
-    reverse: boolean;
-    primer: Function;
-  }) => void;
+  filterOfferings: (
+    sortBy: {
+      field: string;
+      reverse: boolean;
+      primer: Function;
+    },
+    query: string
+  ) => void;
 }
 const offeringsData: IOffering[] = offerings;
 export const OfferingsContext = createContext<IOfferingContextProps>({
@@ -48,12 +53,17 @@ export const OfferingsContext = createContext<IOfferingContextProps>({
   setOfferings: () => {},
   offeringRequests: [],
   setOfferingRequests: () => {},
+  filteredOfferingRequests: [],
+  setFilteredOfferingRequests: () => {},
   selectedOfferings: [],
-  filterOfferings: (sortBy: {
-    field: string;
-    reverse: boolean;
-    primer: Function;
-  }) => {},
+  filterOfferings: (
+    sortBy: {
+      field: string;
+      reverse: boolean;
+      primer: Function;
+    },
+    query: string
+  ) => {},
 });
 
 export function OfferingsContextWrapper({ children }: any) {
@@ -61,24 +71,57 @@ export function OfferingsContextWrapper({ children }: any) {
   const [offeringRequests, setOfferingRequests] = useState<
     Array<IOfferingRequest>
   >(offeringsData.map((val) => ({ ...val, isSelected: false })));
+  const [filteredOfferingRequests, setFilteredOfferingRequests] = useState<
+    Array<IOfferingRequest>
+  >(offeringsData.map((val) => ({ ...val, isSelected: false })));
   const [offerings, setOfferings] = useState(offeringsData);
   const [selectedOfferings, setSelectedOfferings] = useState<
     IOfferingRequest[]
   >([]);
 
-  const filterOfferings = (sortBy: {
-    field: string;
-    reverse: boolean;
-    primer: Function;
-  }) => {
-    const sortedOffs = offeringRequests.sort(sort_by(sortBy));
-    setOfferingRequests(sortedOffs);
-    setSelectedOfferings(sortedOffs.filter((off) => off.isSelected));
-  };
+  const filterOfferings = useCallback(
+    (
+      sortBy: {
+        field: string;
+        reverse: boolean;
+        primer: Function;
+      },
+      query: string
+    ) => {
+      const sortedOffs = offeringRequests
+        .filter(
+          (offer) =>
+            offer.type.toLowerCase().includes(query.toLowerCase()) ||
+            offer.grade.toLowerCase().includes(query.toLowerCase()) ||
+            offer.location.toLowerCase().includes(query.toLowerCase())
+        )
+        .sort(sort_by(sortBy));
+      setFilteredOfferingRequests(sortedOffs);
+      setSelectedOfferings(sortedOffs.filter((off) => off.isSelected));
+    },
+    [offeringRequests]
+  );
+
+  // const filterOfferings = (
+  //   sortBy: {
+  //     field: string;
+  //     reverse: boolean;
+  //     primer: Function;
+  //   },
+  //   query: string
+  // ) => {
+  //   const sortedOffs = offeringRequests
+  //     .filter((offer) => offer.type.toLowerCase().includes(query.toLowerCase()))
+  //     .sort(sort_by(sortBy));
+  //   setFilteredOfferingRequests(sortedOffs);
+  //   setSelectedOfferings(sortedOffs.filter((off) => off.isSelected));
+  // };
 
   useEffect(() => {
-    setSelectedOfferings(offeringRequests.filter((off) => off.isSelected));
-  }, [offeringRequests]);
+    setSelectedOfferings(
+      filteredOfferingRequests.filter((off) => off.isSelected)
+    );
+  }, [filteredOfferingRequests, offeringRequests]);
 
   let sharedState: IOfferingContextProps = useMemo(
     () => ({
@@ -88,10 +131,19 @@ export function OfferingsContextWrapper({ children }: any) {
       setOfferings,
       setOfferingRequests,
       offeringRequests,
+      setFilteredOfferingRequests,
+      filteredOfferingRequests,
       selectedOfferings,
       filterOfferings,
     }),
-    [loading, offerings, offeringRequests, selectedOfferings]
+    [
+      loading,
+      offerings,
+      offeringRequests,
+      filteredOfferingRequests,
+      selectedOfferings,
+      filterOfferings,
+    ]
   );
 
   return (

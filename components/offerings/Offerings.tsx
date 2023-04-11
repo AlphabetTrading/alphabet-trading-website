@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Head from "next/head";
 import React, { useCallback, useEffect, useState } from "react";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
+import { BsGrid, BsList, BsListUl } from "react-icons/bs";
 import { AVAILABILITY } from "../../components/common/AvailabilityChip";
 import BaseLayout from "../../components/common/BaseLayout";
 import Button from "../../components/common/Button";
@@ -13,17 +14,26 @@ import {
   IOfferingRequest,
   useOfferingsContext,
 } from "../../context/OfferingsContext";
-import { sort_by } from "../../utils/common";
 import { AnimatePresence } from "framer-motion";
+import OfferingsFilter from "./OfferingsFilter";
+import GetSVG from "../common/GetSVG";
+import { IoIosArrowForward } from "react-icons/io";
+import { useIsSmall } from "../../hooks/utils";
+import OfferingsSearchbar from "./OfferingsSearchbar";
 
 type Props = {};
-
+export enum ViewTypeEnum {
+  GRID = "GRID",
+  LIST = "LIST",
+}
 const OfferingsComponent = (props: Props) => {
   const {
     selectedOfferings,
     offeringRequests,
     setOfferingRequests,
     filterOfferings,
+    filteredOfferingRequests,
+    setFilteredOfferingRequests,
   } = useOfferingsContext();
   const [sortBy, setSortBy] = useState<{
     field: string;
@@ -35,21 +45,25 @@ const OfferingsComponent = (props: Props) => {
     primer: (a: any | string) => a.toUpperCase(),
   });
   const handleOfferingCheck = (offering: IOfferingRequest) => {
-    setOfferingRequests(
-      offeringRequests.map((off) =>
+    setFilteredOfferingRequests(
+      filteredOfferingRequests.map((off) =>
         offering.id === off.id ? { ...off, isSelected: !off.isSelected } : off
       )
     );
   };
 
+  const isSmall = useIsSmall();
+  const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isFilterOptionOpen, setIsFilterOptionOpen] = useState(!isSmall);
+  const [viewType, setViewType] = useState(ViewTypeEnum.GRID);
   const handleModalOpen = () => {
     setIsModalOpen(true);
   };
 
   useEffect(() => {
-    filterOfferings(sortBy);
-  }, [sortBy]);
+    filterOfferings(sortBy, searchQuery);
+  }, [filterOfferings, searchQuery, sortBy]);
 
   return (
     <>
@@ -73,175 +87,264 @@ const OfferingsComponent = (props: Props) => {
         )}
       >
         <h1 className="text-4xl 2k:text-5xl 4k:text-6xl font-semibold">
-          Our <span className="text-secondary">Coffee</span> Export
+          <span className="text-secondary">Coffee</span> Export
         </h1>
         <p className="w-11/12 md:w-2/3 lg:w-7/12 xl:w-1/2 2k:w-2/5 4k:w-1/4 text-center font-semibold 2k:text-xl 4k:text-2xl">
           Yirgacheffe, Guji, Sidama, Gedebe and Limu are the five regions in
           Ethiopia that Alphabet Coffee sources its coffee from.
         </p>
-        <div className="w-full md:w-5/6 2k:w-2/3 4k:w-1/2 flex justify-end">
-          <Button
-            classname={clsx(
-              "w-full text-white 2k:text-lg 4k:text-xl bg-secondary rounded-2xl",
-              selectedOfferings.length === 0 ? "bg-secondary/40" : ""
+        <label
+          onClick={() => {
+            setIsFilterOptionOpen((prev) => !prev);
+          }}
+          htmlFor="filter"
+          className="flex  flex-col text-black cursor-pointer items-center gap-y-2 justify-between w-full max-w-xs  self-start"
+        >
+          <div className="flex  items-center w-full font-semibold">
+            <div className="flex gap-x-3 ">
+              <GetSVG name="filter" />
+              <h4 className="font-medium">Filters</h4>
+            </div>
+            <div className="flex items-center">
+              <Button
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+                text="Reset All"
+                classname={clsx(
+                  "text-secondary ",
+                  isFilterOptionOpen ? "hidden" : "inline-flex"
+                )}
+              ></Button>
+              <IoIosArrowForward
+                className={clsx(
+                  "w-6 h-5 cursor-pointer transition-all duration-300 ease-in-out text-gray-600",
+                  isFilterOptionOpen ? "-rotate-180" : "rotate-0"
+                )}
+              />
+            </div>
+          </div>
+          <div className="h-0.5 w-full bg-secondary/10 max-w-xs mx-5"></div>
+        </label>
+        <div className="flex w-full ">
+          <div
+            className={clsx(
+              "w-1/6  overflow-hidden transition-all duration-500 ease-in-out",
+              isFilterOptionOpen
+                ? "w-11/12 flex-1 sm:w-1/6 sm:flex-auto sm:max-w-[250px] lg:max-w-xs"
+                : "w-0 max-w-xs"
             )}
-            disabled={selectedOfferings.length === 0}
-            onClick={handleModalOpen}
-            text={`Request Sample (${selectedOfferings.length})`}
-          />
-        </div>
-        <div className="hidden md:grid md:grid-cols-12  md:w-5/6 2k:w-2/3 4k:w-1/2 gap-x-1 mt-8 text-xs md:text-sm lg:text-md 2k:text-[18px] 4k:text-2xl px-2 font-semibold">
-          <div className="col-span-2"></div>
-          <div className="col-span-3 flex items-center">
-            <div className="w-full flex items-center gap-x-1">
-              <h2>Coffee Type</h2>
-              <AiFillCaretUp
-                onClick={() => {
-                  if (sortBy.field !== "type" || sortBy.reverse) {
-                    setSortBy((prev) => ({
-                      ...prev,
-                      field: "type",
-                      reverse: false,
-                    }));
+          >
+            <OfferingsFilter setShowFilterOption={() => {}} />
+          </div>
+          <div
+            className={clsx(
+              "flex flex-col justify-start items-center sm:flex-1 gap-y-2",
+              isFilterOptionOpen
+                ? "w-0 sm:w-1/2 sm:flex sm:flex-auto lg:flex-1"
+                : "flex flex-1 "
+            )}
+          >
+            <div className="w-full md:w-5/6 flex justify-between">
+              <div className="flex gap-x-2 items-center flex-1 cursor-pointer">
+                {/* {viewType === ViewTypeEnum.GRID ? (
+                  <BsGrid
+                    className="h-5 w-5 text-primary/90"
+                    onClick={() => setViewType(ViewTypeEnum.LIST)}
+                  />
+                ) : (
+                  <BsListUl
+                    className="h-5 w-5 text-primary/90"
+                    onClick={() => setViewType(ViewTypeEnum.GRID)}
+                  />
+                )} */}
+                <OfferingsSearchbar
+                  onChange={(query) => setSearchQuery(query)}
+                />
+              </div>
+              <Button
+                classname={clsx(
+                  "w-full text-white 2k:text-lg 4k:text-xl bg-secondary rounded-2xl",
+                  selectedOfferings.length === 0 ? "bg-secondary/40" : ""
+                )}
+                disabled={selectedOfferings.length === 0}
+                onClick={handleModalOpen}
+                text={`Request Sample (${selectedOfferings.length})`}
+              />
+            </div>
+            <div className="hidden w-full md:grid md:grid-cols-12  px-2 font-semibold">
+              <div className="col-span-2"></div>
+              <div className="col-span-3 flex items-center">
+                <div className="w-full flex items-center gap-x-1">
+                  <h2>Coffee Type</h2>
+                  <AiFillCaretUp
+                    onClick={() => {
+                      if (sortBy.field !== "type" || sortBy.reverse) {
+                        setSortBy((prev) => ({
+                          ...prev,
+                          field: "type",
+                          reverse: false,
+                        }));
+                      }
+                    }}
+                    className={clsx(
+                      "-mr-2 cursor-pointer",
+                      sortBy.field === "type" &&
+                        !sortBy.reverse &&
+                        "text-amber-500"
+                    )}
+                  />
+                  <AiFillCaretDown
+                    onClick={() => {
+                      if (sortBy.field !== "type" || !sortBy.reverse) {
+                        setSortBy((prev) => ({
+                          ...prev,
+                          field: "type",
+                          reverse: true,
+                        }));
+                      }
+                    }}
+                    className={clsx(
+                      "-mr-2 cursor-pointer",
+                      sortBy.field === "type" &&
+                        sortBy.reverse &&
+                        "text-amber-500"
+                    )}
+                  />
+                </div>
+              </div>
+              <div className="col-span-2 items-center">
+                <div className="w-full flex items-center gap-x-1">
+                  <h2>Grade</h2>
+                  <AiFillCaretUp
+                    onClick={() => {
+                      console.log("sssssort");
+                      setSortBy((prev) => ({
+                        ...prev,
+                        field: "grade",
+                        reverse: false,
+                      }));
+                    }}
+                    className={clsx(
+                      "-mr-2 cursor-pointer",
+                      sortBy.field === "grade" &&
+                        !sortBy.reverse &&
+                        "text-amber-500"
+                    )}
+                  />
+                  <AiFillCaretDown
+                    onClick={() => {
+                      console.log("sssssort     - reverse");
+                      setSortBy((prev) => ({
+                        ...prev,
+                        field: "grade",
+                        reverse: true,
+                      }));
+                    }}
+                    className={clsx(
+                      "-mr-2 cursor-pointer",
+                      sortBy.field === "grade" &&
+                        sortBy.reverse &&
+                        "text-amber-500"
+                    )}
+                  />
+                </div>
+              </div>
+              <div className="col-span-3 items-center">
+                <div className="w-full flex items-center gap-x-1">
+                  <h2>Location</h2>
+                  <AiFillCaretUp
+                    onClick={() => {
+                      setSortBy((prev) => ({
+                        ...prev,
+                        field: "location",
+                        reverse: false,
+                      }));
+                    }}
+                    className={clsx(
+                      "-mr-2 cursor-pointer",
+                      sortBy.field === "location" &&
+                        !sortBy.reverse &&
+                        "text-amber-500"
+                    )}
+                  />
+                  <AiFillCaretDown
+                    onClick={() => {
+                      setSortBy((prev) => ({
+                        ...prev,
+                        field: "location",
+                        reverse: true,
+                      }));
+                    }}
+                    className={clsx(
+                      "-mr-2 cursor-pointer",
+                      sortBy.field === "location" &&
+                        sortBy.reverse &&
+                        "text-amber-500"
+                    )}
+                  />
+                </div>
+              </div>
+              <div className="col-span-2 items-center">
+                <div className="w-full flex items-center gap-x-1">
+                  <h2>Availability</h2>
+                  <AiFillCaretUp
+                    onClick={() => {
+                      setSortBy((prev) => ({
+                        ...prev,
+                        field: "availability",
+                        reverse: false,
+                      }));
+                    }}
+                    className={clsx(
+                      "-mr-2 cursor-pointer",
+                      sortBy.field === "availability" &&
+                        !sortBy.reverse &&
+                        "text-amber-500"
+                    )}
+                  />
+                  <AiFillCaretDown
+                    onClick={() => {
+                      setSortBy((prev) => ({
+                        ...prev,
+                        field: "availability",
+                        reverse: true,
+                      }));
+                    }}
+                    className={clsx(
+                      "-mr-2 cursor-pointer",
+                      sortBy.field === "availability" &&
+                        sortBy.reverse &&
+                        "text-amber-500"
+                    )}
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className={clsx(
+                "flex flex-col items-center justify-start gap-y-2 w-full"
+              )}
+            >
+              {filteredOfferingRequests.length > 0 ? (
+                filteredOfferingRequests.map(
+                  (offering: IOfferingRequest, index: number) => {
+                    return (
+                      <OfferingsItem
+                        viewType={viewType}
+                        handleOfferingCheck={handleOfferingCheck}
+                        key={offering.id}
+                        offering={offering}
+                      />
+                    );
                   }
-                }}
-                className={clsx(
-                  "-mr-2 cursor-pointer",
-                  sortBy.field === "type" && !sortBy.reverse && "text-amber-500"
-                )}
-              />
-              <AiFillCaretDown
-                onClick={() => {
-                  if (sortBy.field !== "type" || !sortBy.reverse) {
-                    setSortBy((prev) => ({
-                      ...prev,
-                      field: "type",
-                      reverse: true,
-                    }));
-                  }
-                }}
-                className={clsx(
-                  "-mr-2 cursor-pointer",
-                  sortBy.field === "type" && sortBy.reverse && "text-amber-500"
-                )}
-              />
-            </div>
-          </div>
-          <div className="col-span-2 items-center">
-            <div className="w-full flex items-center gap-x-1">
-              <h2>Grade</h2>
-              <AiFillCaretUp
-                onClick={() => {
-                  console.log("sssssort");
-                  setSortBy((prev) => ({
-                    ...prev,
-                    field: "grade",
-                    reverse: false,
-                  }));
-                }}
-                className={clsx(
-                  "-mr-2 cursor-pointer",
-                  sortBy.field === "grade" &&
-                    !sortBy.reverse &&
-                    "text-amber-500"
-                )}
-              />
-              <AiFillCaretDown
-                onClick={() => {
-                  console.log("sssssort     - reverse");
-                  setSortBy((prev) => ({
-                    ...prev,
-                    field: "grade",
-                    reverse: true,
-                  }));
-                }}
-                className={clsx(
-                  "-mr-2 cursor-pointer",
-                  sortBy.field === "grade" && sortBy.reverse && "text-amber-500"
-                )}
-              />
-            </div>
-          </div>
-          <div className="col-span-3 items-center">
-            <div className="w-full flex items-center gap-x-1">
-              <h2>Location</h2>
-              <AiFillCaretUp
-                onClick={() => {
-                  setSortBy((prev) => ({
-                    ...prev,
-                    field: "location",
-                    reverse: false,
-                  }));
-                }}
-                className={clsx(
-                  "-mr-2 cursor-pointer",
-                  sortBy.field === "location" &&
-                    !sortBy.reverse &&
-                    "text-amber-500"
-                )}
-              />
-              <AiFillCaretDown
-                onClick={() => {
-                  setSortBy((prev) => ({
-                    ...prev,
-                    field: "location",
-                    reverse: true,
-                  }));
-                }}
-                className={clsx(
-                  "-mr-2 cursor-pointer",
-                  sortBy.field === "location" &&
-                    sortBy.reverse &&
-                    "text-amber-500"
-                )}
-              />
-            </div>
-          </div>
-          <div className="col-span-2 items-center">
-            <div className="w-full flex items-center gap-x-1">
-              <h2>Availability</h2>
-              <AiFillCaretUp
-                onClick={() => {
-                  setSortBy((prev) => ({
-                    ...prev,
-                    field: "availability",
-                    reverse: false,
-                  }));
-                }}
-                className={clsx(
-                  "-mr-2 cursor-pointer",
-                  sortBy.field === "availability" &&
-                    !sortBy.reverse &&
-                    "text-amber-500"
-                )}
-              />
-              <AiFillCaretDown
-                onClick={() => {
-                  setSortBy((prev) => ({
-                    ...prev,
-                    field: "availability",
-                    reverse: true,
-                  }));
-                }}
-                className={clsx(
-                  "-mr-2 cursor-pointer",
-                  sortBy.field === "availability" &&
-                    sortBy.reverse &&
-                    "text-amber-500"
-                )}
-              />
+                )
+              ) : (
+                <div className="my-5 font-semibold">No Result</div>
+              )}
             </div>
           </div>
         </div>
-        {offeringRequests.map((offering: IOfferingRequest, index: number) => {
-          return (
-            <OfferingsItem
-              handleOfferingCheck={handleOfferingCheck}
-              key={offering.id}
-              offering={offering}
-            />
-          );
-        })}
       </div>
     </>
   );

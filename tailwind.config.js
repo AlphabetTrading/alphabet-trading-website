@@ -42,6 +42,10 @@ module.exports = {
       animation: {
         slide_left: "slide_left 0.1s forwards",
         slide_right: "slide_right 0.1s backwards",
+        animate_circle_in: "animate_circle_in 0.5s forwards",
+        animate_circle_out: "animate_circle_out 1s backwards",
+        rotateY_full_forward: "rotateY_full_forward 0.5s forwards",
+        rotateY_full_reverse: "rotateY_full_reverse 0.5s backwards",
       },
       keyframes: {
         slide_left: {
@@ -53,6 +57,41 @@ module.exports = {
           "0%": { transform: "translateX(100%)" },
           "50%": { transform: "translateX(50%)" },
           "100%": { transform: "translateX(0%)" },
+        },
+        animate_circle_in: {
+          "0%": {
+            borderRadius: "50%",
+            inset: "100%",
+          },
+
+          "100%": {
+            inset: "0%",
+          },
+        },
+        animate_circle_out: {
+          "0%": {
+            // borderRadius: "50%",
+            inset: "0%",
+          },
+          "100%": {
+            inset: "100%",
+          },
+        },
+        rotateY_full_forward: {
+          from: {
+            transform: "rotateY(0deg)",
+          },
+          to: {
+            transform: "rotateY(180deg)",
+          },
+        },
+        rotateY_full_reverse: {
+          from: {
+            transform: "rotateY(180deg)",
+          },
+          to: {
+            transform: "rotateY(0deg)",
+          },
         },
       },
       boxShadow: {

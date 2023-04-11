@@ -11,7 +11,6 @@ import HeroVideo from "../components/home/HeroVideo";
 export default function Home() {
   return (
     <BaseLayout>
-      <Navbar white={false} />
       <Head>
         <title>
           Alphabet Trading PLC | #1 Coffee Trading Company in Ethiopia -
@@ -22,6 +21,7 @@ export default function Home() {
           content="Alphabet is a coffee export firm based in its place of origin. We specialize in discovering, developing and exporting the finest commercial grade coffee and species"
         />
       </Head>
+      <Navbar white={false} />
       <div className="flex flex-col justify-center w-full">
         <HeroVideo />
         <Welcome />

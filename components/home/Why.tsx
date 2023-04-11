@@ -5,6 +5,30 @@ import ImageWithSkeleton from "../common/ImageWithSkeleton";
 type Props = {};
 
 const Why = (props: Props) => {
+  const values = [
+    {
+      id: 1,
+      title: "Best Quality Coffee",
+      icon: "/icons/new_sustain.svg",
+      descriptions:
+        "We source our organic and specialty grade coffees from the birthplace of Coffee - Ethiopia, which is known for its strong, bright flavor and distinctive berry aroma. Each crop is hand-selected with the utmost care and attention in order to bring out its unique characteristics ",
+    },
+    {
+      id: 2,
+      title: "Meticulous Production",
+      icon: "/icons/new_transparency.svg",
+      descriptions:
+        "Our specialists keep a watchful eye on all phases of production, from the choice of crops and processing to putting our beans into containers for shipment. This guarantees that only highest standards are implemented when it comes to quality assurance and freshness.",
+    },
+    {
+      id: 3,
+      title: "Overall Satisfaction",
+      icon: "/icons/new_traceability.svg",
+      descriptions:
+        "Our specialists keep a watchful eye on all phases of production, from the choice of crops and processing to putting our beans into containers for shipment. This guarantees that only highest standards are implemented when it comes to quality assurance and freshness. ",
+    },
+  ];
+
   return (
     <div className="w-full flex flex-col items-center justify-center mt-20">
       <div className="flex flex-col gap-y-4">
@@ -26,63 +50,29 @@ const Why = (props: Props) => {
         </div>
         <div className="w-full flex justify-center items-center py-2">
           <div className="w-11/12 sm:w-3/4 md:w-full lg:w-[96%] 2k:w-4/5 grid grid-cols-1 md:grid-cols-3 justify-center place-content-center items-center md:gap-x-8 xl:gap-x-10 px-[1rem] lg:px-24 xl:px-28 mb-16 gap-y-3 text-md font-medium">
-            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col justify-center my-[2rem] rounded-[20px] shadow-2xl">
-              <div className="w-full flex flex-col gap-y-[1rem] items-center justify-center">
-                <img
-                  alt="sustainability"
-                  className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-2"
-                  src="/icons/new_sustain.svg"
-                />
-                <h1 className="font-semibold text-center text-lg xl:text-xl 2k:text-2xl 4k:text-3xl">
-                  Best Quality Coffee
-                </h1>
-                <p className="text-sm 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
-                  We source our organic and specialty grade coffees from the
-                  birthplace of Coffee - Ethiopia, which is known for its
-                  strong, bright flavor and distinctive berry aroma. Each crop
-                  is hand-selected with the utmost care and attention in order
-                  to bring out its unique characteristics
-                </p>
-              </div>
-            </div>
-            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col justify-center my-[2rem]  rounded-[20px] shadow-2xl">
-              <div className="w-full flex flex-col gap-y-[1rem] items-center justify-center">
-                <img
-                  alt="transparency"
-                  className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-2"
-                  src="/icons/new_transparency.svg"
-                />
-                <h1 className="text-lg xl:text-xl text-center 2k:text-2xl 4k:text-3xl font-semibold">
-                  Meticulous Production
-                </h1>
-                <p className="text-sm 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
-                  Our specialists keep a watchful eye on all phases of
-                  production, from the choice of crops and processing to putting
-                  our beans into containers for shipment. This guarantees that
-                  only highest standards are implemented when it comes to
-                  quality assurance and freshness.
-                </p>
-              </div>
-            </div>
-            <div className="w-full h-full p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16 flex flex-col justify-center my-[2rem] rounded-[20px] shadow-2xl">
-              <div className="w-full flex flex-col gap-y-[1rem] items-center justify-center">
-                <img
-                  alt="traceability"
-                  className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-24"
-                  src="/icons/new_traceability.svg"
-                />
-                <h1 className="text-lg xl:text-xl 2k:text-2xl 4k:text-3xl text-center font-semibold">
-                  Overall Satisfaction
-                </h1>
-                <p className="text-sm 2k:text-lg 4k:text-2xl font-normal text-[#565656] text-center w-11/12 md:w-full h-full">
-                  We proudly offer clients around the globe the finest, freshest
-                  coffee beans available. We strive to provide outstanding
-                  service and guarantee satisfaction by consistently going above
-                  and beyond to ensure all services meet or exceed
-                  customers&apos; expectations.
-                </p>
-              </div>
-            </div>
+            {values.map((value) => {
+              return (
+                <div
+                  key={value.id}
+                  className="relative cursor-pointer overflow-hidden w-full h-full flex flex-col justify-center  rounded-[20px] shadow-2xl transition-all duration-200 group "
+                >
+                  <div className="absolute z-0 bg-secondary/5 animate-animate_circle_out group-hover:animate-animate_circle_in"></div>
+                  <div className="p-[1rem] md:p-[2rem] py-10 2k:py-14 4k:py-16  my-[2rem]  relative w-full flex flex-col gap-y-[1rem] items-center justify-center">
+                    <img
+                      alt={value.title.toLowerCase()}
+                      className="w-16 h-16 2k:w-20 2k:h-20 4k:w-24 4k:h-2  animate-rotateY_full_reverse group-hover:animate-rotateY_full_forward"
+                      src={value.icon}
+                    />
+                    <h1 className="text-lg xl:text-xl text-center 2k:text-2xl 4k:text-3xl font-semibold ">
+                      {value.title}
+                    </h1>
+                    <p className="text-sm 2k:text-lg 4k:text-2xl font-normal text-[#565656]  text-center w-11/12 md:w-full h-full ">
+                      {value.descriptions}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
