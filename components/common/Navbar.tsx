@@ -10,7 +10,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
 import { useDimensions } from "../../hooks/useDimensions";
-import { usePreviousRoute } from "../../hooks/usePreviousPathname";
 
 type Props = {
   white: boolean;

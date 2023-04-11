@@ -8,8 +8,10 @@ import {
   IOfferingRequest,
   useOfferingsContext,
 } from "../../context/OfferingsContext";
+import { ViewTypeEnum } from "./Offerings";
 
 type Props = {
+  viewType: ViewTypeEnum;
   offering: IOfferingRequest;
   handleOfferingCheck: (offering: IOfferingRequest) => void;
 };
