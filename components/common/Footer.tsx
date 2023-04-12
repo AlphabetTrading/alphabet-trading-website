@@ -22,14 +22,11 @@ const Footer = (props: Props) => {
         <div className="w-full flex flex-col items-center justify-start md:grid grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-4">
           <div className="flex flex-col items-center justify-center col-span-2 md:col-span-3 gap-x-4 h-full">
             <div className="flex items-center gap-x-3">
-              <div className="flex justify-center">
-                <img className="w-full h-full" src="/logo.svg" alt="" />
-              </div>
-              <h1 className="font-normal text-3xl sm:text-2xl md:text-3xl tracking-wide xl:my-2 items-center">
-                <span className="font-DM_Serif ">Alphabet</span>
-                <br></br>
-                Trading
-              </h1>
+              <img
+                className="w-full h-full"
+                src="/AlphabetLogoWhite.svg"
+                alt="alphabet logo"
+              />
             </div>
             <div className="w-64 my-2">
               <p className="text-center text-sm text-[#AEAEAE]">
@@ -48,7 +45,10 @@ const Footer = (props: Props) => {
                   <Link href="/services">Services</Link>
                 </li>
                 <li className="text-sm hover:text-white hover:font-semibold transition duration-200">
-                  <Link href="/offerings">Offerings</Link>
+                  <Link href="/our-coffee/origins">Origins</Link>
+                </li>
+                <li className="text-sm hover:text-white hover:font-semibold transition duration-200">
+                  <Link href="/our-coffee/offerings">Offerings</Link>
                 </li>
                 <li className="text-sm hover:text-white hover:font-semibold transition duration-200">
                   <Link href="/contact">Contact Us</Link>
@@ -67,22 +67,32 @@ const Footer = (props: Props) => {
             <div className="flex items-center sm:gap-x-2">
               <FaPhoneAlt />
               <div className="text-sm flex flex-col">
-                <a href="tel:++251911261233">+251 911 261233</a>
-                <a href="tel:+251118220469">+251 118220469</a>
+                <a
+                  href="tel:++251911261233"
+                  className="text-sm hover:text-white hover:font-semibold transition duration-200"
+                >
+                  +251 911 261233
+                </a>
+                <a
+                  href="tel:+251118220469"
+                  className="text-sm hover:text-white hover:font-semibold transition duration-200"
+                >
+                  +251 118220469
+                </a>
               </div>
             </div>
             <div className="flex items-center sm:gap-x-2">
               <AiOutlineMail />
               <div className="text-sm flex flex-col">
                 <a
-                  className="text-base break-words"
+                  className="text-base break-words  hover:text-white hover:font-semibold transition duration-200"
                   href="mailto:henock@alphabettrading.com"
                 >
                   henock@alphabettrading.com
                 </a>
                 <a
-                  className="text-base break-words"
-                  href="mailto:info@alphabettrading.com"
+                  className="text-base break-words hover:text-white hover:font-semibold transition duration-200"
+                  href="mailto:info@alphabettrading.com "
                 >
                   info@alphabettrading.com
                 </a>
@@ -96,28 +106,28 @@ const Footer = (props: Props) => {
                 <img
                   src="/icons/linkedin.svg"
                   alt="linkedin"
-                  className="w-8 h-8 md:w-10 md:h-10 "
+                  className="w-8 h-8 md:w-10 md:h-10 hover:scale-105 transition-all duration-200 ease-in-out"
                 />
               </Link>
               <Link href="https://twitter.com/AlphabeTrading">
                 <img
                   src="/icons/twitter.svg"
                   alt="twitter"
-                  className="w-8 h-8 md:w-10 md:h-10 "
+                  className="w-8 h-8 md:w-10 md:h-10 hover:scale-105 transition-all duration-200 ease-in-out"
                 />
               </Link>
               <Link href="https://www.youtube.com/@AlphabetTrading">
                 <img
                   src="/icons/youtube.svg"
                   alt="youtube"
-                  className="w-8 h-8 md:w-10 md:h-10 "
+                  className="w-8 h-8 md:w-10 md:h-10 hover:scale-105 transition-all duration-200 ease-in-out"
                 />
               </Link>
               <Link href="https://www.instagram.com/alphabettradingplc/">
                 <img
                   src="/icons/instagram.svg"
                   alt=""
-                  className="w-8 h-8 md:w-10 md:h-10 "
+                  className="w-8 h-8 md:w-10 md:h-10 hover:scale-105 transition-all duration-200 ease-in-out"
                 />
               </Link>
             </div>

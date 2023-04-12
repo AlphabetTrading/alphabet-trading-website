@@ -1,26 +1,52 @@
 [
   {
+    "title": "What is the history of coffee in Ethiopia?",
+    "descriptions": [
+      "Since Ethiopia is the source of Arabica coffee and has a distinctive coffee culture, it is regarded as a renowned coffee-producing nation. Ethiopians have been cultivating coffee trees for domestic consumption and commercial sale since the trees were first found growing wild in the country's forests. Coffee is an integral component of Ethiopian culture and a way of life. Ethiopian coffee has 99% more genetic variation than the rest of the globe, making it the most genetically diverse coffee in the world. Because of this, coffee aficionados are very interested in Ethiopian coffee.",
+      "Ethiopians consume a lot of coffee, with about half of the country's annual production of 6.5 million bags consumed domestically and the rest exported. Coffee is commonly consumed in a ceremonial setting and is regarded as a regular display of hospitality and society.",
+      "The majority of Ethiopian farmers are small-scale and subsistence farmers, with less than one hectare of land on average. While some large estates and co-operative societies exist, the average producer grows little for commercial sale. Coffee is frequently grown in gardens or forests rather than large fields of farmland."
+    ]
+  },
+  {
+    "title": "How is coffee usually processed in Ethiopia?",
+    "descriptions": [
+      "In Ethiopia, coffee is prepared in a variety of ways for market. Privately owned large farms employ hired labour and process the coffee from picking to milling on the property. Small-scale farmers who grow 'garden coffee' bring their cherries to the nearest washing station, where they are sold, blended with other farmers' lots, and processed according to the station's preferences. Co-operative members, on the other hand, bring their cherries to a co-op washing station, where they are weighed and recorded on the co-membership op's roster, providing traceability to the producer level."
+    ]
+  },
+  {
     "title": "Where do you get your coffees from?",
-    "description": "Yirgachefe, Guji, Sidama, Gedeb and Limu are the five region in Ethiopia that we source our coffee from"
+    "descriptions": [
+      "Yirgachefe, Guji, Sidama, Gedeb and Limu are the five region in Ethiopia that we source our coffee from"
+    ]
   },
   {
     "title": "Are your coffees traceable?",
-    "description": "Every stage of our process is traceable, allowing us to identify the growers and confirm where each coffee was harvested, processed, and stored. Our traceability approach enables the coffee supply chain to appreciate the effort that each producer puts forward."
+    "descriptions": [
+      "Every stage of our process is traceable, allowing us to identify the growers and confirm where each coffee was harvested, processed, and stored. Our traceability approach enables the coffee supply chain to appreciate the effort that each producer puts forward."
+    ]
   },
   {
     "title": "What do you do differently?",
-    "description": "We deliver what we promise to deliver. We value open communication and we are dedicated to provide exceptional service and unwavering quality."
+    "descriptions": [
+      "We deliver what we promise to deliver. We value open communication and we are dedicated to provide exceptional service and unwavering quality."
+    ]
   },
   {
     "title": "What did buyers say about Alphabet?",
-    "description": "Alphabet coffee has become a more reliable and professional partner we could have imagined for a new company. Their ability to produce and ship quality as specified, promptly and accurately surpasses many more experienced companies. We also have navigated challenges quickly and effectively. How impressive the success of this new company has been in navigating the challenges in Ethiopia and globally with such poise and success from 2020 to 2022 is hard to overstate."
+    "descriptions": [
+      "Alphabet coffee has become a more reliable and professional partner we could have imagined for a new company. Their ability to produce and ship quality as specified, promptly and accurately surpasses many more experienced companies. We also have navigated challenges quickly and effectively. How impressive the success of this new company has been in navigating the challenges in Ethiopia and globally with such poise and success from 2020 to 2022 is hard to overstate."
+    ]
   },
   {
     "title": "Do you ship everywhere?",
-    "description": "Until now, we have been able to export our coffees to USA, Korea, Germen, Belgium, Australia and Japan, with the goal of expanding our destinations."
+    "descriptions": [
+      "Until now, we have been able to export our coffees to USA, Korea, Germen, Belgium, Australia and Japan, with the goal of expanding our destinations."
+    ]
   },
   {
     "title": "How can I get in touch with you?",
-    "description": "You can get in touch with us via email- Henock@alphabettrading.com or contact us through the phone via +251 911 26 12 33."
+    "descriptions": [
+      "You can get in touch with us via email- Henock@alphabettrading.com or contact us through the phone via +251 911 26 12 33."
+    ]
   }
 ]

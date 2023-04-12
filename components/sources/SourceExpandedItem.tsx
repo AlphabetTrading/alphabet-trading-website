@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import React, { Dispatch, SetStateAction, useEffect } from "react";
 import { FaChevronLeft } from "react-icons/fa";
-import { Region } from "../../pages/sources";
 import {
   AiFillCloseCircle,
   AiOutlineClose,
   AiOutlineCloseCircle,
 } from "react-icons/ai";
 import Image from "next/image";
+import { Region } from "../../pages/our-coffee/origins";
 
 type Props = {
   region: Region;
@@ -50,7 +50,7 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2">
               {region.locations &&
-                region.locations.map((location, index) => {
+                region.locations.map((location: any, index: number) => {
                   return <h1 key={index}>{location}</h1>;
                 })}
             </div>

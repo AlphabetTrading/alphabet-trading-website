@@ -1,12 +1,12 @@
 import Head from "next/head";
 import { Props } from "next/script";
-import BaseLayout from "../../components/common/BaseLayout";
-import Navbar from "../../components/common/Navbar";
-import SourceItem from "../../components/sources/SourceItem";
+import BaseLayout from "../../../components/common/BaseLayout";
+import Navbar from "../../../components/common/Navbar";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import SourceExpandedItem from "../../components/sources/SourceExpandedItem";
 import { AiFillCloseCircle } from "react-icons/ai";
+import SourceExpandedItem from "../../../components/sources/SourceExpandedItem";
+import SourceItem from "../../../components/sources/SourceItem";
 
 export type Region = {
   id: number;

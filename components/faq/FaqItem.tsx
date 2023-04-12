@@ -5,7 +5,7 @@ type Props = {
   expanded: false | number;
   setExpanded: React.Dispatch<React.SetStateAction<number | false>>;
   title: string;
-  description: string;
+  descriptions: string[];
   index: number;
 };
 
@@ -13,7 +13,7 @@ const FaqItem = ({
   title,
   expanded,
   setExpanded,
-  description,
+  descriptions,
   index,
 }: Props) => {
   const isOpen = index === expanded;
@@ -60,10 +60,17 @@ const FaqItem = ({
             isOpen ? "max-h-fit p-4 px-10 shadow-md" : ""
           )}
         >
-          <div className="bg-white flex w-full h-fit border-l-4 border-secondary p-4">
-            <h1 className="text-start text-sm md:text-md font-semibold tracking-wide text-black/70">
-              {description}
-            </h1>
+          <div className="bg-white flex flex-col w-full h-fit border-l-4 border-secondary p-4 gap-y-4">
+            {descriptions.map((desc, index) => {
+              return (
+                <h1
+                  key={index}
+                  className="text-start text-sm md:text-md font-semibold tracking-wide text-black/70"
+                >
+                  {desc}
+                </h1>
+              );
+            })}
           </div>
         </div>
       </button>

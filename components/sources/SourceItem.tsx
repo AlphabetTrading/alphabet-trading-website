@@ -1,8 +1,8 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Region } from "../../pages/sources";
 import { motion } from "framer-motion";
+import { Region } from "../../pages/our-coffee/origins";
 
 type Props = {
   region: Region;
