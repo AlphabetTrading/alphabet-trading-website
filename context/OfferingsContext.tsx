@@ -18,7 +18,7 @@ export interface IOffering {
   type: string;
   grade: string;
   location: string;
-  availability: string;
+  quantity: number;
   request?: string;
 }
 

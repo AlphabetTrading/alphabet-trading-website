@@ -172,11 +172,11 @@ const OfferingsComponent = (props: Props) => {
                 text={`Request Sample (${selectedOfferings.length})`}
               />
             </div>
-            <div className="hidden w-full md:grid md:grid-cols-12  px-2 font-semibold">
+            <div className="hidden w-full md:w-5/6 md:grid md:grid-cols-12 px-2 font-semibold">
               <div className="col-span-2"></div>
               <div className="col-span-3 flex items-center">
                 <div className="w-full flex items-center gap-x-1">
-                  <h2>Coffee Type</h2>
+                  <h2 className="text-sm">Coffee Type</h2>
                   <AiFillCaretUp
                     onClick={() => {
                       if (sortBy.field !== "type" || sortBy.reverse) {
@@ -213,9 +213,9 @@ const OfferingsComponent = (props: Props) => {
                   />
                 </div>
               </div>
-              <div className="col-span-2 items-center">
+              <div className="col-span-1 items-center pr-4">
                 <div className="w-full flex items-center gap-x-1">
-                  <h2>Grade</h2>
+                  <h2 className="text-sm">Grade</h2>
                   <AiFillCaretUp
                     onClick={() => {
                       console.log("sssssort");
@@ -250,20 +250,20 @@ const OfferingsComponent = (props: Props) => {
                   />
                 </div>
               </div>
-              <div className="col-span-3 items-center">
-                <div className="w-full flex items-center gap-x-1">
-                  <h2>Location</h2>
-                  <AiFillCaretUp
+              <div className="col-span-2 items-center">
+                <div className="w-full flex justify-start items-center gap-x-1">
+                  <h2 className="text-sm">Quantity</h2>
+                  {/* <AiFillCaretUp
                     onClick={() => {
                       setSortBy((prev) => ({
                         ...prev,
-                        field: "location",
+                        field: "quantity",
                         reverse: false,
                       }));
                     }}
                     className={clsx(
                       "-mr-2 cursor-pointer",
-                      sortBy.field === "location" &&
+                      sortBy.field === "quantity" &&
                         !sortBy.reverse &&
                         "text-amber-500"
                     )}
@@ -272,33 +272,33 @@ const OfferingsComponent = (props: Props) => {
                     onClick={() => {
                       setSortBy((prev) => ({
                         ...prev,
-                        field: "location",
+                        field: "quantity",
                         reverse: true,
                       }));
                     }}
                     className={clsx(
                       "-mr-2 cursor-pointer",
-                      sortBy.field === "location" &&
+                      sortBy.field === "quantity" &&
                         sortBy.reverse &&
                         "text-amber-500"
                     )}
-                  />
+                  /> */}
                 </div>
               </div>
-              <div className="col-span-2 items-center">
+              <div className="col-span-4 items-center">
                 <div className="w-full flex items-center gap-x-1">
-                  <h2>Availability</h2>
+                  <h2 className="text-sm">Location</h2>
                   <AiFillCaretUp
                     onClick={() => {
                       setSortBy((prev) => ({
                         ...prev,
-                        field: "availability",
+                        field: "location",
                         reverse: false,
                       }));
                     }}
                     className={clsx(
                       "-mr-2 cursor-pointer",
-                      sortBy.field === "availability" &&
+                      sortBy.field === "location" &&
                         !sortBy.reverse &&
                         "text-amber-500"
                     )}
@@ -307,13 +307,13 @@ const OfferingsComponent = (props: Props) => {
                     onClick={() => {
                       setSortBy((prev) => ({
                         ...prev,
-                        field: "availability",
+                        field: "location",
                         reverse: true,
                       }));
                     }}
                     className={clsx(
                       "-mr-2 cursor-pointer",
-                      sortBy.field === "availability" &&
+                      sortBy.field === "location" &&
                         sortBy.reverse &&
                         "text-amber-500"
                     )}

@@ -20,12 +20,12 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
   const [error, setError] = useState(false);
   return (
     <>
-      <div className="hidden md:grid md:grid-cols-12 w-full md:w-5/6 2k:w-2/3 4k:w-1/2 gap-x-1 px-2 items-center bg-white text-sm lg:text-md text-[#565656] rounded-lg shadow-xl font-semibold">
-        <div className="md:col-span-2 flex justify-around items-center py-3 2k:py-6 4k:py-10">
+      <div className="hidden md:grid md:grid-cols-12 w-full md:w-5/6 2k:w-2/3 4k:w-1/2 gap-x-1 px-2 items-center justify-start bg-white text-sm lg:text-md text-[#565656] rounded-lg shadow-xl font-semibold">
+        <div className="col-span-2 flex justify-around items-center py-3 2k:py-6 4k:py-1">
           <CustomCheckbox
             isChecked={offering.isSelected}
             handleOfferingCheck={() => {
-              if (offering.availability !== AVAILABILITY.AVAILABLE) {
+              if (offering.quantity === 0) {
                 setError(true);
                 setTimeout(() => {
                   setError(false);
@@ -44,14 +44,18 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
         <div className="col-span-3 2k:text-[18px] 4k:text-3xl">
           {offering.type}
         </div>
-        <div className="col-span-2 2k:text-[18px] 4k:text-3xl">
+        <div className="col-span-1 2k:text-[18px] 4k:text-3xl">
           {offering.grade}
         </div>
-        <div className="col-span-3 2k:text-[18px] 4k:text-3xl">
-          {offering.location}
-        </div>
         <div className="col-span-2">
-          <ProductAvailabilityChip type={offering.availability} />
+          <div className="flex items-center justify-center bg-secondary/10 w-1/2 rounded-3xl p-1">
+            <h1 className="text-secondary text-center">
+              {offering.quantity} bags
+            </h1>
+          </div>
+        </div>
+        <div className="col-span-4 2k:text-[18px] 4k:text-3xl">
+          {offering.location}
         </div>
       </div>
       <div className="block md:hidden w-full">
@@ -60,7 +64,7 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
             <CustomCheckbox
               isChecked={offering.isSelected}
               handleOfferingCheck={() => {
-                if (offering.availability !== AVAILABILITY.AVAILABLE) {
+                if (offering.quantity === 0) {
                   setError(true);
                   setTimeout(() => {
                     setError(false);
@@ -70,7 +74,11 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
                 }
               }}
             />
-            <ProductAvailabilityChip type={offering.availability} />
+            <div className="bg-secondary/10 rounded-3xl p-1 px-2">
+              <h1 className="text-secondary">
+                {offering.quantity} bags available
+              </h1>
+            </div>
           </div>
           <div className="flex gap-x-2">
             <img
@@ -95,7 +103,7 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
       </div>
 
       <AnimatePresence>
-        {error && offering.availability && (
+        {error && offering.quantity === 0 && (
           <motion.div
             initial={{ x: 0, opacity: 0 }}
             animate={{
