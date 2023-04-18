@@ -22,76 +22,123 @@ const origins = [
     items: [
       {
         id: "2",
-        title: "Oddo Shakiso",
+        title: "Michicha",
       },
       {
         id: "3",
-        title: "Addola Redi",
+        title: "Bukisa",
       },
       {
         id: "4",
-        title: "Uraga",
+        title: "Guracho",
       },
-      { id: "5", title: "Kercha" },
+      { id: "5", title: "Bedessa" },
+      {
+        id: "6",
+        title: "Blida",
+      },
+      {
+        id: "7",
+        title: "Egu Abaya",
+      },
+      {
+        id: "8",
+        title: "Inshe",
+      },
+      { id: "9", title: "Edera Take" },
+      {
+        id: "10",
+        title: "Udotu",
+      },
+      {
+        id: "11",
+        title: "Banti Nenka",
+      },
+      {
+        id: "12",
+        title: "Buku Hambella",
+      },
+      { id: "13", title: "Haro Lebetu" },
+
+      { id: "14", title: "Goro Muda" },
     ],
   },
+  // {
+  //   id: "2",
+  //   title: "Sidamo",
+  //   items: [
+  //     {
+  //       id: "2",
+  //       title: "Oddo Shakiso",
+  //     },
+  //     {
+  //       id: "3",
+  //       title: "Addola Redi",
+  //     },
+  //     {
+  //       id: "4",
+  //       title: "Uraga",
+  //     },
+  //     { id: "5", title: "Kercha" },
+  //   ],
+  // },
   {
     id: "2",
-    title: "Sidamo",
-    items: [
-      {
-        id: "2",
-        title: "Oddo Shakiso",
-      },
-      {
-        id: "3",
-        title: "Addola Redi",
-      },
-      {
-        id: "4",
-        title: "Uraga",
-      },
-      { id: "5", title: "Kercha" },
-    ],
-  },
-  {
-    id: "3",
     title: "Yirgacheffe",
     items: [
       {
         id: "2",
-        title: "Oddo Shakiso",
+        title: "Idido",
       },
       {
         id: "3",
-        title: "Addola Redi",
+        title: "Halo Beriti",
       },
       {
         id: "4",
-        title: "Uraga",
+        title: "Konga",
       },
-      { id: "5", title: "Kercha" },
+      { id: "5", title: "Gerse" },
     ],
   },
   {
-    id: "4",
-    title: "Limmu",
+    id: "3",
+    title: "Gedeb",
     items: [
       {
         id: "2",
-        title: "Oddo Shakiso",
+        title: "Chelchele",
       },
       {
         id: "3",
-        title: "Addola Redi",
+        title: "Chelbesa",
       },
       {
         id: "4",
-        title: "Uraga",
+        title: "Banko Gotiti",
       },
-      { id: "5", title: "Kercha" },
+      { id: "5", title: "Worka Sakaro" },
     ],
   },
+  // {
+  //   id: "5",
+  //   title: "Limmu",
+  //   items: [
+  //     {
+  //       id: "2",
+  //       title: "Oddo Shakiso",
+  //     },
+  //     {
+  //       id: "3",
+  //       title: "Addola Redi",
+  //     },
+  //     {
+  //       id: "4",
+  //       title: "Uraga",
+  //     },
+  //     { id: "5", title: "Kercha" },
+  //   ],
+  // },
 ];
 
 const MenuItem = (props: MenuItemProps) => {
