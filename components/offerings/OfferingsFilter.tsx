@@ -217,7 +217,6 @@ const MenuItem = (props: MenuItemProps) => {
 
   return (
     <ul>
-      {JSON.stringify(props.filterBy)}
       <li className="px-2">
         <motion.header
           initial={false}
@@ -381,7 +380,7 @@ const OfferingsFilter = (props: Props) => {
           quantity
         </h6>
         <MultiRangeSlider
-          max={800}
+          max={980}
           min={80}
           step={0.05}
           onChange={setValues}
