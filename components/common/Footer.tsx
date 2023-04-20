@@ -85,7 +85,7 @@ const Footer = (props: Props) => {
               <AiOutlineMail />
               <div className="text-sm flex flex-col">
                 <a
-                  className="text-base break-words  hover:text-white hover:font-semibold transition duration-200"
+                  className="text-base break-words hover:text-white hover:font-semibold transition duration-200"
                   href="mailto:henock@alphabettrading.com"
                 >
                   henock@alphabettrading.com
@@ -134,7 +134,7 @@ const Footer = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="bg-[#086965] py-2 text-center contrast-100">
+      <div className="bg-[#086965] py-2 text-center contrast-100 text-gray-200">
         Copyright <span className="contrast-100">© {getYear()}</span> Alphabet
         Trading PLC. All Rights Reserved
       </div>

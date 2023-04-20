@@ -337,8 +337,9 @@ const OfferingsFilter = (props: Props) => {
       <div className="flex flex-col gap-y-1">
         <h6 className="font-medium text-slate-500 text-sm">PRICE RANGE</h6>
         <MultiRangeSlider
-          max={1000}
+          max={6}
           min={0}
+          step={0.25}
           onChange={setValues}
           unit="lbs"
           // values={values}
@@ -377,8 +378,9 @@ const OfferingsFilter = (props: Props) => {
           quantity
         </h6>
         <MultiRangeSlider
-          max={1000}
-          min={0}
+          max={800}
+          min={80}
+          step={0.05}
           onChange={setValues}
           unit="bags"
           // values={values}

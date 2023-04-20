@@ -1,5 +1,5 @@
-import Head from "next/head";
 import React from "react";
+import Head from "next/head";
 import BaseLayout from "../../../components/common/BaseLayout";
 import Navbar from "../../../components/common/Navbar";
 import { OfferingsContextWrapper } from "../../../context/OfferingsContext";

@@ -11,17 +11,32 @@ import {
 import { ViewTypeEnum } from "./Offerings";
 
 type Props = {
+  index: number;
   viewType: ViewTypeEnum;
   offering: IOfferingRequest;
   handleOfferingCheck: (offering: IOfferingRequest) => void;
 };
 
-const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
+const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
   const [error, setError] = useState(false);
   return (
-    <>
-      <div className="hidden md:grid md:grid-cols-12 w-full md:w-5/6 2k:w-2/3 4k:w-1/2 gap-x-1 px-2 items-center justify-start bg-white text-sm lg:text-md text-[#565656] rounded-lg shadow-xl font-semibold">
-        <div className="col-span-2 flex justify-around items-center py-3 2k:py-6 4k:py-1">
+    <motion.li
+      initial={{
+        opacity: 0,
+        scale: 0,
+        translateX: index % 2 == 0 ? "-1000px" : "1000px",
+      }}
+      animate={{ opacity: 1, scale: 1, translateX: "0px" }}
+      exit={{
+        opacity: 0,
+        scale: 0,
+        translateX: index % 2 == 1 ? "1000px" : "-1000px",
+      }}
+      layout
+      className="list-none w-full flex items-center justify-center"
+    >
+      <div className="hidden md:grid md:grid-cols-12 w-full md:w-11/12 gap-x-1 px-2 items-center justify-start bg-white text-sm lg:text-md text-[#565656] rounded-lg shadow-xl font-semibold">
+        <div className="col-span-2 flex justify-around items-center py-3 2k:py-6 4k:py-1 ">
           <CustomCheckbox
             isChecked={offering.isSelected}
             handleOfferingCheck={() => {
@@ -102,7 +117,7 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
         </div>
       </div>
 
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {error && offering.quantity === 0 && (
           <motion.div
             initial={{ x: 0, opacity: 0 }}
@@ -124,7 +139,7 @@ const OfferingsItem = ({ offering, handleOfferingCheck }: Props) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </motion.li>
   );
 };
 

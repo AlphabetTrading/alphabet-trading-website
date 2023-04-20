@@ -5,8 +5,9 @@ type Props = {
   max: number;
   onChange: Function;
   unit: string;
+  step: number;
 };
-const MultiRangeSlider = ({ min, max, onChange, unit }: Props) => {
+const MultiRangeSlider = ({ min, max, onChange, unit, step }: Props) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
   const minValRef = useRef(min);
@@ -52,6 +53,7 @@ const MultiRangeSlider = ({ min, max, onChange, unit }: Props) => {
           type="range"
           min={min}
           max={max}
+          step={step.toString()}
           value={minVal}
           onChange={(event) => {
             const value = Math.min(Number(event.target.value), maxVal - 1);
@@ -66,6 +68,7 @@ const MultiRangeSlider = ({ min, max, onChange, unit }: Props) => {
           min={min}
           max={max}
           value={maxVal}
+          step={step.toString()}
           onChange={(event) => {
             const value = Math.max(Number(event.target.value), minVal + 1);
             setMaxVal(value);
