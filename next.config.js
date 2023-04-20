@@ -9,6 +9,15 @@ const nextConfig = {
   images: {
     domains: ["images.unsplash.com", "alphabettrading.s3.amazonaws.com"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/our-coffee",
+        destination: "/our-coffee/origins",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = withBundleAnalyzer(nextConfig);

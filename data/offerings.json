@@ -4,21 +4,42 @@
     "type": "Washed Yirgacheeffee Idido",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 312
+    "quantity": 312,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Idido"
+    }
   },
   {
     "id": 2,
     "type": "Washed Yirgacheeffee Idido",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 296
+    "quantity": 296,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Idido"
+    }
   },
   {
     "id": 3,
     "type": "Natural Yirgacheeffee Idido",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 647
+    "quantity": 647,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Idido"
+    }
   },
   {
     "id": 4,

@@ -11,7 +11,7 @@ import Image from "next/image";
 type Props = {};
 type FaqType = {
   title: string;
-  description: string;
+  descriptions: string[];
 };
 const faqs: FaqType[] = faqsData;
 
@@ -31,7 +31,8 @@ const FAQsPage = (props: Props) => {
           faq.title
             .toLowerCase()
             .includes(debouncedSearchText.trim().toLowerCase()) ||
-          faq.description
+          faq.descriptions
+            .join(" ")
             .toLowerCase()
             .includes(debouncedSearchText.trim().toLowerCase())
         );
@@ -75,10 +76,21 @@ const FAQsPage = (props: Props) => {
               <h1 className="text-3xl font-bold">Help Center</h1>
               <p className="w-2/3 text-center text-base md:text-lg font-semibold">
                 You can get in touch with us via email{" "}
-                <span className="text-secondary">
-                  Henock@alphabettrading.com
-                </span>{" "}
-                or contact us through the phone via{" "}
+                <span className="inline-flex items-start  gap-x-2">
+                  <a
+                    className=" break-words  text-secondary hover:font-semibold transition duration-200"
+                    href="mailto:henock@alphabettrading.com"
+                  >
+                    henock@alphabettrading.com,
+                  </a>
+                  <a
+                    className=" break-words text-secondary hover:font-semibold transition duration-200"
+                    href="mailto:info@alphabettrading.com "
+                  >
+                    info@alphabettrading.com
+                  </a>
+                </span>
+                &nbsp; or contact us through the phone via{" "}
                 <span className="text-secondary">+251 911 26 12 33</span>
               </p>
             </div>
@@ -93,7 +105,7 @@ const FAQsPage = (props: Props) => {
                     setExpanded={setExpanded}
                     key={faq.title}
                     title={faq.title}
-                    description={faq.description}
+                    descriptions={faq.descriptions}
                     index={index}
                   />
                 );

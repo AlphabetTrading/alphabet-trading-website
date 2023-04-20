@@ -316,3 +316,20 @@ background: gold;
   height: 22px;
   width: 22px;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, transparent, black);
+  z-index: 1;
+}
+
+.image-container {
+  position: relative;
+  height: 400px;
+  width: 600px;
+  overflow: hidden;
+}

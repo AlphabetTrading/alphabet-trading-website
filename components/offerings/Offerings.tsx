@@ -1,20 +1,14 @@
 import clsx from "clsx";
-import Head from "next/head";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
-import { BsGrid, BsList, BsListUl } from "react-icons/bs";
-import { AVAILABILITY } from "../../components/common/AvailabilityChip";
-import BaseLayout from "../../components/common/BaseLayout";
 import Button from "../../components/common/Button";
-import Footer from "../../components/common/Footer";
-import Navbar from "../../components/common/Navbar";
 import SendRequestModal from "../../components/modals/SendRequestModal";
 import OfferingsItem from "../../components/offerings/OfferingsItem";
 import {
   IOfferingRequest,
   useOfferingsContext,
 } from "../../context/OfferingsContext";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import OfferingsFilter from "./OfferingsFilter";
 import GetSVG from "../common/GetSVG";
 import { IoIosArrowForward } from "react-icons/io";
@@ -26,11 +20,9 @@ export enum ViewTypeEnum {
   GRID = "GRID",
   LIST = "LIST",
 }
-const OfferingsComponent = (props: Props) => {
+const OfferingsComponent = () => {
   const {
     selectedOfferings,
-    offeringRequests,
-    setOfferingRequests,
     filterOfferings,
     filteredOfferingRequests,
     setFilteredOfferingRequests,
@@ -53,7 +45,13 @@ const OfferingsComponent = (props: Props) => {
   };
 
   const isSmall = useIsSmall();
-  const [searchQuery, setSearchQuery] = useState("");
+  const [filterBy, setFilterBy] = useState<{
+    query?: string;
+    grade?: string[];
+    price?: number[];
+    process?: string[];
+    origin?: string[];
+  }>({});
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isFilterOptionOpen, setIsFilterOptionOpen] = useState(!isSmall);
   const [viewType, setViewType] = useState(ViewTypeEnum.GRID);
@@ -62,8 +60,8 @@ const OfferingsComponent = (props: Props) => {
   };
 
   useEffect(() => {
-    filterOfferings(sortBy, searchQuery);
-  }, [filterOfferings, searchQuery, sortBy]);
+    filterOfferings(sortBy, filterBy);
+  }, [filterOfferings, filterBy, sortBy]);
 
   return (
     <>
@@ -126,7 +124,7 @@ const OfferingsComponent = (props: Props) => {
           </div>
           <div className="h-0.5 w-full bg-secondary/10 max-w-xs mx-5"></div>
         </label>
-        <div className="flex w-full ">
+        <div className="flex w-full gap-x-5">
           <div
             className={clsx(
               "w-1/6  overflow-hidden transition-all duration-500 ease-in-out",
@@ -135,7 +133,11 @@ const OfferingsComponent = (props: Props) => {
                 : "w-0 max-w-xs"
             )}
           >
-            <OfferingsFilter setShowFilterOption={() => {}} />
+            <OfferingsFilter
+              setFilterBy={setFilterBy}
+              filterBy={filterBy}
+              setShowFilterOption={() => {}}
+            />
           </div>
           <div
             className={clsx(
@@ -145,8 +147,8 @@ const OfferingsComponent = (props: Props) => {
                 : "flex flex-1 "
             )}
           >
-            <div className="w-full md:w-5/6 flex justify-between">
-              <div className="flex gap-x-2 items-center flex-1 cursor-pointer">
+            <div className="w-full md:w-11/12 flex justify-between">
+              <div className="flex items-center flex-1 cursor-pointer">
                 {/* {viewType === ViewTypeEnum.GRID ? (
                   <BsGrid
                     className="h-5 w-5 text-primary/90"
@@ -159,7 +161,9 @@ const OfferingsComponent = (props: Props) => {
                   />
                 )} */}
                 <OfferingsSearchbar
-                  onChange={(query) => setSearchQuery(query)}
+                  onChange={(query) =>
+                    setFilterBy((prev) => ({ ...prev, query: query }))
+                  }
                 />
               </div>
               <Button
@@ -172,7 +176,7 @@ const OfferingsComponent = (props: Props) => {
                 text={`Request Sample (${selectedOfferings.length})`}
               />
             </div>
-            <div className="hidden w-full md:w-5/6 md:grid md:grid-cols-12 px-2 font-semibold">
+            <div className="hidden w-full md:w-11/12 md:grid md:grid-cols-12 px-2 font-semibold">
               <div className="col-span-2"></div>
               <div className="col-span-3 flex items-center">
                 <div className="w-full flex items-center gap-x-1">
@@ -253,12 +257,15 @@ const OfferingsComponent = (props: Props) => {
               <div className="col-span-2 items-center">
                 <div className="w-full flex justify-start items-center gap-x-1">
                   <h2 className="text-sm">Quantity</h2>
-                  {/* <AiFillCaretUp
+                  <AiFillCaretUp
                     onClick={() => {
                       setSortBy((prev) => ({
                         ...prev,
                         field: "quantity",
                         reverse: false,
+                        primer: (a: number) => {
+                          return a;
+                        },
                       }));
                     }}
                     className={clsx(
@@ -274,6 +281,9 @@ const OfferingsComponent = (props: Props) => {
                         ...prev,
                         field: "quantity",
                         reverse: true,
+                        primer: (a: number) => {
+                          return a;
+                        },
                       }));
                     }}
                     className={clsx(
@@ -282,7 +292,7 @@ const OfferingsComponent = (props: Props) => {
                         sortBy.reverse &&
                         "text-amber-500"
                     )}
-                  /> */}
+                  />
                 </div>
               </div>
               <div className="col-span-4 items-center">
@@ -321,28 +331,31 @@ const OfferingsComponent = (props: Props) => {
                 </div>
               </div>
             </div>
-            <div
+            <motion.li
               className={clsx(
                 "flex flex-col items-center justify-start gap-y-2 w-full"
               )}
             >
-              {filteredOfferingRequests.length > 0 ? (
-                filteredOfferingRequests.map(
-                  (offering: IOfferingRequest, index: number) => {
-                    return (
-                      <OfferingsItem
-                        viewType={viewType}
-                        handleOfferingCheck={handleOfferingCheck}
-                        key={offering.id}
-                        offering={offering}
-                      />
-                    );
-                  }
-                )
-              ) : (
-                <div className="my-5 font-semibold">No Result</div>
-              )}
-            </div>
+              <AnimatePresence>
+                {filteredOfferingRequests.length > 0 ? (
+                  filteredOfferingRequests.map(
+                    (offering: IOfferingRequest, index: number) => {
+                      return (
+                        <OfferingsItem
+                          index={index}
+                          viewType={viewType}
+                          handleOfferingCheck={handleOfferingCheck}
+                          key={offering.id}
+                          offering={offering}
+                        />
+                      );
+                    }
+                  )
+                ) : (
+                  <div className="my-5 font-semibold">No Result</div>
+                )}
+              </AnimatePresence>
+            </motion.li>
           </div>
         </div>
       </div>
