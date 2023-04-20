@@ -1,0 +1,49 @@
+.timeline {
+  width: 6px;
+  height: 75%;
+  background-color: #0000001a;
+}
+
+.timeline-progress {
+  height: 0%;
+  width: 100%;
+  background-color: #fadca0;
+}
+
+.timeline-items {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  box-shadow: black;
+  display: block;
+  border-radius: 100%;
+}
+
+.timeline-item.active::before {
+  background-color: #fadca0;
+}
+
+.timeline-item.completed::before {
+  background-color: #f2a40c;
+}
+
+.timeline-item.active .timeline-content {
+  color: #fff;
+  background-color: #fadca0;
+}
+
+.timeline-item.active .timeline-content::before {
+  background-color: #fadca0;
+}

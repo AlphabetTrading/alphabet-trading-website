@@ -4,7 +4,6 @@ import BaseLayout from "../../../components/common/BaseLayout";
 import Navbar from "../../../components/common/Navbar";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { AiFillCloseCircle } from "react-icons/ai";
 import SourceExpandedItem from "../../../components/sources/SourceExpandedItem";
 import SourceItem from "../../../components/sources/SourceItem";
 
@@ -13,7 +12,7 @@ export type Region = {
   name: string;
   description: string;
   src: string;
-  color: string;
+  expandedSrc: string;
   locations: string[];
 };
 
@@ -21,48 +20,63 @@ const regions: Region[] = [
   {
     id: 0,
     name: "Guji",
-    description: " 14 Regions | 7 Washing Stations",
+    description: " 20 Regions | 7 Washing Stations",
     src: "/images/guji.svg",
-    color: "#086965",
+    expandedSrc: "/images/expanded_guji.svg",
     locations: [
-      "Layo",
-      "Quni",
-      "Michicha",
-      "Bilida",
-      "Ela Farda",
-      "Gurachu",
-      "Egu Abaya",
-      "Birbirsa",
-      "Oddo Shakiso",
-      "Uraga",
-      "Muda Tatesa",
-      "Haro Lebetu",
       "Kercha",
+      "Layo Quni",
+      "Michicha",
+      "Blida",
+      "Ela Farda",
+      "Bukisa",
+      "Guracho",
+      "Bedessa",
+      "Egu Abaya",
+      "Inshe",
+      "Birbirsa",
+      "Edera Take",
+      "Mazora",
+      "Chebi",
+      "Udotu",
       "Hambella Wamena",
+      "Banti Nenka",
+      "Buku Hambella",
+      "Uraga",
+      "Haro Lebetu",
+      "Goro Muda",
     ],
   },
   {
     id: 1,
     name: "Yirgacheffe",
-    description: "7 Regions | 8 Washing Stations",
+    description: "5 Regions | 8 Washing Stations",
     src: "/images/yirgacheffe.svg",
-    color: "#2B48B2",
-    locations: [
-      "Bule",
-      "Chelchele",
-      "Chelbiesa",
-      "Gedeb",
-      "Gelana Abaya",
-      "Kochere",
-      "Yirgacheffe",
-    ],
+    expandedSrc: "/images/expanded_yirgacheffe.svg",
+    locations: ["Gerse", "Halo Beriti", "Idido", "Konga"],
   },
   {
     id: 2,
+    name: "Gedeb",
+    description: "4 Regions | 3 Washing Stations",
+    src: "/images/gedeb.svg",
+    expandedSrc: "/images/expanded_gedeb.svg",
+    locations: ["Chelchele", "Chelbesa", "Worka Sakaro", "Banko Gotiti"],
+  },
+  {
+    id: 3,
+    name: "Sidamo",
+    description: "6 Regions | 5 Washing Stations",
+    src: "/images/Sidamo.svg",
+    expandedSrc: "/images/expanded_sidamo.svg",
+    locations: ["Arbigonna", "Benssa", "Chire", "Dale", "Dara", "Shebedino"],
+  },
+  {
+    id: 4,
     name: "Limmu",
-    description: "8 Regions | 8 Washing Stations",
+    description: "7 Regions | 8 Washing Stations",
     src: "/images/limmu.svg",
-    color: "#E86161",
+    expandedSrc: "/images/expanded_limmu.svg",
     locations: [
       "Gera",
       "Gomma",
@@ -70,29 +84,7 @@ const regions: Region[] = [
       "Kersa",
       "Limmu Kossa",
       "Limmu Seka",
-      "Mena",
       "Seka Chekoressa",
-    ],
-  },
-  {
-    id: 3,
-    name: "Sidamo",
-    description: "13 Regions | 6 Washing Stations",
-    src: "/images/Sidamo.svg",
-    color: "#E69C2D",
-    locations: [
-      "Aleta Wendo",
-      "Arbigonna",
-      "Arroressa",
-      "Benssa",
-      "Chire",
-      "Chuko",
-      "Dale",
-      "Dara",
-      "Hadera Tunto",
-      "Loko Abaya",
-      "Shebedino",
-      "Wensho",
     ],
   },
 ];
@@ -111,48 +103,75 @@ const Index = (props: Props) => {
       </Head>
       <div className="flex flex-col justify-center w-full">
         <Navbar white={true} />
-        <div className="w-full h-full my-12 mt-32 flex justify-center">
-          <motion.div className="w-3/4 grid grid-cols-1 md:grid-cols-2 gap-10 gap-x-12">
-            {regions.map((region: Region, index: number) => (
-              <SourceItem
-                key={index}
-                region={region}
-                setSelectedId={setSelectedId}
-              />
-            ))}
-            <AnimatePresence>
-              <>
-                {selectedId === 0 && (
-                  <SourceExpandedItem
-                    selectedId={selectedId}
-                    setSelectedId={setSelectedId}
-                    region={regions[selectedId]}
-                  />
-                )}
-                {selectedId === 1 && (
-                  <SourceExpandedItem
-                    selectedId={selectedId}
-                    setSelectedId={setSelectedId}
-                    region={regions[selectedId]}
-                  />
-                )}
-                {selectedId === 2 && (
-                  <SourceExpandedItem
-                    selectedId={selectedId}
-                    setSelectedId={setSelectedId}
-                    region={regions[selectedId]}
-                  />
-                )}
-                {selectedId === 3 && (
-                  <SourceExpandedItem
-                    selectedId={selectedId}
-                    setSelectedId={setSelectedId}
-                    region={regions[selectedId]}
-                  />
-                )}
-              </>
-            </AnimatePresence>
-          </motion.div>
+        <div className="w-full h-full mt-32 bg-[#F3F7F7]">
+          <div className="flex flex-col justify-center items-center my-8 mb-14">
+            <div className="w-full flex flex-col justify-center items-center gap-y-3 p-4 py-4 md:py-10 md:px-6 lg:px-10 xl:px-20 2xl:px-36">
+              <h1 className="text-4xl 2k:text-5xl 4k:text-6xl font-semibold">
+                Our <span className="text-secondary">Coffee</span> Sources
+              </h1>
+              <p className="w-11/12 md:w-5/6 text-center font-semibold 2k:text-xl 4k:text-2xl text-[#606060]">
+                Ethiopia is known as the birthplace of coffee and is considered
+                by many to be the darling of the coffee world. The country’s
+                unique climate and geography provide ideal growing conditions
+                for coffee, and Ethiopian coffee is renowned for its complex
+                flavor profiles and high quality. We are currently sourcing our
+                specialty coffee from these four main regions: Yirgacheffe,
+                Guji, Limmu, and Sidamo.
+              </p>
+              <p className="w-11/12 md:w-5/6  text-center font-semibold 2k:text-xl 4k:text-2xl text-[#606060]">
+                Below you can take a look at each regions&apos; stations and the
+                small kebeles the coffee is collected from
+              </p>
+            </div>
+            <motion.div className="w-3/4 grid grid-cols-1 md:grid-cols-2 items-center gap-10 gap-x-12">
+              {regions.map((region: Region, index: number) => (
+                <SourceItem
+                  key={index}
+                  region={region}
+                  setSelectedId={setSelectedId}
+                />
+              ))}
+              <AnimatePresence>
+                <>
+                  {selectedId === 0 && (
+                    <SourceExpandedItem
+                      selectedId={selectedId}
+                      setSelectedId={setSelectedId}
+                      region={regions[selectedId]}
+                    />
+                  )}
+                  {selectedId === 1 && (
+                    <SourceExpandedItem
+                      selectedId={selectedId}
+                      setSelectedId={setSelectedId}
+                      region={regions[selectedId]}
+                    />
+                  )}
+                  {selectedId === 2 && (
+                    <SourceExpandedItem
+                      selectedId={selectedId}
+                      setSelectedId={setSelectedId}
+                      region={regions[selectedId]}
+                    />
+                  )}
+                  {selectedId === 3 && (
+                    <SourceExpandedItem
+                      selectedId={selectedId}
+                      setSelectedId={setSelectedId}
+                      region={regions[selectedId]}
+                    />
+                  )}
+                  {selectedId === 4 && (
+                    <SourceExpandedItem
+                      selectedId={selectedId}
+                      setSelectedId={setSelectedId}
+                      region={regions[selectedId]}
+                    />
+                  )}
+                </>
+              </AnimatePresence>
+            </motion.div>
+          </div>
         </div>
       </div>
     </BaseLayout>

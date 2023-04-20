@@ -25,24 +25,21 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
   }, []);
   return (
     <motion.div
-      className="w-full min-h-screen flex justify-center bg-secondary/10 fixed top-0 right-0 left-0 py-40 z-50"
+      className="w-full h-fit md:min-h-screen flex items-center justify-center bg-secondary/10 fixed top-0 bottom-0 right-0 left-0 z-50"
       onClick={() => setSelectedId(null)}
       layoutId={selectedId.toString()}
     >
       <motion.div
-        className="w-5/6 bg-white min-h-full relative rounded-3xl drop-shadow-2xl"
+        className="w-5/6 h-full max-h-screen overflow-y-scroll no-scrollbar bg-white relative rounded-3xl drop-shadow-2xl"
         onClick={(e) => {
           e.stopPropagation();
         }}
       >
-        <div className="flex flex-col md:flex-row w-full h-full">
-          <div className="flex flex-col w-full md:w-1/2 h-full p-8 px-12 gap-y-8">
+        <div className="flex flex-col-reverse md:flex-row md:justify-center w-full h-full">
+          <div className="flex flex-col w-full md:w-1/2 p-8 px-12 gap-y-8">
             <div>
               <p>{region.description}</p>
-              <div
-                style={{ color: region.color }}
-                className="flex items-center gap-x-1"
-              >
+              <div className="flex items-center gap-x-1 text-secondary">
                 <p className="font-DM_Serif text-5xl text-start">
                   {region.name}
                 </p>
@@ -55,12 +52,12 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
                 })}
             </div>
           </div>
-          <div className="flex w-full md:w-1/2 relative">
+          <div className="flex items-center min-h-[500px] w-full h-full md:w-1/2 relative">
             <Image
-              className="absolute"
+              className="min-h-[400px] absolute inset-0 object-contain"
               fill
-              src="/images/ethiopia_guji.svg"
-              alt=""
+              src={region.expandedSrc}
+              alt={region.name}
             />
           </div>
         </div>

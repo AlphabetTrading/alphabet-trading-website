@@ -382,7 +382,8 @@ const OfferingsFilter = (props: Props) => {
         <MultiRangeSlider
           max={980}
           min={80}
-          step={0.05}
+          step={1}
+          // step={0.05}
           onChange={setValues}
           unit="bags"
           // values={values}
