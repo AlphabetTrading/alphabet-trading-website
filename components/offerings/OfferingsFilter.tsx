@@ -1,18 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import GetSVG from "../common/GetSVG";
 import MultiRangeSlider from "./MultiRangeSlider";
 import { IoIosArrowForward } from "react-icons/io";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
+import GradeFilter from "./GradeFilter";
+import ProcessFilter from "./ProcessFilter";
 
 type Props = {
   setShowFilterOption: React.Dispatch<React.SetStateAction<boolean>>;
+  filterBy: {
+    query?: string;
+    grade?: string[];
+    price?: number[];
+    process?: string[];
+    origin?: string[];
+  };
+  setFilterBy: React.Dispatch<
+    React.SetStateAction<{
+      query?: string;
+      grade?: string[];
+      price?: number[];
+      process?: string[];
+      origin?: string[];
+    }>
+  >;
 };
 
 type MenuItemProps = {
   title: string;
   options: { id: string; title: string }[];
+  filterBy: {
+    query?: string;
+    grade?: string[];
+    price?: number[];
+    process?: string[];
+    origin?: string[];
+  };
+  setFilterBy: React.Dispatch<
+    React.SetStateAction<{
+      query?: string;
+      grade?: string[];
+      price?: number[];
+      process?: string[];
+      origin?: string[];
+    }>
+  >;
 };
 
 const origins = [
@@ -170,13 +204,20 @@ const MenuItem = (props: MenuItemProps) => {
       return options;
     });
   };
-
+  useEffect(() => {
+    const checkedList = selectedOptions.filter((option) => option.checked);
+    console.log(checkedList.map((val) => val.title));
+    props.setFilterBy((prev) => ({
+      ...prev,
+    }));
+  }, []);
   const isAllChecked = () =>
     selectedOptions.filter((item) => item.checked).length ===
     selectedOptions.length;
 
   return (
     <ul>
+      {JSON.stringify(props.filterBy)}
       <li className="px-2">
         <motion.header
           initial={false}
@@ -310,31 +351,12 @@ const OfferingsFilter = (props: Props) => {
       </div>
       <div className="flex flex-col gap-y-1">
         <h6 className="font-medium text-slate-500 text-sm">GRADE</h6>
-        <ul className="flex flex-col gap-y-1">
-          {["Grade 1", "grade 2", "grade 3", "grade 4"].map((item) => {
-            return (
-              <li
-                key={item}
-                className={clsx(
-                  "flex gap-x-2 items-center  px-5 py-1 rounded-md overflow-hidden relative cursor-pointer"
-                )}
-              >
-                <input
-                  type="checkbox"
-                  className="appearance-none w-full h-full absolute z-20 peer/select inset-0"
-                />
-                <div className="w-full h-full peer-checked/select:bg-secondary/20 peer-hover/select:bg-secondary/5 absolute inset-0"></div>
-                <GetSVG
-                  name="check-mark"
-                  className={clsx("hidden peer-checked/select:inline-flex")}
-                />
-                <p className="capitalize">{item}</p>
-              </li>
-            );
-          })}
-        </ul>
+        <GradeFilter
+          setFilterBy={props.setFilterBy}
+          filterBy={props.filterBy}
+        />
       </div>
-      <div className="flex flex-col gap-y-1">
+      {/* <div className="flex flex-col gap-y-1">
         <h6 className="font-medium text-slate-500 text-sm">PRICE RANGE</h6>
         <MultiRangeSlider
           max={6}
@@ -344,34 +366,15 @@ const OfferingsFilter = (props: Props) => {
           unit="lbs"
           // values={values}
         />
-      </div>
+      </div> */}
       <div className="flex flex-col gap-y-1">
         <h6 className="font-medium text-slate-500 text-sm uppercase">
           Process
         </h6>
-        <ul className="flex flex-col gap-y-1">
-          {["Washed", "Natural"].map((item) => {
-            return (
-              <li
-                key={item}
-                className={clsx(
-                  "flex gap-x-2 items-center  px-5 py-1 rounded-md overflow-hidden  relative cursor-pointer"
-                )}
-              >
-                <input
-                  type="checkbox"
-                  className="appearance-none w-full h-full absolute z-20 peer/select inset-0"
-                />
-                <div className="w-full h-full peer-checked/select:bg-secondary/20 peer-hover/select:bg-secondary/5 absolute inset-0"></div>
-                <GetSVG
-                  name="check-mark"
-                  className={clsx("hidden peer-checked/select:inline-flex")}
-                />
-                <p className="capitalize">{item}</p>
-              </li>
-            );
-          })}
-        </ul>
+        <ProcessFilter
+          setFilterBy={props.setFilterBy}
+          filterBy={props.filterBy}
+        />
       </div>
       <div className="flex flex-col gap-y-1">
         <h6 className="font-medium text-slate-500 text-sm uppercase">
@@ -391,6 +394,8 @@ const OfferingsFilter = (props: Props) => {
         {origins.map((origin) => {
           return (
             <MenuItem
+              filterBy={props.filterBy}
+              setFilterBy={props.setFilterBy}
               key={origin.id}
               title={origin.title}
               options={origin.items}

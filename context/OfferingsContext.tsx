@@ -20,6 +20,13 @@ export interface IOffering {
   location: string;
   quantity: number;
   request?: string;
+  process: string;
+  origin: {
+    region: string;
+    zone: string;
+    woreda: string;
+    kebele: string;
+  };
 }
 
 export interface IOfferingRequest extends IOffering {
@@ -42,9 +49,15 @@ interface IOfferingContextProps {
       reverse: boolean;
       primer: Function;
     },
-    query: string
+    filterBy: {
+      query?: string;
+      grade?: string[];
+      price?: number[];
+      origin?: string[];
+    }
   ) => void;
 }
+
 const offeringsData: IOffering[] = offerings;
 export const OfferingsContext = createContext<IOfferingContextProps>({
   loading: false,
@@ -62,7 +75,13 @@ export const OfferingsContext = createContext<IOfferingContextProps>({
       reverse: boolean;
       primer: Function;
     },
-    query: string
+    filterBy: {
+      query?: string;
+      grade?: string[];
+      price?: number[];
+      process?: string[];
+      origin?: string[];
+    }
   ) => {},
 });
 
@@ -86,15 +105,34 @@ export function OfferingsContextWrapper({ children }: any) {
         reverse: boolean;
         primer: Function;
       },
-      query: string
+      filterBy: {
+        query?: string;
+        grade?: string[];
+        price?: number[];
+        process?: string[];
+        origin?: string[];
+      }
     ) => {
       const sortedOffs = offeringRequests
-        .filter(
-          (offer) =>
-            offer.type.toLowerCase().includes(query.toLowerCase()) ||
-            offer.grade.toLowerCase().includes(query.toLowerCase()) ||
-            offer.location.toLowerCase().includes(query.toLowerCase())
-        )
+        .filter((offer) => {
+          let filter = true;
+          if (filterBy.query) {
+            filter = offer.type
+              .toLowerCase()
+              .includes(filterBy.query.toLowerCase());
+          }
+
+          if (filterBy.grade && filterBy.grade.length > 0) {
+            filter = filterBy.grade.includes(offer.grade);
+          }
+          if (filterBy.origin && filterBy.origin.length > 0) {
+            filter = filterBy.origin.includes(offer.origin.kebele);
+          }
+          if (filterBy.process && filterBy.process.length > 0) {
+            filter = filterBy.process.includes(offer.process);
+          }
+          return filter;
+        })
         .sort(sort_by(sortBy));
       setFilteredOfferingRequests(sortedOffs);
       setSelectedOfferings(sortedOffs.filter((off) => off.isSelected));

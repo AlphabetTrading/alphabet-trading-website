@@ -45,7 +45,13 @@ const OfferingsComponent = () => {
   };
 
   const isSmall = useIsSmall();
-  const [searchQuery, setSearchQuery] = useState("");
+  const [filterBy, setFilterBy] = useState<{
+    query?: string;
+    grade?: string[];
+    price?: number[];
+    process?: string[];
+    origin?: string[];
+  }>({});
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isFilterOptionOpen, setIsFilterOptionOpen] = useState(!isSmall);
   const [viewType, setViewType] = useState(ViewTypeEnum.GRID);
@@ -54,8 +60,8 @@ const OfferingsComponent = () => {
   };
 
   useEffect(() => {
-    filterOfferings(sortBy, searchQuery);
-  }, [filterOfferings, searchQuery, sortBy]);
+    filterOfferings(sortBy, filterBy);
+  }, [filterOfferings, filterBy, sortBy]);
 
   return (
     <>
@@ -127,7 +133,11 @@ const OfferingsComponent = () => {
                 : "w-0 max-w-xs"
             )}
           >
-            <OfferingsFilter setShowFilterOption={() => {}} />
+            <OfferingsFilter
+              setFilterBy={setFilterBy}
+              filterBy={filterBy}
+              setShowFilterOption={() => {}}
+            />
           </div>
           <div
             className={clsx(
@@ -151,7 +161,9 @@ const OfferingsComponent = () => {
                   />
                 )} */}
                 <OfferingsSearchbar
-                  onChange={(query) => setSearchQuery(query)}
+                  onChange={(query) =>
+                    setFilterBy((prev) => ({ ...prev, query: query }))
+                  }
                 />
               </div>
               <Button
