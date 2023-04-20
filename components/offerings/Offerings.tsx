@@ -88,7 +88,7 @@ const OfferingsComponent = () => {
           <span className="text-secondary">Coffee</span> Export
         </h1>
         <p className="w-11/12 md:w-2/3 lg:w-7/12 xl:w-1/2 2k:w-2/5 4k:w-1/4 text-center font-semibold 2k:text-xl 4k:text-2xl">
-          Yirgacheffe, Guji, Sidama, Gedebe and Limu are the five regions in
+          Yirgacheffe, Guji, Sidamo, Gedeb and Limmu are the five regions in
           Ethiopia that Alphabet Coffee sources its coffee from.
         </p>
         <label

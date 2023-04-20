@@ -1,12 +1,6 @@
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
-import { RiFacebookCircleLine } from "react-icons/ri";
-import {
-  AiFillTwitterCircle,
-  AiOutlineLinkedin,
-  AiOutlineMail,
-  AiOutlineYoutube,
-} from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 import Link from "next/link";
 
 type Props = {};
@@ -68,7 +62,7 @@ const Footer = (props: Props) => {
               <FaPhoneAlt />
               <div className="text-sm flex flex-col">
                 <a
-                  href="tel:++251911261233"
+                  href="tel:+251911261233"
                   className="text-sm hover:text-white hover:font-semibold transition duration-200"
                 >
                   +251 911 261233
@@ -102,28 +96,44 @@ const Footer = (props: Props) => {
           <div className="col-span-10 md:col-span-10 lg:col-span-2 gap-y-2 py-2 flex flex-col justify-start items-center w-full h-full">
             <h1 className="text-xl text-center w-full">Follow Us</h1>
             <div className="flex gap-x-4 w-full justify-center">
-              <Link href="https://www.linkedin.com/company/alphabet-trading">
+              <Link
+                href="https://www.linkedin.com/company/alphabet-trading"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <img
                   src="/icons/linkedin.svg"
                   alt="linkedin"
                   className="w-8 h-8 md:w-10 md:h-10 hover:scale-105 transition-all duration-200 ease-in-out"
                 />
               </Link>
-              <Link href="https://twitter.com/AlphabeTrading">
+              <Link
+                href="https://twitter.com/AlphabeTrading"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <img
                   src="/icons/twitter.svg"
                   alt="twitter"
                   className="w-8 h-8 md:w-10 md:h-10 hover:scale-105 transition-all duration-200 ease-in-out"
                 />
               </Link>
-              <Link href="https://www.youtube.com/@AlphabetTrading">
+              <Link
+                href="https://www.youtube.com/@AlphabetTrading"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <img
                   src="/icons/youtube.svg"
                   alt="youtube"
                   className="w-8 h-8 md:w-10 md:h-10 hover:scale-105 transition-all duration-200 ease-in-out"
                 />
               </Link>
-              <Link href="https://www.instagram.com/alphabettradingplc/">
+              <Link
+                href="https://www.instagram.com/alphabettradingplc/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <img
                   src="/icons/instagram.svg"
                   alt=""
