@@ -87,10 +87,10 @@ const MultiRangeSlider = ({ min, max, onChange, unit, step }: Props) => {
       </div>
       <div className="flex justify-between items-center h-2 text-xs transition-all ease-in-out">
         <div className="slider__left-value">
-          ${minVal}/{unit}
+          {minVal} {unit}
         </div>
         <div className="slider__right-value">
-          ${maxVal}/{unit}
+          {maxVal} {unit}
         </div>
       </div>
     </div>

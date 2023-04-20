@@ -4,7 +4,7 @@
     "type": "Washed Yirgacheeffee Idido",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 312,
+    "quantity": 610,
     "process": "Washed",
     "origin": {
       "region": "Southern",
@@ -18,8 +18,8 @@
     "type": "Washed Yirgacheeffee Idido",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 296,
-    "process": "Natural",
+    "quantity": 633,
+    "process": "Washed",
     "origin": {
       "region": "Southern",
       "zone": "Gedeo",
@@ -32,7 +32,7 @@
     "type": "Natural Yirgacheeffee Idido",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 647,
+    "quantity": 641,
     "process": "Natural",
     "origin": {
       "region": "Southern",
@@ -46,860 +46,1721 @@
     "type": "Natural Yirgacheeffee Idido",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 776
+    "quantity": 411,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Idido"
+    }
   },
   {
     "id": 5,
     "type": "Natural Yirgacheeffee Idido",
     "grade": "G-3",
     "location": "Southern Region, Ethiopia",
-    "quantity": 183
+    "quantity": 931,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Idido"
+    }
   },
   {
     "id": 6,
     "type": "Natural Yirgacheeffee Idido",
     "grade": "G-4",
     "location": "Southern Region, Ethiopia",
-    "quantity": 628
+    "quantity": 970,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Idido"
+    }
   },
   {
     "id": 7,
     "type": "Washed Yirgacheeffee Halo Beriti",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 571
+    "quantity": 653,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Halo Beriti"
+    }
   },
   {
     "id": 8,
     "type": "Washed Yirgacheeffee Halo Beriti",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 204
+    "quantity": 381,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Halo Beriti"
+    }
   },
   {
     "id": 9,
     "type": "Natural Yirgacheeffee Halo Beriti",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 552
+    "quantity": 572,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Halo Beriti"
+    }
   },
   {
     "id": 10,
     "type": "Natural Yirgacheeffee Halo Beriti",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 100
+    "quantity": 299,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Halo Beriti"
+    }
   },
   {
     "id": 11,
     "type": "Natural Yirgacheeffee Halo Beriti",
     "grade": "G-3",
     "location": "Southern Region, Ethiopia",
-    "quantity": 440
+    "quantity": 689,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Halo Beriti"
+    }
   },
   {
     "id": 12,
     "type": "Natural Yirgacheeffee Halo Beriti",
     "grade": "G-4",
     "location": "Southern Region, Ethiopia",
-    "quantity": 411
+    "quantity": 771,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Halo Beriti"
+    }
   },
   {
     "id": 13,
     "type": "Washed Yirgacheeffee Konga",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 500
+    "quantity": 615,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Konga"
+    }
   },
   {
     "id": 14,
     "type": "Washed Yirgacheeffee Konga",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 294
+    "quantity": 348,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Konga"
+    }
   },
   {
     "id": 15,
     "type": "Natural Yirgacheeffee Konga",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 391
+    "quantity": 530,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Konga"
+    }
   },
   {
     "id": 16,
     "type": "Natural Yirgacheeffee Konga",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 413
+    "quantity": 668,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Konga"
+    }
   },
   {
     "id": 17,
     "type": "Natural Yirgacheeffee Konga",
     "grade": "G-3",
     "location": "Southern Region, Ethiopia",
-    "quantity": 653
+    "quantity": 702,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Konga"
+    }
   },
   {
     "id": 18,
     "type": "Natural Yirgacheeffee Konga",
     "grade": "G-4",
     "location": "Southern Region, Ethiopia",
-    "quantity": 562
+    "quantity": 699,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Konga"
+    }
   },
   {
     "id": 19,
     "type": "Washed Yirgacheeffee Gerse",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 262
+    "quantity": 440,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Gerse"
+    }
   },
   {
     "id": 20,
     "type": "Washed Yirgacheeffee Gerse",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 137
+    "quantity": 729,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Gerse"
+    }
   },
   {
     "id": 21,
     "type": "Natural Yirgacheeffee Gerse",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 128
+    "quantity": 415,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Gerse"
+    }
   },
   {
     "id": 22,
     "type": "Natural Yirgacheeffee Gerse",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 777
+    "quantity": 269,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Gerse"
+    }
   },
   {
     "id": 23,
     "type": "Natural Yirgacheeffee Gerse",
     "grade": "G-3",
     "location": "Southern Region, Ethiopia",
-    "quantity": 175
+    "quantity": 790,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Gerse"
+    }
   },
   {
     "id": 24,
     "type": "Natural Yirgacheeffee Gerse",
     "grade": "G-4",
     "location": "Southern Region, Ethiopia",
-    "quantity": 672
+    "quantity": 747,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Yirgacheeffee",
+      "kebele": "Gerse"
+    }
   },
   {
     "id": 25,
     "type": "Washed Gedeb Chelchele",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 484
+    "quantity": 649,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelchele"
+    }
   },
   {
     "id": 26,
     "type": "Washed Gedeb Chelchele",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 664
+    "quantity": 521,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelchele"
+    }
   },
   {
     "id": 27,
     "type": "Natural Gedeb Chelchele",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 783
+    "quantity": 468,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelchele"
+    }
   },
   {
     "id": 28,
     "type": "Natural Gedeb Chelchele",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 796
+    "quantity": 773,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelchele"
+    }
   },
   {
     "id": 29,
     "type": "Natural Gedeb Chelchele",
     "grade": "G-3",
     "location": "Southern Region, Ethiopia",
-    "quantity": 527
+    "quantity": 882,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelchele"
+    }
   },
   {
     "id": 30,
     "type": "Natural Gedeb Chelchele",
     "grade": "G-4",
     "location": "Southern Region, Ethiopia",
-    "quantity": 157
+    "quantity": 667,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelchele"
+    }
   },
   {
     "id": 31,
     "type": "Washed Gedeb Chelbesa",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 751
+    "quantity": 477,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelbesa"
+    }
   },
   {
     "id": 32,
     "type": "Washed Gedeb Chelbesa",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 284
+    "quantity": 481,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelbesa"
+    }
   },
   {
     "id": 33,
     "type": "Natural Gedeb Chelbesa",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 341
+    "quantity": 261,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelbesa"
+    }
   },
   {
     "id": 34,
     "type": "Natural Gedeb Chelbesa",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 696
+    "quantity": 790,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelbesa"
+    }
   },
   {
     "id": 35,
     "type": "Natural Gedeb Chelbesa",
     "grade": "G-3",
     "location": "Southern Region, Ethiopia",
-    "quantity": 755
+    "quantity": 805,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelbesa"
+    }
   },
   {
     "id": 36,
     "type": "Natural Gedeb Chelbesa",
     "grade": "G-4",
     "location": "Southern Region, Ethiopia",
-    "quantity": 305
+    "quantity": 846,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Chelbesa"
+    }
   },
   {
     "id": 37,
     "type": "Washed Gedeb Banko Gotiti",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 787
+    "quantity": 222,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Banko Gotiti"
+    }
   },
   {
     "id": 38,
     "type": "Washed Gedeb Banko Gotiti",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 755
+    "quantity": 620,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Banko Gotiti"
+    }
   },
   {
     "id": 39,
     "type": "Natural Gedeb Banko Gotiti",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 693
+    "quantity": 410,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Banko Gotiti"
+    }
   },
   {
     "id": 40,
     "type": "Natural Gedeb Banko Gotiti",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 266
+    "quantity": 727,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Banko Gotiti"
+    }
   },
   {
     "id": 41,
     "type": "Natural Gedeb Banko Gotiti",
     "grade": "G-3",
     "location": "Southern Region, Ethiopia",
-    "quantity": 118
+    "quantity": 913,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Banko Gotiti"
+    }
   },
   {
     "id": 42,
     "type": "Natural Gedeb Banko Gotiti",
     "grade": "G-4",
     "location": "Southern Region, Ethiopia",
-    "quantity": 662
+    "quantity": 798,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Banko Gotiti"
+    }
   },
   {
     "id": 43,
     "type": "Washed Gedeb Worka Sakaro",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 334
+    "quantity": 439,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Worka Sakaro"
+    }
   },
   {
     "id": 44,
     "type": "Washed Gedeb Worka Sakaro",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 411
+    "quantity": 478,
+    "process": "Washed",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Worka Sakaro"
+    }
   },
   {
     "id": 45,
     "type": "Natural Gedeb Worka Sakaro",
     "grade": "G-1",
     "location": "Southern Region, Ethiopia",
-    "quantity": 254
+    "quantity": 246,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Worka Sakaro"
+    }
   },
   {
     "id": 46,
     "type": "Natural Gedeb Worka Sakaro",
     "grade": "G-2",
     "location": "Southern Region, Ethiopia",
-    "quantity": 218
+    "quantity": 380,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Worka Sakaro"
+    }
   },
   {
     "id": 47,
     "type": "Natural Gedeb Worka Sakaro",
     "grade": "G-3",
     "location": "Southern Region, Ethiopia",
-    "quantity": 228
+    "quantity": 819,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Worka Sakaro"
+    }
   },
   {
     "id": 48,
     "type": "Natural Gedeb Worka Sakaro",
     "grade": "G-4",
     "location": "Southern Region, Ethiopia",
-    "quantity": 665
+    "quantity": 732,
+    "process": "Natural",
+    "origin": {
+      "region": "Southern",
+      "zone": "Gedeo",
+      "woreda": "Gedeb",
+      "kebele": "Worka Sakaro"
+    }
   },
   {
     "id": 49,
     "type": "Washed Guji Michicha",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 499
+    "quantity": 389,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Michicha"
+    }
   },
   {
     "id": 50,
     "type": "Washed Guji Bukisa",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 365
+    "quantity": 643,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bukisa"
+    }
   },
   {
     "id": 51,
     "type": "Washed Guji Guracho",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 311
+    "quantity": 153,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Guracho"
+    }
   },
   {
     "id": 52,
     "type": "Washed Guji Bedessa",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 354
+    "quantity": 252,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bedessa"
+    }
   },
   {
     "id": 53,
     "type": "Washed Guji Blida",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 353
+    "quantity": 688,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Blida"
+    }
   },
   {
     "id": 54,
     "type": "Washed Guji Egu Abaya",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 264
+    "quantity": 521,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Egu Abaya"
+    }
   },
   {
     "id": 55,
     "type": "Washed Guji Inshe",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 559
+    "quantity": 500,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Inshe"
+    }
   },
   {
     "id": 56,
     "type": "Washed Guji Edera Take",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 571
+    "quantity": 400,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Edera Take"
+    }
   },
   {
     "id": 57,
     "type": "Washed Guji Udotu",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 730
+    "quantity": 745,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Udotu"
+    }
   },
   {
     "id": 58,
     "type": "Washed Guji Banti Nenka",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 139
+    "quantity": 179,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Banti Nenka"
+    }
   },
   {
     "id": 59,
     "type": "Washed Guji Buku Hambella",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 554
+    "quantity": 571,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Buku Hambella"
+    }
   },
   {
     "id": 60,
     "type": "Washed Guji Haro Lebetu",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 761
+    "quantity": 652,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Haro Lebetu"
+    }
   },
   {
     "id": 61,
     "type": "Washed Guji Goro Muda",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 537
+    "quantity": 437,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Goro Muda"
+    }
   },
   {
     "id": 62,
     "type": "Washed Guji Michicha",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 93
+    "quantity": 394,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Michicha"
+    }
   },
   {
     "id": 63,
     "type": "Washed Guji Bukisa",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 234
+    "quantity": 439,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bukisa"
+    }
   },
   {
     "id": 64,
     "type": "Washed Guji Guracho",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 455
+    "quantity": 663,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Guracho"
+    }
   },
   {
     "id": 65,
     "type": "Washed Guji Bedessa",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 412
+    "quantity": 568,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bedessa"
+    }
   },
   {
     "id": 66,
     "type": "Washed Guji Blida",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 308
+    "quantity": 513,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Blida"
+    }
   },
   {
     "id": 67,
     "type": "Washed Guji Egu Abaya",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 488
+    "quantity": 359,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Egu Abaya"
+    }
   },
   {
     "id": 68,
     "type": "Washed Guji Inshe",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 585
+    "quantity": 476,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Inshe"
+    }
   },
   {
     "id": 69,
     "type": "Washed Guji Edera Take",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 762
+    "quantity": 494,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Edera Take"
+    }
   },
   {
     "id": 70,
     "type": "Washed Guji Udotu",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 435
+    "quantity": 245,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Udotu"
+    }
   },
   {
     "id": 71,
     "type": "Washed Guji Banti Nenka",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 83
+    "quantity": 501,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Banti Nenka"
+    }
   },
   {
     "id": 72,
     "type": "Washed Guji Buku Hambella",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 105
+    "quantity": 281,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Buku Hambella"
+    }
   },
   {
     "id": 73,
     "type": "Washed Guji Haro Lebetu",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 219
+    "quantity": 752,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Haro Lebetu"
+    }
   },
   {
     "id": 74,
     "type": "Washed Guji Goro Muda",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 164
+    "quantity": 709,
+    "process": "Washed",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Goro Muda"
+    }
   },
   {
     "id": 75,
     "type": "Natural Guji Michicha",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 436
+    "quantity": 419,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Michicha"
+    }
   },
   {
     "id": 76,
     "type": "Natural Guji Bukisa",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 257
+    "quantity": 749,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bukisa"
+    }
   },
   {
     "id": 77,
     "type": "Natural Guji Guracho",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 759
+    "quantity": 749,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Guracho"
+    }
   },
   {
     "id": 78,
     "type": "Natural Guji Bedessa",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 612
+    "quantity": 582,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bedessa"
+    }
   },
   {
     "id": 79,
     "type": "Natural Guji Blida",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 726
+    "quantity": 106,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Blida"
+    }
   },
   {
     "id": 80,
     "type": "Natural Guji Egu Abaya",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 478
+    "quantity": 687,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Egu Abaya"
+    }
   },
   {
     "id": 81,
     "type": "Natural Guji Inshe",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 515
+    "quantity": 654,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Inshe"
+    }
   },
   {
     "id": 82,
     "type": "Natural Guji Edera Take",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 400
+    "quantity": 540,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Edera Take"
+    }
   },
   {
     "id": 83,
     "type": "Natural Guji Udotu",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 177
+    "quantity": 154,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Udotu"
+    }
   },
   {
     "id": 84,
     "type": "Natural Guji Banti Nenka",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 698
+    "quantity": 368,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Banti Nenka"
+    }
   },
   {
     "id": 85,
     "type": "Natural Guji Buku Hambella",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 326
+    "quantity": 732,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Buku Hambella"
+    }
   },
   {
     "id": 86,
     "type": "Natural Guji Haro Lebetu",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 772
+    "quantity": 180,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Haro Lebetu"
+    }
   },
   {
     "id": 87,
     "type": "Natural Guji Goro Muda",
     "grade": "G-1",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 505
+    "quantity": 702,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Goro Muda"
+    }
   },
   {
     "id": 88,
     "type": "Natural Guji Michicha",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 504
+    "quantity": 407,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Michicha"
+    }
   },
   {
     "id": 89,
     "type": "Natural Guji Bukisa",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 352
+    "quantity": 291,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bukisa"
+    }
   },
   {
     "id": 90,
     "type": "Natural Guji Guracho",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 793
+    "quantity": 766,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Guracho"
+    }
   },
   {
     "id": 91,
     "type": "Natural Guji Bedessa",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 198
+    "quantity": 544,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bedessa"
+    }
   },
   {
     "id": 92,
     "type": "Natural Guji Blida",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 388
+    "quantity": 410,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Blida"
+    }
   },
   {
     "id": 93,
     "type": "Natural Guji Egu Abaya",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 244
+    "quantity": 445,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Egu Abaya"
+    }
   },
   {
     "id": 94,
     "type": "Natural Guji Inshe",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 711
+    "quantity": 223,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Inshe"
+    }
   },
   {
     "id": 95,
     "type": "Natural Guji Edera Take",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 737
+    "quantity": 720,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Edera Take"
+    }
   },
   {
     "id": 96,
     "type": "Natural Guji Udotu",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 465
+    "quantity": 380,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Udotu"
+    }
   },
   {
     "id": 97,
     "type": "Natural Guji Banti Nenka",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 439
+    "quantity": 563,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Banti Nenka"
+    }
   },
   {
     "id": 98,
     "type": "Natural Guji Buku Hambella",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 322
+    "quantity": 609,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Buku Hambella"
+    }
   },
   {
     "id": 99,
     "type": "Natural Guji Haro Lebetu",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 583
+    "quantity": 741,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Haro Lebetu"
+    }
   },
   {
     "id": 100,
     "type": "Natural Guji Goro Muda",
     "grade": "G-2",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 179
+    "quantity": 328,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Goro Muda"
+    }
   },
   {
     "id": 101,
     "type": "Natural Guji Michicha",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 745
+    "quantity": 963,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Michicha"
+    }
   },
   {
     "id": 102,
     "type": "Natural Guji Bukisa",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 91
+    "quantity": 673,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bukisa"
+    }
   },
   {
     "id": 103,
     "type": "Natural Guji Guracho",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 785
+    "quantity": 686,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Guracho"
+    }
   },
   {
     "id": 104,
     "type": "Natural Guji Bedessa",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 491
+    "quantity": 956,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bedessa"
+    }
   },
   {
     "id": 105,
     "type": "Natural Guji Blida",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 719
+    "quantity": 887,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Blida"
+    }
   },
   {
     "id": 106,
     "type": "Natural Guji Egu Abaya",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 131
+    "quantity": 639,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Egu Abaya"
+    }
   },
   {
     "id": 107,
     "type": "Natural Guji Inshe",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 550
+    "quantity": 921,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Inshe"
+    }
   },
   {
     "id": 108,
     "type": "Natural Guji Edera Take",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 307
+    "quantity": 666,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Edera Take"
+    }
   },
   {
     "id": 109,
     "type": "Natural Guji Udotu",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 327
+    "quantity": 805,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Udotu"
+    }
   },
   {
     "id": 110,
     "type": "Natural Guji Banti Nenka",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 443
+    "quantity": 839,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Banti Nenka"
+    }
   },
   {
     "id": 111,
     "type": "Natural Guji Buku Hambella",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 623
+    "quantity": 745,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Buku Hambella"
+    }
   },
   {
     "id": 112,
     "type": "Natural Guji Haro Lebetu",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 524
+    "quantity": 642,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Haro Lebetu"
+    }
   },
   {
     "id": 113,
     "type": "Natural Guji Goro Muda",
     "grade": "G-3",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 676
+    "quantity": 900,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Goro Muda"
+    }
   },
   {
     "id": 114,
     "type": "Natural Guji Michicha",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 616
+    "quantity": 976,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Michicha"
+    }
   },
   {
     "id": 115,
     "type": "Natural Guji Bukisa",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 540
+    "quantity": 950,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bukisa"
+    }
   },
   {
     "id": 116,
     "type": "Natural Guji Guracho",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 194
+    "quantity": 912,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Guracho"
+    }
   },
   {
     "id": 117,
     "type": "Natural Guji Bedessa",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 399
+    "quantity": 923,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Bedessa"
+    }
   },
   {
     "id": 118,
     "type": "Natural Guji Blida",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 680
+    "quantity": 943,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Blida"
+    }
   },
   {
     "id": 119,
     "type": "Natural Guji Egu Abaya",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 317
+    "quantity": 768,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Egu Abaya"
+    }
   },
   {
     "id": 120,
     "type": "Natural Guji Inshe",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 109
+    "quantity": 824,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Kercha",
+      "kebele": "Inshe"
+    }
   },
   {
     "id": 121,
     "type": "Natural Guji Edera Take",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 86
+    "quantity": 717,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Edera Take"
+    }
   },
   {
     "id": 122,
     "type": "Natural Guji Udotu",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 455
+    "quantity": 971,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Birbirsa",
+      "kebele": "Udotu"
+    }
   },
   {
     "id": 123,
     "type": "Natural Guji Banti Nenka",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 522
+    "quantity": 898,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Banti Nenka"
+    }
   },
   {
     "id": 124,
     "type": "Natural Guji Buku Hambella",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 211
+    "quantity": 764,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Hambella Wamena",
+      "kebele": "Buku Hambella"
+    }
   },
   {
     "id": 125,
     "type": "Natural Guji Haro Lebetu",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 652
+    "quantity": 673,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Haro Lebetu"
+    }
   },
   {
     "id": 126,
     "type": "Natural Guji Goro Muda",
     "grade": "G-4",
     "location": "Oromia Region, Ethiopia",
-    "quantity": 327
+    "quantity": 821,
+    "process": "Natural",
+    "origin": {
+      "region": "Oromia",
+      "zone": " Guji",
+      "woreda": "Uraga",
+      "kebele": "Goro Muda"
+    }
   }
 ]
