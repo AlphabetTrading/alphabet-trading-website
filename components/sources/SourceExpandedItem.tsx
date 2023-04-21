@@ -52,9 +52,9 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
                 })}
             </div>
           </div>
-          <div className="flex items-center min-h-[425px] w-full h-full md:w-1/2 relative">
+          <div className="flex items-center min-h-[300px] md:min-h-[500px] w-full h-full md:w-1/2 relative">
             <Image
-              className="min-h-fit absolute inset-0 object-contain"
+              className="h-full absolute inset-0 object-contain"
               fill
               src={region.expandedSrc}
               alt={region.name}

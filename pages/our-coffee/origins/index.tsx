@@ -50,7 +50,7 @@ const regions: Region[] = [
   {
     id: 1,
     name: "Yirgacheffe",
-    description: "5 Regions | 8 Washing Stations",
+    description: "4 Regions | 8 Washing Stations",
     src: "/images/yirgacheffe.svg",
     expandedSrc: "/images/expanded_yirgacheffe.svg",
     locations: ["Gerse", "Halo Beriti", "Idido", "Konga"],
@@ -133,46 +133,51 @@ const Index = (props: Props) => {
                   setSelectedId={setSelectedId}
                 />
               ))}
-              <AnimatePresence>
-                <>
-                  {selectedId === 0 && (
-                    <SourceExpandedItem
-                      selectedId={selectedId}
-                      setSelectedId={setSelectedId}
-                      region={regions[selectedId]}
-                    />
-                  )}
-                  {selectedId === 1 && (
-                    <SourceExpandedItem
-                      selectedId={selectedId}
-                      setSelectedId={setSelectedId}
-                      region={regions[selectedId]}
-                    />
-                  )}
-                  {selectedId === 2 && (
-                    <SourceExpandedItem
-                      selectedId={selectedId}
-                      setSelectedId={setSelectedId}
-                      region={regions[selectedId]}
-                    />
-                  )}
-                  {selectedId === 3 && (
-                    <SourceExpandedItem
-                      selectedId={selectedId}
-                      setSelectedId={setSelectedId}
-                      region={regions[selectedId]}
-                    />
-                  )}
-                  {selectedId === 4 && (
-                    <SourceExpandedItem
-                      selectedId={selectedId}
-                      setSelectedId={setSelectedId}
-                      region={regions[selectedId]}
-                    />
-                  )}
-                </>
-              </AnimatePresence>
             </motion.div>
+            <AnimatePresence>
+              <motion.div>
+                {selectedId === 0 && (
+                  <SourceExpandedItem
+                    key="origin-expanded"
+                    selectedId={selectedId}
+                    setSelectedId={setSelectedId}
+                    region={regions[selectedId]}
+                  />
+                )}
+                {selectedId === 1 && (
+                  <SourceExpandedItem
+                    key="origin-expanded"
+                    selectedId={selectedId}
+                    setSelectedId={setSelectedId}
+                    region={regions[selectedId]}
+                  />
+                )}
+                {selectedId === 2 && (
+                  <SourceExpandedItem
+                    key="origin-expanded"
+                    selectedId={selectedId}
+                    setSelectedId={setSelectedId}
+                    region={regions[selectedId]}
+                  />
+                )}
+                {selectedId === 3 && (
+                  <SourceExpandedItem
+                    key="origin-expanded"
+                    selectedId={selectedId}
+                    setSelectedId={setSelectedId}
+                    region={regions[selectedId]}
+                  />
+                )}
+                {selectedId === 4 && (
+                  <SourceExpandedItem
+                    key="origin-expanded"
+                    selectedId={selectedId}
+                    setSelectedId={setSelectedId}
+                    region={regions[selectedId]}
+                  />
+                )}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
