@@ -69,10 +69,12 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
             </h1>
           </div>
         </div>
-        <div className="col-span-4 2k:text-[18px] 4k:text-3xl">
+        <div className="col-span-1 2k:text-[18px] 4k:text-3xl">AA</div>
+        <div className="col-span-3 2k:text-[18px] 4k:text-3xl">
           {offering.location}
         </div>
       </div>
+
       <div className="block md:hidden w-full">
         <div className="w-full flex flex-col gap-y-2 p-6 pb-10 bg-white text-sm text-[#565656] rounded-lg shadow-xl font-semibold">
           <div className="w-full flex justify-between">
@@ -111,6 +113,9 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
               <h1 className="text-[#8B8B8B] font-bold">
                 Location:{" "}
                 <span className="font-medium">{offering.location}</span>
+              </h1>
+              <h1 className="text-[#8B8B8B] font-bold">
+                Spot: <span className="font-medium">AA</span>
               </h1>
             </div>
           </div>

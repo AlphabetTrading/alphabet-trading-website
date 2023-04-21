@@ -14,6 +14,7 @@ import GetSVG from "../common/GetSVG";
 import { IoIosArrowForward } from "react-icons/io";
 import { useIsSmall } from "../../hooks/utils";
 import OfferingsSearchbar from "./OfferingsSearchbar";
+import { FaSmileWink } from "react-icons/fa";
 
 type Props = {};
 export enum ViewTypeEnum {
@@ -53,7 +54,7 @@ const OfferingsComponent = () => {
     origin?: string[];
   }>({});
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [isFilterOptionOpen, setIsFilterOptionOpen] = useState(!isSmall);
+  const [isFilterOptionOpen, setIsFilterOptionOpen] = useState(false);
   const [viewType, setViewType] = useState(ViewTypeEnum.GRID);
   const handleModalOpen = () => {
     setIsModalOpen(true);
@@ -91,39 +92,7 @@ const OfferingsComponent = () => {
           Yirgacheffe, Guji, Sidamo, Gedeb and Limmu are the five regions in
           Ethiopia that Alphabet Coffee sources its coffee from.
         </p>
-        <label
-          onClick={() => {
-            setIsFilterOptionOpen((prev) => !prev);
-          }}
-          htmlFor="filter"
-          className="flex  flex-col text-black cursor-pointer items-center gap-y-2 justify-between w-full max-w-xs  self-start"
-        >
-          <div className="flex  items-center w-full font-semibold">
-            <div className="flex gap-x-3 ">
-              <GetSVG name="filter" />
-              <h4 className="font-medium">Filters</h4>
-            </div>
-            <div className="flex items-center">
-              <Button
-                onClick={(e) => {
-                  e.stopPropagation();
-                }}
-                text="Reset All"
-                classname={clsx(
-                  "text-secondary ",
-                  isFilterOptionOpen ? "hidden" : "inline-flex"
-                )}
-              ></Button>
-              <IoIosArrowForward
-                className={clsx(
-                  "w-6 h-5 cursor-pointer transition-all duration-300 ease-in-out text-gray-600",
-                  isFilterOptionOpen ? "-rotate-180" : "rotate-0"
-                )}
-              />
-            </div>
-          </div>
-          <div className="h-0.5 w-full bg-secondary/10 max-w-xs mx-5"></div>
-        </label>
+
         <div className="flex w-full gap-x-5">
           <div
             className={clsx(
@@ -132,13 +101,7 @@ const OfferingsComponent = () => {
                 ? "w-11/12 flex-1 sm:w-1/6 sm:flex-auto sm:max-w-[250px] lg:max-w-xs"
                 : "w-0 max-w-xs"
             )}
-          >
-            <OfferingsFilter
-              setFilterBy={setFilterBy}
-              filterBy={filterBy}
-              setShowFilterOption={() => {}}
-            />
-          </div>
+          ></div>
           <div
             className={clsx(
               "flex flex-col justify-start items-center sm:flex-1 gap-y-2",
@@ -295,7 +258,44 @@ const OfferingsComponent = () => {
                   />
                 </div>
               </div>
-              <div className="col-span-4 items-center">
+
+              <div className="col-span-1 items-center">
+                <div className="w-full flex items-center gap-x-1">
+                  <h2 className="text-sm">Spot</h2>
+                  <AiFillCaretUp
+                    onClick={() => {
+                      // setSortBy((prev) => ({
+                      //   ...prev,
+                      //   field: "spot",
+                      //   reverse: false,
+                      // }));
+                    }}
+                    className={clsx(
+                      "-mr-2 cursor-pointer"
+                      // sortBy.field === "spot" &&
+                      //   !sortBy.reverse &&
+                      //   "text-amber-500"
+                    )}
+                  />
+                  <AiFillCaretDown
+                    onClick={() => {
+                      // setSortBy((prev) => ({
+                      //   ...prev,
+                      //   field: "spot",
+                      //   reverse: true,
+                      // }));
+                    }}
+                    className={clsx(
+                      "-mr-2 cursor-pointer"
+                      // sortBy.field === "spot" &&
+                      //   sortBy.reverse &&
+                      //   "text-amber-500"
+                    )}
+                  />
+                </div>
+              </div>
+
+              <div className="col-span-3 items-center">
                 <div className="w-full flex items-center gap-x-1">
                   <h2 className="text-sm">Location</h2>
                   <AiFillCaretUp

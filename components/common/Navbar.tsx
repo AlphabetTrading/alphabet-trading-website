@@ -306,7 +306,10 @@ const Navbar = ({ white }: Props) => {
                 }}
                 variants={variants}
                 exit={variants.hidden}
-                className="min-w-full  flex flex-col p-5 px-10 gap-y-3 bg-[#0A1026] rounded-xl absolute top-20 right-0 left-0 z-50"
+                className={clsx(
+                  "min-w-full  flex flex-col p-5 px-10 gap-y-3 bg-[#0A1026] rounded-xl absolute top-20 right-0 left-0 z-50",
+                  isOpen ? "" : "hidden"
+                )}
               >
                 {navigationItems.map((navItem) => (
                   <motion.li
