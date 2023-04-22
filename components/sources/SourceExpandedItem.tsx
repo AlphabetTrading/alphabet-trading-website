@@ -26,7 +26,7 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
   }, []);
   return (
     <motion.div
-      className="w-full h-full  md:min-h-screen flex items-center justify-center bg-secondary/10 fixed top-0 bottom-0 right-0 left-0 z-50 py-5"
+      className="w-full h-full  md:min-h-screen flex items-center justify-center bg-secondary/10 fixed top-0 bottom-0 right-0 left-0 z-50 py-10 md:py-10"
       onClick={() => setSelectedId(null)}
       layoutId={selectedId.toString()}
     >
@@ -36,8 +36,8 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
           e.stopPropagation();
         }}
       >
-        <div className="flex flex-col-reverse md:flex-row md:justify-center w-full h-full">
-          <div className="flex flex-col w-full md:w-1/2 p-5 md:px-12 gap-y-8">
+        <div className="flex flex-col-reverse justify-center sm:justify-around  md:flex-row md:justify-center w-full h-full">
+          <div className="flex flex-col justify-center h-fit w-full md:w-1/2 p-5 md:px-12 md:gap-y-8 ">
             <div>
               <p>{region.description}</p>
               <div className="flex items-center gap-x-1 text-secondary">
@@ -59,7 +59,7 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
                 })}
             </div>
           </div>
-          <div className="flex items-center min-h-[300px] max-h-52 md:max-h-max md:min-h-[500px] w-full h-full md:w-1/2 relative">
+          <div className="flex items-center min-h-[350px]  max-h-52 md:max-h-max md:min-h-[500px] w-full h-full md:w-1/2 relative ">
             <Image
               className="h-full absolute inset-0 object-contain"
               fill
