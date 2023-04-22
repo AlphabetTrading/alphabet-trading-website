@@ -31,7 +31,7 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
       layoutId={selectedId.toString()}
     >
       <motion.div
-        className="w-5/6 h-full max-h-screen overflow-y-scroll no-scrollbar bg-white relative rounded-3xl drop-shadow-2xl"
+        className="w-5/6 h-full max-h-[80vh] md:max-h-[70vh] lg:max-h-[60vh] overflow-y-scroll no-scrollbar bg-white relative rounded-3xl drop-shadow-2xl"
         onClick={(e) => {
           e.stopPropagation();
         }}
