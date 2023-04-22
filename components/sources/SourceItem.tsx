@@ -1,6 +1,5 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
-import Image from "next/image";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React, { Dispatch, SetStateAction } from "react";
+import { FaChevronRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Region } from "../../pages/our-coffee/origins";
 
@@ -12,7 +11,7 @@ type Props = {
 const SourceItem = ({ region, setSelectedId }: Props) => {
   return (
     <motion.div
-      className="last:w-full last:flex last:justify-center w-full h-96 p-2 rounded-2xl shadow-md bg-white"
+      className="last:w-full last:flex last:justify-center w-full h-96 p-2 rounded-2xl shadow-md bg-white cursor-pointer"
       layoutId={region.id.toString()}
       onClick={() => setSelectedId(region.id)}
     >

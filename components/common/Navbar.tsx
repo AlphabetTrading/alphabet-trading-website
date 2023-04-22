@@ -8,13 +8,13 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDimensions } from "../../hooks/useDimensions";
-import { usePreviousRoute } from "../../hooks/usePreviousPathname";
 
 type Props = {
   white: boolean;
 };
+
 const variants = {
   open: {
     opacity: 1,
@@ -47,6 +47,7 @@ const Navbar = ({ white }: Props) => {
       unsubscribeX();
     };
   }, []);
+
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -141,10 +142,10 @@ const Navbar = ({ white }: Props) => {
             (scrolledYAmount > 50 || isOpen) && "!text-white"
           )}
         >
-          <div className="flex-shrink-0 ml-2 md:ml-4 lg:ml-6 xl:ml-8">
+          <div className="hidden md:flex flex-shrink-0 ml-2 md:ml-4 lg:ml-6 xl:ml-8 justify-start max-w-xs">
             <Link className="z-20" href="/">
-              <div className="flex items-center gap-x-1 md:gap-x-2">
-                <div className="flex h-12 items-center justify-center">
+              <div className="flex items-center gap-x-1 md:gap-x-2 ">
+                <div className="flex h-12 items-center justify-start ">
                   {!(scrolledYAmount > 50 || isOpen) ? (
                     <img
                       className="w-full h-full "
@@ -195,7 +196,26 @@ const Navbar = ({ white }: Props) => {
               </div>
             </nav>
           </div>
-          <div className="flex w-full md:hidden ">
+          <div className="flex justify-between items-center w-full md:hidden">
+            <Link className="z-20" href="/">
+              <div className="flex items-center gap-x-1 md:gap-x-2">
+                <div className="flex h-12 items-center justify-center">
+                  {!(scrolledYAmount > 50 || isOpen) ? (
+                    <img
+                      className="w-full h-full "
+                      src="/AlphabetLogoBlack.svg"
+                      alt=""
+                    />
+                  ) : (
+                    <img
+                      className="w-full h-full "
+                      src="/AlphabetLogoWhite.svg"
+                      alt=""
+                    />
+                  )}
+                </div>
+              </div>
+            </Link>
             <AnimatePresence>
               <motion.nav
                 className="w-full flex flex-col items-end !text-white"
