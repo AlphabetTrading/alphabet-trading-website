@@ -106,10 +106,10 @@ const Index = (props: Props) => {
         <div className="w-full h-full mt-32 bg-[#F3F7F7]">
           <div className="flex flex-col justify-center items-center my-8 mb-14">
             <div className="w-full flex flex-col justify-center items-center gap-y-3 p-4 py-4 md:py-10 md:px-6 lg:px-10 xl:px-20 2xl:px-36">
-              <h1 className="text-4xl 2k:text-5xl 4k:text-6xl font-semibold">
+              <h1 className="text-3xl md:text-4xl 2k:text-5xl 4k:text-6xl font-semibold">
                 Our <span className="text-secondary">Coffee</span> Sources
               </h1>
-              <p className="w-11/12 md:w-5/6 text-center font-semibold 2k:text-xl 4k:text-2xl text-[#606060]">
+              <p className="w-11/12 md:w-5/6 text-center font-semibold text-sm md:text-base 2k:text-xl 4k:text-2xl text-[#606060]">
                 Ethiopia is known as the birthplace of coffee and is considered
                 by many to be the darling of the coffee world. The country’s
                 unique climate and geography provide ideal growing conditions
@@ -120,12 +120,12 @@ const Index = (props: Props) => {
                 its own mention since it has unique flavors), Guji, Limmu and
                 Sidamo.
               </p>
-              <p className="w-11/12 md:w-5/6  text-center font-semibold 2k:text-xl 4k:text-2xl text-[#606060]">
+              <p className="w-11/12 md:w-5/6  text-center font-semibold text-sm md:text-base 2k:text-xl 4k:text-2xl text-[#606060]">
                 Below you can take a look at each regions&apos; stations and the
                 small kebeles the coffee is collected from.
               </p>
             </div>
-            <motion.div className="w-3/4 grid grid-cols-1 md:grid-cols-2 items-center gap-10 gap-x-12">
+            <motion.div className="w-11/12 md:w-3/4 grid grid-cols-1 md:grid-cols-2 items-center gap-10 gap-x-12 mt-20 h-full">
               {regions.map((region: Region, index: number) => (
                 <SourceItem
                   key={index}
@@ -133,9 +133,7 @@ const Index = (props: Props) => {
                   setSelectedId={setSelectedId}
                 />
               ))}
-            </motion.div>
-            <AnimatePresence>
-              <motion.div>
+              <AnimatePresence>
                 {selectedId === 0 && (
                   <SourceExpandedItem
                     key="origin-expanded"
@@ -176,8 +174,8 @@ const Index = (props: Props) => {
                     region={regions[selectedId]}
                   />
                 )}
-              </motion.div>
-            </AnimatePresence>
+              </AnimatePresence>
+            </motion.div>
           </div>
         </div>
       </div>

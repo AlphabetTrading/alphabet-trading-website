@@ -8,6 +8,7 @@ import {
 } from "react-icons/ai";
 import Image from "next/image";
 import { Region } from "../../pages/our-coffee/origins";
+import clsx from "clsx";
 
 type Props = {
   region: Region;
@@ -25,7 +26,7 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
   }, []);
   return (
     <motion.div
-      className="w-full h-fit md:min-h-screen flex items-center justify-center bg-secondary/10 fixed top-0 bottom-0 right-0 left-0 z-50"
+      className="w-full h-full  md:min-h-screen flex items-center justify-center bg-secondary/10 fixed top-0 bottom-0 right-0 left-0 z-50 py-5"
       onClick={() => setSelectedId(null)}
       layoutId={selectedId.toString()}
     >
@@ -36,7 +37,7 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
         }}
       >
         <div className="flex flex-col-reverse md:flex-row md:justify-center w-full h-full">
-          <div className="flex flex-col w-full md:w-1/2 p-8 px-12 gap-y-8">
+          <div className="flex flex-col w-full md:w-1/2 p-5 md:px-12 gap-y-8">
             <div>
               <p>{region.description}</p>
               <div className="flex items-center gap-x-1 text-secondary">
@@ -45,14 +46,20 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2">
+            <div
+              className={clsx(
+                "grid grid-cols-1 md:grid-cols-2 gap-2",
+                region.locations.length > 15 &&
+                  "grid-cols-3 text-xs md:text-base md:grid-cols-2"
+              )}
+            >
               {region.locations &&
                 region.locations.map((location: any, index: number) => {
                   return <h1 key={index}>{location}</h1>;
                 })}
             </div>
           </div>
-          <div className="flex items-center min-h-[300px] md:min-h-[500px] w-full h-full md:w-1/2 relative">
+          <div className="flex items-center min-h-[300px] max-h-52 md:max-h-max md:min-h-[500px] w-full h-full md:w-1/2 relative">
             <Image
               className="h-full absolute inset-0 object-contain"
               fill
