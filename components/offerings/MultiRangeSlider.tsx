@@ -1,23 +1,46 @@
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useState,
+  useRef,
+  useMemo,
+} from "react";
 
 type Props = {
   min: number;
   max: number;
-  onChange: Function;
   unit: string;
   step: number;
-  rangeValues: [number, number];
+  filterBy: {
+    query?: string;
+    grade?: string[];
+    price?: number[];
+    bagsRange?: [number, number];
+    process?: string[];
+    origin?: Set<string>;
+  };
+  setFilterBy: React.Dispatch<
+    React.SetStateAction<{
+      query?: string;
+      grade?: string[];
+      price?: number[];
+      bagsRange?: [number, number];
+      process?: string[];
+      origin?: Set<string>;
+    }>
+  >;
 };
 const MultiRangeSlider = ({
   min,
   max,
-  onChange,
   unit,
   step,
-  rangeValues,
+  filterBy,
+  setFilterBy,
 }: Props) => {
-  console.log(rangeValues, " range");
-  const [values, setValues] = useState<[number, number]>(rangeValues);
+  const [values, setValues] = useState<[number, number]>(
+    filterBy.bagsRange || [80, 980]
+  );
 
   const [minVal, setMinVal] = useState(values[0]);
   const [maxVal, setMaxVal] = useState(values[1]);
@@ -28,7 +51,7 @@ const MultiRangeSlider = ({
   // Convert to percentage
   const getPercent = useCallback(
     (value: any) => Math.round(((value - min) / (max - min)) * 100),
-    [min, max]
+    [min, max, values]
   );
 
   // Set width of the range to decrease from the left side
@@ -40,7 +63,7 @@ const MultiRangeSlider = ({
       range.current.style.left = `${minPercent}%`;
       range.current.style.width = `${maxPercent - minPercent}%`;
     }
-  }, [minVal, getPercent]);
+  }, [minVal, getPercent, values]);
 
   // Set width of the range to decrease from the right side
   useEffect(() => {
@@ -50,13 +73,13 @@ const MultiRangeSlider = ({
     if (range.current) {
       range.current.style.width = `${maxPercent - minPercent}%`;
     }
-  }, [maxVal, getPercent]);
+  }, [maxVal, getPercent, values]);
 
   // Get min and max values when their state changes
   useEffect(() => {
     setValues([minVal, maxVal]);
-    onChange(minVal, maxVal);
-  }, [minVal, maxVal]);
+    setFilterBy((prev) => ({ ...prev, bagsRange: [minVal, maxVal] }));
+  }, [minVal, maxVal, values]);
 
   return (
     <div className="flex flex-col">
