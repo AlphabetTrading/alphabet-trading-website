@@ -35,20 +35,27 @@ const grades = [
 ];
 
 const GradeFilter = (props: Props) => {
-  const [checkedItems, setCheckedItems] = useState<string[]>([]);
+  const [checkedItems, setCheckedItems] = useState<string[]>(
+    props.filterBy.grade || []
+  );
 
   const handleChange = (e: any) => {
     const { value, checked } = e.target;
     if (checked) {
-      setCheckedItems((prev: any) => [...prev, value]);
+      setCheckedItems((prev: any) => [...new Set([...prev, value])]);
     } else {
-      setCheckedItems((prev: any) => prev.filter((x: any) => x !== value));
+      setCheckedItems((prev: any) => [
+        ...new Set([...prev.filter((x: any) => x !== value)]),
+      ]);
     }
   };
 
   useEffect(() => {
-    props.setFilterBy((prev) => ({ ...prev, grade: checkedItems }));
-  }, [checkedItems, props]);
+    props.setFilterBy((prev) => ({
+      ...prev,
+      grade: [...new Set(checkedItems)],
+    }));
+  }, [checkedItems]);
 
   return (
     <div>
@@ -60,16 +67,11 @@ const GradeFilter = (props: Props) => {
               className={clsx(
                 "flex gap-x-2 items-center  px-5 py-1 rounded-md overflow-hidden relative cursor-pointer"
               )}
-              onClick={() => {
-                props.setFilterBy((prev) => ({
-                  ...prev,
-                  grade: [item.code],
-                }));
-              }}
             >
               <input
                 type="checkbox"
                 onChange={handleChange}
+                checked={props.filterBy.grade?.includes(item.code)}
                 value={item.code}
                 className="appearance-none w-full h-full absolute z-20 peer/select inset-0"
               />

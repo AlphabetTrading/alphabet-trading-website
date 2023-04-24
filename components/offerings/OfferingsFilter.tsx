@@ -7,13 +7,14 @@ import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import GradeFilter from "./GradeFilter";
 import ProcessFilter from "./ProcessFilter";
+import Button from "../common/Button";
 
 type Props = {
-  setShowFilterOption: React.Dispatch<React.SetStateAction<boolean>>;
   filterBy: {
     query?: string;
     grade?: string[];
     price?: number[];
+    bagsRange?: [number, number];
     process?: string[];
     origin?: string[];
   };
@@ -22,6 +23,7 @@ type Props = {
       query?: string;
       grade?: string[];
       price?: number[];
+      bagsRange?: [number, number];
       process?: string[];
       origin?: string[];
     }>
@@ -328,32 +330,22 @@ const CheckboxItem = () => {
   const [isChecked, setIsChecked] = useState(false);
 };
 
-const OfferingsFilter = (props: Props) => {
-  const [values, setValues] = useState<[number, number]>([0, 1000]);
-
+const OfferingsFilter = ({ setFilterBy, filterBy }: Props) => {
   return (
-    <aside className="flex flex-col px-2 gap-y-4">
+    <aside className="flex flex-col px-2 gap-y-4 w-full">
       <div className="flex justify-between items-center ">
-        {/* <label
-          onClick={() => props.setShowFilterOption((prev) => !prev)}
-          htmlFor="filter"
-          className="flex gap-x-2 text-black"
-        >
-          <GetSVG name="filter" />
-          <h4 className="font-medium">Filters</h4>
-        </label> */}
-        {/* <Button
-          onClick={() => {}}
+        <h3 className="text-2xl font-medium">Filters</h3>
+        <Button
+          onClick={() => {
+            setFilterBy({});
+          }}
           text="Reset All"
           classname="text-secondary font-semibold"
-        ></Button> */}
+        ></Button>
       </div>
       <div className="flex flex-col gap-y-1">
         <h6 className="font-medium text-slate-500 text-sm">GRADE</h6>
-        <GradeFilter
-          setFilterBy={props.setFilterBy}
-          filterBy={props.filterBy}
-        />
+        <GradeFilter setFilterBy={setFilterBy} filterBy={filterBy} />
       </div>
       {/* <div className="flex flex-col gap-y-1">
         <h6 className="font-medium text-slate-500 text-sm">PRICE RANGE</h6>
@@ -370,10 +362,7 @@ const OfferingsFilter = (props: Props) => {
         <h6 className="font-medium text-slate-500 text-sm uppercase">
           Process
         </h6>
-        <ProcessFilter
-          setFilterBy={props.setFilterBy}
-          filterBy={props.filterBy}
-        />
+        <ProcessFilter setFilterBy={setFilterBy} filterBy={filterBy} />
       </div>
       <div className="flex flex-col gap-y-1">
         <h6 className="font-medium text-slate-500 text-sm uppercase">
@@ -383,10 +372,19 @@ const OfferingsFilter = (props: Props) => {
           max={980}
           min={80}
           step={1}
+          rangeValues={
+            filterBy.bagsRange &&
+            filterBy.bagsRange[0] > 0 &&
+            filterBy.bagsRange[1] > 0
+              ? filterBy.bagsRange
+              : [80, 980]
+          }
           // step={0.05}
-          onChange={setValues}
+          onChange={(min: number, max: number) => {
+            console.log(min, max, " max min");
+            setFilterBy((prev) => ({ ...prev, bagsRange: [min, max] }));
+          }}
           unit="bags"
-          // values={values}
         />
       </div>
       <div className="flex flex-col gap-y-1">
@@ -394,8 +392,8 @@ const OfferingsFilter = (props: Props) => {
         {origins.map((origin) => {
           return (
             <MenuItem
-              filterBy={props.filterBy}
-              setFilterBy={props.setFilterBy}
+              filterBy={filterBy}
+              setFilterBy={setFilterBy}
               key={origin.id}
               title={origin.title}
               options={origin.items}
