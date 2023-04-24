@@ -20,7 +20,7 @@ const regions: Region[] = [
   {
     id: 0,
     name: "Guji",
-    description: " 20 Regions | 7 Washing Stations",
+    description: " 16 Regions | 7 Washing Stations",
     src: "/images/guji.svg",
     expandedSrc: "/images/expanded_guji.svg",
     locations: [
@@ -31,20 +31,15 @@ const regions: Region[] = [
       "Ela Farda",
       "Bukisa",
       "Guracho",
-      "Bedessa",
       "Egu Abaya",
       "Inshe",
       "Birbirsa",
       "Edera Take",
-      "Mazora",
-      "Chebi",
       "Udotu",
       "Hambella Wamena",
       "Banti Nenka",
       "Buku Hambella",
       "Uraga",
-      "Haro Lebetu",
-      "Goro Muda",
     ],
   },
   {
@@ -57,24 +52,8 @@ const regions: Region[] = [
   },
   {
     id: 2,
-    name: "Gedeb",
-    description: "4 Regions | 3 Washing Stations",
-    src: "/images/gedeb.svg",
-    expandedSrc: "/images/expanded_gedeb.svg",
-    locations: ["Chelchele", "Chelbesa", "Worka Sakaro", "Banko Gotiti"],
-  },
-  {
-    id: 3,
-    name: "Sidamo",
-    description: "6 Regions | 5 Washing Stations",
-    src: "/images/sidamo.svg",
-    expandedSrc: "/images/expanded_sidamo.svg",
-    locations: ["Arbigonna", "Benssa", "Chire", "Dale", "Dara", "Shebedino"],
-  },
-  {
-    id: 4,
     name: "Limmu",
-    description: "7 Regions | 8 Washing Stations",
+    description: "7 Regions | 3 Washing Stations",
     src: "/images/limmu.svg",
     expandedSrc: "/images/expanded_limmu.svg",
     locations: [
@@ -86,6 +65,23 @@ const regions: Region[] = [
       "Limmu Seka",
       "Seka Chekoressa",
     ],
+  },
+
+  {
+    id: 3,
+    name: "Sidamo",
+    description: "6 Regions | 5 Washing Stations",
+    src: "/images/sidamo.svg",
+    expandedSrc: "/images/expanded_sidamo.svg",
+    locations: ["Arbigonna", "Benssa", "Chire", "Dale", "Dara", "Shebedino"],
+  },
+  {
+    id: 4,
+    name: "Gedeb",
+    description: "4 Regions | 3 Washing Stations",
+    src: "/images/gedeb.svg",
+    expandedSrc: "/images/expanded_gedeb.svg",
+    locations: ["Chelchele", "Chelbesa", "Worka Sakaro", "Banko Gotiti"],
   },
 ];
 
@@ -125,7 +121,7 @@ const Index = (props: Props) => {
                 small kebeles the coffee is collected from.
               </p>
             </div>
-            <motion.div className="w-11/12 md:w-3/4 grid grid-cols-1 md:grid-cols-2 items-center gap-10 gap-x-12 mt-20 h-full">
+            <motion.div className="w-11/12 md:w-3/4 flex  justify-center flex-wrap items-center gap-10 gap-x-12 mt-12 h-full">
               {regions.map((region: Region, index: number) => (
                 <SourceItem
                   key={index}

@@ -26,19 +26,19 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
   }, []);
   return (
     <motion.div
-      className="w-full h-full  md:min-h-screen flex items-center justify-center bg-secondary/10 fixed top-0 bottom-0 right-0 left-0 z-50 py-10 md:py-10"
+      className="w-full h-full md:min-h-screen flex items-center justify-center bg-secondary/10 fixed top-0 bottom-0 right-0 left-0 z-50 py-10 md:py-10"
       onClick={() => setSelectedId(null)}
       layoutId={selectedId.toString()}
     >
       <motion.div
-        className="w-5/6 h-full max-h-[80vh] md:max-h-[70vh] lg:max-h-[60vh] overflow-y-scroll no-scrollbar bg-white relative rounded-3xl drop-shadow-2xl"
+        className="w-5/6 h-fit max-h-screen md:max-h-[500px] py-7 md:py-0 overflow-y-scroll no-scrollbar bg-white relative rounded-3xl drop-shadow-2xl"
         onClick={(e) => {
           e.stopPropagation();
         }}
       >
         <div className="flex flex-col-reverse justify-center sm:justify-around  md:flex-row md:justify-center w-full h-full">
           <div className="flex flex-col justify-center h-fit w-full md:w-1/2 p-5 md:px-12 md:gap-y-8 ">
-            <div>
+            <div className="p-4">
               <p>{region.description}</p>
               <div className="flex items-center gap-x-1 text-secondary">
                 <p className="font-DM_Serif text-5xl text-start">
@@ -48,7 +48,7 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
             </div>
             <div
               className={clsx(
-                "grid grid-cols-1 md:grid-cols-2 gap-2",
+                "grid grid-cols-1 md:grid-cols-2 gap-2 px-4",
                 region.locations.length > 15 &&
                   "grid-cols-3 text-xs md:text-base md:grid-cols-2"
               )}
@@ -59,7 +59,7 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
                 })}
             </div>
           </div>
-          <div className="flex items-center min-h-[350px]  max-h-52 md:max-h-max md:min-h-[500px] w-full h-full md:w-1/2 relative ">
+          <div className="flex items-center min-h-[150px] md:min-h-[500px] max-h-48 md:max-h-fit w-full h-full md:w-1/2 relative ">
             <Image
               className="h-full absolute inset-0 object-contain"
               fill
