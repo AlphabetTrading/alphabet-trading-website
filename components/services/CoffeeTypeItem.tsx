@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
@@ -70,9 +71,9 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
                 <p className="leading-6 2k:leading-snug 4k:leading-normal">
                   {coffeeType.description}
                 </p>
-                <button
+                <Link
+                  href="/our-coffee/offerings"
                   aria-label="see offerings"
-                  onClick={() => router.push("/offerings")}
                   className={clsx(
                     "flex items-center border hover:scale-105 transition duration-200 ease-in-out",
                     index % 2 == 0 ? "border-primary" : "border-white"
@@ -82,7 +83,7 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
                     See Offerings
                   </p>
                   <FaChevronRight className="pr-2" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>

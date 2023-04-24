@@ -9,12 +9,11 @@ import {
   useOfferingsContext,
 } from "../../context/OfferingsContext";
 import { AnimatePresence, motion } from "framer-motion";
-import OfferingsFilter from "./OfferingsFilter";
 import GetSVG from "../common/GetSVG";
-import { IoIosArrowForward } from "react-icons/io";
 import { useIsSmall } from "../../hooks/utils";
 import OfferingsSearchbar from "./OfferingsSearchbar";
-import { FaSmileWink } from "react-icons/fa";
+import OfferingFilterSidebar from "./OfferingFilterSidebar";
+import OfferingsFilterMobile from "./OfferingFilterPopup";
 
 type Props = {};
 export enum ViewTypeEnum {
@@ -79,7 +78,7 @@ const OfferingsComponent = () => {
       </AnimatePresence>
       <div
         className={clsx(
-          "w-full flex flex-col justify-center items-center gap-y-3 mt-28 p-4 py-12 md:py-20 md:px-6 lg:px-10 xl:px-20 2xl:px-36",
+          "w-full flex flex-col justify-center items-center gap-y-3 mt-20 p-4 py-12 md:py-20 md:px-6 lg:px-10 xl:px-20 2xl:px-36",
           isModalOpen
             ? "bg-gray-900 bg-opacity-30 overflow-y-hidden"
             : "bg-secondary/10"
@@ -93,25 +92,17 @@ const OfferingsComponent = () => {
           Ethiopia that Alphabet Coffee sources its coffee from.
         </p>
 
-        <div className="flex w-full gap-x-5">
-          <div
-            className={clsx(
-              "w-1/6  overflow-hidden transition-all duration-500 ease-in-out",
-              isFilterOptionOpen
-                ? "w-11/12 flex-1 sm:w-1/6 sm:flex-auto sm:max-w-[250px] lg:max-w-xs"
-                : "w-0 max-w-xs"
-            )}
-          ></div>
+        <div className="flex w-full">
+          {/* <OfferingsFilterMobile filterBy={filterBy} setFilterBy={setFilterBy} isFilterOptionOpen={isFilterOptionOpen} setIsFilterOptionOpen={setIsFilterOptionOpen} /> */}
+          {/* <OfferingFilterSidebar filterBy={filterBy} setFilterBy={setFilterBy} /> */}
           <div
             className={clsx(
               "flex flex-col justify-start items-center sm:flex-1 gap-y-2",
-              isFilterOptionOpen
-                ? "w-0 sm:w-1/2 sm:flex sm:flex-auto lg:flex-1"
-                : "flex flex-1 "
+              "w-full flex sm:w-1/2 sm:flex sm:flex-auto lg:flex-1"
             )}
           >
-            <div className="w-full md:w-11/12 flex justify-between">
-              <div className="flex items-center flex-1 cursor-pointer">
+            <div className="w-full md:w-11/12 flex flex-col-reverse  gap-y-3 md:flex-row justify-between">
+              <div className="flex items-center justify-between flex-1 cursor-pointer">
                 {/* {viewType === ViewTypeEnum.GRID ? (
                   <BsGrid
                     className="h-5 w-5 text-primary/90"
@@ -128,6 +119,15 @@ const OfferingsComponent = () => {
                     setFilterBy((prev) => ({ ...prev, query: query }))
                   }
                 />
+                <div className="md:hidden">
+                  <button
+                    onClick={() => setIsFilterOptionOpen((prev) => !prev)}
+                    className="flex gap-x-2 text-black"
+                  >
+                    <GetSVG name="filter" />
+                    <h4 className="font-medium">Filter</h4>
+                  </button>
+                </div>
               </div>
               <Button
                 classname={clsx(

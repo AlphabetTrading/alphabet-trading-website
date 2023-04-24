@@ -53,6 +53,8 @@ interface IOfferingContextProps {
       query?: string;
       grade?: string[];
       price?: number[];
+      bagsRange?: [number, number];
+      process?: string[];
       origin?: string[];
     }
   ) => void;
@@ -79,6 +81,7 @@ export const OfferingsContext = createContext<IOfferingContextProps>({
       query?: string;
       grade?: string[];
       price?: number[];
+      bagsRange?: [number, number];
       process?: string[];
       origin?: string[];
     }
@@ -109,6 +112,7 @@ export function OfferingsContextWrapper({ children }: any) {
         query?: string;
         grade?: string[];
         price?: number[];
+        bagsRange?: [number, number];
         process?: string[];
         origin?: string[];
       }
@@ -131,6 +135,17 @@ export function OfferingsContextWrapper({ children }: any) {
           if (filterBy.process && filterBy.process.length > 0) {
             filter = filterBy.process.includes(offer.process);
           }
+
+          if (
+            filterBy.bagsRange &&
+            filterBy.bagsRange.length > 0 &&
+            offer.quantity
+          ) {
+            filter =
+              filterBy.bagsRange[0] <= offer.quantity &&
+              offer.quantity <= filterBy.bagsRange[1];
+          }
+
           return filter;
         })
         .sort(sort_by(sortBy));

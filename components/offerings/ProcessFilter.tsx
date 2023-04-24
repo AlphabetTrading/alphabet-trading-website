@@ -35,7 +35,7 @@ const ProcessFilter = (props: Props) => {
 
   useEffect(() => {
     props.setFilterBy((prev) => ({ ...prev, process: checkedItems }));
-  }, [checkedItems, props]);
+  }, [checkedItems]);
 
   return (
     <div>
