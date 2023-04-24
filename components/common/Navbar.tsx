@@ -124,61 +124,65 @@ const Navbar = ({ white }: Props) => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden">
-      <motion.header
-        className={clsx(
-          "w-full top-0 left-0 fixed transition p-2 md:p-4 z-50 duration-500 ease-in-out",
-          white ? "text-gray-700" : "text-white",
+    <motion.header
+      className={clsx(
+        "w-full top-0 left-0 fixed transition p-2 md:p-4 z-50 duration-500 ease-in-out",
+        white ? "text-gray-700" : "text-white",
 
-          scrolledYAmount > 50 || isOpen
-            ? "bg-[#0A1026] drop-shadow-md text-white"
-            : "bg-transparent"
+        scrolledYAmount > 50 || isOpen
+          ? "bg-[#0A1026] drop-shadow-md text-white"
+          : "bg-transparent"
+      )}
+    >
+      <div
+        className={clsx(
+          "w-full flex justify-between items-center text-white ",
+          white ? "text-gray-700" : "text-white",
+          (scrolledYAmount > 50 || isOpen) && "!text-white"
         )}
       >
-        <div
-          className={clsx(
-            "w-full flex justify-between items-center text-white",
-            white ? "text-gray-700" : "text-white",
-            (scrolledYAmount > 50 || isOpen) && "!text-white"
-          )}
-        >
-          <div className="hidden md:flex flex-shrink-0 ml-2 md:ml-4 lg:ml-6 xl:ml-8 justify-start max-w-xs">
-            <Link className="z-20" href="/">
-              <div className="flex items-center gap-x-1 md:gap-x-2 ">
-                <div className="flex h-12 items-center justify-start ">
-                  {!(scrolledYAmount > 50 || isOpen) ? (
-                    <img
-                      className="w-full h-full "
-                      src="/AlphabetLogoBlack.svg"
-                      alt=""
-                    />
-                  ) : (
-                    <img
-                      className="w-full h-full "
-                      src="/AlphabetLogoWhite.svg"
-                      alt=""
-                    />
-                  )}
-                </div>
+        <div className="hidden md:flex flex-shrink-0 ml-2 md:ml-4 lg:ml-6 xl:ml-8 justify-start max-w-xs">
+          <Link className="z-20" href="/">
+            <div className="flex items-center gap-x-1 md:gap-x-2 ">
+              <div className="flex h-12 items-center justify-start">
+                {!(scrolledYAmount > 50 || isOpen) ? (
+                  <img
+                    className="w-full h-full "
+                    src={
+                      router.pathname === "/"
+                        ? "/Alphabet_Logo_White.svg"
+                        : "/Alphabet_Logo_Black.svg"
+                    }
+                    alt=""
+                  />
+                ) : (
+                  <img
+                    className="w-full h-full "
+                    src="/Alphabet_Logo_White.png"
+                    alt=""
+                  />
+                )}
               </div>
-            </Link>
-          </div>
-          <div className="hidden md:flex items-center justify-between">
-            <nav className="">
-              <div className="w-full flex items-center justify-between px-6 pl-10 2k:px-14 2k:pl-18 4k:px-20 4k:pl-24">
-                <div
-                  className={clsx(
-                    "flex gap-x-6 lg:gap-x-8 text-md 2k:text-xl 4k:text-2xl font-semibold z-20",
-                    white ? "" : "text-white"
-                  )}
-                >
-                  {navigationItems.map((navItem, index) => {
-                    return (
+            </div>
+          </Link>
+        </div>
+        <div className="hidden md:flex items-center justify-between">
+          <nav className="">
+            <div className=" w-full flex items-center justify-between px-6 pl-10 2k:px-14 2k:pl-18 4k:px-20 4k:pl-24">
+              <ul
+                className={clsx(
+                  "flex h-full items-center gap-x-6 lg:gap-x-8 text-md 2k:text-xl 4k:text-2xl font-semibold z-20",
+                  white ? "" : "text-white"
+                )}
+              >
+                {navigationItems.map((navItem, index) => {
+                  return (
+                    <li key={navItem.id}>
                       <Link
-                        key={navItem.id}
                         href={navItem.href}
                         className={clsx(
-                          "block mt-6 lg:inline-block lg:mt-0 lg:mr-4 cursor-pointer hover:scale-110 hover:font-bold transition duration-200 ease-in-out",
+                          "block w-full h-full text-center lg:inline-block lg:mt-0 lg:mr-4 cursor-pointer ",
+                          "hover:scale-110 hover:font-bold transition duration-200 ease-in-out ",
                           router.pathname === navItem.href
                             ? `after:content-[''] relative after:absolute after:-bottom-1 after:left-0 after:h-1 after:w-full after:rounded-md after:bg-secondary ${
                                 prevIndex > index
@@ -190,107 +194,111 @@ const Navbar = ({ white }: Props) => {
                       >
                         {navItem.title}
                       </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            </nav>
-          </div>
-          <div className="flex justify-between items-center w-full md:hidden">
-            <Link className="z-20" href="/">
-              <div className="flex items-center gap-x-1 md:gap-x-2">
-                <div className="flex h-12 items-center justify-center">
-                  {!(scrolledYAmount > 50 || isOpen) ? (
-                    <img
-                      className="w-full h-full "
-                      src="/AlphabetLogoBlack.svg"
-                      alt=""
-                    />
-                  ) : (
-                    <img
-                      className="w-full h-full "
-                      src="/AlphabetLogoWhite.svg"
-                      alt=""
-                    />
-                  )}
-                </div>
-              </div>
-            </Link>
-            <AnimatePresence>
-              <motion.nav
-                className="w-full flex flex-col items-end !text-white"
-                initial={false}
-                animate={isOpen ? "open" : "closed"}
-                exit={variants.exit}
-                custom={height}
-                ref={containerRef}
-              >
-                <button
-                  className={clsx(
-                    white ? "text-gray-700" : "text-white",
-                    (scrolledYAmount > 50 || isOpen) && "!text-white"
-                  )}
-                  onClick={() => toggleOpen()}
-                >
-                  <svg
-                    className="h-5 w-6 md:h-6 md:w-7 lg:h-8 lg:w-8"
-                    viewBox="0 0 23 23"
-                  >
-                    <Path
-                      variants={{
-                        closed: { d: "M 2 2.5 L 20 2.5" },
-                        open: { d: "M 3 16.5 L 17 2.5" },
-                      }}
-                    />
-                    <Path
-                      d="M 2 9.423 L 20 9.423"
-                      variants={{
-                        closed: { opacity: 1 },
-                        open: { opacity: 0 },
-                      }}
-                      transition={{ duration: 0.1 }}
-                    />
-                    <Path
-                      variants={{
-                        closed: { d: "M 2 16.346 L 20 16.346" },
-                        open: { d: "M 3 2.5 L 17 16.346" },
-                      }}
-                    />
-                  </svg>
-                </button>
-                <motion.ul
-                  style={{
-                    boxShadow: "0 10px 30px -15px var(--navy-shadow)",
-                    borderRadius: "var(--border-radius)",
-                    transition: "var(--transition)",
-                  }}
-                  variants={variants}
-                  exit={variants.exit}
-                  className="min-w-full  flex flex-col p-5 px-10 gap-y-3 bg-[#0A1026] rounded-xl absolute top-16 right-0 left-0 z-50"
-                >
-                  {navigationItems.map((navItem) => (
-                    <motion.li
-                      key={navItem.id}
-                      variants={variants}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Link
-                        href={navItem.href}
-                        title={navItem.title}
-                        className=" font-normal text-gray-400 transition-all duration-200 hover:text-white"
-                      >
-                        {navItem.title}
-                      </Link>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              </motion.nav>
-            </AnimatePresence>
-          </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </nav>
         </div>
-      </motion.header>
-    </div>
+        <div className="flex justify-between items-center w-full md:hidden">
+          <Link className="z-20" href="/">
+            <div className="flex items-center gap-x-1 md:gap-x-2">
+              <div className="flex h-12 items-center justify-center min-w-lg w-44">
+                {!(scrolledYAmount > 50 || isOpen) ? (
+                  <img
+                    className="w-full h-full "
+                    src={
+                      router.pathname === "/"
+                        ? "/Alphabet_Logo_White.svg"
+                        : "/Alphabet_Logo_Black.svg"
+                    }
+                    alt=""
+                  />
+                ) : (
+                  <img
+                    className="w-full h-full "
+                    src="/Alphabet_Logo_White.png"
+                    alt=""
+                  />
+                )}
+              </div>
+            </div>
+          </Link>
+          <AnimatePresence>
+            <motion.nav
+              className="w-full flex flex-col items-end !text-white"
+              initial={false}
+              animate={isOpen ? "open" : "closed"}
+              exit={variants.exit}
+              custom={height}
+              ref={containerRef}
+            >
+              <button
+                className={clsx(
+                  white ? "text-gray-700" : "text-white",
+                  (scrolledYAmount > 50 || isOpen) && "!text-white"
+                )}
+                onClick={() => toggleOpen()}
+              >
+                <svg
+                  className="h-5 w-6 md:h-6 md:w-7 lg:h-8 lg:w-8"
+                  viewBox="0 0 23 23"
+                >
+                  <Path
+                    variants={{
+                      closed: { d: "M 2 2.5 L 20 2.5" },
+                      open: { d: "M 3 16.5 L 17 2.5" },
+                    }}
+                  />
+                  <Path
+                    d="M 2 9.423 L 20 9.423"
+                    variants={{
+                      closed: { opacity: 1 },
+                      open: { opacity: 0 },
+                    }}
+                    transition={{ duration: 0.1 }}
+                  />
+                  <Path
+                    variants={{
+                      closed: { d: "M 2 16.346 L 20 16.346" },
+                      open: { d: "M 3 2.5 L 17 16.346" },
+                    }}
+                  />
+                </svg>
+              </button>
+              <motion.ul
+                style={{
+                  boxShadow: "0 10px 30px -15px var(--navy-shadow)",
+                  borderRadius: "var(--border-radius)",
+                  transition: "var(--transition)",
+                }}
+                variants={variants}
+                exit={variants.exit}
+                className="min-w-full  flex flex-col p-5 px-10 gap-y-3 bg-[#0A1026] rounded-xl absolute top-16 right-0 left-0 z-50"
+              >
+                {navigationItems.map((navItem) => (
+                  <motion.li
+                    key={navItem.id}
+                    variants={variants}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Link
+                      href={navItem.href}
+                      title={navItem.title}
+                      className=" font-normal text-gray-400 transition-all duration-200 hover:text-white"
+                    >
+                      {navItem.title}
+                    </Link>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </motion.nav>
+          </AnimatePresence>
+        </div>
+      </div>
+    </motion.header>
   );
 };
 

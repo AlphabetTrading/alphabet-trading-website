@@ -6,10 +6,21 @@ type Props = {
   onChange: Function;
   unit: string;
   step: number;
+  rangeValues: [number, number];
 };
-const MultiRangeSlider = ({ min, max, onChange, unit, step }: Props) => {
-  const [minVal, setMinVal] = useState(min);
-  const [maxVal, setMaxVal] = useState(max);
+const MultiRangeSlider = ({
+  min,
+  max,
+  onChange,
+  unit,
+  step,
+  rangeValues,
+}: Props) => {
+  console.log(rangeValues, " range");
+  const [values, setValues] = useState<[number, number]>(rangeValues);
+
+  const [minVal, setMinVal] = useState(values[0]);
+  const [maxVal, setMaxVal] = useState(values[1]);
   const minValRef = useRef(min);
   const maxValRef = useRef(max);
   const range = useRef<any>(null);
@@ -43,8 +54,9 @@ const MultiRangeSlider = ({ min, max, onChange, unit, step }: Props) => {
 
   // Get min and max values when their state changes
   useEffect(() => {
-    onChange({ min: minVal, max: maxVal });
-  }, [minVal, maxVal, onChange]);
+    setValues([minVal, maxVal]);
+    onChange(minVal, maxVal);
+  }, [minVal, maxVal]);
 
   return (
     <div className="flex flex-col">
