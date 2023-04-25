@@ -248,7 +248,7 @@ const MenuItem = (props: MenuItemProps) => {
         {/* {JSON.stringify([...props.filterBy.origin || []])} */}
         <motion.header
           initial={false}
-          animate={{ backgroundColor: isOpen ? "#08696510" : "" }}
+          animate={{ backgroundColor: isOpen ? "#08696510" : "none" }}
           onClick={() => setIsOpen((prev) => !prev)}
           // onClick={() => setExpanded(isOpen ? false : i)}
           className={clsx(

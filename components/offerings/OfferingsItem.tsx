@@ -22,15 +22,13 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
   return (
     <motion.li
       initial={{
-        opacity: 0,
         scale: 0,
-        translateX: index % 2 == 0 ? "-1000px" : "1000px",
+        translateX: index % 2 == 0 ? "-100px" : "100px",
       }}
-      animate={{ opacity: 1, scale: 1, translateX: "0px" }}
+      animate={{ scale: 1, translateX: "0px" }}
       exit={{
-        opacity: 0,
         scale: 0,
-        translateX: index % 2 == 1 ? "1000px" : "-1000px",
+        translateX: index % 2 == 1 ? "100px" : "-100px",
       }}
       layout
       className="list-none w-full flex items-center justify-center"
