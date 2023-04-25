@@ -8,7 +8,7 @@ type Props = {
     grade?: string[];
     price?: number[];
     process?: string[];
-    origin?: string[];
+    origin?: Set<string>;
   };
   setFilterBy: React.Dispatch<
     React.SetStateAction<{
@@ -16,26 +16,42 @@ type Props = {
       grade?: string[];
       price?: number[];
       process?: string[];
-      origin?: string[];
+      origin?: Set<string>;
     }>
   >;
 };
 
 const ProcessFilter = (props: Props) => {
-  const [checkedItems, setCheckedItems] = useState<string[]>([]);
+  const [checkedItems, setCheckedItems] = useState<string[]>(
+    props.filterBy.process || []
+  );
 
   const handleChange = (e: any) => {
     const { value, checked } = e.target;
     if (checked) {
-      setCheckedItems((prev: any) => [...prev, value]);
+      const items = [...new Set([...(props.filterBy.process || []), value])];
+      setCheckedItems((prev: any) => items);
+      props.setFilterBy((prev) => ({
+        ...prev,
+        process: items,
+      }));
     } else {
-      setCheckedItems((prev: any) => prev.filter((x: any) => x !== value));
+      const items = [
+        ...new Set([
+          ...(props.filterBy.process || []).filter((x: any) => x !== value),
+        ]),
+      ];
+      setCheckedItems((prev: any) => items);
+      props.setFilterBy((prev) => ({
+        ...prev,
+        process: items,
+      }));
     }
   };
 
-  useEffect(() => {
-    props.setFilterBy((prev) => ({ ...prev, process: checkedItems }));
-  }, [checkedItems]);
+  // useEffect(() => {
+  //   props.setFilterBy((prev) => ({ ...prev, process: checkedItems }));
+  // }, [checkedItems]);
 
   return (
     <div>
@@ -49,8 +65,9 @@ const ProcessFilter = (props: Props) => {
               )}
             >
               <input
-                onClick={handleChange}
+                onChange={handleChange}
                 value={item}
+                checked={props.filterBy.process?.includes(item)}
                 type="checkbox"
                 className="appearance-none w-full h-full absolute z-20 peer/select inset-0"
               />

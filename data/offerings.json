@@ -713,20 +713,7 @@
       "kebele": "Guracho"
     }
   },
-  {
-    "id": 52,
-    "type": "Washed Guji Bedessa",
-    "grade": "G-1",
-    "location": "Oromia Region, Ethiopia",
-    "quantity": 90,
-    "process": "Washed",
-    "origin": {
-      "region": "Oromia",
-      "zone": "Guji",
-      "woreda": "Kercha",
-      "kebele": "Bedessa"
-    }
-  },
+
   {
     "id": 53,
     "type": "Washed Guji Blida",
@@ -867,20 +854,7 @@
       "kebele": "Guracho"
     }
   },
-  {
-    "id": 65,
-    "type": "Washed Guji Bedessa",
-    "grade": "G-2",
-    "location": "Oromia Region, Ethiopia",
-    "quantity": 65,
-    "process": "Washed",
-    "origin": {
-      "region": "Oromia",
-      "zone": "Guji",
-      "woreda": "Kercha",
-      "kebele": "Bedessa"
-    }
-  },
+
   {
     "id": 66,
     "type": "Washed Guji Blida",
@@ -1019,20 +993,6 @@
       "zone": "Guji",
       "woreda": "Kercha",
       "kebele": "Guracho"
-    }
-  },
-  {
-    "id": 78,
-    "type": "Natural Guji Bedessa",
-    "grade": "G-1",
-    "location": "Oromia Region, Ethiopia",
-    "quantity": 38,
-    "process": "Natural",
-    "origin": {
-      "region": "Oromia",
-      "zone": "Guji",
-      "woreda": "Kercha",
-      "kebele": "Bedessa"
     }
   },
   {
@@ -1176,20 +1136,6 @@
     }
   },
   {
-    "id": 91,
-    "type": "Natural Guji Bedessa",
-    "grade": "G-2",
-    "location": "Oromia Region, Ethiopia",
-    "quantity": 85,
-    "process": "Natural",
-    "origin": {
-      "region": "Oromia",
-      "zone": "Guji",
-      "woreda": "Kercha",
-      "kebele": "Bedessa"
-    }
-  },
-  {
     "id": 92,
     "type": "Natural Guji Blida",
     "grade": "G-2",
@@ -1327,20 +1273,6 @@
       "zone": "Guji",
       "woreda": "Kercha",
       "kebele": "Guracho"
-    }
-  },
-  {
-    "id": 104,
-    "type": "Natural Guji Bedessa",
-    "grade": "G-3",
-    "location": "Oromia Region, Ethiopia",
-    "quantity": 64,
-    "process": "Natural",
-    "origin": {
-      "region": "Oromia",
-      "zone": "Guji",
-      "woreda": "Kercha",
-      "kebele": "Bedessa"
     }
   },
   {

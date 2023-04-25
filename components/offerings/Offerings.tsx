@@ -50,7 +50,7 @@ const OfferingsComponent = () => {
     grade?: string[];
     price?: number[];
     process?: string[];
-    origin?: string[];
+    origin?: Set<string>;
   }>({});
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isFilterOptionOpen, setIsFilterOptionOpen] = useState(false);
@@ -91,10 +91,17 @@ const OfferingsComponent = () => {
           Yirgacheffe, Guji, Sidamo, Gedeb and Limmu are the five regions in
           Ethiopia that Alphabet Coffee sources its coffee from.
         </p>
-
         <div className="flex w-full">
-          {/* <OfferingsFilterMobile filterBy={filterBy} setFilterBy={setFilterBy} isFilterOptionOpen={isFilterOptionOpen} setIsFilterOptionOpen={setIsFilterOptionOpen} /> */}
-          {/* <OfferingFilterSidebar filterBy={filterBy} setFilterBy={setFilterBy} /> */}
+          <OfferingsFilterMobile
+            filterBy={filterBy}
+            setFilterBy={setFilterBy}
+            isFilterOptionOpen={isFilterOptionOpen}
+            setIsFilterOptionOpen={setIsFilterOptionOpen}
+          />
+          <OfferingFilterSidebar
+            filterBy={filterBy}
+            setFilterBy={setFilterBy}
+          />
           <div
             className={clsx(
               "flex flex-col justify-start items-center sm:flex-1 gap-y-2",
@@ -331,7 +338,7 @@ const OfferingsComponent = () => {
                 </div>
               </div>
             </div>
-            <motion.li
+            <motion.ul
               className={clsx(
                 "flex flex-col items-center justify-start gap-y-2 w-full"
               )}
@@ -355,7 +362,7 @@ const OfferingsComponent = () => {
                   <div className="my-5 font-semibold">No Result</div>
                 )}
               </AnimatePresence>
-            </motion.li>
+            </motion.ul>
           </div>
         </div>
       </div>

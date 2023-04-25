@@ -9,7 +9,7 @@ type Props = {
     grade?: string[];
     price?: number[];
     process?: string[];
-    origin?: string[];
+    origin?: Set<string>;
   };
   setFilterBy: React.Dispatch<
     React.SetStateAction<{
@@ -17,7 +17,7 @@ type Props = {
       grade?: string[];
       price?: number[];
       process?: string[];
-      origin?: string[];
+      origin?: Set<string>;
     }>
   >;
 };

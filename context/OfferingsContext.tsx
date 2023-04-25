@@ -55,7 +55,7 @@ interface IOfferingContextProps {
       price?: number[];
       bagsRange?: [number, number];
       process?: string[];
-      origin?: string[];
+      origin?: Set<string>;
     }
   ) => void;
 }
@@ -83,7 +83,7 @@ export const OfferingsContext = createContext<IOfferingContextProps>({
       price?: number[];
       bagsRange?: [number, number];
       process?: string[];
-      origin?: string[];
+      origin?: Set<string>;
     }
   ) => {},
 });
@@ -114,7 +114,7 @@ export function OfferingsContextWrapper({ children }: any) {
         price?: number[];
         bagsRange?: [number, number];
         process?: string[];
-        origin?: string[];
+        origin?: Set<string>;
       }
     ) => {
       const sortedOffs = offeringRequests
@@ -127,13 +127,11 @@ export function OfferingsContextWrapper({ children }: any) {
           }
 
           if (filterBy.grade && filterBy.grade.length > 0) {
-            filter = filterBy.grade.includes(offer.grade);
+            filter = filter && filterBy.grade.includes(offer.grade);
           }
-          if (filterBy.origin && filterBy.origin.length > 0) {
-            filter = filterBy.origin.includes(offer.origin.kebele);
-          }
+
           if (filterBy.process && filterBy.process.length > 0) {
-            filter = filterBy.process.includes(offer.process);
+            filter = filter && filterBy.process.includes(offer.process);
           }
 
           if (
@@ -142,8 +140,13 @@ export function OfferingsContextWrapper({ children }: any) {
             offer.quantity
           ) {
             filter =
+              filter &&
               filterBy.bagsRange[0] <= offer.quantity &&
               offer.quantity <= filterBy.bagsRange[1];
+          }
+
+          if (filterBy.origin && filterBy.origin.size > 0) {
+            filter = filter && filterBy.origin.has(offer.origin.kebele);
           }
 
           return filter;
