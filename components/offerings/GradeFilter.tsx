@@ -34,7 +34,7 @@ const grades = [
   },
   {
     id: "3",
-    code: "G-4",
+    code: "G-3",
     title: "Grade 3",
   },
   {

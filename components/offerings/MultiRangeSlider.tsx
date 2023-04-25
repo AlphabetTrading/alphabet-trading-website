@@ -51,7 +51,7 @@ const MultiRangeSlider = ({
   // Convert to percentage
   const getPercent = useCallback(
     (value: any) => Math.round(((value - min) / (max - min)) * 100),
-    [min, max, values]
+    [min, max]
   );
 
   // Set width of the range to decrease from the left side
@@ -63,7 +63,7 @@ const MultiRangeSlider = ({
       range.current.style.left = `${minPercent}%`;
       range.current.style.width = `${maxPercent - minPercent}%`;
     }
-  }, [minVal, getPercent, values]);
+  }, [minVal, getPercent]);
 
   // Set width of the range to decrease from the right side
   useEffect(() => {
@@ -79,7 +79,7 @@ const MultiRangeSlider = ({
   useEffect(() => {
     setValues([minVal, maxVal]);
     setFilterBy((prev) => ({ ...prev, bagsRange: [minVal, maxVal] }));
-  }, [minVal, maxVal, values]);
+  }, [minVal, maxVal]);
 
   return (
     <div className="flex flex-col">

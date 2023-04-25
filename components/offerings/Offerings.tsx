@@ -126,7 +126,7 @@ const OfferingsComponent = () => {
                     setFilterBy((prev) => ({ ...prev, query: query }))
                   }
                 />
-                <div className="md:hidden">
+                <div className="md:hidden max-w-[7rem] overflow-hidden border flex justify-end items-center px-4">
                   <button
                     onClick={() => setIsFilterOptionOpen((prev) => !prev)}
                     className="flex gap-x-2 text-black"
