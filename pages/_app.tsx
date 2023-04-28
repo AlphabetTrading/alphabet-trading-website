@@ -6,7 +6,7 @@ import clsx from "clsx";
 const raleway = Raleway({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic", "vietnamese"],
   variable: "--font-raleway",
 });
 const dm_serif = DM_Serif_Display({
@@ -17,7 +17,7 @@ const dm_serif = DM_Serif_Display({
 });
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={clsx(raleway.variable, dm_serif.variable)}>
+    <div className={clsx(raleway.variable, dm_serif.variable, "")}>
       <Component {...pageProps} />
     </div>
   );

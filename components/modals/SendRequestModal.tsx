@@ -5,12 +5,10 @@ import React, { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import FormField from "../common/FormField";
 import Tag from "../common/Tag";
-import {
-  IOfferingRequest,
-  useOfferingsContext,
-} from "../../context/OfferingsContext";
+import { useOfferingsContext } from "../../context/OfferingsContext";
 import { motion } from "framer-motion";
 import { sendOfferingRequestEmail } from "../../lib/sendOfferingRequestEmail";
+import { IOfferingRequest } from "../../types/offerings";
 export interface FormValues {
   firstName: string;
   lastName: string;

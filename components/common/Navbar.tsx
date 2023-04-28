@@ -46,7 +46,7 @@ const Navbar = ({ white }: Props) => {
     return () => {
       unsubscribeX();
     };
-  }, []);
+  }, [scrollY]);
 
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -130,7 +130,7 @@ const Navbar = ({ white }: Props) => {
         white ? "text-gray-700" : "text-white",
 
         scrolledYAmount > 50 || isOpen
-          ? "bg-[#0A1026] drop-shadow-md text-white"
+          ? "bg-[#0A1026] md:bg-[#0A1026]/60 drop-shadow-md text-white backdrop-blur-3xl"
           : "bg-transparent"
       )}
     >
@@ -144,7 +144,7 @@ const Navbar = ({ white }: Props) => {
         <div className="hidden md:flex flex-shrink-0 ml-2 md:ml-4 lg:ml-6 xl:ml-8 justify-start max-w-xs">
           <Link className="z-20" href="/">
             <div className="flex items-center gap-x-1 md:gap-x-2 ">
-              <div className="flex h-12 items-center justify-start">
+              <div className="flex h-12 lg:h-14 items-center justify-start">
                 {!(scrolledYAmount > 50 || isOpen) ? (
                   <img
                     className="w-full h-full "
@@ -181,10 +181,10 @@ const Navbar = ({ white }: Props) => {
                       <Link
                         href={navItem.href}
                         className={clsx(
-                          "block w-full h-full text-center lg:inline-block lg:mt-0 lg:mr-4 cursor-pointer ",
+                          "w-full h-full text-center lg:inline-block lg:mt-0 lg:mr-4 cursor-pointer flex justify-center items-center flex-col",
                           "hover:scale-110 hover:font-bold transition duration-200 ease-in-out ",
                           router.pathname === navItem.href
-                            ? `after:content-[''] relative after:absolute after:-bottom-1 after:left-0 after:h-1 after:w-full after:rounded-md after:bg-secondary ${
+                            ? `after:content-[''] relative after:absolute after:-bottom-1  after:w-1/2 hover:after:w-3/4 after:left-1/4 hover:after:left-3 after:transition-all after:duration-300 after:ease-in-out after:h-1 after:transform  after:rounded-md after:bg-secondary ${
                                 prevIndex > index
                                   ? "after:animate-slide_right"
                                   : "after:animate-slide_left"
@@ -281,13 +281,13 @@ const Navbar = ({ white }: Props) => {
                   <motion.li
                     key={navItem.id}
                     variants={variants}
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.1, color: "rgb(255 255 255)" }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <Link
                       href={navItem.href}
                       title={navItem.title}
-                      className=" font-normal text-gray-400 transition-all duration-200 hover:text-white"
+                      className=" font-normal w-full h-full text-gray-400 transition-all duration-200 hover:text-white"
                     >
                       {navItem.title}
                     </Link>

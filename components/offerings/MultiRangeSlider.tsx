@@ -1,23 +1,46 @@
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useState,
+  useRef,
+  useMemo,
+} from "react";
 
 type Props = {
   min: number;
   max: number;
-  onChange: Function;
   unit: string;
   step: number;
-  rangeValues: [number, number];
+  filterBy: {
+    query?: string;
+    grade?: string[];
+    price?: number[];
+    bagsRange?: [number, number];
+    process?: string[];
+    origin?: Set<string>;
+  };
+  setFilterBy: React.Dispatch<
+    React.SetStateAction<{
+      query?: string;
+      grade?: string[];
+      price?: number[];
+      bagsRange?: [number, number];
+      process?: string[];
+      origin?: Set<string>;
+    }>
+  >;
 };
 const MultiRangeSlider = ({
   min,
   max,
-  onChange,
   unit,
   step,
-  rangeValues,
+  filterBy,
+  setFilterBy,
 }: Props) => {
-  console.log(rangeValues, " range");
-  const [values, setValues] = useState<[number, number]>(rangeValues);
+  const [values, setValues] = useState<[number, number]>(
+    filterBy.bagsRange || [80, 980]
+  );
 
   const [minVal, setMinVal] = useState(values[0]);
   const [maxVal, setMaxVal] = useState(values[1]);
@@ -50,12 +73,12 @@ const MultiRangeSlider = ({
     if (range.current) {
       range.current.style.width = `${maxPercent - minPercent}%`;
     }
-  }, [maxVal, getPercent]);
+  }, [maxVal, getPercent, values]);
 
   // Get min and max values when their state changes
   useEffect(() => {
     setValues([minVal, maxVal]);
-    onChange(minVal, maxVal);
+    setFilterBy((prev) => ({ ...prev, bagsRange: [minVal, maxVal] }));
   }, [minVal, maxVal]);
 
   return (

@@ -49,13 +49,13 @@ module.exports = {
       },
       keyframes: {
         slide_left: {
-          "0%": { transform: "translateX(-100%)" },
-          "50%": { transform: "translateX(-50%)" },
+          "0%": { transform: "translateX(100%)" },
+          "50%": { transform: "translateX(50%)" },
           "100%": { transform: "translateX(0%)" },
         },
         slide_right: {
-          "0%": { transform: "translateX(100%)" },
-          "50%": { transform: "translateX(50%)" },
+          "0%": { transform: "translateX(-100%)" },
+          "50%": { transform: "translateX(-50%)" },
           "100%": { transform: "translateX(0%)" },
         },
         animate_circle_in: {

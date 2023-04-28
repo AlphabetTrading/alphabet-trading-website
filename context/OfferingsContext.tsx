@@ -10,28 +10,13 @@ import {
   useMemo,
   useState,
 } from "react";
-import { sort_by } from "../utils/common";
+import { sort_by, sortByField, sortOfferingsRequestFN } from "../utils/common";
 import offerings from "../data/offerings.json";
-
-export interface IOffering {
-  id: number;
-  type: string;
-  grade: string;
-  location: string;
-  quantity: number;
-  request?: string;
-  process: string;
-  origin: {
-    region: string;
-    zone: string;
-    woreda: string;
-    kebele: string;
-  };
-}
-
-export interface IOfferingRequest extends IOffering {
-  isSelected: boolean;
-}
+import {
+  IFilterOfferings,
+  IOffering,
+  IOfferingRequest,
+} from "../types/offerings";
 
 interface IOfferingContextProps {
   loading: boolean;
@@ -43,24 +28,11 @@ interface IOfferingContextProps {
   setOfferingRequests: Dispatch<SetStateAction<any>>;
   setFilteredOfferingRequests: Dispatch<SetStateAction<any>>;
   selectedOfferings: IOfferingRequest[];
-  filterOfferings: (
-    sortBy: {
-      field: string;
-      reverse: boolean;
-      primer: Function;
-    },
-    filterBy: {
-      query?: string;
-      grade?: string[];
-      price?: number[];
-      bagsRange?: [number, number];
-      process?: string[];
-      origin?: string[];
-    }
-  ) => void;
+  filterOfferings: (filter: IFilterOfferings) => void;
 }
 
 const offeringsData: IOffering[] = offerings;
+
 export const OfferingsContext = createContext<IOfferingContextProps>({
   loading: false,
   setLoading: () => {},
@@ -71,21 +43,7 @@ export const OfferingsContext = createContext<IOfferingContextProps>({
   filteredOfferingRequests: [],
   setFilteredOfferingRequests: () => {},
   selectedOfferings: [],
-  filterOfferings: (
-    sortBy: {
-      field: string;
-      reverse: boolean;
-      primer: Function;
-    },
-    filterBy: {
-      query?: string;
-      grade?: string[];
-      price?: number[];
-      bagsRange?: [number, number];
-      process?: string[];
-      origin?: string[];
-    }
-  ) => {},
+  filterOfferings: (filter: IFilterOfferings) => {},
 });
 
 export function OfferingsContextWrapper({ children }: any) {
@@ -102,21 +60,7 @@ export function OfferingsContextWrapper({ children }: any) {
   >([]);
 
   const filterOfferings = useCallback(
-    (
-      sortBy: {
-        field: string;
-        reverse: boolean;
-        primer: Function;
-      },
-      filterBy: {
-        query?: string;
-        grade?: string[];
-        price?: number[];
-        bagsRange?: [number, number];
-        process?: string[];
-        origin?: string[];
-      }
-    ) => {
+    ({ filterBy, sortBy }: IFilterOfferings) => {
       const sortedOffs = offeringRequests
         .filter((offer) => {
           let filter = true;
@@ -127,13 +71,11 @@ export function OfferingsContextWrapper({ children }: any) {
           }
 
           if (filterBy.grade && filterBy.grade.length > 0) {
-            filter = filterBy.grade.includes(offer.grade);
+            filter = filter && filterBy.grade.includes(offer.grade);
           }
-          if (filterBy.origin && filterBy.origin.length > 0) {
-            filter = filterBy.origin.includes(offer.origin.kebele);
-          }
+
           if (filterBy.process && filterBy.process.length > 0) {
-            filter = filterBy.process.includes(offer.process);
+            filter = filter && filterBy.process.includes(offer.process);
           }
 
           if (
@@ -142,13 +84,18 @@ export function OfferingsContextWrapper({ children }: any) {
             offer.quantity
           ) {
             filter =
+              filter &&
               filterBy.bagsRange[0] <= offer.quantity &&
               offer.quantity <= filterBy.bagsRange[1];
           }
 
+          if (filterBy.origin && filterBy.origin.size > 0) {
+            filter = filter && filterBy.origin.has(offer.origin.kebele);
+          }
+
           return filter;
         })
-        .sort(sort_by(sortBy));
+        .sort(sortByField(sortBy.field, sortBy.reverse, sortBy.primer as any));
       setFilteredOfferingRequests(sortedOffs);
       setSelectedOfferings(sortedOffs.filter((off) => off.isSelected));
     },

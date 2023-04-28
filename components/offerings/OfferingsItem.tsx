@@ -4,11 +4,9 @@ import ProductAvailabilityChip, {
   AVAILABILITY,
 } from "../common/AvailabilityChip";
 import CustomCheckbox from "../common/CustomCheckbox";
-import {
-  IOfferingRequest,
-  useOfferingsContext,
-} from "../../context/OfferingsContext";
+import { useOfferingsContext } from "../../context/OfferingsContext";
 import { ViewTypeEnum } from "./Offerings";
+import { IOfferingRequest } from "../../types/offerings";
 
 type Props = {
   index: number;
@@ -22,15 +20,13 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
   return (
     <motion.li
       initial={{
-        opacity: 0,
         scale: 0,
-        translateX: index % 2 == 0 ? "-1000px" : "1000px",
+        translateX: index % 2 == 0 ? "-100px" : "100px",
       }}
-      animate={{ opacity: 1, scale: 1, translateX: "0px" }}
+      animate={{ scale: 1, translateX: "0px" }}
       exit={{
-        opacity: 0,
         scale: 0,
-        translateX: index % 2 == 1 ? "1000px" : "-1000px",
+        translateX: index % 2 == 1 ? "100px" : "-100px",
       }}
       layout
       className="list-none w-full flex items-center justify-center"
@@ -57,7 +53,7 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
           />
         </div>
         <div className="col-span-3 2k:text-[18px] 4k:text-3xl">
-          {offering.type}
+          {offering.type}-{offering.priority}
         </div>
         <div className="col-span-1 2k:text-[18px] 4k:text-3xl">
           {offering.grade}

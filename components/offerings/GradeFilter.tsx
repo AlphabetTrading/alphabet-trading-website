@@ -8,7 +8,7 @@ type Props = {
     grade?: string[];
     price?: number[];
     process?: string[];
-    origin?: string[];
+    origin?: Set<string>;
   };
   setFilterBy: React.Dispatch<
     React.SetStateAction<{
@@ -16,7 +16,7 @@ type Props = {
       grade?: string[];
       price?: number[];
       process?: string[];
-      origin?: string[];
+      origin?: Set<string>;
     }>
   >;
 };
@@ -32,6 +32,16 @@ const grades = [
     code: "G-2",
     title: "Grade 2",
   },
+  {
+    id: "3",
+    code: "G-3",
+    title: "Grade 3",
+  },
+  {
+    id: "4",
+    code: "G-4",
+    title: "Grade 4",
+  },
 ];
 
 const GradeFilter = (props: Props) => {
@@ -42,20 +52,32 @@ const GradeFilter = (props: Props) => {
   const handleChange = (e: any) => {
     const { value, checked } = e.target;
     if (checked) {
-      setCheckedItems((prev: any) => [...new Set([...prev, value])]);
+      const items = [...new Set([...(props.filterBy.grade || []), value])];
+      setCheckedItems((prev: any) => items);
+      props.setFilterBy((prev) => ({
+        ...prev,
+        grade: items,
+      }));
     } else {
-      setCheckedItems((prev: any) => [
-        ...new Set([...prev.filter((x: any) => x !== value)]),
-      ]);
+      const items = [
+        ...new Set([
+          ...(props.filterBy.grade || []).filter((x: any) => x !== value),
+        ]),
+      ];
+      setCheckedItems((prev: any) => items);
+      props.setFilterBy((prev) => ({
+        ...prev,
+        grade: items,
+      }));
     }
   };
 
-  useEffect(() => {
-    props.setFilterBy((prev) => ({
-      ...prev,
-      grade: [...new Set(checkedItems)],
-    }));
-  }, [checkedItems]);
+  // useEffect(() => {
+  //   props.setFilterBy((prev) => ({
+  //     ...prev,
+  //     grade: [...new Set(checkedItems)],
+  //   }));
+  // }, [checkedItems]);
 
   return (
     <div>

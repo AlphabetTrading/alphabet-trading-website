@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { lazy, useState } from "react";
+import React, { lazy, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 interface Props {
@@ -11,9 +11,33 @@ interface Props {
 
 const ImageWithSkeleton = ({ className, src, alt, props }: Props) => {
   const [isloaded, setIsloaded] = useState(false);
+
+  const rightClicker = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleContextMenu(e: Event) {
+      e.preventDefault();
+    }
+
+    if (rightClicker && rightClicker.current) {
+      rightClicker.current.addEventListener(
+        "contextmenu",
+        handleContextMenu,
+        false
+      );
+      return function cleanup() {
+        rightClicker.current?.removeEventListener(
+          "contextmenu",
+          handleContextMenu,
+          false
+        );
+      };
+    }
+  }, []);
+
   return (
     <>
-      <div className={clsx("relative h-full min-h-full ")}>
+      <div ref={rightClicker} className={clsx("relative h-full min-h-full ")}>
         {!isloaded && (
           <div
             className={clsx(

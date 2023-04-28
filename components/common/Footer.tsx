@@ -18,7 +18,7 @@ const Footer = (props: Props) => {
             <div className="flex items-center gap-x-3">
               <img
                 className="w-full h-full"
-                src="/AlphabetLogoWhite.svg"
+                src="/Alphabet_Logo_White.svg"
                 alt="alphabet logo"
               />
             </div>
@@ -75,7 +75,7 @@ const Footer = (props: Props) => {
                 </a>
               </div>
             </div>
-            <div className="flex items-center sm:gap-x-2">
+            <div className="flex items-center gap-x-1 sm:gap-x-2">
               <AiOutlineMail />
               <div className="text-sm flex flex-col">
                 <a

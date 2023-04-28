@@ -4,16 +4,14 @@ import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import Button from "../../components/common/Button";
 import SendRequestModal from "../../components/modals/SendRequestModal";
 import OfferingsItem from "../../components/offerings/OfferingsItem";
-import {
-  IOfferingRequest,
-  useOfferingsContext,
-} from "../../context/OfferingsContext";
+import { useOfferingsContext } from "../../context/OfferingsContext";
 import { AnimatePresence, motion } from "framer-motion";
 import GetSVG from "../common/GetSVG";
 import { useIsSmall } from "../../hooks/utils";
 import OfferingsSearchbar from "./OfferingsSearchbar";
 import OfferingFilterSidebar from "./OfferingFilterSidebar";
 import OfferingsFilterMobile from "./OfferingFilterPopup";
+import { IOfferingRequest } from "../../types/offerings";
 
 type Props = {};
 export enum ViewTypeEnum {
@@ -28,7 +26,7 @@ const OfferingsComponent = () => {
     setFilteredOfferingRequests,
   } = useOfferingsContext();
   const [sortBy, setSortBy] = useState<{
-    field: string;
+    field: keyof IOfferingRequest;
     reverse: boolean;
     primer: Function;
   }>({
@@ -50,7 +48,7 @@ const OfferingsComponent = () => {
     grade?: string[];
     price?: number[];
     process?: string[];
-    origin?: string[];
+    origin?: Set<string>;
   }>({});
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isFilterOptionOpen, setIsFilterOptionOpen] = useState(false);
@@ -60,7 +58,7 @@ const OfferingsComponent = () => {
   };
 
   useEffect(() => {
-    filterOfferings(sortBy, filterBy);
+    filterOfferings({ sortBy, filterBy });
   }, [filterOfferings, filterBy, sortBy]);
 
   return (
@@ -91,10 +89,17 @@ const OfferingsComponent = () => {
           Yirgacheffe, Guji, Sidamo, Gedeb and Limmu are the five regions in
           Ethiopia that Alphabet Coffee sources its coffee from.
         </p>
-
         <div className="flex w-full">
-          {/* <OfferingsFilterMobile filterBy={filterBy} setFilterBy={setFilterBy} isFilterOptionOpen={isFilterOptionOpen} setIsFilterOptionOpen={setIsFilterOptionOpen} /> */}
-          {/* <OfferingFilterSidebar filterBy={filterBy} setFilterBy={setFilterBy} /> */}
+          <OfferingsFilterMobile
+            filterBy={filterBy}
+            setFilterBy={setFilterBy}
+            isFilterOptionOpen={isFilterOptionOpen}
+            setIsFilterOptionOpen={setIsFilterOptionOpen}
+          />
+          <OfferingFilterSidebar
+            filterBy={filterBy}
+            setFilterBy={setFilterBy}
+          />
           <div
             className={clsx(
               "flex flex-col justify-start items-center sm:flex-1 gap-y-2",
@@ -119,7 +124,7 @@ const OfferingsComponent = () => {
                     setFilterBy((prev) => ({ ...prev, query: query }))
                   }
                 />
-                <div className="md:hidden">
+                <div className="md:hidden max-w-[7rem] overflow-hidden border flex justify-end items-center px-4">
                   <button
                     onClick={() => setIsFilterOptionOpen((prev) => !prev)}
                     className="flex gap-x-2 text-black"
@@ -331,7 +336,7 @@ const OfferingsComponent = () => {
                 </div>
               </div>
             </div>
-            <motion.li
+            <motion.ul
               className={clsx(
                 "flex flex-col items-center justify-start gap-y-2 w-full"
               )}
@@ -355,7 +360,7 @@ const OfferingsComponent = () => {
                   <div className="my-5 font-semibold">No Result</div>
                 )}
               </AnimatePresence>
-            </motion.li>
+            </motion.ul>
           </div>
         </div>
       </div>

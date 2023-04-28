@@ -24,7 +24,6 @@ const OfferingsSearchbar = (props: Props) => {
         </svg>
         <input
           type="text"
-          autoFocus
           onChange={(e) => props.onChange(e.target.value)}
           placeholder="Search"
           className="w-full py-2 pl-12 pr-4 placeholder:text-primary/50 text-primary/70 border rounded-md outline-none bg-secondary/10 focus:bg-secondary/10 focus:border-secondary/50"

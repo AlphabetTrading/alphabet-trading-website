@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 type Props = {};
 
@@ -32,6 +32,29 @@ const HeroVideo = (props: Props) => {
   const [webmVideoSrc, setWebmVideoSrc] = useState(
     "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm"
   );
+
+  const rightClicker = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    function handleContextMenu(e: Event) {
+      e.preventDefault();
+    }
+
+    if (rightClicker && rightClicker.current) {
+      rightClicker.current.addEventListener(
+        "contextmenu",
+        handleContextMenu,
+        false
+      );
+      return function cleanup() {
+        rightClicker.current?.removeEventListener(
+          "contextmenu",
+          handleContextMenu,
+          false
+        );
+      };
+    }
+  }, []);
 
   useEffect(() => {
     const networkInterface = (window.navigator as any).connection;
@@ -114,6 +137,7 @@ const HeroVideo = (props: Props) => {
   }, []);
   return (
     <video
+      ref={rightClicker}
       loop
       muted
       playsInline

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
+import clsx from "clsx";
 
 type Props = {};
 
@@ -115,14 +116,14 @@ const Why = (props: Props) => {
             <ImageWithSkeleton
               props={{ fill: true }}
               className="w-full h-full object-cover bg-gray-800"
-              src={`https://alphabettrading.s3.amazonaws.com/images/whyalphabet1.webp`}
+              src={`https://alphabettrading.s3.amazonaws.com/images/whyalphabet1_flipped.webp`}
               alt="why-alphabet-1"
             />
           </div>
         </div>
       </div>
       <div className="relative flex flex-col bg-[#086965]">
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 2k:grid-cols-5">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 2k:grid-cols-5 ">
           <div className="relative order-1 md:order-1 col-span-2 2k:col-span-3 h-80 md:h-full md:flex flex-col gap-y-2">
             <ImageWithSkeleton
               props={{ fill: true }}
