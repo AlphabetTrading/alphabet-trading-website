@@ -181,15 +181,10 @@ const Navbar = ({ white }: Props) => {
                       <Link
                         href={navItem.href}
                         className={clsx(
-                          "w-full h-full text-center lg:inline-block lg:mt-0 lg:mr-4 cursor-pointer flex justify-center items-center flex-col",
-                          "hover:scale-110 hover:font-bold transition duration-200 ease-in-out ",
-                          router.pathname === navItem.href
-                            ? `after:content-[''] relative after:absolute after:-bottom-1  after:w-1/2 hover:after:w-3/4 after:left-1/4 hover:after:left-3 after:transition-all after:duration-300 after:ease-in-out after:h-1 after:transform  after:rounded-md after:bg-secondary ${
-                                prevIndex > index
-                                  ? "after:animate-slide_right"
-                                  : "after:animate-slide_left"
-                              }`
-                            : ""
+                          "relative group py-2 px-3 text-white hover:text-gray-300 transition duration-200 ease-in-out",
+                          // activeIndex === index && "font-bold",
+                          router.pathname === navItem.href &&
+                            "group-hover:after:content-[''] group-hover:absolute group-hover:-bottom-1 group-hover:w-full group-hover:h-1 group-hover:rounded-b-md group-hover:bg-secondary"
                         )}
                       >
                         {navItem.title}
