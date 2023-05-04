@@ -53,7 +53,7 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
           />
         </div>
         <div className="col-span-3 2k:text-[18px] 4k:text-3xl">
-          {offering.type}-{offering.priority}
+          {offering.type}
         </div>
         <div className="col-span-1 2k:text-[18px] 4k:text-3xl">
           {offering.grade}
