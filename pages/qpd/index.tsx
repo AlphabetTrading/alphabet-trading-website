@@ -1,10 +1,11 @@
 import React from "react";
-import LandingPage from "../../components/qpd/LandingPage";
-import QPDDetail from "../../components/qpd/QPDDetail";
-import StrategyGoal from "../../components/qpd/StrategyGoal";
 import BaseLayout from "../../components/common/BaseLayout";
 import Navbar from "../../components/common/Navbar";
 import Head from "next/head";
+import Traceability from "../../components/qpd/Traceability";
+import LandingPage from "../../components/qpd/LandingPage";
+import QPDDetail from "../../components/qpd/QPDDetail";
+import StrategyGoal from "../../components/qpd/StrategyGoal";
 
 type Props = {};
 
@@ -44,6 +45,7 @@ const index = (props: Props) => {
           <LandingPage />
           <StrategyGoal />
           <QPDDetail details={detail} />
+          <Traceability />
         </div>
       </>
     </BaseLayout>
