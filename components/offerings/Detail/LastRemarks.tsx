@@ -4,7 +4,7 @@ type Props = {};
 
 const LastRemarks = (props: Props) => {
   return (
-    <div className="bg-[url('/images/last.svg')] flex w-full h-screen text-white p-24">
+    <div className="bg-[url('/images/last_remarks.svg')] flex w-full h-screen text-white p-24">
       <div className="w-full md:w-1/2 h-full flex flex-col justify-center gap-y-6">
         <div className="">
           <h1 className="uppercase text-xs 2k:text-lg 4k:text-xl font-bold text-secondary">

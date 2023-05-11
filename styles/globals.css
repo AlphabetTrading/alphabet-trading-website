@@ -96,6 +96,10 @@
   border: 1px solid red;
 }
 
+.apexcharts-legend {
+  justify-content: center !important;
+  top: 0 !important;
+}
 /* 
 .range-slider {
   position: relative;

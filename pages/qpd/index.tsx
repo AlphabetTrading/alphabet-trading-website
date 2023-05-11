@@ -6,6 +6,7 @@ import Traceability from "../../components/qpd/Traceability";
 import LandingPage from "../../components/qpd/LandingPage";
 import QPDDetail from "../../components/qpd/QPDDetail";
 import StrategyGoal from "../../components/qpd/StrategyGoal";
+import ApexChart from "../../components/qpd/PriceBreakdown";
 
 type Props = {};
 
@@ -46,6 +47,7 @@ const index = (props: Props) => {
           <StrategyGoal />
           <QPDDetail details={detail} />
           <Traceability />
+          <ApexChart />
         </div>
       </>
     </BaseLayout>

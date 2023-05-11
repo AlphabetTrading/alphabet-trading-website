@@ -5,7 +5,7 @@ type Props = {};
 const StrategyGoal = (props: Props) => {
   return (
     <div className="flex flex-col md:flex-row gap-4 bg-[#2A93DF]/10">
-      <div className="w-full md:w-1/2 h-full flex items-start gap-x-4 p-20 px-28">
+      <div className="w-full md:w-1/2 h-full flex items-start gap-x-4 p-6 px-8 md:p-20 md:px-28">
         <img src="/icons/strategy.svg" alt="" />
         <div className="flex flex-col gap-y-4">
           <h1 className="text-[#2A93DF] text-3xl font-semibold mt-2">
@@ -23,7 +23,7 @@ const StrategyGoal = (props: Props) => {
           </p>
         </div>
       </div>
-      <div className="w-full md:w-1/2 h-full flex items-start gap-x-4 p-20 px-28">
+      <div className="w-full md:w-1/2 h-full flex items-start gap-x-4 p-6 md:p-20 md:px-28">
         <img src="/icons/goal.svg" alt="" />
         <div className="flex flex-col gap-y-4">
           <h1 className="text-[#2A93DF] text-3xl font-semibold mt-2">
