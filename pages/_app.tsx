@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Raleway, DM_Serif_Display } from "@next/font/google";
+import { Raleway, DM_Serif_Display } from "next/font/google";
 import clsx from "clsx";
 
 const raleway = Raleway({

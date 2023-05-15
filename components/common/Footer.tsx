@@ -36,6 +36,9 @@ const Footer = (props: Props) => {
                   <Link href="/">Home</Link>
                 </li>
                 <li className="text-sm hover:text-white hover:font-semibold transition duration-200">
+                  <Link href="/our-approach">Our Approach</Link>
+                </li>
+                <li className="text-sm hover:text-white hover:font-semibold transition duration-200">
                   <Link href="/services">Services</Link>
                 </li>
                 <li className="text-sm hover:text-white hover:font-semibold transition duration-200">

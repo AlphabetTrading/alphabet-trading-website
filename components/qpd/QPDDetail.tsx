@@ -7,13 +7,13 @@ type Props = {
 
 const QPDDetail = ({ details }: Props) => {
   return (
-    <div className="w-full min-h-screen flex justify-center items-center bg-gradient-to-b from-[#1E3B60]/90 to-[#1E3B60]">
-      <div className="w-full md:w-1/2 min-h-screen h-full flex flex-col gap-y-6 justify-center items-center">
+    <div className="w-full h-fit flex justify-center items-center bg-gradient-to-b from-[#1E3B60]/90 to-[#1E3B60]">
+      <div className="w-11/12 lg:w-1/2 h-full py-12 lg:py-0 flex flex-col gap-y-6 justify-center items-center">
         {details.map((detail: any, index: number) => {
           return (
             <div
               className={clsx(
-                "w-11/12 md:w-2/3 flex flex-col items-center justify-center text-white pb-8",
+                "w-11/12 lg:w-2/3 flex flex-col items-center justify-center text-white pb-8",
                 index !== details.length - 1
                   ? "border-b-[0.5px] border-white/20"
                   : ""
@@ -31,10 +31,10 @@ const QPDDetail = ({ details }: Props) => {
           );
         })}
       </div>
-      <div className="hidden md:block w-full md:w-1/2 h-screen">
+      <div className="hidden lg:block w-full lg:w-1/2 h-screen">
         <img
           className="w-full h-full object-cover"
-          src="/images/qpd_detail.svg"
+          src="/images/qpd/qpd_detail.svg"
           alt=""
         />
       </div>
