@@ -7,6 +7,7 @@ import Review from "../components/home/Review";
 import Details from "../components/home/Details";
 import BaseLayout from "../components/common/BaseLayout";
 import HeroVideo from "../components/home/HeroVideo";
+import CTA from "../components/home/CTA";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <HeroVideo />
         <Welcome />
         <Why />
+        <CTA />
         <Details />
         <Review />
       </div>

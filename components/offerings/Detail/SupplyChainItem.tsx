@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import Timeline from "./Timeline";
-import { SupplyChainStep } from "../../../pages/try";
 import Image from "next/image";
+import { SupplyChainStep } from "../../../types/offerings";
 
 type Props = {
   step: SupplyChainStep;

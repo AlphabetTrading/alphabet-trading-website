@@ -35,3 +35,10 @@ export interface IFilterOfferings {
     origin?: Set<string>;
   };
 }
+
+export type SupplyChainStep = {
+  id: number;
+  title: string;
+  description: string[];
+  image: string;
+};

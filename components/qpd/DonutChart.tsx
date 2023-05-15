@@ -19,6 +19,7 @@ const DonutChart: React.FC<DonutChartProps> = ({ data, labels }) => {
     colors: ["#034C65", "#EF8C86", "#FCB677", "#685268", "#2F1F2B"],
     chart: {
       width: "100%",
+      height: 250,
     },
 
     legend: {
@@ -77,6 +78,10 @@ const DonutChart: React.FC<DonutChartProps> = ({ data, labels }) => {
       {
         breakpoint: 640,
         options: {
+          chart: {
+            width: "100%",
+            height: 400,
+          },
           legend: {
             width: "100%",
             height: "100%",
@@ -90,12 +95,7 @@ const DonutChart: React.FC<DonutChartProps> = ({ data, labels }) => {
 
   return (
     <div className="w-full">
-      <ReactApexChart
-        options={options}
-        series={series}
-        type="donut"
-        width="100%"
-      />
+      <ReactApexChart options={options} series={series} type="donut" />
     </div>
   );
 };

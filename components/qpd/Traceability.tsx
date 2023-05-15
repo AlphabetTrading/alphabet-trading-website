@@ -8,78 +8,136 @@ export type Process = {
   title: string;
   image: string;
   description: string;
-  details: string[];
+  details: Map<string, string>;
 };
 
 const processes: Process[] = [
   {
     id: 1,
     title: "Harvesting",
-    image: "/images/qpd_detail.svg",
+    image: "/images/qpd/harvesting.svg",
     description:
-      "During harvesting, there are lots of expenses and these include labor costs for hiring workers to harvest the cherries and deliver those cherries to the washing/drying stations",
-    details: [
-      "Location: Farm Name, Chelchele",
-      "Labor and Transportation Cost: $0.45/lb",
-      "Red Cherry Cost: $0.45/lb",
-    ],
+      "Coffee beans are typically harvested by hand-picking when they reach the desired level of ripeness (Red is the most desired color). At this step, most of the expense is related to labor. Skilled laborers are required to hand-pick the ripe coffee cherries",
+    details: new Map([
+      ["Location", "Farm in Gedeo Zone, Yirgacheffe"],
+      ["Labor and Transportation Cost", "$0.34/lb"],
+      ["Red Cherry Cost", "$0.45/lb"],
+    ]),
   },
   {
     id: 2,
-    title: "Drying",
-    image: "/images/qpd_detail.svg",
+    title: "Sorting and Cleaning",
+    image: "/images/qpd/cleaning.svg",
     description:
-      "he fruit's organic material naturally begins fermenting as soon as the cherries are picked, and the fermentation is accelerated once the fruit is laid out under the hot sun. The fruit is susceptible to mold and other types of defects that can occur during this time so it requires constant attention by staff to rotate the cherries, and to continue to sort them as they dry. ",
-    details: ["Location: Farm name, Chelchele", "Labor cost: $0.45/lb"],
+      "It involves removing any debris, leaves, or unripe cherries, as well as sorting them by size and quality. This step helps to ensure uniformity in the final product. This process mostly involves manual labor and equipment. The costs can include labor wages, equipment maintenance, and infrastructure expenses.",
+    details: new Map([
+      ["Location", "Worka Station, Yirgacheffe, Gedeo"],
+      ["Labor cost", "$0.45/lb"],
+    ]),
   },
 
   {
     id: 3,
-    title: "Milling",
-    image: "/images/qpd_detail.svg",
+    title: "Processing",
+    image: "/images/qpd/drying.svg",
     description:
-      "After the fruit is dry, it is transferred to the dry mill where the coffee and its cherry will be run through a hulling machine which uses friction to remove its fruit and the parchment layer. The resulting green coffee is taken to a mill to be sorted by hand or by special equipment and it will also be polished at this stage.",
-    details: ["Location: Farm name, Chelchele", "Labor cost: $0.45/lb"],
+      "In the dry Processing method, the coffee cherries are spread out on drying beds to dry under the sun. They are raked regularly to prevent mold. Once the cherries are dried, the outer skin and pulp are removed, revealing the green coffee beans. The cost of dry processing involves labor for spreading and raking the cherries during drying. Additional costs include equipment for removing the outer skin and pulp.",
+    details: new Map([
+      ["Location", "Worka Station, Yirgacheffe, Gedeo"],
+      ["Labor cost", "$0.45/lb"],
+      ["Equipment cost", "$0.45/lb"],
+    ]),
   },
 
   {
     id: 4,
-    title: "Warehouse",
-    image: "/images/qpd_detail.svg",
+    title: "Milling and Hulling",
+    image: "/images/qpd/milling.svg",
     description:
-      "Then it will be placed in sacks and stored in a warehouse until it’s ready to be shipped.",
-    details: ["Location: Farm Name, Chelchele", "Labor Cost: $0.45/lb"],
+      "Milling and hulling are essential steps after the beans are fully dried. They involve removing the parchment layer and silver skin from the beans to enhance their quality. These processes further refine the beans' quality. The costs associated with milling and hulling include labor wages, equipment maintenance, and energy consumption. Specialized machinery is used for these processes.",
+    details: new Map([
+      ["Location", "Worka Station, Yirgacheffe, Gedeo"],
+      ["Labor cost", "$0.05/lb"],
+      ["Equipment Operation cost", "$0.45/lb"],
+    ]),
   },
   {
     id: 5,
-    title: "Shipping",
-    image: "/images/qpd_detail.svg",
+    title: "Sorting and Grading",
+    image: "/images/qpd/sorting_grading.svg",
     description:
-      "The coffee beans must be carefully handled and stored during transit to ensure that they arrive at their destination in good condition.",
-    details: [
-      "Location: Farm Name, Chelchele",
-      "Labor and Transportation Cost: $0.45/lb",
-      "Red Cherry Cost: $0.45/lb",
-    ],
+      "The beans are sorted based on size, color, density, and quality. Specialized equipment is used to separate the beans into different grades. This ensures consistency. Sorting and grading involve labor wages for skilled workers and the use of specialized equipment. The costs can also vary depending on the number of grades and the thoroughness of the sorting process. Since this is a Grade 2 coffee, it requires more effort hence higher cost.",
+    details: new Map([
+      ["Location", "Worka Station, Yirgacheffe, Gedeo"],
+      ["Labor cost", "$0.05/lb"],
+      ["Equipment cost", "$0.45/lb"],
+    ]),
+  },
+  {
+    id: 6,
+    title: "Quality Control",
+    image: "/images/qpd/quality_control.svg",
+    description:
+      "After samples are taken, various parameters, such as moisture content, bean defects, and cupping evaluations, are assessed to ensure the beans meet the desired standards. Quality control testing involves labor costs for the trained cuppers and quality control personnel. ",
+    details: new Map([
+      ["Location", "Bel Amor Building, Addis Ababa"],
+      ["Labor cost", "$0.05/lb"],
+    ]),
+  },
+  {
+    id: 7,
+    title: "Packaging",
+    image: "/images/qpd/warehouse.svg",
+    description:
+      "Once the beans pass quality control, they are packaged in jute bags. The bag is designed to protect the beans from moisture, light, and other external factors that can affect their quality. As a result, the bags need to be durable and protective to maintain the quality of the beans during storage and transportation. Packaging costs include the price of the jute bags, as well as labor for packing the beans.",
+    details: new Map([
+      ["Location", "Bole, Addis Ababa, Ethiopia"],
+      ["Labor cost", "$0.05/lb"],
+      ["Packaging cost", "$0.45/lb"],
+    ]),
+  },
+  {
+    id: 8,
+    title: "Storage and Shipping",
+    image: "/images/qpd/shipment.svg",
+    description:
+      "The packaged coffee beans are then stored in appropriate warehouses to maintain their freshness. When ready for shipment, the beans are loaded into shipping containers and transported. Costs related to storage and shipping include warehousing expenses, transportation costs, insurance, and documentation fees.",
+    details: new Map([
+      ["Location", "Bole, Addis Ababa, Ethiopia"],
+      ["Storage cost", "$0.45/lb"],
+      ["Transportation cost", "$0.45/lb"],
+      ["Other costs", "$0.45/lb"],
+    ]),
   },
 ];
 
 const Traceability = (props: Props) => {
   return (
-    <div className="w-11/12 min-h-screen h-full flex flex-col items-center py-16">
-      <div className="py-16 flex flex-col items-center">
-        <h1 className="font-semibold text-[#AB9875] text-xl">
-          The Coffee Journey
+    <div className="w-11/12 min-h-screen h-full flex flex-col items-center py-6 lg:py-12">
+      <div className="w-11/12 lg:w-full py-16 flex flex-col items-center text-center">
+        <div className="flex items-center gap-x-3">
+          <div className="w-8 h-0.5 bg-[#2A93DF]"></div>
+          <h1 className="font-semibold text-[#2A93DF] text-lg lg:text-2xl">
+            The Coffee Journey
+          </h1>
+          <div className="w-8 h-0.5 bg-[#2A93DF]"></div>
+        </div>
+        <h1 className="font-bold text-3xl lg:text-4xl">
+          From the Farmer to your Cup
         </h1>
-        <h1 className="font-bold text-4xl">From the Farmer to your Cup</h1>
+        <h1 className="mt-4">
+          Let&apos;s consider the case of a{" "}
+          <span className="font-semibold">Natural G-2 Gedeb Chelchele</span>{" "}
+          coffee and see all the steps it passes before it reaches you
+        </h1>
       </div>
-      <div className="w-4/5 flex flex-col py-8">
+      <div className="hidden lg:flex w-3/4 lg:flex-col py-2">
         {processes.map((process, index) => {
           return (
             <div key={index} className="w-full grid grid-cols-2">
               <div
                 className={clsx(
-                  "w-full h-72 flex border-[#2A93DF]/60 relative ",
+                  "w-full flex border-[#2A93DF]/60 relative",
                   index % 2 === 0 ? "order-1 border-r-4" : "order-2"
                 )}
               >
@@ -96,9 +154,9 @@ const Traceability = (props: Props) => {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 border-2 border-[#2A93DF]/10 rounded-full animate-pulse transform ease-in-out duration-300"></div>
                   </div>
                 </div>
-                <div className="absolute -top-2 w-full h-full px-12">
+                <div className="-mt-2.5 h-60 xl:h-64 w-full px-12 pb-12">
                   <img
-                    className="w-full h-full max-h-60 object-cover rounded-3xl"
+                    className="w-full h-full object-cover rounded-3xl"
                     src={process.image}
                     alt=""
                   />
@@ -125,19 +183,87 @@ const Traceability = (props: Props) => {
                 </div>
                 <div
                   className={clsx(
-                    "absolute -top-2 flex flex-col justify-between gap-y-2 px-12",
+                    "-mt-2.5 flex h-fit flex-col justify-between gap-y-3 px-12 pb-12",
                     index % 2 === 0 ? "text-left" : "text-right"
                   )}
                 >
                   <div>
-                    <h1 className="text-3xl font-bold">{process.title}</h1>
-                    {process.details.map((detail: string, index2: number) => {
-                      return <h1 key={index2}>{detail}</h1>;
-                    })}
+                    <h1 className="text-3xl font-bold -mt-2 mb-2">
+                      {process.title}
+                    </h1>
+                    {[...process.details.entries()].map(
+                      (keyvalue: [string, string], index: number) => {
+                        return (
+                          <h1 key={index}>
+                            {keyvalue[0]}:{" "}
+                            <span className="text-[#1E3B60]">
+                              {keyvalue[1]}
+                            </span>
+                          </h1>
+                        );
+                      }
+                    )}
+                  </div>
+                  <div
+                    className={clsx(
+                      "flex",
+                      index % 2 === 0 ? "justify-start" : "justify-end"
+                    )}
+                  >
+                    <div className="w-2/3 h-0.5 bg-[#DFDFDF]"></div>
                   </div>
                   <div>
                     <p>{process.description}</p>
                   </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="flex flex-col lg:hidden w-11/12 md:w-5/6 py-8">
+        {processes.map((process, index) => {
+          return (
+            <div key={index} className="w-full">
+              <div className="w-full flex border-[#2A93DF]/60 relative border-l-4 mx-4">
+                <div className="w-4 h-4 absolute -top-2 -left-[10px] rounded-3xl">
+                  <div className="relative h-full w-full">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#2A93DF] rounded-full"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 border-2 border-[#2A93DF]/80 rounded-full animate-pulse transform ease-in-out duration-150"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 border-2 border-[#2A93DF]/40 rounded-full animate-pulse transform ease-in-out duration-200"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 border-2 border-[#2A93DF]/10 rounded-full animate-pulse transform ease-in-out duration-300"></div>
+                  </div>
+                </div>
+                <div className="flex flex-col justify-start w-full h-full px-12 mb-16">
+                  <h1 className="text-3xl font-bold -mt-4 mb-2">
+                    {process.title}
+                  </h1>
+                  <img
+                    className="w-full h-full max-h-60 my-1 object-cover rounded-3xl"
+                    src={process.image}
+                    alt=""
+                  />
+                  {[...process.details.entries()].map(
+                    (keyvalue: [string, string], index: number) => {
+                      return (
+                        <h1 key={index}>
+                          {keyvalue[0]}:{" "}
+                          <strong className="text-[#1E3B60] font-semibold">
+                            {keyvalue[1]}
+                          </strong>
+                        </h1>
+                      );
+                    }
+                  )}
+                  <div
+                    className={clsx(
+                      "flex",
+                      index % 2 === 0 ? "justify-start" : "justify-end"
+                    )}
+                  >
+                    <div className="w-full h-0.5 bg-[#DFDFDF] my-4"></div>
+                  </div>
+                  <p>{process.description}</p>
                 </div>
               </div>
             </div>

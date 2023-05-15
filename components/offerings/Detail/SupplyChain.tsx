@@ -2,7 +2,7 @@ import { motion, useScroll } from "framer-motion";
 import SupplyChainItem from "./SupplyChainItem";
 import React, { useRef, useState, useEffect } from "react";
 import Timeline from "./Timeline";
-import { SupplyChainStep } from "../../../pages/try";
+import { SupplyChainStep } from "../../../types/offerings";
 
 type Props = {
   steps: SupplyChainStep[];
