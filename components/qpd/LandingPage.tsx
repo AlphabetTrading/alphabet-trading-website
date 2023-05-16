@@ -9,7 +9,7 @@ const LandingPage = (props: Props) => {
         <h1 className="text-[#AB9875] text-md md:text-3xl font-light text-center tracking-wider -mb-4 md:-mb-2 xl:-mb-8">
           A Coffee Trade Revolution
         </h1>
-        <div className="w-4/5 sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-[85%] 2xl:w-5/6 h-12 sm:h-20 md:h-24 lg:h-28 xl:h-40 2xl:h-44 flex justify-between text-white font-DM_Serif text-[28px] sm:text-[56px] lg:text-[66px] xl:text-[110px] 2xl:text-[118px]">
+        <div className="w-4/5 sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-[85%] 2xl:w-5/6 h-12 sm:h-20 md:h-24 lg:h-28 xl:h-40 2xl:h-44 flex justify-between text-white !font-DM_Serif text-[28px] sm:text-[56px] lg:text-[66px] xl:text-[110px] 2xl:text-[118px]">
           <h1>Quality</h1>
           <h1>.</h1>
           <h1 className="border-b-2 md:border-b-4 border-[#AB9875]">Price</h1>

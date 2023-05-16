@@ -25,7 +25,16 @@ module.exports = {
           "sans-serif",
           ...defaultTheme.fontFamily.sans,
         ],
-        DM_Serif: ["var(--font-dm-serif)", "DM Serif Display", "sans-serif"],
+        DM_Serif: [
+          "DM Serif Display",
+          "sans-serif",
+          ...defaultTheme.fontFamily.sans,
+        ],
+        DM_Text: [
+          "DM Serif Text",
+          "sans-serif",
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
       colors: {
         primary: "#0A1026",

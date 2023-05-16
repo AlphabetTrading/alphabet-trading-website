@@ -1,15 +1,13 @@
 import React from "react";
+import Head from "next/head";
 import BaseLayout from "../../components/common/BaseLayout";
 import Navbar from "../../components/common/Navbar";
-import Head from "next/head";
 import Traceability from "../../components/qpd/Traceability";
 import LandingPage from "../../components/qpd/LandingPage";
 import QPDDetail from "../../components/qpd/QPDDetail";
 import StrategyGoal from "../../components/qpd/StrategyGoal";
 import PriceBreakdown from "../../components/qpd/PriceBreakdown";
 import CTA from "../../components/qpd/CTA";
-
-type Props = {};
 
 const detail = [
   {
@@ -31,7 +29,7 @@ const detail = [
       "It represents the reliable and timely delivery of coffee beans from Ethiopia to our customers' destinations. Our commitment to this involves effective logistics management, including arranging transportation, ensuring proper packaging and labeling, and complying with import and export regulations",
   },
 ];
-const index = (props: Props) => {
+const OurApproach = () => {
   return (
     <BaseLayout>
       <Head>
@@ -56,4 +54,4 @@ const index = (props: Props) => {
   );
 };
 
-export default index;
+export default OurApproach;
