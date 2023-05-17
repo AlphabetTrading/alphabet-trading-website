@@ -1,5 +1,6 @@
 export const sendOfferingRequestEmail = async (data: any) => {
-  await fetch("api/request-offerings", {
+  console.log(data, "is the data");
+  await fetch("/api/request-offerings", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -9,11 +10,13 @@ export const sendOfferingRequestEmail = async (data: any) => {
   })
     .then((res) => {
       if (!res.ok) {
+        console.log("error", res);
         throw new Error("Failed to send message");
       }
       return res.json();
     })
     .catch((error) => {
+      console.log("error", error);
       return error;
     });
 };

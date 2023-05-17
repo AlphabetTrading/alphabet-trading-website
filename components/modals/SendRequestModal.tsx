@@ -79,10 +79,10 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
           onSubmit={async (values: any, { setSubmitting }) => {
             setSubmitting(true);
             try {
-              await sendOfferingRequestEmail(values);
-              setSubmitting(false);
-              setSubmitting(false);
-              setTimeout(onClose, 1000);
+              const data = { ...values, selectedOfferings };
+              await sendOfferingRequestEmail(data);
+              // setSubmitting(false);
+              // setTimeout(onClose, 1000);
             } catch (error: any) {
               setErrorMessage(error.message);
             }
@@ -197,23 +197,23 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                         label="Email*"
                       />
                       <FormField
-                        id="phone"
-                        name="phone"
-                        placeholder="Phone"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="PhoneNumber"
                         formik={formik}
                         label="Phone No."
                       />
                     </div>
                     <FormField
-                      id="cname"
-                      name="cname"
+                      id="companyName"
+                      name="companyName"
                       placeholder="Company Name"
                       formik={formik}
                       label="Company Name"
                     />
                     <FormField
-                      id="shipAdd"
-                      name="shipAdd"
+                      id="shippingAddress"
+                      name="shippingAddress"
                       placeholder="Shipping Address"
                       formik={formik}
                       label="Shipping Address"
@@ -240,8 +240,8 @@ const SendRequestModal = ({ handleOfferingCheck, onClose }: Props) => {
                         </div>
                         <div className="w-1/2">
                           <FormField
-                            id="zip"
-                            name="zip"
+                            id="zipCode"
+                            name="zipCode"
                             placeholder="Zip code"
                             formik={formik}
                             label="Zip code"

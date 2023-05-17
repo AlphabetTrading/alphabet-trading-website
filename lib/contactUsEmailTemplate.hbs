@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Contact Us</title>
+    <style>
+      /* Load Tailwind CSS from a CDN */ @import
+      'https://cdn.tailwindcss.com/3.3.0/tailwind.min.css';
+    </style>
+  </head>
+  <body>
+    <div class="container mx-auto rounded border border-gray-300 p-8">
+      <h1 class="mb-4 text-2xl font-bold">Hi,</h1>
+      <p class="mb-8">{{message}}</p>
+      <div>
+        <p><strong>Name:</strong> {{firstName}} {{lastName}}</p>
+        <p><strong>Email:</strong> {{email}}</p>
+        <p><strong>Phone:</strong> {{phoneNumber}}</p>
+        <p><strong>Company:</strong> {{companyName}}</p>
+      </div>
+    </div>
+  </body>
+
+</html>

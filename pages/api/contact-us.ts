@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import {
+  contactUsEmailTemplate,
   mailOptions,
   offeringEmailTemplate,
   transporter,
@@ -22,7 +23,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         ...mailOptions,
         subject: "Contact Us",
         text: "",
-        html: offeringEmailTemplate({ email }),
+        html: contactUsEmailTemplate({
+          firstName,
+          lastName,
+          email,
+          phoneNumber,
+          companyName,
+          message,
+        }),
       });
 
       return res

@@ -13,11 +13,21 @@ export const transporter = nodemailer.createTransport({
   },
 });
 
-const dir = path.join("lib/emailTemplate.hbs");
-const source = fs.readFileSync(dir, { encoding: "utf-8" });
-const template = handlebars.compile(source);
+const contactUsTemplateDir = path.join("lib/contactUsEmailTemplate.hbs");
+const offeringsTemplateDir = path.join("lib/offeringsEmailTemplate.hbs");
 
-export const offeringEmailTemplate = (data: any) => template(data);
+const offeringSource = fs.readFileSync(offeringsTemplateDir, {
+  encoding: "utf-8",
+});
+const contactUsSource = fs.readFileSync(contactUsTemplateDir, {
+  encoding: "utf-8",
+});
+
+const offeringsTemplate = handlebars.compile(offeringSource);
+const contactUsTemplate = handlebars.compile(contactUsSource);
+
+export const offeringEmailTemplate = (data: any) => offeringsTemplate(data);
+export const contactUsEmailTemplate = (data: any) => contactUsTemplate(data);
 
 export const mailOptions = {
   from: user,

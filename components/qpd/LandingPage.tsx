@@ -4,7 +4,7 @@ type Props = {};
 
 const LandingPage = (props: Props) => {
   return (
-    <div className="relative w-full overflow-y-clip min-h-screen flex justify-center items-center bg-gradient-to-b from-[#1E3B60] to-[#0A1528]">
+    <div className="relative w-full overflow-y-clip  min-h-screen min-h-[100svh] flex justify-center items-center bg-gradient-to-b from-[#1E3B60] to-[#0A1528]">
       <div className="absolute top-[30%] md:top-[20%] lg:top-[30%] xl:top-[25%] w-full flex flex-col items-center gap-y-4">
         <h1 className="text-[#AB9875] text-md md:text-3xl font-light text-center tracking-wider -mb-4 md:-mb-2 xl:-mb-8">
           A Coffee Trade Revolution

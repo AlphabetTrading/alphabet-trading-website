@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React from "react";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 
 type Props = {
   details: any[];
@@ -32,9 +33,9 @@ const QPDDetail = ({ details }: Props) => {
         })}
       </div>
       <div className="hidden lg:block w-full lg:w-1/2 h-screen">
-        <img
+        <ImageWithSkeleton
           className="w-full h-full object-cover"
-          src="/images/qpd/qpd_detail.svg"
+          src="https://alphabettrading.s3.amazonaws.com/images/qpd/details.webp"
           alt=""
         />
       </div>

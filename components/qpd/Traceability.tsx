@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import React from "react";
-
+import Image from "next/image";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 type Props = {};
 
 export type Process = {
@@ -15,19 +16,20 @@ const processes: Process[] = [
   {
     id: 1,
     title: "Harvesting",
-    image: "/images/qpd/harvesting.svg",
+    image:
+      "https://alphabettrading.s3.amazonaws.com/images/qpd/harvesting.webp",
     description:
       "Coffee beans are typically harvested by hand-picking when they reach the desired level of ripeness (Red is the most desired color). At this step, most of the expense is related to labor. Skilled laborers are required to hand-pick the ripe coffee cherries",
     details: new Map([
       ["Location", "Farm in Gedeo Zone, Yirgacheffe"],
       ["Labor and Transportation Cost", "$0.34/lb"],
-      ["Red Cherry Cost", "$0.45/lb"],
+      ["Red Cherry Cost", "$0.54/lb"],
     ]),
   },
   {
     id: 2,
     title: "Sorting and Cleaning",
-    image: "/images/qpd/cleaning.svg",
+    image: "https://alphabettrading.s3.amazonaws.com/images/qpd/cleaning.webp",
     description:
       "It involves removing any debris, leaves, or unripe cherries, as well as sorting them by size and quality. This step helps to ensure uniformity in the final product. This process mostly involves manual labor and equipment. The costs can include labor wages, equipment maintenance, and infrastructure expenses.",
     details: new Map([
@@ -39,9 +41,9 @@ const processes: Process[] = [
   {
     id: 3,
     title: "Processing",
-    image: "/images/qpd/drying.svg",
+    image: "https://alphabettrading.s3.amazonaws.com/images/qpd/washing.webp",
     description:
-      "In the dry Processing method, the coffee cherries are spread out on drying beds to dry under the sun. They are raked regularly to prevent mold. Once the cherries are dried, the outer skin and pulp are removed, revealing the green coffee beans. The cost of dry processing involves labor for spreading and raking the cherries during drying. Additional costs include equipment for removing the outer skin and pulp.",
+      "In the wet processing method, the cherries are pulped to remove the outer skin and fruit pulp, exposing the beans which are then fermented in water tanks to remove the remaining mucilage. After fermentation, the beans are thoroughly washed and dried. This process typically involves more machinery and water usage compared to dry processing. The costs include labor for pulping, fermentation, washing, and drying, as well as equipment and water resources.",
     details: new Map([
       ["Location", "Worka Station, Yirgacheffe, Gedeo"],
       ["Labor cost", "$0.45/lb"],
@@ -52,7 +54,7 @@ const processes: Process[] = [
   {
     id: 4,
     title: "Milling and Hulling",
-    image: "/images/qpd/milling.svg",
+    image: "https://alphabettrading.s3.amazonaws.com/images/qpd/milling.webp",
     description:
       "Milling and hulling are essential steps after the beans are fully dried. They involve removing the parchment layer and silver skin from the beans to enhance their quality. These processes further refine the beans' quality. The costs associated with milling and hulling include labor wages, equipment maintenance, and energy consumption. Specialized machinery is used for these processes.",
     details: new Map([
@@ -64,7 +66,7 @@ const processes: Process[] = [
   {
     id: 5,
     title: "Sorting and Grading",
-    image: "/images/qpd/sorting_grading.svg",
+    image: "https://alphabettrading.s3.amazonaws.com/images/qpd/grading.webp",
     description:
       "The beans are sorted based on size, color, density, and quality. Specialized equipment is used to separate the beans into different grades. This ensures consistency. Sorting and grading involve labor wages for skilled workers and the use of specialized equipment. The costs can also vary depending on the number of grades and the thoroughness of the sorting process. Since this is a Grade 2 coffee, it requires more effort hence higher cost.",
     details: new Map([
@@ -76,7 +78,7 @@ const processes: Process[] = [
   {
     id: 6,
     title: "Quality Control",
-    image: "/images/qpd/quality_control.svg",
+    image: "https://alphabettrading.s3.amazonaws.com/images/qpd/quality.webp",
     description:
       "After samples are taken, various parameters, such as moisture content, bean defects, and cupping evaluations, are assessed to ensure the beans meet the desired standards. Quality control testing involves labor costs for the trained cuppers and quality control personnel. ",
     details: new Map([
@@ -87,7 +89,7 @@ const processes: Process[] = [
   {
     id: 7,
     title: "Packaging",
-    image: "/images/qpd/warehouse.svg",
+    image: "https://alphabettrading.s3.amazonaws.com/images/qpd/packaging.webp",
     description:
       "Once the beans pass quality control, they are packaged in jute bags. The bag is designed to protect the beans from moisture, light, and other external factors that can affect their quality. As a result, the bags need to be durable and protective to maintain the quality of the beans during storage and transportation. Packaging costs include the price of the jute bags, as well as labor for packing the beans.",
     details: new Map([
@@ -99,7 +101,7 @@ const processes: Process[] = [
   {
     id: 8,
     title: "Storage and Shipping",
-    image: "/images/qpd/shipment.svg",
+    image: "https://alphabettrading.s3.amazonaws.com/images/qpd/shipping.webp",
     description:
       "The packaged coffee beans are then stored in appropriate warehouses to maintain their freshness. When ready for shipment, the beans are loaded into shipping containers and transported. Costs related to storage and shipping include warehousing expenses, transportation costs, insurance, and documentation fees.",
     details: new Map([
@@ -127,7 +129,7 @@ const Traceability = (props: Props) => {
         </h1>
         <h1 className="mt-4">
           Let&apos;s consider the case of a{" "}
-          <span className="font-semibold">Natural G-2 Gedeb Chelchele</span>{" "}
+          <span className="font-semibold">Washed G-2 Gedeb Chelchele</span>{" "}
           coffee and see all the steps it passes before it reaches you
         </h1>
       </div>
@@ -155,7 +157,7 @@ const Traceability = (props: Props) => {
                   </div>
                 </div>
                 <div className="-mt-2.5 h-60 xl:h-64 w-full px-12 pb-12">
-                  <img
+                  <ImageWithSkeleton
                     className="w-full h-full object-cover rounded-3xl"
                     src={process.image}
                     alt=""

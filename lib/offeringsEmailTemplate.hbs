@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Offerings Request</title>
+
+  </head>
+  <body>
+    <div
+      style="margin: 0 auto; border: 1px solid gray; padding: 32px;"
+      class="container mx-auto rounded border border-gray-300 p-8"
+    >
+      <h1 class=""><strong>Name:</strong> {{firstName}} {{lastName}}</h1>
+      <p class=""><strong>Email:</strong> {{email}}</p>
+      <p class=""><strong>Phone:</strong> {{phoneNumber}}</p>
+      <p class=""><strong>Company Name:</strong> {{companyName}}</p>
+      <p class=""><strong>Shipping Address:</strong> {{shippingAddress}}</p>
+      <p class=""><strong>City:</strong> {{city}}</p>
+      <p class=""><strong>State:</strong> {{state}}</p>
+      <p class=""><strong>Zip Code:</strong> {{zipCode}}</p>
+      <div class="my-10">
+        <h1 class="">Offerings</h1>
+        <ul
+          style="display: flex; flex-direction: column; align-items: center; justify-content: start; row-gap: 8px; list-style: none;"
+          class="flex w-full flex-col items-center justify-start gap-y-2"
+        >
+          {{#each selectedOfferings}}
+            <li
+              style="width: 100%; list-style-type: none; list-style: none;"
+              class="w-full"
+            >
+              <div
+                style="width: 100%; display: flex; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: center; justify-content: flex-start; column-gap: 0.25rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.875rem; color: rgb(86 86 86); padding-left: 0.5rem; padding-right: 0.5rem"
+                class="text-md grid w-full grid-cols-12 items-center justify-start gap-x-1 rounded-lg border-8 bg-white px-2 text-sm font-semibold text-[#565656]"
+              >
+                <span
+                  style="grid-column: span 2 / span 2; display: flex; align-items: center; justify-content: space-around; padding-top: 0.75rem; padding-bottom: 0.75rem;"
+                  class="col-span-2 flex items-center justify-around py-3"
+                >{{this.id}}</span>
+                <span
+                  style="grid-column: span 3 / span 3; display: flex; align-items: center; justify-content: space-around; padding-top: 0.75rem; padding-bottom: 0.75rem;"
+                  class="col-span-3"
+                >{{this.type}}</span>
+                <span
+                  style="grid-column: span 1 / span 1; display: flex; align-items: center; justify-content: space-around; padding-top: 0.75rem; padding-bottom: 0.75rem;"
+                  class="col-span-1"
+                >{{this.grade}}</span>
+                <span
+                  style="grid-column: span 2 / span 2; display: flex; align-items: center; justify-content: space-around; padding-top: 0.75rem; padding-bottom: 0.75rem;"
+                  class="col-span-2"
+                >
+                  <div
+                    class="bg-secondary/10 flex w-1/2 items-center justify-center rounded-3xl p-1"
+                  >
+                    <h1
+                      class="text-secondary text-center"
+                    >{{this.quantity}}</h1>
+                  </div>
+                </span>
+                <span class="col-span-1">{{this.spot}}</span>
+                <span class="col-span-3">{{this.location}}</span>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+  </body>
+</html>

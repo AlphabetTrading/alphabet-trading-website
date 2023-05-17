@@ -21,17 +21,34 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       city,
       state,
       zipCode,
+      selectedOfferings,
     } = req.body;
+    console.log("nati", req.body);
 
-    if (!firstName || !lastName || !email) {
+    if (!firstName || !lastName || !email || !selectedOfferings.length) {
       return res.status(400).json({ message: "All Fields are required!" });
     }
+
+    const data = {
+      title: "Offerings Request",
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      companyName,
+      shippingAddress,
+      city,
+      state,
+      zipCode,
+      selectedOfferings,
+    };
+    console.log(data);
     try {
       await transporter.sendMail({
         ...mailOptions,
-        subject: "Email Subject",
+        subject: "New Offerings Request",
         text: "This is a sample text",
-        html: offeringEmailTemplate({ email }),
+        html: offeringEmailTemplate(data),
       });
 
       return res
