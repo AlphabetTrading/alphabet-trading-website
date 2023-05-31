@@ -178,24 +178,23 @@ const Navbar = ({ white }: Props) => {
                 >
                   {navigationItems.map((navItem, index) => {
                     return (
-                      <li key={navItem.id}>
+                      <motion.li layoutId={""} key={navItem.id}>
                         <Link
                           href={navItem.href}
                           className={clsx(
-                            "w-full h-full text-center lg:inline-block lg:mt-0 lg:mr-4 cursor-pointer flex justify-center items-center flex-col",
-                            "hover:scale-110 hover:font-bold transition duration-200 ease-in-out ",
-                            router.pathname === navItem.href
-                              ? `after:content-[''] relative after:absolute after:-bottom-1  after:w-1/2 hover:after:w-3/4 after:left-1/4 hover:after:left-3 after:transition-all after:duration-300 after:ease-in-out after:h-1 after:transform  after:rounded-md after:bg-secondary ${
-                                  prevIndex > index
-                                    ? "after:animate-slide_right"
-                                    : "after:animate-slide_left"
-                                }`
-                              : ""
+                            "w-full relative h-full text-center lg:inline-block lg:mt-0 lg:mr-4 cursor-pointer flex justify-center items-center flex-col",
+                            "hover:scale-105 hover:font-bold transition duration-200 ease-in-out "
                           )}
                         >
                           {navItem.title}
+                          {router.pathname === navItem.href ? (
+                            <motion.div
+                              className="rounded-full w-1/2 h-1.5 bg-secondary absolute -bottom-2 left-1/4 right-0 "
+                              layoutId={"underline"}
+                            />
+                          ) : null}
                         </Link>
-                      </li>
+                      </motion.li>
                     );
                   })}
                 </ul>
