@@ -158,7 +158,7 @@ const Navbar = ({ white }: Props) => {
                 ) : (
                   <img
                     className="w-full h-full "
-                    src="/Alphabet_Logo_White.png"
+                    src="/Alphabet_Logo_White.svg"
                     alt=""
                   />
                 )}
@@ -204,7 +204,7 @@ const Navbar = ({ white }: Props) => {
         <div className="flex justify-between items-center w-full md:hidden">
           <Link className="z-20" href="/">
             <div className="flex items-center gap-x-1 md:gap-x-2">
-              <div className="flex h-12 items-center justify-center min-w-lg w-44">
+              <div className="flex h-12 items-center justify-center min-w-lg w-24">
                 {!(scrolledYAmount > 50 || isOpen) ? (
                   <img
                     className="w-full h-full "
@@ -218,7 +218,7 @@ const Navbar = ({ white }: Props) => {
                 ) : (
                   <img
                     className="w-full h-full "
-                    src="/Alphabet_Logo_White.png"
+                    src="/Alphabet_Logo_White.svg"
                     alt=""
                   />
                 )}
