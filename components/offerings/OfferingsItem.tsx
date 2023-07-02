@@ -9,6 +9,7 @@ import {
   useOfferingsContext,
 } from "../../context/OfferingsContext";
 import { ViewTypeEnum } from "./Offerings";
+import clsx from "clsx";
 
 type Props = {
   index: number;
@@ -31,9 +32,9 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
         translateX: index % 2 == 1 ? "100px" : "-100px",
       }}
       layout
-      className="list-none w-full flex items-center justify-center"
+      className="list-none w-full flex flex-col items-center justify-center"
     >
-      <div className="hidden md:grid md:grid-cols-12 w-full md:w-11/12 gap-x-1 px-2 items-center justify-start bg-white text-sm lg:text-md text-[#565656] rounded-lg shadow-xl font-semibold">
+      <div className="bg-white hidden md:grid md:grid-cols-12 w-full md:w-11/12 gap-x-1 px-2 items-center justify-start text-sm lg:text-md text-[#565656] rounded-lg shadow-xl font-semibold">
         <div className="col-span-2 flex justify-around items-center py-3 2k:py-6 4k:py-1 ">
           <CustomCheckbox
             isChecked={offering.isSelected}
@@ -61,8 +62,18 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
           {offering.grade}
         </div>
         <div className="col-span-2">
-          <div className="flex items-center justify-center bg-secondary/10 w-1/2 rounded-3xl p-1">
-            <h1 className="text-secondary text-center">
+          <div
+            className={clsx(
+              "flex items-center justify-center w-1/2 rounded-3xl p-1",
+              offering.quantity > 0 ? "bg-secondary/10" : "bg-[#515151]/20"
+            )}
+          >
+            <h1
+              className={clsx(
+                "text-center",
+                offering.quantity > 0 ? "text-secondary" : "text-[#515151]"
+              )}
+            >
               {offering.quantity} bags
             </h1>
           </div>
@@ -89,8 +100,17 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
                 }
               }}
             />
-            <div className="bg-secondary/10 rounded-3xl p-1 px-2">
-              <h1 className="text-secondary">
+            <div
+              className={clsx(
+                "rounded-3xl p-1 px-2",
+                offering.quantity > 0 ? "bg-secondary/10" : "bg-[#515151]/20"
+              )}
+            >
+              <h1
+                className={
+                  offering.quantity > 0 ? "text-secondary" : "text-[#515151]"
+                }
+              >
                 {offering.quantity} bags available
               </h1>
             </div>
@@ -134,7 +154,7 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
               opacity: 0,
               transition: { duration: 0.6 },
             }}
-            className="w-full md:w-5/6 2k:w-3/5 4k:w-1/2 px-2 items-center text-sm lg:text-md text-[#565656] font-semibold"
+            className="w-full md:w-5/6 2k:w-3/5 4k:w-1/2 p-2 items-center text-sm lg:text-md text-[#565656] font-semibold"
           >
             <h1 className="self-start text-red-500 2k:text-xl 4k:text-2xl">
               Item is currently not available

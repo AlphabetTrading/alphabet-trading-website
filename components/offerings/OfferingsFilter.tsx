@@ -75,7 +75,7 @@ const OfferingsFilter = ({ setFilterBy, filterBy }: Props) => {
         </h6>
         <MultiRangeSlider
           max={980}
-          min={80}
+          min={0}
           step={1}
           setFilterBy={setFilterBy}
           filterBy={filterBy}
