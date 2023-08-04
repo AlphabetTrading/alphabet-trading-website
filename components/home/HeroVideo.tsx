@@ -117,7 +117,7 @@ const HeroVideo = (props: Props) => {
       loop
       muted
       playsInline
-      className="min-h-[400px] aspect-video object-cover w-screen bg-secondary"
+      className="min-h-screen aspect-video object-cover w-screen bg-secondary"
       width="100%"
       preload="auto"
       poster="https://alphabettrading.s3.amazonaws.com/images/hero_video_poster_min.webp"

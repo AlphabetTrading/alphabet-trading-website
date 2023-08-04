@@ -201,13 +201,13 @@ const Navbar = ({ white }: Props) => {
             </div>
           </nav>
         </div>
-        <div className="flex justify-between items-center w-full md:hidden">
+        <div className="flex justify-between items-center w-full md:hidden p-2 px-4">
           <Link className="z-20" href="/">
             <div className="flex items-center gap-x-1 md:gap-x-2">
-              <div className="flex h-12 items-center justify-center min-w-lg w-24">
+              <div className="flex h-12 items-center justify-center min-w-lg w-12">
                 {!(scrolledYAmount > 50 || isOpen) ? (
                   <img
-                    className="w-full h-full "
+                    className="w-full h-full"
                     src={
                       router.pathname === "/"
                         ? "/Alphabet_Logo_White.svg"
@@ -217,7 +217,7 @@ const Navbar = ({ white }: Props) => {
                   />
                 ) : (
                   <img
-                    className="w-full h-full "
+                    className="w-full h-full"
                     src="/Alphabet_Logo_White.svg"
                     alt=""
                   />
@@ -275,7 +275,7 @@ const Navbar = ({ white }: Props) => {
                 }}
                 variants={variants}
                 exit={variants.exit}
-                className="min-w-full  flex flex-col p-5 px-10 gap-y-3 bg-[#0A1026] rounded-xl absolute top-16 right-0 left-0 z-50"
+                className="min-w-full flex flex-col p-5 px-6 gap-y-3 bg-[#0A1026] rounded-xl absolute top-16 right-0 left-0 z-50"
               >
                 {navigationItems.map((navItem) => (
                   <motion.li
