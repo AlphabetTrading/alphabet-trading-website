@@ -101,11 +101,12 @@ const index = (props: Props) => {
                 </div>
                 <p className="text-md font-medium leading-5">
                   Alphabet Trading PLC was formally established in November 2019
-                  by Mr Henock Fikru Asfaw along with his mother, to engage
-                  mainly in the export of agricultural goods from Ethiopia and
-                  has been focused on building relationships with coffee
-                  producers and suppliers from the Southern and Western parts of
-                  Ethiopia, in Sidama, Oromia and SNNP regions.
+                  by Mr. Henock Fikru. Its primary focus is on exporting
+                  agricultural goods from Ethiopia, with a strong emphasis on
+                  building relationships with coffee producers and suppliers in
+                  the Southern and Western parts of Ethiopia, including the
+                  SNNPR (Southern Nations, Nationalities, and Peoples&apos;
+                  Region), Sidama, and Oromia regions.
                 </p>
                 <p className="text-md font-medium leading-5">
                   The company has its office on the 5th floor of Bel Amour
