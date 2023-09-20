@@ -39,7 +39,7 @@ const MultiRangeSlider = ({
   setFilterBy,
 }: Props) => {
   const [values, setValues] = useState<[number, number]>(
-    filterBy.bagsRange || [80, 980]
+    filterBy.bagsRange || [0, 980]
   );
 
   const [minVal, setMinVal] = useState(values[0]);
