@@ -67,17 +67,17 @@ const index = (props: Props) => {
                 <p className="text-md font-medium leading-5">
                   The story of Alphabet begins with Henock. While living in the
                   US and working as a coffee agent, he witnessed the
-                  transparency gap which in the sector. His experience first
-                  inspired him to create Lucid Specialty Coffee in USA, a
-                  company that’s dedicated to establish a strong linkage between
-                  exports and international distribution of coffees from
+                  transparency gap in the sector. His experience first inspired
+                  him to create Lucid Specialty Coffee in the USA, a company
+                  that’s dedicated to establishing a strong linkage between
+                  exports and the international distribution of coffee from
                   Ethiopia.
                 </p>
                 <p className="text-md font-medium leading-5">
-                  With the vision of sourcing coffee from the origin he then
-                  founded Alphabet coffee in 2019. Based in Addis Ababa
-                  Ethiopia, Alphabet is a platform that operates in an exemplary
-                  diligence, open communication and reasonable speed.
+                  With the vision of sourcing coffee from the origin, he founded
+                  Alphabet Trading in 2019. Based in Addis Ababa Ethiopia,
+                  Alphabet is a platform operating with exemplary diligence,
+                  open communication, and reasonable speed.
                 </p>
               </div>
               <div className="w-full lg:w-1/2 lg:flex font-semibold h-full ">
