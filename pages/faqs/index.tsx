@@ -83,12 +83,6 @@ const FAQsPage = (props: Props) => {
                   >
                     henock@alphabettrading.com,
                   </a>
-                  <a
-                    className=" break-words text-secondary hover:font-semibold transition duration-200"
-                    href="mailto:info@alphabettrading.com "
-                  >
-                    info@alphabettrading.com
-                  </a>
                 </span>
                 &nbsp; or contact us through the phone via{" "}
                 <span className="text-secondary">+251 911 26 12 33</span>

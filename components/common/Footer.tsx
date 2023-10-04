@@ -84,12 +84,6 @@ const Footer = (props: Props) => {
                 >
                   henock@alphabettrading.com
                 </a>
-                <a
-                  className="text-base break-words hover:text-white hover:font-semibold transition duration-200"
-                  href="mailto:info@alphabettrading.com "
-                >
-                  info@alphabettrading.com
-                </a>
               </div>
             </div>
           </div>

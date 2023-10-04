@@ -71,7 +71,6 @@ const index = (props: Props) => {
                   </div>
                   <div className="text-secondary">
                     <h2>henock@alphabettrading.com</h2>
-                    <h2>info@alphabetrading.com </h2>
                   </div>
                 </div>
               </div>
