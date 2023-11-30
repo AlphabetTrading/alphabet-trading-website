@@ -9,6 +9,7 @@ import GradeFilter from "./GradeFilter";
 import ProcessFilter from "./ProcessFilter";
 import Button from "../common/Button";
 import OriginFilter from "./OriginFilter";
+import OfferingsSearchbar from "./OfferingsSearchbar";
 
 type Props = {
   filterBy: {
@@ -38,6 +39,13 @@ type Props = {
 const OfferingsFilter = ({ setFilterBy, filterBy }: Props) => {
   return (
     <aside className="flex flex-col px-2 gap-y-4 w-full">
+      <div className="md:hidden w-full">
+        <OfferingsSearchbar
+          onChange={(query) =>
+            setFilterBy((prev) => ({ ...prev, query: query }))
+          }
+        />
+      </div>
       <div className="flex justify-between items-center ">
         <h3 className="text-2xl font-medium">Filters</h3>
         <Button

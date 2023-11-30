@@ -6,7 +6,7 @@ type Props = {
 
 const OfferingsSearchbar = (props: Props) => {
   return (
-    <form className="max-w-xl min-w-sm w-2/3 xl:w-1/3">
+    <form className="max-w-xl min-w-sm xl:w-1/3">
       <div className="relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ const OfferingsSearchbar = (props: Props) => {
           type="text"
           onChange={(e) => props.onChange(e.target.value)}
           placeholder="Search"
-          className="w-full py-2 pl-12 pr-4 placeholder:text-primary/50 text-primary/70 border rounded-md outline-none bg-secondary/10 focus:bg-secondary/10 focus:border-secondary/50"
+          className="w-full py-2 pl-12 pr-4 placeholder:text-primary/50 text-primary/70 border-2 rounded-md outline-none bg-secondary/10 lg:bg-white focus:bg-secondary/10 focus:border-secondary/50"
         />
       </div>
     </form>
