@@ -10,11 +10,11 @@ const CustomCheckbox = ({ handleOfferingCheck, isChecked }: Props) => {
   return (
     <div
       className={clsx(
-        "relative w-5 h-5 2k:w-7 2k:h-7 4k:w-9 4k:h-9 p-[3px] 2k:p-[4px] 4k:p-[5px] rounded-full border-2",
+        "relative w-4 h-4 2k:w-6 2k:h-6 4k:w-8 4k:h-8 p-[2px] 4k:p-[3px] rounded-[4px] border",
         isChecked ? "border-[#F2A40C]" : "border-[#C9C9C9]"
       )}
     >
-      <label className="flex justify-center items-center  rounded-full cursor-pointer">
+      <label className="flex justify-center items-center rounded-sm cursor-pointer">
         <input
           type="checkbox"
           className="invisible absolute whitespace-nowrap overflow-hidden"
@@ -22,7 +22,7 @@ const CustomCheckbox = ({ handleOfferingCheck, isChecked }: Props) => {
         />
         <svg
           className={clsx(
-            "h-full w-full rounded-full",
+            "h-full w-full rounded-sm",
             isChecked ? "bg-[#F2A40C] border border-[#F2A40C]" : "bg-white"
           )}
           aria-hidden
