@@ -121,7 +121,7 @@ const OfferingsComponent = () => {
                     onClick={() => setViewType(ViewTypeEnum.GRID)}
                   />
                 )} */}
-                <div className="lg:hidden max-w-[7rem] overflow-hidden border flex justify-end items-center px-4">
+                <div className="lg:hidden max-w-[7rem] overflow-hidden flex justify-end items-center px-4">
                   <button
                     onClick={() => setIsFilterOptionOpen((prev) => !prev)}
                     className="flex gap-x-2 text-black"

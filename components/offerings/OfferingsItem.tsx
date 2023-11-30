@@ -110,11 +110,9 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
             <h1 className="font-semibold">{offering.type}</h1>
             <div className="flex justify-between">
               <div className="w-full">
-                <h1 className="text-[#9D9D9D] font-light">
-                  {offering.location}
-                </h1>
-                <h1 className="text-[#9D9D9D] font-light">Spot - AA</h1>
-                <h1 className="text-[#9D9D9D] font-light">
+                <h1 className="text-[#9D9D9D]">{offering.location}</h1>
+                <h1 className="text-[#9D9D9D]">Spot - AA</h1>
+                <h1 className="text-[#9D9D9D]">
                   Grade - {offering.grade.split("-")[1]}
                 </h1>
               </div>
