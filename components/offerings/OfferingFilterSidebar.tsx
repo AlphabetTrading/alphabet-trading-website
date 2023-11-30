@@ -26,7 +26,7 @@ const OfferingFilterSidebar = ({ filterBy, setFilterBy }: Props) => {
   return (
     <div
       className={clsx(
-        "hidden md:flex w-1/5  overflow-hidden transition-all duration-500 ease-in-out"
+        "hidden lg:flex w-1/5  overflow-hidden transition-all duration-500 ease-in-out"
       )}
     >
       {" "}

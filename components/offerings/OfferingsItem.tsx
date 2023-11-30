@@ -32,9 +32,9 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
         translateX: index % 2 == 1 ? "100px" : "-100px",
       }}
       layout
-      className="list-none w-full flex flex-col items-center justify-center"
+      className="list-none w-full flex flex-col items-center justify-center "
     >
-      <div className="bg-white hidden md:grid md:grid-cols-12 w-full md:w-11/12 gap-x-1 px-2 items-center justify-start text-sm lg:text-md text-[#565656] rounded-lg shadow-xl font-semibold">
+      <div className="bg-white hidden lg:grid lg:grid-cols-12 w-full gap-x-1 px-2 items-center justify-start text-sm lg:text-md text-[#565656] font-semibold border-b-[1px]">
         <div className="col-span-2 flex justify-around items-center py-3 2k:py-6 4k:py-1 ">
           <CustomCheckbox
             isChecked={offering.isSelected}
@@ -49,19 +49,15 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
               }
             }}
           />
-          <img
-            className="w-10 h-10"
-            src="/images/offerings_coffee.svg"
-            alt=""
-          />
+          <img className="h-20" src="/images/offerings_coffee.png" alt="" />
         </div>
         <div className="col-span-3 2k:text-[18px] 4k:text-3xl">
           {offering.type}
         </div>
-        <div className="col-span-1 2k:text-[18px] 4k:text-3xl">
+        <div className="flex justify-center col-span-1 2k:text-[18px] 4k:text-3xl">
           {offering.grade}
         </div>
-        <div className="col-span-2">
+        <div className="flex justify-center col-span-2">
           <div
             className={clsx(
               "flex items-center justify-center w-1/2 rounded-3xl p-1",
@@ -78,15 +74,17 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
             </h1>
           </div>
         </div>
-        <div className="col-span-1 2k:text-[18px] 4k:text-3xl">AA</div>
-        <div className="col-span-3 2k:text-[18px] 4k:text-3xl">
+        <div className="flex justify-center col-span-1 2k:text-[18px] 4k:text-3xl">
+          AA
+        </div>
+        <div className="flex justify-center col-span-3 2k:text-[18px] 4k:text-3xl">
           {offering.location}
         </div>
       </div>
 
-      <div className="block md:hidden w-full">
-        <div className="w-full flex flex-col gap-y-2 p-6 pb-10 bg-white text-sm text-[#565656] rounded-lg shadow-xl font-semibold">
-          <div className="w-full flex justify-between">
+      <div className="block lg:hidden w-full">
+        <div className="w-full flex p-2 py-4 gap-x-1 text-sm text-[#565656] rounded-lg font-semibold border-b-[1px]">
+          <div className="w-5">
             <CustomCheckbox
               isChecked={offering.isSelected}
               handleOfferingCheck={() => {
@@ -100,41 +98,40 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
                 }
               }}
             />
-            <div
-              className={clsx(
-                "rounded-3xl p-1 px-2",
-                offering.quantity > 0 ? "bg-secondary/10" : "bg-[#515151]/20"
-              )}
-            >
-              <h1
-                className={
-                  offering.quantity > 0 ? "text-secondary" : "text-[#515151]"
-                }
-              >
-                {offering.quantity} bags available
-              </h1>
-            </div>
           </div>
-          <div className="flex gap-x-2">
-            <img
-              className="w-6 h-6"
-              src="/images/offerings_coffee.svg"
-              alt=""
-            />
-            <div>
-              <h1 className="text-lg font-bold tracking-wide">
-                {offering.type}
-              </h1>
-              <h1 className="text-[#8B8B8B] text-md font-bold">
-                Grade: <span className="font-medium">{offering.grade}</span>
-              </h1>
-              <h1 className="text-[#8B8B8B] font-bold">
-                Location:{" "}
-                <span className="font-medium">{offering.location}</span>
-              </h1>
-              <h1 className="text-[#8B8B8B] font-bold">
-                Spot: <span className="font-medium">AA</span>
-              </h1>
+
+          <img
+            className="h-[75px] "
+            src="/images/offerings_coffee_2.png"
+            alt=""
+          />
+
+          <div className="w-full flex flex-col gap-y-1 -ml-3">
+            <h1 className="font-semibold">{offering.type}</h1>
+            <div className="flex justify-between">
+              <div className="w-full">
+                <h1 className="text-[#9D9D9D] font-light">
+                  {offering.location}
+                </h1>
+                <h1 className="text-[#9D9D9D] font-light">Spot - AA</h1>
+                <h1 className="text-[#9D9D9D] font-light">
+                  Grade - {offering.grade.split("-")[1]}
+                </h1>
+              </div>
+              <div
+                className={clsx(
+                  "w-20 flex justify-center self-center rounded-3xl p-1 px-2 text-[11px] font-medium",
+                  offering.quantity > 0 ? "bg-secondary/10" : "bg-[#515151]/20"
+                )}
+              >
+                <h1
+                  className={
+                    offering.quantity > 0 ? "text-secondary" : "text-[#515151]"
+                  }
+                >
+                  {offering.quantity} bags
+                </h1>
+              </div>
             </div>
           </div>
         </div>
