@@ -227,7 +227,7 @@ const Navbar = ({ white }: Props) => {
           </Link>
           <AnimatePresence>
             <motion.nav
-              className="w-full flex flex-col items-end !text-white"
+              className="w-full flex flex-col items-end !text-white mr-4"
               initial={false}
               animate={isOpen ? "open" : "closed"}
               exit={variants.exit}

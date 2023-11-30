@@ -43,7 +43,7 @@ const OfferingsFilterMobile = ({
               x: "100%",
             }}
             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-            className="fixed  md:hidden bg-white  shadow-xl drop-shadow-lg top-0 right-0 w-full max-w-sm h-screen px-5 py-1 z-[1000] overflow-y-auto"
+            className="fixed lg:hidden bg-white  shadow-xl drop-shadow-lg top-0 right-0 w-full max-w-sm h-screen px-5 py-1 z-[1000] overflow-y-auto"
           >
             <div className="py-5">
               <IoIosClose
