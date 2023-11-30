@@ -47,7 +47,7 @@ const index = (props: Props) => {
           <div className="relative min-h-[450px] xl:h-[20rem] 2k:h-[25rem] 4k:h-[45rem] ml-4 overflow-hidden lg:w-1/2 rounded-l-full border-[16px] border-r-0 border-secondary/10">
             <ImageWithSkeleton
               className="w-full h-full object-cover aspect-square"
-              src={`https://alphabettrading.s3.amazonaws.com/images/services1.webp`}
+              src={`https://alphabettrading.s3.amazonaws.com/images/services0.webp`}
               // blurDataURL="data:application/xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48RXJyb3I+PENvZGU+SHR0cFZlcnNpb25Ob3RTdXBwb3J0ZWQ8L0NvZGU+PE1lc3NhZ2U+VGhlIEhUVFAgdmVyc2lvbiBzcGVjaWZpZWQgaXMgbm90IHN1cHBvcnRlZC48L01lc3NhZ2U+PFJlcXVlc3RJZD43MkQ4NUVCQkMxQjg3QUVGPC9SZXF1ZXN0SWQ+PEhvc3RJZD5FdWxFc05sTWVLYnBHNStSVlc1bWFFTWlENzJNQ1pCTW8zbytGWmJuVnBYVVJrV1RQZkxoZC9iSWpoa0pUWDJ3czBOSVJQQVcyNGY1U3BwdUNEVkQwK25qQVkvbDNsVDQ8L0hvc3RJZD48L0Vycm9yPg=="
               alt="services"
               // priority
