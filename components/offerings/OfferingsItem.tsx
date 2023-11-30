@@ -107,7 +107,7 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
           />
 
           <div className="w-full flex flex-col gap-y-1 -ml-3">
-            <h1 className="font-semibold">{offering.type}</h1>
+            <h1 className="font-semibold text-lg">{offering.type}</h1>
             <div className="flex justify-between">
               <div className="w-full">
                 <h1 className="text-[#9D9D9D]">{offering.location}</h1>
@@ -118,7 +118,7 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
               </div>
               <div
                 className={clsx(
-                  "w-20 flex justify-center self-center rounded-3xl p-1 px-2 text-[11px] font-medium",
+                  "w-24 flex justify-center self-center rounded-3xl p-1 px-2 text-xs font-medium",
                   offering.quantity > 0 ? "bg-secondary/10" : "bg-[#515151]/20"
                 )}
               >
