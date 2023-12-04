@@ -25,7 +25,7 @@ const Why = (props: Props) => {
       title: "Overall Satisfaction",
       icon: "/icons/new_traceability.svg",
       descriptions:
-        "Our specialists keep a watchful eye on all phases of production, from the choice of crops and processing to putting our beans into containers for shipment. This guarantees that only highest standards are implemented when it comes to quality assurance and freshness. ",
+        "We proudly offer clients around the globe the finest, freshest coffee beans available. We strive to provide outstanding service and guarantee satisfaction by consistently going above and beyond to ensure all services meet or exceed customers&apos; expectations.",
     },
   ];
 
