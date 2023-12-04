@@ -7,6 +7,9 @@ import Review from "../components/home/Review";
 import Details from "../components/home/Details";
 import BaseLayout from "../components/common/BaseLayout";
 import HeroVideo from "../components/home/HeroVideo";
+import Provision from "../components/home/Provision";
+import Commitment from "../components/home/Commitment";
+import CTA from "../components/home/CTA";
 
 export default function Home() {
   return (
@@ -25,8 +28,10 @@ export default function Home() {
       <div className="flex flex-col justify-center w-full">
         <HeroVideo />
         <Welcome />
-        <Why />
+        <Provision />
         <Details />
+        <CTA />
+        <Commitment />
         <Review />
       </div>
     </BaseLayout>

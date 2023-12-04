@@ -11,7 +11,7 @@ const getYear = () => {
 
 const Footer = (props: Props) => {
   return (
-    <footer className=" bg-[#0A1026]">
+    <footer className="w-full bg-[#0A1026]">
       <div className="flex items-center p-5 sm:p-8 text-white py-14">
         <div className="w-full flex flex-col items-center justify-start md:grid grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-4">
           <div className="flex flex-col items-center justify-center col-span-2 md:col-span-3 gap-x-4 h-full">
@@ -138,7 +138,7 @@ const Footer = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="bg-[#086965] py-2 text-center contrast-100 text-gray-200">
+      <div className="bg-secondary/70 py-2 text-center contrast-100 text-white">
         Copyright <span className="contrast-100">© {getYear()}</span> Alphabet
         Trading PLC. All Rights Reserved
       </div>
