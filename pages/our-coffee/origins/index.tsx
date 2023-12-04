@@ -99,7 +99,7 @@ const Index = (props: Props) => {
       </Head>
       <div className="flex flex-col justify-center w-full">
         <Navbar white={true} />
-        <div className="w-full h-full mt-20 py-12  bg-[#F3F7F7]">
+        <div className="w-full h-full mt-20 py-12 ">
           <div className="flex flex-col justify-center items-center my-8 mb-14">
             <div className="w-full flex flex-col justify-center items-center gap-y-3 p-4 py-4 md:py-10 md:px-6 lg:px-10 xl:px-20 2xl:px-36">
               <h1 className="text-3xl md:text-4xl 2k:text-5xl 4k:text-6xl font-semibold">

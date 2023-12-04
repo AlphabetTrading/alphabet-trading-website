@@ -12,7 +12,7 @@ type Props = {
 const SourceItem = ({ region, setSelectedId }: Props) => {
   return (
     <motion.div
-      className="w-full md:w-[45%] h-96 p-2 rounded-2xl shadow-md bg-white cursor-pointer"
+      className="w-full md:w-[45%] h-96 p-2 rounded-2xl border border-[#CCCCCC] bg-white cursor-pointer"
       layoutId={region.id.toString()}
       onClick={() => setSelectedId(region.id)}
     >
@@ -23,11 +23,11 @@ const SourceItem = ({ region, setSelectedId }: Props) => {
         <motion.div className="flex flex-col justify-end">
           <motion.p>{region.description}</motion.p>
           <motion.div className="flex items-center gap-x-2">
-            <motion.p className="font-DM_Serif text-5xl md:text-4xl xl:text-5xl text-start text-secondary">
+            <motion.p className="font-DM_Serif text-5xl md:text-4xl xl:text-5xl text-start text-dark_gray">
               {region.name}
             </motion.p>
             <motion.div>
-              <FaChevronRight color="#086965" size={24} />
+              <FaChevronRight color="#383838" size={24} />
             </motion.div>
           </motion.div>
         </motion.div>
