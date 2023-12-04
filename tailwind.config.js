@@ -33,6 +33,8 @@ module.exports = {
         text_primary: "#5956E9",
         navy: "#0a1026",
         bg_green: "#086965",
+        light_gray_gray: "#EDEFF0",
+        light_green: "#39B54A",
       },
       aspectRatio: {
         "4/3": "4/3",
