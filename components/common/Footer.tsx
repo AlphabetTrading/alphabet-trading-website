@@ -17,7 +17,7 @@ const Footer = (props: Props) => {
           <div className="flex flex-col items-center justify-center col-span-2 md:col-span-3 gap-x-4 h-full">
             <div className="flex items-center justify-center gap-x-3">
               <img
-                className="w-2/3"
+                className="w-1/3"
                 src="/Alphabet_Logo_White.svg"
                 alt="alphabet logo"
               />
