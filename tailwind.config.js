@@ -29,7 +29,7 @@ module.exports = {
       },
       colors: {
         primary: "#0A1026",
-        secondary: "#39B54A",
+        secondary: "#2BA891",
         text_primary: "#5956E9",
         navy: "#0a1026",
         bg_green: "#086965",

@@ -26,11 +26,11 @@ const Commitment = (props: Props) => {
             approach that enables us to discover, develop and deliver quality
             coffee that benefits everyone from the grower to the consumer.
           </p>
-          <p>
+          {/* <p>
             Our approach is rooted in the principles of sustainability,
             transparency, traceability and the collective economic health of a
             global community like no other.
-          </p>
+          </p> */}
         </div>
         <div
           className={clsx(

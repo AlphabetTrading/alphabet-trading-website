@@ -49,8 +49,8 @@ const Provision = (props: Props) => {
               <div
                 key={index}
                 className={clsx(
-                  "h-[270px] lg:h-[360px] w-full p-6 rounded-2xl",
-                  index % 2 == 0 ? "bg-white" : "bg-secondary text-white"
+                  "h-[270px] lg:h-[360px] w-full p-6 rounded-2xl bg-white"
+                  // index % 2 == 0 ? "bg-white" : "bg-secondary text-white"
                 )}
               >
                 <div className="w-full h-full flex flex-col justify-between">
