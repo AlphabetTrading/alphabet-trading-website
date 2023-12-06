@@ -118,12 +118,10 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
               >
                 Current Crop
               </h1>
-              <h1 className={clsx("text-base font-semibold")}>
-                {offering.type}
-              </h1>
+              <h1 className={clsx("text-lg font-semibold")}>{offering.type}</h1>
             </div>
             {/* <h1 className="font-semibold text-lg">{offering.type}</h1> */}
-            <div className="flex justify-between">
+            <div className="flex justify-between -mt-1">
               <div className="w-full">
                 <h1 className="text-[#9D9D9D]">{offering.location}</h1>
                 <h1 className="text-[#9D9D9D]">Spot - AA</h1>
@@ -133,7 +131,7 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
               </div>
               <div
                 className={clsx(
-                  "w-24 flex justify-center self-center rounded-3xl p-1 px-2 text-xs font-medium",
+                  "w-24 flex justify-center self-center rounded-3xl p-1 px-2 text-xs font-semibold",
                   offering.quantity > 0 ? "bg-secondary/10" : "bg-[#515151]/20"
                 )}
               >
