@@ -7,14 +7,17 @@ import Review from "../components/home/Review";
 import Details from "../components/home/Details";
 import BaseLayout from "../components/common/BaseLayout";
 import HeroVideo from "../components/home/HeroVideo";
+import Provision from "../components/home/Provision";
+import Commitment from "../components/home/Commitment";
+import CTA from "../components/home/CTA";
 
 export default function Home() {
   return (
     <BaseLayout>
       <Head>
         <title>
-          Alphabet Trading PLC | #1 Coffee Trading Company in Ethiopia -
-          Alphabet Trading PLC
+          Alphabet Trading PLC | The Finest Selection of Coffee Beans from the
+          Birth Place - Alphabet Trading PLC
         </title>
         <meta
           name="description"
@@ -25,8 +28,10 @@ export default function Home() {
       <div className="flex flex-col justify-center w-full">
         <HeroVideo />
         <Welcome />
-        <Why />
+        <Provision />
         <Details />
+        <CTA />
+        <Commitment />
         <Review />
       </div>
     </BaseLayout>

@@ -85,7 +85,7 @@ const OfferingsComponent = () => {
         )}
       >
         <h1 className="text-4xl 2k:text-5xl 4k:text-6xl font-bold">
-          Our Co<span className="bg-[#F3D849]">ffee Export</span>
+          Our <span className="text-secondary">Coffee </span>Export
         </h1>
         <p className="w-11/12 md:w-2/3 lg:w-7/12 xl:w-1/2 2k:w-2/5 4k:w-1/4 text-center font-semibold 2k:text-xl 4k:text-2xl pb-12">
           Yirgacheffe, Guji, Sidamo, Gedeb and Limmu are the five regions in

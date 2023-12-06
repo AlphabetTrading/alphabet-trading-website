@@ -32,18 +32,25 @@ const details = [
 
 const Details = (props: Props) => {
   return (
-    <div className="bg-navy py-14 md:py-20 flex flex-col gap-y-10">
-      {details.map((detail: any, index: number) => {
-        return (
-          <DetailItem
-            key={index}
-            index={index}
-            title={detail.title}
-            descriptions={detail.descriptions}
-            imageSrc={detail.imageSrc}
-          />
-        );
-      })}
+    <div className="flex justify-center items-center bg-navy py-12">
+      <div className="flex flex-col w-5/6 md:py-20  py-14 gap-y-8 lg:gap-y-14">
+        <h1 className="text-white text-3xl lg:text-5xl font-bold ">
+          Our <span className="text-secondary">Ethical</span> Approach
+        </h1>
+        <div className=" flex flex-col gap-y-5 lg:gap-y-24">
+          {details.map((detail: any, index: number) => {
+            return (
+              <DetailItem
+                key={index}
+                index={index}
+                title={detail.title}
+                descriptions={detail.descriptions}
+                imageSrc={detail.imageSrc}
+              />
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

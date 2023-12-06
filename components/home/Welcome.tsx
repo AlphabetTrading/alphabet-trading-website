@@ -1,30 +1,36 @@
 import React from "react";
 import Image from "next/image";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 type Props = {};
 
 const Welcome = (props: Props) => {
   return (
-    <div className="flex flex-col justify-center items-center gap-y-4 bg-secondary text-white py-20 relative px-5 md:px-14 min-h-[400px] 2k:h-[40rem]">
-      <div className="w-full h-full relative">
-        <Image
-          fill
-          className="w-full h-full absolute m-auto left-0 right-0 top-0 bottom-0"
-          src="/images/welcome.svg"
-          alt=""
-        />
-      </div>
-      <div className="w-full flex flex-col gap-y-2 justify-center items-center absolute top-0 right-0 left-0 bottom-0 z-10">
-        <h1 className="text-2xl md:text-4xl lg:text-5xl 2k:text-6xl font-semibold">
-          Welcome to Alphabet Trading
-        </h1>
-        <p className="w-11/12 sm:w-3/4 md:w-2/3 2k:w-3/5 4k:w-1/2 text-center text-sm md:text-md lg:text-lg 2k:text-2xl 4k:text-4xl md:leading-6 py-4 md:py-6">
-          Alphabet Trading PLC was formally established in November 2019 by Mr.
-          Henock Fikru. Its primary focus is on exporting agricultural goods
-          from Ethiopia, with a strong emphasis on building relationships with
-          coffee producers and suppliers in the Southern and Western parts of
-          Ethiopia, including the SNNPR (Southern Nations, Nationalities, and
-          Peoples&apos; Region), Sidama, and Oromia regions.
-        </p>
+    <div className="w-full flex justify-center py-12 lg:pt-24 bg-primary">
+      <div className="w-5/6 flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-12">
+        <div className="w-full lg:w-2/5 flex flex-col gap-y-4">
+          <h1 className="w-full lg:w-4/5 text-3xl lg:text-5xl font-bold  text-white">
+            Welcome to <span className="text-secondary">Alphabet Trading</span>
+          </h1>
+          <p className="lg:text-lg text-white">
+            Alphabet Trading PLC was formally established in November 2019 by
+            Mr. Henock Fikru. Its primary focus is on exporting agricultural
+            goods from Ethiopia, with a strong emphasis on building
+            relationships with coffee producers and suppliers in the Southern
+            and Western parts of Ethiopia, including the SNNPR (Southern
+            Nations, Nationalities, and Peoples&apos; Region), Sidama, and
+            Oromia regions.
+          </p>
+        </div>
+        <div className="w-full lg:w-2/5 bg-light_gray_gray/10 relative rounded-3xl lg:mr-12 aspect-3/2">
+          <div className="w-full h-full absolute lg:left-12 lg:bottom-12 rounded-3xl overflow-hidden">
+            <ImageWithSkeleton
+              props={{ fill: true }}
+              className="w-full h-full object-cover"
+              src="https://alphabettrading.s3.amazonaws.com/images/guji.webp"
+              alt="welcome"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
