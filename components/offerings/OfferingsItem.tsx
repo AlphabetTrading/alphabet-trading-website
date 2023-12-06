@@ -52,7 +52,12 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
           <img className="h-20" src="/images/offerings_coffee.png" alt="" />
         </div>
         <div className="col-span-3 2k:text-[18px] 4k:text-3xl">
-          {offering.type}
+          <div>
+            <h1 className={clsx("text-secondary uppercase text-xs font-bold")}>
+              Current Crop
+            </h1>
+            <h1 className={clsx("text-base")}>{offering.type}</h1>
+          </div>
         </div>
         <div className="flex justify-center col-span-1 2k:text-[18px] 4k:text-3xl">
           {offering.grade}
@@ -107,7 +112,17 @@ const OfferingsItem = ({ offering, handleOfferingCheck, index }: Props) => {
           />
 
           <div className="w-full flex flex-col gap-y-1 -ml-3">
-            <h1 className="font-semibold text-lg">{offering.type}</h1>
+            <div>
+              <h1
+                className={clsx("text-secondary uppercase text-xs font-bold")}
+              >
+                Current Crop
+              </h1>
+              <h1 className={clsx("text-base font-semibold")}>
+                {offering.type}
+              </h1>
+            </div>
+            {/* <h1 className="font-semibold text-lg">{offering.type}</h1> */}
             <div className="flex justify-between">
               <div className="w-full">
                 <h1 className="text-[#9D9D9D]">{offering.location}</h1>
