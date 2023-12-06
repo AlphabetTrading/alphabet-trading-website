@@ -29,10 +29,12 @@ module.exports = {
       },
       colors: {
         primary: "#0A1026",
-        secondary: "#086965",
+        secondary: "#2BA891",
         text_primary: "#5956E9",
         navy: "#0a1026",
         bg_green: "#086965",
+        light_gray_gray: "#EDEFF0",
+        dark_gray: "#383838",
       },
       aspectRatio: {
         "4/3": "4/3",

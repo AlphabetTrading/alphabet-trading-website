@@ -26,7 +26,7 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
   }, []);
   return (
     <motion.div
-      className="w-full h-full md:min-h-screen flex items-center justify-center bg-secondary/10 fixed top-0 bottom-0 right-0 left-0 z-50 py-10 md:py-10"
+      className="w-full h-full md:min-h-screen flex items-center justify-center fixed top-0 bottom-0 right-0 left-0 z-50 py-10 md:py-10"
       onClick={() => setSelectedId(null)}
       layoutId={selectedId.toString()}
     >
@@ -40,7 +40,7 @@ const SourceExpandedItem = ({ region, selectedId, setSelectedId }: Props) => {
           <div className="flex flex-col justify-center h-fit w-full md:w-1/2 p-5 md:px-12 md:gap-y-8 ">
             <div className="p-4">
               <p>{region.description}</p>
-              <div className="flex items-center gap-x-1 text-secondary">
+              <div className="flex items-center gap-x-1 text-dark_gray">
                 <p className="font-DM_Serif text-5xl text-start">
                   {region.name}
                 </p>
