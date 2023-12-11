@@ -5,7 +5,10 @@ type Props = {};
 
 const Welcome = (props: Props) => {
   return (
-    <div className="w-full flex justify-center py-12 lg:pt-24 bg-primary">
+    <div
+      id="welcome"
+      className="w-full flex justify-center py-12 lg:pt-24 bg-primary"
+    >
       <div className="w-5/6 flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-12">
         <div className="w-full lg:w-2/5 flex flex-col gap-y-4">
           <h1 className="w-full lg:w-4/5 text-3xl lg:text-5xl font-bold  text-white">

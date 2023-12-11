@@ -3,7 +3,6 @@ import ImageWithSkeleton from "../common/ImageWithSkeleton";
 import clsx from "clsx";
 import style from "./commitment.module.css";
 import CommitmentItem from "./CommitmentItem";
-
 type Props = {};
 
 const Commitment = (props: Props) => {
@@ -14,8 +13,8 @@ const Commitment = (props: Props) => {
           Our <span className="text-secondary">Commitment</span>
         </h1>
       </div>
-      <div className={clsx(style.container, "w-5/6 h-full")}>
-        <div className={clsx(style.first, "flex flex-col gap-y-6")}>
+      <div id="commitment" className={clsx(style.container, "w-5/6 h-full ")}>
+        <div className={clsx(style.first, "flex flex-col gap-y-6 grid-item")}>
           <p>
             Helping the world to discover the finest quality isn’t just a
             one-time task for us, but rather a process. A process in which we
@@ -35,7 +34,7 @@ const Commitment = (props: Props) => {
         <div
           className={clsx(
             style.second,
-            "relative aspect-4/5 lg:aspect-auto h-full overflow-hidden rounded-xl lg:rounded-3xl"
+            "relative aspect-4/5 lg:aspect-auto h-full overflow-hidden rounded-xl lg:rounded-3xl grid-item"
           )}
         >
           <ImageWithSkeleton
@@ -45,7 +44,7 @@ const Commitment = (props: Props) => {
             alt="why-alphabet-1"
           />
         </div>
-        <div className={clsx(style.third)}>
+        <div className={clsx(style.third, "grid-item")}>
           <CommitmentItem
             className="h-full bg-primary rounded-xl lg:rounded-3xl"
             header="about alphabet trading"
@@ -59,7 +58,7 @@ const Commitment = (props: Props) => {
             descriptionColor="text-white"
           />
         </div>
-        <div className={clsx(style.fourth, "")}>
+        <div className={clsx(style.fourth, "grid-item")}>
           <CommitmentItem
             className="h-full bg-light_gray_gray rounded-xl lg:rounded-3xl"
             header="Delighting Customers"
@@ -72,7 +71,7 @@ const Commitment = (props: Props) => {
             descriptionColor="text-[#717171]"
           />
         </div>
-        <div className={clsx(style.fifth)}>
+        <div className={clsx(style.fifth, "grid-item")}>
           <CommitmentItem
             className="h-full bg-secondary rounded-xl lg:rounded-3xl"
             header="Dependable Quality"
@@ -88,7 +87,7 @@ const Commitment = (props: Props) => {
         <div
           className={clsx(
             style.sixth,
-            "relative h-full overflow-hidden rounded-xl lg:rounded-3xl"
+            "relative h-full overflow-hidden rounded-xl lg:rounded-3xl grid-item"
           )}
         >
           <ImageWithSkeleton
@@ -98,7 +97,7 @@ const Commitment = (props: Props) => {
             alt="why-alphabet-2"
           />
         </div>
-        <div className={clsx(style.seventh)}>
+        <div className={clsx(style.seventh, "grid-item")}>
           <CommitmentItem
             className="h-full bg-light_gray_gray rounded-xl lg:rounded-3xl"
             header="Nurturing Strong Bonds"

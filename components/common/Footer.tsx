@@ -138,7 +138,7 @@ const Footer = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="bg-secondary/70 py-2 text-center contrast-100 text-white">
+      <div className="bg-secondary/70 py-2 text-center text-sm md:text-base contrast-100 text-white">
         Copyright <span className="contrast-100">© {getYear()}</span> Alphabet
         Trading PLC. All Rights Reserved
       </div>

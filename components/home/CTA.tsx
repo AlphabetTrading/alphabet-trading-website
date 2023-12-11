@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import clsx from "clsx";
 
 type Props = {};
 
@@ -18,9 +19,17 @@ const CTA = (props: Props) => {
         </h1>
         <div
           onClick={() => router.push("/our-coffee/offerings")}
-          className="rounded-full p-2 lg:p-4 px-4 lg:px-8 border cursor-pointer"
+          className="rounded-full p-2 lg:p-3 px-4 lg:px-6 border-2 hover:scale-105 transition-all duration-300 ease-in-out border-opacity-10 cursor-pointer group relative overflow-hidden"
         >
-          <h1 className="text-lg lg:text-2xl">Check Our Offerings</h1>
+          <div
+            className={clsx(
+              "min-w-full  group-hover:flex duration-500 min-h-full ease-in-out z-0 scale-x-[1.5] scale-y-150 -translate-x-[125%] group-hover:translate-x-[5%] translate-y-1/2 group-hover:-translate-y-0  transition-all rounded-full absolute inset-0 ",
+              "group-hover:bg-primary"
+            )}
+          ></div>
+          <h1 className="text-lg lg:text-xl group-hover:text-white relative">
+            Check Our Offerings
+          </h1>
         </div>
       </div>
     </div>

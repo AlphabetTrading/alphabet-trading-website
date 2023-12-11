@@ -1,4 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import styles from "./HeroVideo.module.css";
+import clsx from "clsx";
+
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 
 type Props = {};
 
@@ -112,26 +117,68 @@ const HeroVideo = (props: Props) => {
       }
     };
   }, []);
+
+  const scrollButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  const handleScroll = () => {
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: "#welcome",
+      overwrite: "auto",
+    });
+  };
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollToPlugin);
+
+    if (scrollButtonRef.current) {
+      scrollButtonRef.current.addEventListener("click", handleScroll);
+    }
+    // clean up both gsap context, scroll trigger, and event listener
+    return () => {
+      if (scrollButtonRef.current)
+        scrollButtonRef.current.removeEventListener("click", handleScroll);
+    };
+  }, []);
+
   return (
-    <video
-      loop
-      muted
-      playsInline
-      className="min-h-[400px] aspect-video object-cover w-screen bg-secondary"
-      width="100%"
-      preload="auto"
-      poster="https://alphabettrading.s3.amazonaws.com/images/hero_video_poster_min.webp"
-      autoPlay
-      src={
-        webmVideoSrc ||
-        videoSrc ||
-        "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm"
-      }
-    >
-      <source src={webmVideoSrc} type="video/webm" />
-      <source src={videoSrc} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <header className="min-h-[400px] max-h-screen w-screen relative">
+      <div
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(0,0,0,0.001) 0%, rgba(0,0,0,0.5) 85%)",
+        }}
+        className="absolute inset-0 z-20"
+      ></div>
+      <video
+        loop
+        muted
+        playsInline
+        className="relative z-10 h-full aspect-video object-cover w-screen bg-secondary "
+        width="100%"
+        preload="auto"
+        poster="https://alphabettrading.s3.amazonaws.com/images/hero_video_poster_min.webp"
+        autoPlay
+        src={
+          webmVideoSrc ||
+          videoSrc ||
+          "https://alphabettrading.s3.amazonaws.com/FINAL+COFFEE++COLOER+VIDEO_480p.webm"
+        }
+      >
+        <source src={webmVideoSrc} type="video/webm" />
+        <source src={videoSrc} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <button
+        ref={(el: any) => {
+          scrollButtonRef.current = el;
+        }}
+        id="scrollDownBtn"
+        className={clsx(styles.scrollDownBtn)}
+      >
+        .
+      </button>
+    </header>
   );
 };
 

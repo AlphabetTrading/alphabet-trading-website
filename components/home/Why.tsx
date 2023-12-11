@@ -30,7 +30,7 @@ const Why = (props: Props) => {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center justify-center mt-20">
+    <div className=" w-full flex flex-col items-center justify-center mt-20">
       <div className="flex flex-col gap-y-4">
         <div className="flex flex-col mx-auto items-center gap-y-2 w-5/6 md:w-2/3 lg:w-3/5">
           <div className="">

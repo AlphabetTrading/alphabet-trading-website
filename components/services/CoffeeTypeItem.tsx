@@ -75,14 +75,36 @@ const CoffeeTypeItem = ({ index, coffeeType }: Props) => {
                   href="/our-coffee/offerings"
                   aria-label="see offerings"
                   className={clsx(
-                    "flex items-center border hover:scale-105 transition duration-200 ease-in-out",
+                    "flex items-center border hover:scale-105 transition duration-200 ease-in-out group relative overflow-hidden",
                     index % 2 == 0 ? "border-primary" : "border-white"
                   )}
                 >
-                  <p className="p-2 px-3 2k:p-4 2k:px-5 font-semibold ">
+                  <p
+                    className={clsx(
+                      "p-2 px-3 2k:p-4 2k:px-5 font-semibold group-hover:text-white delay-75 duration-200 z-10",
+                      index % 2 == 0
+                        ? "group-hover:text-white"
+                        : "group-hover:text-primary"
+                    )}
+                  >
                     See Offerings
                   </p>
-                  <FaChevronRight className="pr-2" />
+                  <FaChevronRight
+                    className={clsx(
+                      "pr-2 group-hover:text-white delay-75 duration-200 z-10",
+                      index % 2 == 0
+                        ? "group-hover:text-white"
+                        : "group-hover:text-primary"
+                    )}
+                  />
+                  <div
+                    className={clsx(
+                      "min-w-full  group-hover:flex duration-500 min-h-full ease-in-out z-0 scale-x-[1.5] scale-y-150 -translate-x-[125%] group-hover:translate-x-[5%] translate-y-1/2 group-hover:-translate-y-0  transition-all rounded-full absolute inset-0 ",
+                      index % 2 == 0
+                        ? "group-hover:bg-primary"
+                        : "group-hover:bg-white"
+                    )}
+                  ></div>
                 </Link>
               </div>
             </div>

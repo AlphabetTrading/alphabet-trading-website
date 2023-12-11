@@ -53,7 +53,7 @@ const index = (props: Props) => {
                 props={{ fill: true }}
                 src={`https://alphabettrading.s3.amazonaws.com/images/about1.webp`}
                 alt="about_us_1"
-                className="h-full w-full"
+                className="h-full w-full !bg-fixed"
               />
             </div>
             <div className="flex flex-col lg:flex-row items-center p-8 md:p-12 gap-y-5 md:gap-x-[4rem] lg:px-20 xl:px-28  mt-16">

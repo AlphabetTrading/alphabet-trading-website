@@ -169,35 +169,45 @@ const Navbar = ({ white }: Props) => {
         <div className="hidden md:flex items-center justify-between">
           <nav className="">
             <div className=" w-full flex items-center justify-between px-6 pl-10 2k:px-14 2k:pl-18 4k:px-20 4k:pl-24">
-              <ul
+              <motion.ul
                 className={clsx(
-                  "flex h-full items-center gap-x-6 lg:gap-x-8 text-md 2k:text-xl 4k:text-2xl font-semibold z-20",
+                  "flex h-full items-center gap-x-6 lg:gap-x-8 text-md 2k:text-xl 4k:text-2xl font-semibold z-20 relative",
                   white ? "" : "text-white"
                 )}
+                layout
+                id="underline"
               >
                 {navigationItems.map((navItem, index) => {
                   return (
-                    <li key={navItem.id}>
+                    <motion.li
+                      key={navItem.id}
+                      className="flex flex-col items-center lg:mt-0 lg:mr-4 relative"
+                    >
                       <Link
                         href={navItem.href}
                         className={clsx(
-                          "w-full h-full text-center lg:inline-block lg:mt-0 lg:mr-4 cursor-pointer flex justify-center items-center flex-col",
-                          "hover:scale-110 hover:font-bold transition duration-200 ease-in-out ",
-                          router.pathname === navItem.href
-                            ? `after:content-[''] relative after:absolute after:-bottom-1  after:w-1/2 hover:after:w-3/4 after:left-1/4 hover:after:left-3 after:transition-all after:duration-300 after:ease-in-out after:h-1 after:transform  after:rounded-md after:bg-secondary ${
-                                prevIndex > index
-                                  ? "after:animate-slide_right"
-                                  : "after:animate-slide_left"
-                              }`
-                            : ""
+                          "w-full h-full text-center lg:inline-block  cursor-pointer ",
+                          "hover:scale-110 hover:font-bold transition duration-200 ease-in-out "
+                          // router.pathname === navItem.href
+                          //   ? `after:content-[''] relative after:absolute after:-bottom-1  after:w-1/2 hover:after:w-3/4 after:left-1/4 hover:after:left-3 after:transition-all after:duration-300 after:ease-in-out after:h-1 after:transform  after:rounded-md after:bg-secondary ${prevIndex > index
+                          //     ? "after:animate-slide_right"
+                          //     : "after:animate-slide_left"
+                          //   }`
+                          //   : ""
                         )}
                       >
                         {navItem.title}
                       </Link>
-                    </li>
+                      {router.pathname === navItem.href && (
+                        <motion.div
+                          layoutId="underline"
+                          className="absolute -bottom-1 w-3/4 h-1 bg-secondary rounded-md"
+                        />
+                      )}
+                    </motion.li>
                   );
                 })}
-              </ul>
+              </motion.ul>
             </div>
           </nav>
         </div>
