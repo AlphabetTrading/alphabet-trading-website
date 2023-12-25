@@ -63,7 +63,7 @@ const Commitment = (props: Props) => {
           <CommitmentItem
             className="h-full bg-light_gray_gray rounded-xl lg:rounded-3xl"
             header="Delighting Customers"
-            headerColor="text-secondary"
+            headerColor="text-primary"
             title="Customer Satisfaction"
             titleColor="text-dark_gray"
             descriptions={[
